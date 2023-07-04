@@ -44,98 +44,56 @@ Pie Pelota TV
 
 <br>
 <script>
-function eventos()
-{
-	var x = Math.random().toString(36).substring(7);
+function eventos() {
+    var x = Math.random().toString(36).substring(7);
 
-	$.ajax({
-		url : "eventos.json?"+x,
-		type : "get",
-		success: function (arr) {
-			var content = '';
-			
-			for (var i = 0; i < arr.length; i++)
-			{
-				if (i%4==0)
-				{
-					if (i != 0)
-						content += '</div>';
-					
-					content += '<div class="w3-row-padding w3-padding-16 w3-center" id="copa">';
-				}
-					
-				var obj = arr[i];
-		
-				if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO")
-					status = obj['status'];
-				else
-					status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
-			
-				if (status == "EN VIVO")
-					color = "danger";
-				else
-					color = "dark";
-					
-				content += '<div class="w3-quarter"><a href="' + obj['url'] + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a><a class="btn btn-block btn-' + color + '" href="' + obj['url'] + '">' + status + '</a> <div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
-				
-				if (i == arr.length-1)
-					content += '</div>';
-			}
-			
-			$("#eventos").html(content);
-			
-			guardaHorario();
-			dT();
-		}
-	})
+    $.ajax({
+        url: "eventos.json?" + x,
+        type: "get",
+        success: function (arr) {
+            var content = '';
+
+            for (var i = 0; i < arr.length; i++) {
+                if (i % 4 == 0) {
+                    if (i != 0)
+                        content += '</div>';
+
+                    content += '<div class="w3-row-padding w3-padding-16 w3-center" id="copa">';
+                }
+
+                var obj = arr[i];
+
+                var status = '';
+
+                if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO") {
+                    status = obj['status'];
+                } else {
+                    var horarioEnVivo = new Date(obj['status']);
+                    var horarioEnVivoLocal = horarioEnVivo.toLocaleTimeString([], { hour: 'numeric', minute: 'numeric' });
+                    status = 'HOY | <span class="t">' + horarioEnVivoLocal + '</span> hs';
+                }
+
+                var color = (status == "EN VIVO") ? "danger" : "dark";
+
+                content += '<div class="w3-quarter"><a href="' + obj['url'] + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a><a class="btn btn-block btn-' + color + '" href="' + obj['url'] + '">' + status + '</a> <div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
+
+                if (i == arr.length - 1)
+                    content += '</div>';
+            }
+
+            $("#eventos").html(content);
+
+            guardaHorario();
+            dT();
+        }
+    });
 }
 
 eventos();
 
-window.setInterval(function() {
-	eventos();
+window.setInterval(function () {
+    eventos();
 }, 60000);
-
-
-	// Array de eventos
-var eventos = [
-  {
-    "title": "Liverpool vs. Deportivo Maldonado",
-    "league": "Campeonato Uruguayo",
-    "horarioEnVivo": new Date("2023-07-04T09:00:00Z"), // Ejemplo de horario en vivo para el primer evento (ajusta la fecha y hora según sea necesario)
-    "duracionFinalizado": 2 * 60 * 60 * 1000 // Duración en milisegundos después de la cual el evento se considera finalizado
-  },
-  {
-    "title": "Evento 2",
-    "league": "Liga 2",
-    "horarioEnVivo": new Date("2023-07-05T14:30:00Z"), // Ejemplo de horario en vivo para el segundo evento (ajusta la fecha y hora según sea necesario)
-    "duracionFinalizado": 3 * 60 * 60 * 1000 // Duración en milisegundos después de la cual el evento se considera finalizado
-  },
-  // Agrega más eventos según sea necesario
-];
-
-// Obtén la hora actual
-var horaActual = new Date();
-
-// Recorre los eventos y aplica la lógica a cada uno
-eventos.forEach(function(evento) {
-  // Calcula la diferencia en milisegundos entre el horario en vivo y la hora actual
-  var diferencia = horaActual - evento.horarioEnVivo;
-
-  if (diferencia >= evento.duracionFinalizado) {
-    // El evento ha finalizado
-    evento.status = "FINALIZADO";
-  } else if (diferencia >= 0) {
-    // El evento está en vivo
-    evento.status = "EN VIVO";
-  } else {
-    // El evento aún no ha comenzado
-    evento.status = "PRÓXIMAMENTE";
-  }
-});
-
-// Imprime el resultado para verificar
-console.log(eventos);
 
 </script>
 
