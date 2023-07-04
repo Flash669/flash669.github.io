@@ -95,6 +95,48 @@ eventos();
 window.setInterval(function() {
 	eventos();
 }, 60000);
+
+
+	// Array de eventos
+var eventos = [
+  {
+    "title": "Liverpool vs. Deportivo Maldonado",
+    "league": "Campeonato Uruguayo",
+    "horarioEnVivo": new Date("2023-07-04T09:00:00Z"), // Ejemplo de horario en vivo para el primer evento (ajusta la fecha y hora según sea necesario)
+    "duracionFinalizado": 2 * 60 * 60 * 1000 // Duración en milisegundos después de la cual el evento se considera finalizado
+  },
+  {
+    "title": "Evento 2",
+    "league": "Liga 2",
+    "horarioEnVivo": new Date("2023-07-05T14:30:00Z"), // Ejemplo de horario en vivo para el segundo evento (ajusta la fecha y hora según sea necesario)
+    "duracionFinalizado": 3 * 60 * 60 * 1000 // Duración en milisegundos después de la cual el evento se considera finalizado
+  },
+  // Agrega más eventos según sea necesario
+];
+
+// Obtén la hora actual
+var horaActual = new Date();
+
+// Recorre los eventos y aplica la lógica a cada uno
+eventos.forEach(function(evento) {
+  // Calcula la diferencia en milisegundos entre el horario en vivo y la hora actual
+  var diferencia = horaActual - evento.horarioEnVivo;
+
+  if (diferencia >= evento.duracionFinalizado) {
+    // El evento ha finalizado
+    evento.status = "FINALIZADO";
+  } else if (diferencia >= 0) {
+    // El evento está en vivo
+    evento.status = "EN VIVO";
+  } else {
+    // El evento aún no ha comenzado
+    evento.status = "PRÓXIMAMENTE";
+  }
+});
+
+// Imprime el resultado para verificar
+console.log(eventos);
+
 </script>
 
 
