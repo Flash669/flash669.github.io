@@ -68,7 +68,7 @@ function eventos() {
                 if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO") {
                     status = obj['status'];
                 } else {
-                    var horarioEnVivo = new Date(obj['status']);
+                    var horarioEnVivo = new Date(obj['utcTime']);
                     var horarioEnVivoLocal = horarioEnVivo.toLocaleTimeString([], { hour: 'numeric', minute: 'numeric' });
                     status = 'HOY | <span class="t">' + horarioEnVivoLocal + '</span> hs';
                 }
@@ -85,15 +85,7 @@ function eventos() {
 
             guardaHorario();
             dT();
-        }
-    });
-}
-
-eventos();
-
-window.setInterval(function () {
-    eventos();
-}, 60000);
+       
 
 </script>
 
