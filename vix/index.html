@@ -44,7 +44,7 @@ function eventos()
 	var x = Math.random().toString(36).substring(7);
 
 	$.ajax({
-		url : "/vix/eventos.json",
+		url : "/vix/eventos.json? + x,
 		type : "get",
 		success: function (arr) {
 			var content = '';
