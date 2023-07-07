@@ -7,7 +7,7 @@
 <title>Ver Vix Plus online en VIVO y en directo. Pie Pelota TV</title>
 
 
-<script type="text/javascript" src="/horario.js?v"></script>
+<script type="text/javascript" src="/vix/horario.js?v"></script>
 
 <link href="/star/bootstrap.css?v3" rel="stylesheet">
 
@@ -44,7 +44,7 @@ function eventos()
 	var x = Math.random().toString(36).substring(7);
 
 	$.ajax({
-		url : "/vix/eventos.json? + x,
+		url : "/vix/eventos.json?"+x,
 		type : "get",
 		success: function (arr) {
 			var content = '';
