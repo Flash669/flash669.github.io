@@ -29,14 +29,14 @@ Pie Pelota TV
 
 <div class="w3-main w3-content w3-padding" style="max-width:1200px">
     <center>
-<img src="/img/logo-vixplus.png" alt="VIX+" width="250" height="100"> 
+<img src="https://librefutboltv.com/img/logo-vixplus.png" alt="VIX+"  height="120"> 
 </center><br><p class="display-5 text-center">Elige el evento:</p>
 	
 <div id="eventos"></div>
 
 <br>
 
-<div class="sharethis-inline-share-buttons"></div>
+
 
 <script>
 function eventos()
@@ -44,7 +44,7 @@ function eventos()
 	var x = Math.random().toString(36).substring(7);
 
 	$.ajax({
-		url : "eventos.json?"+x,
+		url : "/vix/eventos.json?"+x,
 		type : "get",
 		success: function (arr) {
 			var content = '';
