@@ -1,0 +1,371 @@
+<style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<meta name="referrer" content="no-referrer" />
+<meta http-equiv="Cache-control" content="public, max-age=604800, immutable"/>
+<script src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
+<script>
+    jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo";
+</script>
+<script type="text/javascript">
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+        var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null
+            ? ""
+            : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    var id = getParameterByName("id");
+    if (id == "#") {
+        alert("Vuelve a la página anterior");
+    }
+</script>
+<script>
+    let probabilidad = 40;
+    let percent = Math.floor(Math.random() * 100) + 1;
+    let isOk = percent>probabilidad;
+    if (id == 0000) {//0000
+        keyId = "0000";
+        key = "0000";
+    } else if (id == 1057) {//Directv Sports Argentina (X)
+        keyId = "a7e09c6f47af57e999b789eb54d3255d";
+        key = "263f6db12d6f9aa72f2cc9b0ef2e26b2";
+    } else if (id == 1059) {//Directv Sports Colombia (X)
+        keyId = "60203b253cb45019b0a739bb2b32345a";
+        key = "31e8d7c9def0d523c559904f23f94ce2";
+    } else if (id == 1061) {//Directv Sports Peru (X)
+        keyId = "7119069b99015b4eb9ee4300577399e2";
+        key = "b89827cc970cd78da882ffca3504c774";
+    } else if (id == 1058) {//Directv Sports Chile (X)
+        keyId = "6acff80330fd5da6961e33d84dff4d03";
+        key = "c1dff4e0cbd2c594cbd83e9ba6debe4d";   
+    } else if (id == 1062) {//Directv Sports Uruguay (X)
+        keyId = "faa1953009425668857b1aea4beb5a92";
+        key = "81324009511de3ff21e90e52df808076";         
+    } else if (id == 1063) {//DSport 2 (X)
+        keyId = "ab020a1710d630168de21698375a439c";
+        key = "235898cdb10b0cdba35ea2ce94fbb1fb";
+    } else if (id == 1245) {//VTV (X)
+        keyId = "06997340922035bf8bbdb05ccad59aac";
+        key = "e54951d9df22a73a8ab2d951c67ca260";
+     } else if (id == 1246) {//VTV Plus (X)
+        keyId = "0b23302438ff324dab2eeaca5ea9f554";
+        key = "cd59eb711c8ac4ee0bf0c66f3e967a9c";
+    } else if (id == 1117) {//Fox Sport 1 Chile (X)
+        keyId = "5804b7a24ca1303d8511b6d49278610c";
+        key = "fc0a63fd4fb80fd67ad25646857082f5";
+    } else if (id == 1118) {//Fox SPorts 1 Argentina (X)
+        keyId = "76be81041e7133a38457f097d2b0041c";
+        key = "8ced846c9effd56d7e2a9276224bb3c5";
+    } else if (id == 1125) {//ESPN Premium (X)
+        keyId = "4cb49df341423cb597bf3e79b78f2a52";
+        key = "11ad69d2c84f41dbb520abfe38b19fe7";
+    } else if (id == 1240) {//TyC Sport Argentina (X)
+        keyId = "4d45b79d4487343589058ab49ddf8cf0";
+        key = "aa7f95f71a3cfe40aa59904f9285af72";
+    } else if (id == 1157) {//Latina TV Peru (X)
+        keyId = "174f5f2ee8193624bec9dd8e5d507a64";
+        key = "8ea131613f968b9c2b07d2d08ce5ef44";
+    } else if (id == 1011) {//America TV Peru (X)
+        keyId = "b9fc5a15382b35818904ecbeed545fd0";
+        key = "8b4d83e2c382780ca615ce6cd6754d79";
+    } else if (id == 1016) {//ATV Peru (X)
+        keyId = "bd16d3dc021e31369f1df0ce68f0a4f3";
+        key = "3b872c2fbf3c4c7e6a77f126b8ebdc92";
+    } else if (id == 1017) {//ATV+ Peru
+        keyId = "a85710136cd7392dabdaf4e2d7169b5f";
+        key = "dae80dc1e63aff5975cce0f302870b79";
+    } else if (id == 1249) {//Willax TV PERU (X)
+        keyId = "e0140e8c60d2362a9982f97276d0e1a4";
+        key = "f682dcb20c7068275840411916b79d85";  
+    } else if (id == 1104) {//ESPN 1 (X)
+        keyId = "66a61cf22e5956c49b89ecbc56049248";
+        key = "51fc45f5a6f184b9916631ac31f95653";  
+    } else if (id == 1106) {//ESPN 1 COLOMBIA Nuevo ---
+        keyId = "2444f7f19b29352eb6d1c7f9d8f71d59";
+        key = "027fc4f3b6275111c0c8b5ae84933ea8";        
+    } else if (id == 1098) {//ESPN 2 COLOMBIA (X)
+        keyId = "bfe0b4ea79d63f3ca8370f9465ad853a";
+        key = "6bf0a6db3672e1d1ebe22e494156ff5d";
+    } else if (id == 1260) {//ESPN 2 PERU NUEVOOOO ---
+        keyId = "b195be74361834d9aff2e13ac0260a36";
+        key = "a6af584b36df51fba33b3e8661f5505a";      
+    } else if (id == 1103) {//ESPN 3 (X)
+        keyId = "f91c485f605b337cab75d446604d5dfc";
+        key = "933c006497039ce8b345d53a1131d8c4";
+    } else if (id == 1116) {//ESPN 4 CHILE
+        keyId = "120a14e524f637d4b897c0b70a52d91f";
+        key = "5c78b4010783b638eac8bc2e852858ac";
+    } else if (id == 1217) {//Telemundo Internacional
+        keyId = "576b5361b6273d2fbb14aae6e8eb646a";
+        key = "1e0c5591f570116dbf9f22da26d17226";
+    } else if (id == 1187) {//CANAL 10 URUGUAY (X)
+        keyId = "dfd472261dcf350594173e8acf5f97ad";
+        key = "313d66dcc3202f8cb471c51b864d3917";
+    } else if (id == 1093) {//Canal Gourmedt
+        keyId = "afb378efc4c937999a9237a734f9a67a";
+        key = "3b6ca02e5b0589cab0dd32db45308884";
+    } else if (id == 1162) {//Mega Chile
+        keyId = "6a8f63dac3923823a6fdfac3ce7f2a21";
+        key = "45be5c78b14caf1fa16535950d765b76";
+    } else if (id == 1134) {//Gol TV ECUADOR (X)
+        keyId = "3303b4c6982f381ea9e309009fbb3f27";
+        key = "a7fd49808f890c2500bf2180aaf42307";
+    } else if (id == 1030) {//CANAL 13 CHIII (X)
+        keyId = "d0141f7c4c5b3b9fb023c229aa78f66e";
+        key = "fbb6d022cde627f2ebc3891735af5dd5";          
+    } else if (id == 1111) {//FILS Y ARTE
+        keyId = "bcae817ff7873a70b2fccd25b733db42";
+        key = "0f1f51febbf4eaafd859fab66e441715";      
+    } else if (id == 1108) {//ESPN MEXICO
+        keyId = "591cdbc97034330b849614a6efbfdfd4";
+        key = "d664407707d260f93908121d84df4eba";
+    } else if (id == 1231) {//TNT Sport 3 CHILE (X)
+        keyId = "1743cd7101c73e2983ba928fbfcec307";
+        key = "cf38d2027de3affce951afcbd583458d";
+    } else if (id == 1250) {//Win Sport (X)
+        keyId = "f195c02916303b2691090ca545933afb";
+        key = "774d7a8fae5e6bde902c5b33bc33ce01";
+    } else if (id == 1214) {//TeleAmazonas (X)
+        keyId = "806e76a83b73357a96e1446ad152ff71";
+        key = "002babbb1c5869a0f2f8f34b711700c6";
+    } else if (id == 1185) {//RCN COLOMBIA (X)
+        keyId = "fad9eaf7a980300686af7809c0377a00";
+        key = "0d270d4c1ef2a319aeaf2f424e9b1442";
+    } else if (id == 1048) {//CITY COLOMBIA Nuevo ---
+        keyId = "bdc3078b087a3eb59b35bd020b8ece2a";
+        key = "e18f7d7e795c381457b2d26557b5a788";      
+    } else if (id == 1075) {//DISCOVERY HOME (X)
+        keyId = "8d6be15405ba3ce7b06b240b6b9cfcde";
+        key = "dca9f758abd501c3850dd0ad9ab502ae";
+    } else if (id == 1082) {//DISCOVERY World NUEVO
+        keyId = "650b2a2c9d993175a95cff9f4379bf77";
+        key = "1261346c61c4ec61927dead8fc0cc057";        
+    } else if (id == 1080) {//DISCOVERY Theater NUEVO
+        keyId = "50b848449e373bec925946db30cc0634";
+        key = "a2523f96ee3baee69dc96210d6257a54";    
+    } else if (id == 1077) {//DISCOVERY Investigation NUEVO
+        keyId = "36312b6db5aa3bb29ec97a35c79f7d66";
+        key = "0ff142134ad716a7a9a99585167a52b2";     
+    } else if (id == 1013) {//Animal Planet NUEVO
+        keyId = "48669e623e763dc58ea76114be946e60";
+        key = "c5b51ed03ae30a5b6b6ed352582f38c4";  
+    } else if (id == 1152) {// I-Sat NUEVO
+        keyId = "5d0e7b44e6d0321db36e558c1a9372d7";
+        key = "d98275fa94dd740a828df0608ebfdff3";  
+    } else if (id == 1046) {// Cinemax NUEVO
+        keyId = "a7b05e3667903700af35356dd04dc541";
+        key = "62b59f0618484452a7e735d1faf3e3a4";   
+    } else if (id == 1193) {// Space NUEVO
+        keyId = "f3af71d7c21a381fb6f41a1564293b06";
+        key = "b21e3b466e6d399618bdae6cd9dd5242";  
+    } else if (id == 1041) {// Cinecanal NUEVO
+        keyId = "5df14c61af95312297a04b1068400323";
+        key = "6b5ead536a990449718dace6f780b7ef"; 
+    } else if (id == 1129) {// FX NUEVO
+        keyId = "7d80ccdb972032ac86f8df6c2e97b61e";
+        key = "2f8969eaee264489d64542b94a3e9807";  
+    } else if (id == 1019) {// AXN NUEVO
+        keyId = "c152bb4696563d6d9369c375e328a8fd";
+        key = "c077f09e3a9dfef0580c9ae9f29e3bf2";   
+    } else if (id == 1007) {// AMC NUEVO
+        keyId = "4ff7f7bd977b33189108629f0effaa4b";
+        key = "211e132997cd8646eedf3d1bfe00696a";   
+    } else if (id == 1210) {// STUDIO UNIVERSAL NUEVO
+        keyId = "b8569dadb1563206a2c2bb0bdb6655b8";
+        key = "e17fec1b1897b5b1c25883749a89cf76"; 
+    } else if (id == 1003) {// AyE NUEVO
+        keyId = "b4ad623c8e66373082f26ad3d591b433";
+        key = "445da0b9da7f1edc2173b8f96e21618e";    
+    } else if (id == 1004) {// A3Cine NUEVO
+        keyId = "f130169834613fdca23dd19f9f4e8863";
+        key = "78b03dacb3616f457ccef7cf31b039ba"; 
+    } else if (id == 1054) {// Comedy Central NUEVO
+        keyId = "7bb71d07f3fb3eca97467beceec040cf";
+        key = "4ba18bb62f03cdcdb8419383ff0dfc82";  
+    } else if (id == 1150) {// HTV NUEVO
+        keyId = "a08ae17db9543c9db725b5044de5d48c";
+        key = "9ad0d02412d384dd5a02b94ccf25c6af";   
+    } else if (id == 1165) {// MTV NUEVO
+        keyId = "74d426155d66366e97dc3a95d406dc03";
+        key = "049cb061d1e683a01504192e5f8e90cb";         
+    } else if (id == 1014) {//ANTENA 3 INTERNACIONAL
+        keyId = "0bcc4dfb40e838a9a0f629a8c126d0ef";
+        key = "2b339d76834357a35d9a65eafd910709";    
+    } else if (id == 1163) {//CANAL 4 URUGUAY
+        keyId = "ce240cb1f55935b5825c82f1c1e4c8d7";
+        key = "26ed0ca8b8b325d9452b88456ebc9abe";   
+    } else if (id == 1222) {//CANAL 5 URUGUAY
+        keyId = "f19ba54f0b1638578211d1a1acf29e84";
+        key = "c7a0476d0396644ba4b6076f4de88fc8";         
+    } else if (id == 1227) {//TNT CHANNEL (X)
+        keyId = "2bdcf12a2d68305db6c5a1521efd11c7";
+        key = "ff22ccb2e8b75305f634ec90d18dc01c";
+    } else if (id == 1039) {//CDO Premium ---
+        keyId = "7859f9978593322f90d6f471d25827f8";
+        key = "65f802d409e27dcde1c49a7371849104";  
+    } else if (id == 1095) {//El Trece ---
+        keyId = "27965a5e47515c52af970def8230142c";
+        key = "b2f163b93028a4c325c0d8f7f1b29e25";    
+    } else if (id == 1010) {//America Argentina ---
+        keyId = "d14fca550adb5b75bb34f0c42aa281dd";
+        key = "6f76634b14e243f1bcee1c5fcd8a393c";   
+    } else if (id == 1264) {//DNEWS ---
+        keyId = "fe49940345dd5e40be8f6c163a088aff";
+        key = "464172bbc422938df76633bf3a8a2b54";   
+    } else if (id == 1182) {//PASIONES ---X
+        keyId = "d45aaa733900339cbdbebebc392dba28";
+        key = "3eea88ae8d0e43f0aaea586f48b851d1";         
+    } else if (id == 1173) {//Nick Junior (X)
+        keyId = "d4b1b9c4f55d396694e289660fd0c84b";
+        key = "2a9eb403e30a82516a14e1f3f8142c77";      
+    } else if (id == 0068) {//SportTV BRASIL (X)
+        keyId = "4f62db627bd93b718154cc8629e92976";
+        key = "09e37739a090140734904513ee2f4ce3";
+    }
+
+    if (
+        id == 1011 ||    
+        id == 1039 ||          
+        id == 1048 ||                
+        id == 1106 ||   
+        id == 1082 ||            
+        id == 1150 ||          
+        id == 1260 ||                        
+        id == 1003 ||                  
+        id == 1165 ||                        
+        id == 1004 ||                        
+        id == 1210 ||                  
+        id == 1007 ||                  
+        id == 1013 ||                  
+        id == 1019 ||                       
+        id == 1054 ||                              
+        id == 1080 ||                  
+        id == 1129 ||                        
+        id == 1041 ||                        
+        id == 1193 ||                        
+        id == 1046 ||                        
+        id == 1152 ||                        
+        id == 1227 ||     
+        id == 1077 ||            
+        id == 1173 ||            
+        id == 1063 ||
+        id == 1125 ||
+        id == 1240 ||
+        id == 1116 ||      
+        id == 1118 ||
+        id == 1103 ||
+        id == 1246 ||
+        id == 1117 ||
+        id == 1245 ||
+        id == 1014 ||      
+        id == 1098 ||
+        id == 1163 ||      
+        id == 1217 ||
+        id == 1222 ||      
+        id == 1017 ||
+        id == 1187 ||
+        id == 1016 ||
+        id == 1103 ||
+        id == 1182 ||      
+        id == 1093 ||
+        id == 1111 ||
+        id == 1162 ||
+        id == 1030 ||
+        id == 1249 ||
+        id == 1134 ||
+        id == 1157 ||
+        id == 1108 ||
+        id == 1227 ||
+        id == 1231 ||
+        id == 1250 ||
+        id == 1214 ||
+        id == 1185 ||
+        id == 1075 ||      
+        id == 1187 ||
+        id == 0068
+    ) {
+        url = "https://" + id + "-vos.dtvott.com/DASH";
+    } else if (id == 1106 || id == 1251 || id == 1040 || id == 1035) {
+        url = "https:///dtvott-akaws.akamaized.net/live_" + id + "/DASH";
+    } else if (id == 1095 || id == 1061 || id == 1095 || id == 1058 || id == 1057 || id == 1062 || id == 1059 || id == 1010 || id == 1264) {
+        url = "https://" + id + "-abc.dtvott.com/dash_live_" + id;
+    } else if (id == 1009) {
+        url = "https://dtvott-cwtests.akamaized.net/dash_live_" + id;
+    } else {
+        if (
+            id == 1122 ||
+            id == 1123 ||
+            id == 1124 ||
+            id == 1027 ||
+            id == 1211 ||
+            id == 1053 ||
+            id == 1091 ||
+            id == 1223 ||
+            id == 1144 ||
+            id == 1190 ||
+            id == 1081 ||
+            id == 1147 ||
+            id == 1012 ||
+            id == 1181 ||
+            id == 1076 ||
+            id == 1074 ||
+            id == 1148 ||
+            id == 1248 ||
+            id == 1045 ||
+            id == 1101 ||
+            id == 1107 ||
+            id == 1100 ||
+            id == 1115 ||
+            id == 1060 ||
+            id == 1069
+        )
+            letter = "c";
+        else letter = "a";
+
+        url = "https://dtvott-" + letter + "bc.akamaized.net/dash_live_" + id;
+    }
+</script>
+<div id="player"></div>
+<script>
+    var playerInstance = jwplayer("player");
+    console.log(url);
+    playerInstance.setup({
+        playlist: [
+            {
+                sources: [
+                    {
+                        default: false,
+                        type: "dash",
+                        file: url + "/manifest.mpd",
+                        drm: {
+                            clearkey: { keyId: keyId, key: key },
+                        },
+                        label: "0",
+                    },
+                ],
+            },
+        ],
+        width: "100%",
+        height: "100%",
+        aspectratio: "16:9",
+        autostart: false,
+        cast: {},
+        sharing: {},
+    });
+</script>
+
+<script>
+    console.log("??");
+    console.log("??");
+    console.log("??");
+    console.log("??");
+    console.log("??");
+    console.log("??");
+    console.log("??");
+</script>
