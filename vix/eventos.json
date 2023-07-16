@@ -1,30 +1,128 @@
 [
     {
-        "title": "Gimnasia vs. Independiente",
-        "league": "Liga Profesional",
-        "status": "FINALIZADO",
-        "img": "https:\/\/images.vix.com\/prd\/league\/card\/62166915eb81d283bdc6e5ac\/a72bb3b9a46f4ba6bb708c0ba4ddf1bf?tr=w-1200,h-675:oi-\/prd\/team-logo\/62166559eb81d28edec6c425\/fc13f99fb101aa5695f104985c780554,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/621665fceb81d27dbbc6cb7d\/987b19247049b8383061463cd5597af4,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "title": "Cruzeiro vs. Coritiba",
+        "league": "Brasileir\u00e3o",
+        "status": "16:00",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/6216769deb81d29924c770c5\/47f1beb03d7b00c55a21c052c558dd1e?tr=w-1200,h-675:oi-\/prd\/team-logo\/642da7c1e1e44dd1e4076ba5\/502b02b1679235d47de1dbf4c133190c,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/624daaa258227669adee1aed\/c432c0d53d8ea1e99659cd9ea9727fa8,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
         "url": "#"
     },
     {
-        "title": "Central C\u00f3rdoba vs. Newell's",
+        "title": "Belgrano vs. San Lorenzo",
         "league": "Liga Profesional",
-        "status": "EN VIVO",
-        "img": "https:\/\/images.vix.com\/prd\/league\/card\/62166915eb81d283bdc6e5ac\/a72bb3b9a46f4ba6bb708c0ba4ddf1bf?tr=w-1200,h-675:oi-\/prd\/team-logo\/621664a0eb81d21011c6bfcd\/bbfa91f4aa0c24393fd2ba6bc1922544,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/6216666beb81d280c5c6ce03\/e5b908dd0329c5ed1be6527d96444209,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
-        "url": "https://piepelotatv.blogspot.com/2023/07/eventos-vix-plus_7.html?r=p-1"
+        "status": "19:00",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/62166915eb81d283bdc6e5ac\/a72bb3b9a46f4ba6bb708c0ba4ddf1bf?tr=w-1200,h-675:oi-\/prd\/team-logo\/63bc33eaabe0dae144257173\/a45f69ef434b4d40ddbf9d33942e8f8f,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/6216674feb81d214ecc6d4b9\/e8d3f651104b79f94375593e4439d235,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
     },
     {
-        "title": "Puebla vs. Santos Laguna",
-        "league": "Liga MX",
-        "status": "EN VIVO",
-        "img": "https:\/\/images.vix.com\/prd\/league\/card\/6495fe4bbfdce8e91858e3fa\/1e43f0fa08d14ef952c6064dff1ba097?tr=w-1200,h-675:oi-\/prd\/team-logo\/649cce23c9ea82cf81f088e3\/df3e95d9fe114627aca544a129cb263f,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/649daf3721a8ca381f9b9c39\/4bf79200e9f8b1b5da39edd492a6015d,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
-        "url": "https://piepelotatv.blogspot.com/2023/07/eventos-vix-plus_7.html?r=p-2"
+        "title": "Santos Laguna vs. Sporting de Gij\u00f3n",
+        "league": "Amistoso",
+        "status": "19:00",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/61ba495addc8852eee925785\/fda702789866796c9dcf5ee71b3ecc0b?tr=w-1200,h-675:oi-\/prd\/team-logo\/649daf3721a8ca381f9b9c39\/4bf79200e9f8b1b5da39edd492a6015d,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/6335e84668b5471e142e68b4\/41a3ef8c3087e0411b436cd1a91d720b,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
     },
     {
-        "title": "Necaxa vs. Tijuana",
+        "title": "Toluca vs. Ju\u00e1rez",
         "league": "Liga MX",
-        "status": "05:00",
-        "img": "https:\/\/images.vix.com\/prd\/league\/card\/6495fe4bbfdce8e91858e3fa\/1e43f0fa08d14ef952c6064dff1ba097?tr=w-1200,h-675:oi-\/prd\/team-logo\/649ccdfb30d73a11e5ccc4ef\/e798d422bae503bdc5104d5779e1771c,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/649ccd70d5bf3416bf2d8676\/52cecce96a1dc1ec203c005b78379eac,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "status": "20:00",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/6495fe4bbfdce8e91858e3fa\/1e43f0fa08d14ef952c6064dff1ba097?tr=w-1200,h-675:oi-\/prd\/team-logo\/649cce9514adc3cf3b50b993\/a2c6c48b42a9ba7e5e559646afa589fc,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/649ccda377a963272ba815e4\/7f8938e0717a821af0541f4bcce3b174,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "Chivas vs. Athletic Club",
+        "league": "Amistoso",
+        "status": "20:00",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/64af0e5e4319c868f7fb4e09\/4c8b9c8f43c1c28be38214944f1d7118?tr=w-1200,h-675:oi-\/prd\/team-logo\/649ccd57cf4d06c4d60b39f0\/d308d24cba560fa38cb1e0d9ed09216e,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/631a7428761fb86d1cf0f5ff\/07381fe9e13a0e3d6f6bf95357c42071,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "Fluminense vs. Flamengo",
+        "league": "Brasileir\u00e3o",
+        "status": "21:00",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/6216769deb81d29924c770c5\/47f1beb03d7b00c55a21c052c558dd1e?tr=w-1200,h-675:oi-\/prd\/team-logo\/621678edeb81d22e28c78a7c\/bcf32b2c3a8b53fbe01ad95347482929,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/621678daeb81d23d22c78a53\/8f364a55446493fed9da2876c5b963a9,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "S\u00e3o Paulo vs. Santos",
+        "league": "Brasileir\u00e3o",
+        "status": "21:00",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/6216769deb81d29924c770c5\/47f1beb03d7b00c55a21c052c558dd1e?tr=w-1200,h-675:oi-\/prd\/team-logo\/6216794feb81d264f5c78c81\/49961c62e96879f0b59fdf79aba8d894,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/6216793aeb81d28249c78c6a\/4c6b9e463432f83d9957da3a1cd3c63f,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "Fortaleza vs. Cuiab\u00e1",
+        "league": "Brasileir\u00e3o",
+        "status": "21:00",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/6216769deb81d29924c770c5\/47f1beb03d7b00c55a21c052c558dd1e?tr=w-1200,h-675:oi-\/prd\/team-logo\/6435cfd1a4ac3211694a6a7b\/bcfb3e55aeca7f0346dc8ee023c35eaf,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/621678bceb81d29fb3c7850b\/8edcd236cdf8c526f0112e8acda414eb,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "Gimnasia vs. Boca Juniors",
+        "league": "Liga Profesional",
+        "status": "21:30",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/62166915eb81d283bdc6e5ac\/a72bb3b9a46f4ba6bb708c0ba4ddf1bf?tr=w-1200,h-675:oi-\/prd\/team-logo\/62166559eb81d28edec6c425\/fc13f99fb101aa5695f104985c780554,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/62166481eb81d23ae9c6be43\/097deb0649603bf29cdcd490d73ba31e,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "Internacional vs. Palmeiras",
+        "league": "Brasileir\u00e3o",
+        "status": "23:30",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/6216769deb81d29924c770c5\/47f1beb03d7b00c55a21c052c558dd1e?tr=w-1200,h-675:oi-\/prd\/team-logo\/6216796beb81d2840ac78d95\/0f843f98870e6681e8c850d9dd5c45f7,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/62167924eb81d27834c78bac\/855ac48ecb4a92d30ba6502025f9df29,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "Athletico Paranaense vs. Bahia",
+        "league": "Brasileir\u00e3o",
+        "status": "23:30",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/6216769deb81d29924c770c5\/47f1beb03d7b00c55a21c052c558dd1e?tr=w-1200,h-675:oi-\/prd\/team-logo\/62167615eb81d2a83fc76bae\/da1d069aed542d9d3056415bcec9207c,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/642da7f3835d6a36d96b70bc\/dbe6585d39394d9a16f322aeca499542,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "Lan\u00fas vs. Banfield",
+        "league": "Liga Profesional",
+        "status": "00:00",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/62166915eb81d283bdc6e5ac\/a72bb3b9a46f4ba6bb708c0ba4ddf1bf?tr=w-1200,h-675:oi-\/prd\/team-logo\/62166636eb81d22f2cc6cd5a\/ca8a84d3afa312a166a0177831e43f53,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/62166444eb81d28d34c6bce3\/3ff8791f13da60cb699251df897118ba,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "Am\u00e9rica de Cali vs. Deportes Tolima",
+        "league": "Liga BetPlay",
+        "status": "00:15",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/6216607ceb81d251f1c68ec3\/9b60180611a71d3c77df249821ee382f?tr=w-1200,h-675:oi-\/prd\/team-logo\/62165c6ceb81d2d68ac663ac\/6184b4aa84e78afe91aee1edce2f4a4b,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/62165e2feb81d20fcec675f9\/9ee56e21b270538910aa76a19ad7184f,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "M\u00e9xico vs. Panam\u00e1",
+        "league": "Copa Oro",
+        "status": "01:30",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/648a21a30f11996004cdf184\/27454f84dc12364b0a6df5028a806b5c?tr=w-1200,h-675:oi-\/prd\/team-logo\/648a2548a9cb7658ab7b2f66\/f14fab8b8d5759fa5f5bc45ee726b487,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/648a25677df2a5503d494672\/3d0c05aeb7275ecd326ee032fc85f707,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "Central C\u00f3rdoba vs. Independiente",
+        "league": "Liga Profesional",
+        "status": "02:30",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/62166915eb81d283bdc6e5ac\/a72bb3b9a46f4ba6bb708c0ba4ddf1bf?tr=w-1200,h-675:oi-\/prd\/team-logo\/621664a0eb81d21011c6bfcd\/bbfa91f4aa0c24393fd2ba6bc1922544,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/621665fceb81d27dbbc6cb7d\/987b19247049b8383061463cd5597af4,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "Argentinos Juniors vs. Col\u00f3n",
+        "league": "Liga Profesional",
+        "status": "02:30",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/62166915eb81d283bdc6e5ac\/a72bb3b9a46f4ba6bb708c0ba4ddf1bf?tr=w-1200,h-675:oi-\/prd\/team-logo\/6216614ceb81d2e5ebc696f5\/042aef3396d84afc53e61fca1590ac8c,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/621664c4eb81d26c00c6c0f7\/bad4248c76f5f26ee83d52fcf069c51f,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "Once Caldas vs. Atl\u00e9tico Nacional",
+        "league": "Liga BetPlay",
+        "status": "02:30",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/6216607ceb81d251f1c68ec3\/9b60180611a71d3c77df249821ee382f?tr=w-1200,h-675:oi-\/prd\/team-logo\/62165de4eb81d2c58ec6748c\/d33dfcac02fb2de0881b58c1e5b26ddb,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/62165cb1eb81d2757ec6679f\/cf6cbefe81cc1308735a85cb70c8ce61,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "Pachuca vs. Pumas UNAM",
+        "league": "Liga MX",
+        "status": "04:15",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/6495fe4bbfdce8e91858e3fa\/1e43f0fa08d14ef952c6064dff1ba097?tr=w-1200,h-675:oi-\/prd\/team-logo\/649cce105abc8972b0373066\/2710a040ab1c2c462524b2320e86c477,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/649cce380a27c860ddf66f80\/01a037becaa73cc8fd02cc2207fad8a1,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
         "url": "#"
     }
 ]
