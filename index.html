@@ -30,8 +30,8 @@
 <li class="MEX">
   <a href="#" class="">
     Liga MX: Pachuca vs. Pumas UNAM
-    <span class="t">23:15</span>
-    <span class="live-event"></span>
+    <span  id="timeSpan1"class="t">23:15</span>
+    
   </a>
   <ul style="display: none;">
     <li class="subitem1">
@@ -55,44 +55,40 @@
   </ul>
 </li>
 
-<script>
-  // Obtener la hora actual del dispositivo del usuario
-  var horaActual = new Date();
-  var horaEvento = new Date();
-  
-  // Establecer la hora del evento en el formato deseado (HH:mm)
-  horaEvento.setHours(23);
-  horaEvento.setMinutes(15);
-  
-  // Obtener la hora local del dispositivo del usuario
-  var horaLocal = horaActual.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', hour12: false });
-  
-  // Obtener la diferencia horaria en minutos entre la hora local del dispositivo y la hora del evento
-  var diferenciaHoraria = (horaEvento.getTimezoneOffset() - horaActual.getTimezoneOffset()) * 60 * 1000;
-  
-  // Comparar la hora actual con la hora del evento ajustada a la zona horaria del dispositivo del usuario
-  if (horaActual < horaEvento.getTime() + diferenciaHoraria) {
-    // El evento aún no ha comenzado
-    document.querySelector('.live-event').textContent = 'En VIVO';
-  } else if (horaActual < horaEvento.getTime() + diferenciaHoraria + 2 * 60 * 60 * 1000) {
-    // El evento está en curso (2 horas después del inicio)
-    document.querySelector('.live-event').textContent = 'En Vivo';
-    
-    // Mostrar el enlace al evento en vivo
-    document.querySelector('ul').style.display = 'block';
-  } else {
-    // El evento ha finalizado (2 horas después del inicio)
-    document.querySelector('.live-event').textContent = 'Finalizado';
-  }
-  
-  // Actualizar el horario del evento con la hora local según la zona horaria del dispositivo del usuario
-  document.querySelector('.t').textContent = horaLocal;
-</script>
-
 </ul>
 </div>
 <br>
+<script>
+    // Obtén los elementos span por su ID
+    const timeSpan1 = document.getElementById("timeSpan1");
+    const timeSpan2 = document.getElementById("timeSpan2");
 
+    // Define los rangos de horas para cada evento
+    const eventos = [
+      { id: "timeSpan1", horaInicio: 3, horaFin: 5 },
+      { id: "timeSpan2", horaInicio: 6, horaFin: 8 }
+    ];
+
+    // Obtiene la hora actual del sistema
+    const fechaActual = new Date();
+    const horaActual = fechaActual.getHours();
+
+    // Recorre cada evento y aplica los cambios correspondientes
+    eventos.forEach(evento => {
+      const { id, horaInicio, horaFin } = evento;
+      const span = document.getElementById(id);
+
+      if (horaActual >= horaInicio && horaActual < horaFin) {
+        span.textContent = "LIVE";
+        span.style.color = "#fff";
+        span.style.backgroundColor = "#b12e2e";
+      } else if (horaActual >= horaFin && horaActual < horaFin + 2) {
+        span.textContent = "Fin";
+        span.style.color = "#fff";
+        span.style.backgroundColor = "#403e3e";
+      }
+    });
+  </script>
 <script type="text/javascript">
     $(function() {
     
