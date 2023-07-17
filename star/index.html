@@ -5,7 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Ver Star Plus online en VIVO y en directo. Pie Pelota TV</title>
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 <link href='https://www.blogger.com/u/1/favicon-image.g?blogID=6464223849025536726' rel='icon'  type='image/png'/>
 
@@ -21,6 +22,41 @@
 <meta http-Equiv="Pragma" Content="no-cache" />
 <meta http-Equiv="Expires" Content="0" />
 <link href="/star/starp.css" rel="stylesheet">
+	<style type:"text/css" >.live-indicator-block {
+	 position: absolute;
+	 left: 50%;
+	 top: 50%;
+	 transform: translate(-50%, -50%);
+}
+ .live-indicator-block .live-indicator {
+	 font-family: 'Roboto', sans-serif;
+	 background: #ea2429;
+	 color: #fff;
+	 padding: 6px 7px;
+	 line-height: 1;
+	 border-radius: 6px;
+	 text-transform: uppercase;
+	 display: inline-block;
+	 vertical-align: middle;
+	 font-size: 12px;
+	 font-weight: bold;
+	 width: auto;
+}
+ .live-indicator-block .live-indicator .blink {
+	 animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+	 font-size: 10px;
+	 margin-right: 5px;
+	 vertical-align: baseline;
+}
+ @keyframes blinker {
+	 from {
+		 opacity: 1;
+	}
+	 to {
+		 opacity: 0;
+	}
+}
+ </style>
 </head>
 <body>
 <div id="navbar"><div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
@@ -44,57 +80,64 @@ Pie Pelota TV
 
 <br>
 <script>
-function eventos()
-{
-	var x = Math.random().toString(36).substring(7);
+function eventos() {
+  var x = Math.random().toString(36).substring(7);
 
-	$.ajax({
-		url : "eventos.json?"+x,
-		type : "get",
-		success: function (arr) {
-			var content = '';
-			
-			for (var i = 0; i < arr.length; i++)
-			{
-				if (i%4==0)
-				{
-					if (i != 0)
-						content += '</div>';
-					
-					content += '<div class="w3-row-padding w3-padding-16 w3-center" id="copa">';
-				}
-					
-				var obj = arr[i];
-		
-				if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO")
-					status = obj['status'];
-				else
-					status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
-			
-				if (status == "EN VIVO")
-					color = "danger";
-				else
-					color = "dark";
-					
-				content += '<div class="w3-quarter"><a href="' + obj['url'] + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a><a class="btn btn-block btn-' + color + '" href="' + obj['url'] + '">' + status + '</a> <div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
-				
-				if (i == arr.length-1)
-					content += '</div>';
-			}
-			
-			$("#eventos").html(content);
-			
-			guardaHorario();
-			dT();
-		}
-	})
+  $.ajax({
+    url: "eventos.json?" + x,
+    type: "get",
+    success: function (arr) {
+      var content = '';
+
+      for (var i = 0; i < arr.length; i++) {
+        if (i % 4 == 0) {
+          if (i != 0)
+            content += '</div>';
+
+          content += '<div class="w3-row-padding w3-padding-16 w3-center" id="copa">';
+        }
+
+        var obj = arr[i];
+        var status, color, additionalClass;
+
+        if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO") {
+          status = obj['status'];
+          additionalClass = (status == "EN VIVO") ? "live-indicator-block" : "";
+          color = (status == "EN VIVO") ? "danger" : "dark";
+        } else {
+          status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
+          additionalClass = "";
+          color = "dark";
+        }
+
+        content += '<div class="w3-quarter"><a href="' + obj['url'] + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>';
+
+        if (status == "EN VIVO") {
+          content += '<div class="live-indicator-block"><span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i>Live</span></div>';
+        } else {
+          content += '<a class="btn btn-block btn-' + color + '" href="' + obj['url'] + '">' + status + '</a>';
+        }
+
+        content += '<div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
+
+        if (i == arr.length - 1)
+          content += '</div>';
+      }
+
+      $("#eventos").html(content);
+
+      guardaHorario();
+      dT();
+    }
+  })
 }
 
 eventos();
 
-window.setInterval(function() {
-	eventos();
+window.setInterval(function () {
+  eventos();
 }, 60000);
+
 
 </script>
 
