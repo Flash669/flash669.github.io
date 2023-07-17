@@ -13,32 +13,7 @@
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </head>
-<body link="#547484" onload="guardaHorario();dT();" vlink="#547484"><script>
-  // Actualiza el contenido y los estilos del elemento <span>
-function actualizarSpan(spanId, horaInicio) {
-  const timeSpan = document.getElementById(spanId);
-  const horaActual = obtenerHoraLocalizada();
-  const husoHorario = obtenerHusoHorario() / 60;
-
-  if (horaActual === horaInicio || (horaActual === "02:35" && horaInicio === "06:35")) {
-    timeSpan.textContent = "VIVO";
-    timeSpan.style.color = "#000";
-    timeSpan.style.backgroundColor = "#cf1d1d";
-  } else {
-    const horaInicioFin = parseInt(horaInicio.split(":")[0]) + husoHorario + 2; // Hora de inicio + huso horario + 2 horas
-
-    if (horaActual >= horaInicioFin) {
-      timeSpan.textContent = "FIN";
-      timeSpan.style.color = "#000";
-      timeSpan.style.backgroundColor = "#2c2b2b";
-    }
-  }
-}
-
-// Actualizar cada elemento <span> correspondiente a cada partido
-actualizarSpan("timeSpan1", "06:35");
-
-</script>
+<body link="#547484" onload="guardaHorario();dT();" vlink="#547484">
 <div id="wraper">
 <ul class="menu">
 
@@ -84,7 +59,67 @@ actualizarSpan("timeSpan1", "06:35");
 </ul>
 </div>
 <br>
+<script>
+ // Mapeo de ID de elementos <span> con sus husos horarios
+const husosHorarios = {
+  timeSpan1: -4, // Ejemplo para Argentina (-4 horas de UTC)
+  timeSpan2: -6, // Ejemplo para México (-6 horas de UTC)
+  // Agrega más mapeos de ID y husos horarios aquí
+};
 
+// Actualiza el contenido y los estilos del elemento <span>
+function actualizarSpan(spanId, horaEvento) {
+  const timeSpan = document.getElementById(spanId);
+  const husoHorario = husosHorarios[spanId];
+
+  if (!husoHorario) {
+    // No se encontró el huso horario para el ID del elemento <span>
+    return;
+  }
+
+  // Obtener la hora localizada para el huso horario del país
+  const horaLocal = obtenerHoraLocalizada(horaEvento, husoHorario);
+
+  if (horaLocal === horaEvento) {
+    timeSpan.textContent = "LIVE";
+    timeSpan.style.color = "#000";
+    timeSpan.style.backgroundColor = "#cf1d1d";
+  } else {
+    // Restaurar la hora original si ya no es hora de "LIVE"
+    timeSpan.textContent = horaEvento;
+    timeSpan.style.color = ""; // Restaurar el color original si se ha modificado anteriormente
+    timeSpan.style.backgroundColor = ""; // Restaurar el color de fondo original si se ha modificado anteriormente
+  }
+}
+
+// Obtener la hora localizada para un huso horario específico
+function obtenerHoraLocalizada(horaEvento, husoHorario) {
+  const now = new Date();
+  const horaUTC = now.getUTCHours();
+  const minutosUTC = now.getUTCMinutes();
+
+  let horaLocal = horaUTC + husoHorario;
+  let minutosLocal = minutosUTC;
+
+  if (horaLocal < 0) {
+    horaLocal = 24 + horaLocal;
+  } else if (horaLocal >= 24) {
+    horaLocal = horaLocal - 24;
+  }
+
+  if (minutosLocal < 10) {
+    minutosLocal = "0" + minutosLocal;
+  }
+
+  return horaLocal + ":" + minutosLocal;
+}
+
+// Llamar a la función para actualizar los elementos <span> cuando sea necesario
+actualizarSpan("timeSpan1", "06:35");
+actualizarSpan("timeSpan2", "06:35");
+// Llama a la función para otros elementos <span> con sus respectivas horas y husos horarios
+
+</script>
 
 
 
