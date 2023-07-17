@@ -27,15 +27,6 @@
 
 
 
-<li class="MEX">
-  <a href="#" class="active">
-    Liga MX: Pachuca vs. Pumas UNAM
-   <span class="t" id="timeSpan1">07:43</span>
-
-    
-  </a>
-  
-</li>
 
 
 
@@ -62,25 +53,6 @@
     });
 
 
-
-    // Función para verificar si la hora actual coincide con la hora del evento
-function verificarHoraEvento(spanId, horaEvento) {
-  const timeSpan = document.getElementById(spanId);
-  const horaActual = new Date().getHours();
-  const minutosActual = new Date().getMinutes();
-  const [horaEventoParte, minutosEventoParte] = horaEvento.split(':');
-  const horaEventoNum = parseInt(horaEventoParte, 10);
-  const minutosEventoNum = parseInt(minutosEventoParte, 10);
-
-  if (horaActual === horaEventoNum && minutosActual === minutosEventoNum) {
-    timeSpan.textContent = 'LIVE';
-    timeSpan.style.color = '#000';
-    timeSpan.style.backgroundColor = '#cf1d1d';
-  }
-}
-
-// Ejemplo de uso
-verificarHoraEvento('time-event', '07:43');
 </script>
 </body>
 </html>
