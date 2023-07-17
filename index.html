@@ -30,7 +30,7 @@
 <li class="MEX">
   <a href="#" class="">
     Liga MX: Pachuca vs. Pumas UNAM
-    <span  id="timeSpan1"class="t">03:30</span><span id="timeSpan1"></span>
+    <span  class="t">03:30</span>
 
     
   </a>
@@ -59,41 +59,7 @@
 </ul>
 </div>
 <br>
-<script>
- // Función para obtener la hora localizada
-function obtenerHoraLocalizada() {
-  const fechaActual = new Date();
-  const horaLocal = fechaActual.toLocaleTimeString(navigator.language, {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true
-  });
 
-  return horaLocal;
-}
-
-// Actualiza la hora del elemento <span>
-function actualizarHora() {
-  const timeSpan1 = document.getElementById("timeSpan1");
-  const horaActual = obtenerHoraLocalizada();
-
-  if (horaActual === "3:15 PM") {
-    timeSpan1.textContent = "LIVE";
-    timeSpan1.style.color = "#fff";
-    timeSpan1.style.backgroundColor = "#b12e2e";
-  } else if (horaActual >= "5:00 PM" && horaActual < "7:00 PM") {
-    timeSpan1.textContent = "Fin";
-    timeSpan1.style.color = "#fff";
-    timeSpan1.style.backgroundColor = "#403e3e";
-  }
-}
-
-// Actualiza la hora cada segundo
-setInterval(actualizarHora, 1000);
-
-
-
-  </script>
 <script type="text/javascript">
     $(function() {
     
