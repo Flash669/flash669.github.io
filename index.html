@@ -50,6 +50,59 @@
 
 
 
+<li class="CH">
+  <a href="#" class="">
+    Primera División: Everton vs. Unión La Calera
+    <span class="t">22:30</span><span class="evento"></span>
+  </a>
+  
+  <ul style="display: none;">
+    <li class="subitem1">
+      <a href="https://piepelota-tv.blogspot.com/2023/07/tnt-sports-chile.html" target="_top">
+        TNT Sports Chile
+        <span>Calidad 720p</span>
+      </a>
+    </li>
+    <li class="subitem1">
+      <a href="https://piepelota-tv.blogspot.com/2023/07/eventos.html?r=5" target="_top">
+        TNT Sports Chile 2
+        <span>Calidad SD</span>
+      </a>
+    </li>
+  </ul>
+</li>
+
+<script>
+  // Obtener la hora actual en México (UTC-6)
+  var horaActualMx = new Date();
+  var horaEvento = new Date();
+  
+  // Establecer la hora del evento en Argentina (UTC-3)
+  horaEvento.setUTCHours(3);
+  horaEvento.setUTCMinutes(30);
+  
+  // Convertir la hora del evento de UTC a hora local en México
+  horaEvento.setHours(horaEvento.getHours() - 6);
+  
+  // Comparar la hora actual en México con la hora del evento
+  if (horaActualMx < horaEvento) {
+    // El evento aún no ha comenzado
+    var tiempoRestante = horaEvento - horaActualMx;
+    var horasRestantes = Math.floor(tiempoRestante / 3600000); // Convertir a horas
+    
+    // Mostrar el tiempo restante antes del evento
+    document.querySelector('.evento').innerHTML = 'En vivo en ' + horasRestantes + ' horas';
+  } else if (horaActualMx < horaEvento.getTime() + 2 * 60 * 60 * 1000) {
+    // El evento está en curso (2 horas después del inicio)
+    document.querySelector('.evento').innerHTML = 'En vivo';
+    
+    // Mostrar el enlace al evento en vivo
+    document.querySelector('ul').style.display = 'block';
+  } else {
+    // El evento ha finalizado (2 horas después del inicio)
+    document.querySelector('.evento').innerHTML = 'Finalizado';
+  }
+</script>
 
 <li class="CH"><a href="#" class="">
 Primera División: Everton vs. Unión La Calera
