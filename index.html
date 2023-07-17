@@ -73,7 +73,7 @@
   // Comparar la hora actual con la hora del evento ajustada a la zona horaria del dispositivo del usuario
   if (horaActual < horaEvento.getTime() + diferenciaHoraria) {
     // El evento aún no ha comenzado
-    document.querySelector('.live-event').textContent = 'Aqui Cambia a en Vivo Cuando Inicie';
+    document.querySelector('.live-event').textContent = 'En VIVO';
   } else if (horaActual < horaEvento.getTime() + diferenciaHoraria + 2 * 60 * 60 * 1000) {
     // El evento está en curso (2 horas después del inicio)
     document.querySelector('.live-event').textContent = 'En Vivo';
