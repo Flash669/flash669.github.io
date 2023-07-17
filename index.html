@@ -79,11 +79,11 @@ function actualizarHora() {
     const span = spans[i];
     const horaActual = obtenerHoraLocalizada();
 
-    if (horaActual === "3:15 PM") {
+    if (horaActual === "01:35 AM") {
       span.textContent = "LIVE";
       span.style.color = "#fff";
       span.style.backgroundColor = "#b12e2e";
-    } else if (horaActual >= "5:00 PM" && horaActual < "7:00 PM") {
+    } else if (horaActual >= "01:35 AM" && horaActual < "03:00 AM") {
       span.textContent = "Fin";
       span.style.color = "#fff";
       span.style.backgroundColor = "#403e3e";
