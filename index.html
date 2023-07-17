@@ -30,7 +30,8 @@
 <li class="MEX">
   <a href="#" class="">
     Liga MX: Pachuca vs. Pumas UNAM
-    <span  id="timeSpan1"class="t">03:30</span>
+    <span  id="timeSpan1"class="t">03:30</span><span id="timeSpan1"></span>
+
     
   </a>
   <ul style="display: none;">
@@ -71,28 +72,25 @@ function obtenerHoraLocalizada() {
   return horaLocal;
 }
 
-// Actualiza la hora de los elementos <span>
+// Actualiza la hora del elemento <span>
 function actualizarHora() {
-  const spans = document.getElementsByClassName("t");
+  const timeSpan1 = document.getElementById("timeSpan1");
+  const horaActual = obtenerHoraLocalizada();
 
-  for (let i = 0; i < spans.length; i++) {
-    const span = spans[i];
-    const horaActual = obtenerHoraLocalizada();
-
-    if (horaActual === "01:35 AM") {
-      span.textContent = "LIVE";
-      span.style.color = "#fff";
-      span.style.backgroundColor = "#b12e2e";
-    } else if (horaActual >= "01:35 AM" && horaActual < "03:00 AM") {
-      span.textContent = "Fin";
-      span.style.color = "#fff";
-      span.style.backgroundColor = "#403e3e";
-    }
+  if (horaActual === "3:15 PM") {
+    timeSpan1.textContent = "LIVE";
+    timeSpan1.style.color = "#fff";
+    timeSpan1.style.backgroundColor = "#b12e2e";
+  } else if (horaActual >= "5:00 PM" && horaActual < "7:00 PM") {
+    timeSpan1.textContent = "Fin";
+    timeSpan1.style.color = "#fff";
+    timeSpan1.style.backgroundColor = "#403e3e";
   }
 }
 
 // Actualiza la hora cada segundo
 setInterval(actualizarHora, 1000);
+
 
 
   </script>
