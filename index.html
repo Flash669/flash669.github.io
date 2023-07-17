@@ -103,6 +103,62 @@
     document.querySelector('.evento').innerHTML = 'Finalizado';
   }
 </script>
+<li class="CH">
+  <a href="#" class="">
+    Primera División: Everton vs. Unión La Calera
+    <span class="t">01:30</span>
+  </a>
+  <span class="evento"></span>
+  <ul style="display: none;">
+    <li class="subitem1">
+      <a href="https://piepelota-tv.blogspot.com/2023/07/tnt-sports-chile.html" target="_top">
+        TNT Sports Chile
+        <span>Calidad 720p</span>
+      </a>
+    </li>
+    <li class="subitem1">
+      <a href="https://piepelota-tv.blogspot.com/2023/07/eventos.html?r=5" target="_top">
+        TNT Sports Chile 2
+        <span>Calidad SD</span>
+      </a>
+    </li>
+  </ul>
+</li>
+
+<script>
+  // Obtener la hora actual del dispositivo del usuario
+  var horaActual = new Date();
+  var horaEvento = new Date();
+  
+  // Establecer la hora del evento en el formato deseado (HH:mm)
+  horaEvento.setHours(1);
+  horaEvento.setMinutes(30);
+  
+  // Obtener la hora local en el formato deseado según la zona horaria del dispositivo del usuario
+  var horaLocal = horaEvento.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', hour12: false });
+  
+  // Comparar la hora actual con la hora del evento
+  if (horaActual < horaEvento) {
+    // El evento aún no ha comenzado
+    var tiempoRestante = horaEvento - horaActual;
+    var horasRestantes = Math.floor(tiempoRestante / 3600000); // Convertir a horas
+    
+    // Mostrar el tiempo restante antes del evento
+    document.querySelector('.evento').textContent = 'En vivo en ' + horasRestantes + ' horas';
+  } else if (horaActual < horaEvento.getTime() + 2 * 60 * 60 * 1000) {
+    // El evento está en curso (2 horas después del inicio)
+    document.querySelector('.evento').textContent = 'En vivo';
+    
+    // Mostrar el enlace al evento en vivo
+    document.querySelector('ul').style.display = 'block';
+  } else {
+    // El evento ha finalizado (2 horas después del inicio)
+    document.querySelector('.evento').textContent = 'Finalizado';
+  }
+  
+  // Actualizar el horario del evento con la hora local según la zona horaria del dispositivo del usuario
+  document.querySelector('.t').textContent = horaLocal;
+</script>
 
 <li class="CH"><a href="#" class="">
 Primera División: Everton vs. Unión La Calera
