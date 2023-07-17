@@ -98,27 +98,23 @@ function eventos() {
         }
 
         var obj = arr[i];
-        var status, color, additionalClass;
+        var status, additionalClass, buttonContent;
 
         if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO") {
           status = obj['status'];
           additionalClass = (status == "EN VIVO") ? "live-indicator-block" : "";
-          color = (status == "EN VIVO") ? "danger" : "dark";
         } else {
           status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
           additionalClass = "";
-          color = "dark";
         }
-
-        content += '<div class="w3-quarter"><a href="' + obj['url'] + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>';
 
         if (status == "EN VIVO") {
-          content += '<div class="live-indicator-block"><span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i>Live</span></div>';
+          buttonContent = '<div class="live-indicator-block"><span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i>Live</span></div>';
         } else {
-          content += '<a class="btn btn-block btn-' + color + '" href="' + obj['url'] + '">' + status + '</a>';
+          buttonContent = '<a class="btn btn-block btn-dark" href="' + obj['url'] + '">' + status + '</a>';
         }
 
-        content += '<div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
+        content += '<div class="w3-quarter"><a href="' + obj['url'] + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>' + buttonContent + '<div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
 
         if (i == arr.length - 1)
           content += '</div>';
