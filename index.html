@@ -56,70 +56,11 @@
 <center>
 <div class="sombreada_css3">
 <font size="2" face="Helvetica Neue,Helvetica,Arial,sans-serif" color="#000">
-<b>Agenda deportiva - Domingo 16 de julio de 2023</b>
+<b>Agenda deportiva - Lunes 17 de julio de 2023</b>
 </font>
 </div>
 </center>
 
-<li class="CH"><a href="#">
-Primera División: Palestino vs. Coquimbo
-<span id="timeSpan1" class="t">08:15</span></a>
-<ul>
-
-</ul>
-</li>
-
-</ul>
-</div>
-<br>
-
-<script type="text/javascript" > // Obtén la hora actual del sistema
-const fechaActual = new Date();
-
-// Define la lista de eventos con su respectivo huso horario
-const eventos = [
-  { id: "timeSpan1", horaInicio: getHoraLocal(3, "America/Argentina") },
-  { id: "timeSpan2", horaInicio: getHoraLocal(6, "America/New_York") }
-];
-
-// Función para obtener la hora local de acuerdo al huso horario
-function getHoraLocal(hora, timeZone) {
-  const fechaHoraLocal = fechaActual.toLocaleString("es-AR", { timeZone, hour: "numeric", minute: "numeric" });
-  const [horaLocal, minutoLocal] = fechaHoraLocal.split(":");
-  return { hora: Number(horaLocal), minuto: Number(minutoLocal) };
-}
-
-// Recorre cada evento y aplica los cambios correspondientes
-eventos.forEach(evento => {
-  const { id, horaInicio } = evento;
-  const div = document.getElementById(id).parentNode;
-
-  if (
-    fechaActual.getHours() === horaInicio.hora &&
-    fechaActual.getMinutes() >= horaInicio.minuto &&
-    fechaActual.getMinutes() < horaInicio.minuto + 120
-  ) {
-    div.innerHTML = `
-      <div class="live">
-        <span class="live-indicator">
-          <i class="fa fa-circle blink" aria-hidden="true"></i>Live
-        </span>
-      </div>
-    `;
-  } else if (
-    fechaActual.getHours() >= horaInicio.hora + 2 &&
-    fechaActual.getHours() < horaInicio.hora + 4
-  ) {
-    div.innerHTML = `
-      <div class="live">
-        <span class="live-indicator">
-          <i class="fa fa-circle blink" aria-hidden="true"></i>Fin
-        </span>
-      </div>
-    `;
-  }
-});
-</script>
 
 <script type="text/javascript">
     $(function() {
