@@ -59,44 +59,41 @@
 </div>
 <br>
 <script>
-  // Obtén la hora actual del sistema
-const fechaActual = new Date();
+ // Función para obtener la hora localizada
+function obtenerHoraLocalizada() {
+  const fechaActual = new Date();
+  const horaLocal = fechaActual.toLocaleTimeString(navigator.language, {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true
+  });
 
-// Define la lista de eventos con su respectivo huso horario
-const eventos = [
-  { id: "timeSpan1", horaInicio: getHoraLocal(1, "America/Argentina") },
-  { id: "timeSpan2", horaInicio: getHoraLocal(6, "America/New_York") }
-];
-
-// Función para obtener la hora local de acuerdo al huso horario
-function getHoraLocal(hora, timeZone) {
-  const fechaHoraLocal = fechaActual.toLocaleString("es-AR", { timeZone, hour: "numeric", minute: "numeric" });
-  const [horaLocal, minutoLocal] = fechaHoraLocal.split(":");
-  return { hora: Number(horaLocal), minuto: Number(minutoLocal) };
+  return horaLocal;
 }
 
-// Recorre cada evento y aplica los cambios correspondientes
-eventos.forEach(evento => {
-  const { id, horaInicio } = evento;
-  const span = document.getElementById(id);
+// Actualiza la hora de los elementos <span>
+function actualizarHora() {
+  const spans = document.getElementsByClassName("t");
 
-  if (
-    fechaActual.getHours() === horaInicio.hora &&
-    fechaActual.getMinutes() >= horaInicio.minuto &&
-    fechaActual.getMinutes() < horaInicio.minuto + 120
-  ) {
-    span.textContent = "LIVE";
-    span.style.color = "#fff";
-    span.style.backgroundColor = "#b12e2e";
-  } else if (
-    fechaActual.getHours() >= horaInicio.hora + 2 &&
-    fechaActual.getHours() < horaInicio.hora + 4
-  ) {
-    span.textContent = "Fin";
-    span.style.color = "#fff";
-    span.style.backgroundColor = "#403e3e";
+  for (let i = 0; i < spans.length; i++) {
+    const span = spans[i];
+    const horaActual = obtenerHoraLocalizada();
+
+    if (horaActual === "3:15 PM") {
+      span.textContent = "LIVE";
+      span.style.color = "#fff";
+      span.style.backgroundColor = "#b12e2e";
+    } else if (horaActual >= "5:00 PM" && horaActual < "7:00 PM") {
+      span.textContent = "Fin";
+      span.style.color = "#fff";
+      span.style.backgroundColor = "#403e3e";
+    }
   }
-});
+}
+
+// Actualiza la hora cada segundo
+setInterval(actualizarHora, 1000);
+
 
   </script>
 <script type="text/javascript">
