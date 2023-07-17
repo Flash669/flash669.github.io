@@ -27,16 +27,58 @@
 
 
 
-<li class="MEX"><a href="#" class="active">
-Liga MX: Pachuca vs. Pumas UNAM
-<span class="t">03:15</span></a>
-<ul style="display: block;">
-<li class="subitem1"><a href="https://piepelota-tv.blogspot.com/2023/07/eventos.html?r=16" target="_top">FOX Sports MX<span>Calidad 720p</span></a></li>
-
-<li class="subitem1"><a href="https://piepelota-tv.blogspot.com/2023/07/eventos.html?r=17" target="_top">FOX Sports Premium MX<span>Calidad 1080p</span></a></li>
-<li class="subitem1"><a href="https://piepelota-tv.blogspot.com/2023/07/eventos.html?r=18" target="_top">Claro Sports<span>Calidad 1080p</span></a></li>
-</ul>
+<li class="MEX">
+  <a href="#" class="">
+    Liga MX: Pachuca vs. Pumas UNAM
+    <span class="t">23:15</span>
+    <span class="live-event">Aqui Cambia a en Vivo Cuando Inicie, y Cuando termine Cambia a Finalizado</span>
+  </a>
+  <ul style="display: none;">
+    <li class="subitem1">
+      <a href="https://piepelota-tv.blogspot.com/2023/07/eventos.html?r=16" target="_top">
+        FOX Sports MX
+        <span>Calidad 720p</span>
+      </a>
+    </li>
+    <li class="subitem1">
+      <a href="https://piepelota-tv.blogspot.com/2023/07/eventos.html?r=17" target="_top">
+        FOX Sports Premium MX
+        <span>Calidad 1080p</span>
+      </a>
+    </li>
+    <li class="subitem1">
+      <a href="https://piepelota-tv.blogspot.com/2023/07/eventos.html?r=18" target="_top">
+        Claro Sports
+        <span>Calidad 1080p</span>
+      </a>
+    </li>
+  </ul>
 </li>
+
+<script>
+  // Obtener la hora actual en México
+  var horaActual = new Date();
+  var horaEvento = new Date();
+  
+  // Establecer la hora del evento en México (UTC-6)
+  horaEvento.setUTCHours(23);
+  horaEvento.setUTCMinutes(15);
+  
+  // Comparar la hora actual con la hora del evento
+  if (horaActual < horaEvento) {
+    // El evento aún no ha comenzado
+    document.querySelector('.live-event').textContent = 'Aqui Cambia a en Vivo Cuando Inicie';
+  } else if (horaActual < horaEvento.getTime() + 2 * 60 * 60 * 1000) {
+    // El evento está en curso (2 horas después del inicio)
+    document.querySelector('.live-event').textContent = 'En Vivo';
+    
+    // Mostrar el enlace al evento en vivo
+    document.querySelector('ul').style.display = 'block';
+  } else {
+    // El evento ha finalizado (2 horas después del inicio)
+    document.querySelector('.live-event').textContent = 'Finalizado';
+  }
+</script>
 
 </ul>
 </div>
