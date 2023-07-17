@@ -59,35 +59,45 @@
 </div>
 <br>
 <script>
-    // Obtén los elementos span por su ID
-    const timeSpan1 = document.getElementById("timeSpan1");
-    const timeSpan2 = document.getElementById("timeSpan2");
+  // Obtén la hora actual del sistema
+const fechaActual = new Date();
 
-    // Define los rangos de horas para cada evento
-    const eventos = [
-      { id: "timeSpan1", horaInicio: 23, horaFin: 5 },
-      { id: "timeSpan2", horaInicio: 6, horaFin: 8 }
-    ];
+// Define la lista de eventos con su respectivo huso horario
+const eventos = [
+  { id: "timeSpan1", horaInicio: getHoraLocal(3, "America/Argentina") },
+  { id: "timeSpan2", horaInicio: getHoraLocal(6, "America/New_York") }
+];
 
-    // Obtiene la hora actual del sistema
-    const fechaActual = new Date();
-    const horaActual = fechaActual.getHours();
+// Función para obtener la hora local de acuerdo al huso horario
+function getHoraLocal(hora, timeZone) {
+  const fechaHoraLocal = fechaActual.toLocaleString("es-AR", { timeZone, hour: "numeric", minute: "numeric" });
+  const [horaLocal, minutoLocal] = fechaHoraLocal.split(":");
+  return { hora: Number(horaLocal), minuto: Number(minutoLocal) };
+}
 
-    // Recorre cada evento y aplica los cambios correspondientes
-    eventos.forEach(evento => {
-      const { id, horaInicio, horaFin } = evento;
-      const span = document.getElementById(id);
+// Recorre cada evento y aplica los cambios correspondientes
+eventos.forEach(evento => {
+  const { id, horaInicio } = evento;
+  const span = document.getElementById(id);
 
-      if (horaActual >= horaInicio && horaActual < horaFin) {
-        span.textContent = "LIVE";
-        span.style.color = "#fff";
-        span.style.backgroundColor = "#b12e2e";
-      } else if (horaActual >= horaFin && horaActual < horaFin + 2) {
-        span.textContent = "Fin";
-        span.style.color = "#fff";
-        span.style.backgroundColor = "#403e3e";
-      }
-    });
+  if (
+    fechaActual.getHours() === horaInicio.hora &&
+    fechaActual.getMinutes() >= horaInicio.minuto &&
+    fechaActual.getMinutes() < horaInicio.minuto + 120
+  ) {
+    span.textContent = "LIVE";
+    span.style.color = "#fff";
+    span.style.backgroundColor = "#b12e2e";
+  } else if (
+    fechaActual.getHours() >= horaInicio.hora + 2 &&
+    fechaActual.getHours() < horaInicio.hora + 4
+  ) {
+    span.textContent = "Fin";
+    span.style.color = "#fff";
+    span.style.backgroundColor = "#403e3e";
+  }
+});
+
   </script>
 <script type="text/javascript">
     $(function() {
