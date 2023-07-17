@@ -43,7 +43,7 @@
 <li class="CH">
   <a href="#" class="">
     Primera División: Everton vs. Unión La Calera
-    <span class="t">12:30</span>  <span class="evento"></span>
+    <span class="t">23:30</span>  <span class="evento"></span>
   </a>
 
   <ul style="display: none;">
@@ -81,7 +81,7 @@
     var horasRestantes = Math.floor(tiempoRestante / 3600000); // Convertir a horas
     
     // Mostrar el tiempo restante antes del evento
-    document.querySelector('.evento').textContent = 'En vivo en ' + horasRestantes + ' horas';
+    document.querySelector('.evento').textContent = 'Horas' + horasRestantes + ' Restantes';
   } else if (horaActual < horaEvento.getTime() + 2 * 60 * 60 * 1000) {
     // El evento está en curso (2 horas después del inicio)
     document.querySelector('.evento').textContent = 'En vivo';
