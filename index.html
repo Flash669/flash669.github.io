@@ -13,7 +13,32 @@
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </head>
-<body link="#547484" onload="guardaHorario();dT();" vlink="#547484">
+<body link="#547484" onload="guardaHorario();dT();" vlink="#547484"><script>
+  // Actualiza el contenido y los estilos del elemento <span>
+function actualizarSpan(spanId, horaInicio) {
+  const timeSpan = document.getElementById(spanId);
+  const horaActual = obtenerHoraLocalizada();
+  const husoHorario = obtenerHusoHorario() / 60;
+
+  if (horaActual === horaInicio || (horaActual === "02:35" && horaInicio === "06:35")) {
+    timeSpan.textContent = "VIVO";
+    timeSpan.style.color = "#000";
+    timeSpan.style.backgroundColor = "#cf1d1d";
+  } else {
+    const horaInicioFin = parseInt(horaInicio.split(":")[0]) + husoHorario + 2; // Hora de inicio + huso horario + 2 horas
+
+    if (horaActual >= horaInicioFin) {
+      timeSpan.textContent = "FIN";
+      timeSpan.style.color = "#000";
+      timeSpan.style.backgroundColor = "#2c2b2b";
+    }
+  }
+}
+
+// Actualizar cada elemento <span> correspondiente a cada partido
+actualizarSpan("timeSpan1", "06:35");
+
+</script>
 <div id="wraper">
 <ul class="menu">
 
@@ -61,58 +86,7 @@
 <br>
 
 
-<script>
-  // Función para obtener la hora localizada
-  function obtenerHoraLocalizada() {
-    const fechaActual = new Date();
-    const horaLocal = fechaActual.toLocaleTimeString(navigator.language, {
-      hour: "numeric",
-      minute: "numeric",
-      hour12: false
-    });
 
-    return horaLocal;
-  }
-
-  // Función para obtener el huso horario del usuario en minutos
-  function obtenerHusoHorario() {
-    const fechaActual = new Date();
-    return fechaActual.getTimezoneOffset();
-  }
-
-  // Función para actualizar un elemento <span> específico
-  function actualizarSpan(spanId, horaInicio) {
-    const timeSpan = document.getElementById(spanId);
-    const horaActual = obtenerHoraLocalizada();
-    const husoHorario = obtenerHusoHorario() / 60;
-
-    if (horaActual === horaInicio) {
-      timeSpan.textContent = "VIVO";
-      timeSpan.style.color = "#000";
-      timeSpan.style.backgroundColor = "#cf1d1d";
-    } else {
-      const horaInicioFin = parseInt(horaInicio.split(":")[0]) + husoHorario + 2; // Hora de inicio + huso horario + 2 horas
-
-      if (horaActual >= horaInicioFin) {
-        timeSpan.textContent = "FIN";
-        timeSpan.style.color = "#000";
-        timeSpan.style.backgroundColor = "#2c2b2b";
-      }
-    }
-  }
-
-  // Actualizar cada elemento <span> correspondiente a cada partido
-  actualizarSpan("timeSpan1", "06:35");
-  actualizarSpan("timeSpan2", "18:30");
-  actualizarSpan("timeSpan3", "21:45");
-
-  // Actualiza el contenido y los estilos cada segundo
-  setInterval(function() {
-    actualizarSpan("timeSpan1", "06:35");
-    actualizarSpan("timeSpan2", "18:30");
-    actualizarSpan("timeSpan3", "21:45");
-  }, 1000);
-</script>
 
 <script type="text/javascript">
     $(function() {
