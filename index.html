@@ -60,6 +60,27 @@
      });
     
     });
+
+
+
+    // Función para verificar si la hora actual coincide con la hora del evento
+function verificarHoraEvento(spanId, horaEvento) {
+  const timeSpan = document.getElementById(spanId);
+  const horaActual = new Date().getHours();
+  const minutosActual = new Date().getMinutes();
+  const [horaEventoParte, minutosEventoParte] = horaEvento.split(':');
+  const horaEventoNum = parseInt(horaEventoParte, 10);
+  const minutosEventoNum = parseInt(minutosEventoParte, 10);
+
+  if (horaActual === horaEventoNum && minutosActual === minutosEventoNum) {
+    timeSpan.textContent = 'LIVE';
+    timeSpan.style.color = '#000';
+    timeSpan.style.backgroundColor = '#cf1d1d';
+  }
+}
+
+// Ejemplo de uso
+verificarHoraEvento('time-event', '23:23');
 </script>
 </body>
 </html>
