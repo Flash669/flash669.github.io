@@ -30,7 +30,7 @@
 <li class="MEX">
   <a href="#" class="">
     Liga MX: Pachuca vs. Pumas UNAM
-    <span  class="t">03:30</span>
+   <span class="t" id="timeSpan1">06:35</span>
 
     
   </a>
@@ -59,6 +59,62 @@
 </ul>
 </div>
 <br>
+<span class="t" id="timeSpan1">20:00</span>
+<span class="t" id="timeSpan2">18:30</span>
+<span class="t" id="timeSpan3">21:45</span>
+
+<script>
+  // Función para obtener la hora localizada
+  function obtenerHoraLocalizada() {
+    const fechaActual = new Date();
+    const horaLocal = fechaActual.toLocaleTimeString(navigator.language, {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: false
+    });
+
+    return horaLocal;
+  }
+
+  // Función para obtener el huso horario del usuario en minutos
+  function obtenerHusoHorario() {
+    const fechaActual = new Date();
+    return fechaActual.getTimezoneOffset();
+  }
+
+  // Función para actualizar un elemento <span> específico
+  function actualizarSpan(spanId, horaInicio) {
+    const timeSpan = document.getElementById(spanId);
+    const horaActual = obtenerHoraLocalizada();
+    const husoHorario = obtenerHusoHorario() / 60;
+
+    if (horaActual === horaInicio) {
+      timeSpan.textContent = "VIVO";
+      timeSpan.style.color = "#000";
+      timeSpan.style.backgroundColor = "#cf1d1d";
+    } else {
+      const horaInicioFin = parseInt(horaInicio.split(":")[0]) + husoHorario + 2; // Hora de inicio + huso horario + 2 horas
+
+      if (horaActual >= horaInicioFin) {
+        timeSpan.textContent = "FIN";
+        timeSpan.style.color = "#000";
+        timeSpan.style.backgroundColor = "#2c2b2b";
+      }
+    }
+  }
+
+  // Actualizar cada elemento <span> correspondiente a cada partido
+  actualizarSpan("timeSpan1", "06:35");
+  actualizarSpan("timeSpan2", "18:30");
+  actualizarSpan("timeSpan3", "21:45");
+
+  // Actualiza el contenido y los estilos cada segundo
+  setInterval(function() {
+    actualizarSpan("timeSpan1", "06:35");
+    actualizarSpan("timeSpan2", "18:30");
+    actualizarSpan("timeSpan3", "21:45");
+  }, 1000);
+</script>
 
 <script type="text/javascript">
     $(function() {
