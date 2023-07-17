@@ -63,11 +63,7 @@
 
 <li class="CH"><a href="#">
 Primera División: Palestino vs. Coquimbo
-<span class="t">20:00</span><div class="live">
-  <span class="live-indicator">
-          <i class="fa fa-circle blink" aria-hidden="true"></i>Live
-          </span>
-</div></a>
+<span class="t">20:00</span></a>
 <ul>
 
 </ul>
@@ -77,6 +73,52 @@ Primera División: Palestino vs. Coquimbo
 </div>
 <br>
 
+// Obtén la hora actual del sistema
+const fechaActual = new Date();
+
+// Define la lista de eventos con su respectivo huso horario
+const eventos = [
+  { id: "timeSpan1", horaInicio: getHoraLocal(3, "America/Argentina") },
+  { id: "timeSpan2", horaInicio: getHoraLocal(6, "America/New_York") }
+];
+
+// Función para obtener la hora local de acuerdo al huso horario
+function getHoraLocal(hora, timeZone) {
+  const fechaHoraLocal = fechaActual.toLocaleString("es-AR", { timeZone, hour: "numeric", minute: "numeric" });
+  const [horaLocal, minutoLocal] = fechaHoraLocal.split(":");
+  return { hora: Number(horaLocal), minuto: Number(minutoLocal) };
+}
+
+// Recorre cada evento y aplica los cambios correspondientes
+eventos.forEach(evento => {
+  const { id, horaInicio } = evento;
+  const div = document.getElementById(id).parentNode;
+
+  if (
+    fechaActual.getHours() === horaInicio.hora &&
+    fechaActual.getMinutes() >= horaInicio.minuto &&
+    fechaActual.getMinutes() < horaInicio.minuto + 120
+  ) {
+    div.innerHTML = `
+      <div class="live">
+        <span class="live-indicator">
+          <i class="fa fa-circle blink" aria-hidden="true"></i>Live
+        </span>
+      </div>
+    `;
+  } else if (
+    fechaActual.getHours() >= horaInicio.hora + 2 &&
+    fechaActual.getHours() < horaInicio.hora + 4
+  ) {
+    div.innerHTML = `
+      <div class="live">
+        <span class="live-indicator">
+          <i class="fa fa-circle blink" aria-hidden="true"></i>Fin
+        </span>
+      </div>
+    `;
+  }
+});
 
 
 <script type="text/javascript">
