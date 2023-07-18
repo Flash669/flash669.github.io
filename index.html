@@ -136,13 +136,18 @@ Ejemplo - PARTIDO NO OFICIAL
   const currentLocalHours = new Date(currentLocalTime).getHours();
   const currentLocalMinutes = new Date(currentLocalTime).getMinutes();
 
-  if (currentLocalHours === 16 && currentLocalMinutes >= 30 && currentLocalMinutes < 30 + 120) {
+  if (currentLocalHours === 2 && currentLocalMinutes === 10) {
     // Cambia a EN VIVO
     infoElement.innerText = 'EN VIVO';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
-  } else if (currentLocalHours === 16 && currentLocalMinutes >= 30 + 120) {
-    // Cambia a Finalizado
+  } else if (currentLocalHours === 2 && currentLocalMinutes >= 10 && currentLocalMinutes < 10 + 120) {
+    // Cambia a EN VIVO durante 2 horas
+    infoElement.innerText = 'EN VIVO';
+    infoElement.style.color = '#fff';
+    infoElement.style.backgroundColor = '#bf1c1c';
+  } else if (currentLocalHours === 2 && currentLocalMinutes >= 10 + 120) {
+    // Cambia a Finalizado después de 2 horas
     infoElement.innerText = 'Finalizado';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#222222';
@@ -156,6 +161,7 @@ Ejemplo - PARTIDO NO OFICIAL
 
 // Llama a la función para cambiar el estado del partido cada minuto
 setInterval(cambiarEstadoPartido, 60000); // 60000 ms = 1 minuto
+
 
 
 </script>
