@@ -127,34 +127,40 @@ Ejemplo - PARTIDO NO OFICIAL
 </script>
 	
 <script type="text/javascript">
-  // Obtén el elemento span con la clase "t"
-const tElement = document.querySelector('.t');
-
-// Obtiene la hora actual en UTC
-const currentUTC = new Date().getUTCHours();
-
-// Obtiene la diferencia de horas en base al elemento span "t"
-const timeDifference = parseInt(tElement.innerText) - currentUTC;
-
-// Define la función para cambiar el estado del partido
-function cambiarEstadoPartido() {
+  function cambiarEstadoPartido() {
+  const tElement = document.querySelector('.t');
   const infoElement = document.querySelector('.info');
-  
-  if (timeDifference === 0) {
+
+  // Obtiene la hora actual en UTC
+  const currentUTC = new Date().getTime();
+
+  // Obtiene la hora del partido en UTC
+  const partidoTime = new Date().setUTCHours(parseInt(tElement.innerText.split(':')[0]), parseInt(tElement.innerText.split(':')[1]), 0, 0);
+
+  const diferenciaTiempo = currentUTC - partidoTime;
+  const diferenciaHoras = diferenciaTiempo / (1000 * 60 * 60); // Convertir la diferencia de tiempo a horas
+
+  if (diferenciaHoras >= 0 && diferenciaHoras < 2) {
     // Cambia a EN VIVO
     infoElement.innerText = 'EN VIVO';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
-  } else if (timeDifference === 2) {
-    // Cambia a Finalizado
+  } else if (diferenciaHoras >= 2 && diferenciaHoras < 2.083333) {
+    // Cambia a Finalizado después de 2 horas y 5 minutos (2.083333 horas)
     infoElement.innerText = 'Finalizado';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#222222';
+  } else {
+    // Cambia a Próximamente
+    infoElement.innerText = 'Próximamente';
+    infoElement.style.color = '#000';
+    infoElement.style.backgroundColor = '#fff';
   }
 }
 
-// Llama a la función para cambiar el estado del partido
-cambiarEstadoPartido();
+// Llama a la función para cambiar el estado del partido cada minuto
+setInterval(cambiarEstadoPartido, 60000); // 60000 ms = 1 minuto
+
 
 
 
