@@ -136,23 +136,29 @@ function cambiarEstadoPartido() {
   const currentLocalHours = new Date(currentLocalTime).getHours();
   const currentLocalMinutes = new Date(currentLocalTime).getMinutes();
 
-  if (currentLocalHours === 2 && currentLocalMinutes === 10) {
+  if (
+    (currentLocalHours === 2 && currentLocalMinutes >= 10) || // A partir de las 2:10
+    (currentLocalHours === 3 && currentLocalMinutes <= 40) // Hasta las 3:40
+  ) {
     // Cambia a EN VIVO
     infoElement.innerText = 'EN VIVO';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
-
-    // Después de 1 minuto, cambia a Finalizado
-    setTimeout(function () {
-      infoElement.innerText = 'Finalizado';
-      infoElement.style.color = '#fff';
-      infoElement.style.backgroundColor = '#222222';
-    }, 1 * 60 * 1000); // 1 minuto en milisegundos
-  } else if (currentLocalHours === 2 && currentLocalMinutes > 10) {
-    // Cambia a EN VIVO mientras no haya pasado 1 minuto
-    infoElement.innerText = 'EN VIVO';
+  } else if (
+    (currentLocalHours === 3 && currentLocalMinutes > 40) || // Después de las 3:40
+    currentLocalHours > 3 // Cualquier hora después de las 3
+  ) {
+    // Cambia a Finalizado después de las 3:40
+    infoElement.innerText = 'Finalizado';
     infoElement.style.color = '#fff';
-    infoElement.style.backgroundColor = '#bf1c1c';
+    infoElement.style.backgroundColor = '#222222';
+
+    // Establece un temporizador para cambiar el estado a Próximamente después de 7 horas y 30 minutos
+    setTimeout(() => {
+      infoElement.innerText = 'Próximamente';
+      infoElement.style.color = '#000';
+      infoElement.style.backgroundColor = '#fff';
+    }, 7 * 60 * 60 * 1000 + 30 * 60 * 1000); // 7 horas + 30 minutos en milisegundos
   } else {
     // Cambia a Próximamente o mantiene el estado actual
     infoElement.innerText = 'Próximamente';
@@ -163,11 +169,6 @@ function cambiarEstadoPartido() {
 
 // Llama a la función para cambiar el estado del partido cada segundo
 setInterval(cambiarEstadoPartido, 1000); // 1000 ms = 1 segundo
-
-
-
-
-
 
 
 
