@@ -90,7 +90,7 @@
 
 <li class="COL"><a href="#">
 Liga BetPlay: Pereira vs. Deportivo Cali
-<span class="t">02:00</span><span class="info">Próximamente</span></a>
+<span class="t">05:00</span><span class="info">Próximamente</span></a>
 <ul>
 <li class="subitem1"><a href="https://piepelota-tv.blogspot.com/2023/07/win-sports-plus.html" target="_top">Win Sports +<span>Calidad 720p</span></a></li>
 
@@ -122,6 +122,40 @@ Liga BetPlay: Pereira vs. Deportivo Cali
      });
     
     });
+
+
+</script>
+	
+<script type="text/javascript">
+  // Obtén el elemento span con la clase "t"
+const tElement = document.querySelector('.t');
+
+// Obtiene la hora actual en UTC
+const currentUTC = new Date().getUTCHours();
+
+// Obtiene la diferencia de horas en base al elemento span "t"
+const timeDifference = parseInt(tElement.innerText) - currentUTC;
+
+// Define la función para cambiar el estado del partido
+function cambiarEstadoPartido() {
+  const infoElement = document.querySelector('.info');
+  
+  if (timeDifference === 0) {
+    // Cambia a EN VIVO
+    infoElement.innerText = 'EN VIVO';
+    infoElement.style.color = '#fff';
+    infoElement.style.backgroundColor = '#bf1c1c';
+  } else if (timeDifference === 2) {
+    // Cambia a Finalizado
+    infoElement.innerText = 'Finalizado';
+    infoElement.style.color = '#fff';
+    infoElement.style.backgroundColor = '#222222';
+  }
+}
+
+// Llama a la función para cambiar el estado del partido
+cambiarEstadoPartido();
+
 
 
 </script>
