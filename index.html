@@ -146,7 +146,7 @@ function cambiarEstadoPartido() {
     infoElement.innerText = 'EN VIVO';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
-  } else if (currentLocalHours === 2 && currentLocalMinutes >= 10 + 120) {
+  } else if (currentLocalHours === 2 && currentLocalMinutes >= 10 + 1) {
     // Cambia a Finalizado después de 2 horas
     infoElement.innerText = 'Finalizado';
     infoElement.style.color = '#fff';
