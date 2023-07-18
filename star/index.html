@@ -115,9 +115,9 @@ function eventos() {
           let nurl = url.replace("/embed/eventos/?r=", "");
           nurl = atob(nurl);
           let wurl = nurl.replace(/.*starott\.com/, "");
-          wurl = "https://futbolparatodostv.com/canales/starplus.html?get=https://live-ftc-na-south-2.media.starott.com/" + wurl;
+          wurl = "https://eventos-star-plus.blogspot.com/?get=https://live-ftc-na-south-2.media.starott.com/" + wurl;
           let furl = btoa(wurl);
-          url = "//futbolparatodostv.com/iframe/?r=" + furl;
+          url = "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=" + furl;
         }
 
         content += '<div class="w3-quarter"><a href="' + url + '"><img class="radio" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>' + buttonContent + '<div class="w3-card-4"><p>' + obj['league'] + '</p><p><b>' + obj['title'] + '</b></p></div></div>';
