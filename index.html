@@ -136,26 +136,32 @@ function cambiarEstadoPartido() {
   const currentLocalHours = new Date(currentLocalTime).getHours();
   const currentLocalMinutes = new Date(currentLocalTime).getMinutes();
 
-  if (currentLocalHours === 2 && currentLocalMinutes === 30) {
+  if (currentLocalHours === 2 && currentLocalMinutes === 10) {
     // Cambia a EN VIVO
     infoElement.innerText = 'EN VIVO';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
-  } else if (currentLocalHours === 2 && currentLocalMinutes >= 30 && currentLocalMinutes < 10 + 120) {
+  } else if (currentLocalHours === 2 && currentLocalMinutes >= 10 && currentLocalMinutes < 10 + 120) {
     // Cambia a EN VIVO durante 2 horas
     infoElement.innerText = 'EN VIVO';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
-  } else if (currentLocalHours === 2 && currentLocalMinutes >= 30 + 120) {
+  } else if (currentLocalHours === 2 && currentLocalMinutes >= 10 + 120) {
     // Cambia a Finalizado después de 2 horas
-    infoElement.innerText = 'FINALIZADO';
+    infoElement.innerText = 'Finalizado';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#222222';
-  } 
+  } else {
+    // Cambia a Próximamente o mantiene el estado actual
+    infoElement.innerText = 'Próximamente';
+    infoElement.style.color = '#000';
+    infoElement.style.backgroundColor = '#fff';
+  }
 }
 
-// Llama a la función para cambiar el estado del partido cada minuto
-setInterval(cambiarEstadoPartido, 60000); // 60000 ms = 1 minuto
+// Llama a la función para cambiar el estado del partido cada segundo
+setInterval(cambiarEstadoPartido, 1000); // 1000 ms = 1 segundo
+
 
 
 
