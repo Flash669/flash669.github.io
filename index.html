@@ -141,16 +141,18 @@ function cambiarEstadoPartido() {
     infoElement.innerText = 'EN VIVO';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
-  } else if (currentLocalHours === 2 && currentLocalMinutes >= 10 && currentLocalMinutes < 10 + 120) {
-    // Cambia a EN VIVO durante 2 horas
+
+    // Después de 1 minuto, cambia a Finalizado
+    setTimeout(function () {
+      infoElement.innerText = 'Finalizado';
+      infoElement.style.color = '#fff';
+      infoElement.style.backgroundColor = '#222222';
+    }, 1 * 60 * 1000); // 1 minuto en milisegundos
+  } else if (currentLocalHours === 2 && currentLocalMinutes > 10) {
+    // Cambia a EN VIVO mientras no haya pasado 1 minuto
     infoElement.innerText = 'EN VIVO';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
-  } else if (currentLocalHours === 2 && currentLocalMinutes >= 10 + 120) {
-    // Cambia a Finalizado después de 2 horas
-    infoElement.innerText = 'Finalizado';
-    infoElement.style.color = '#fff';
-    infoElement.style.backgroundColor = '#222222';
   } else {
     // Cambia a Próximamente o mantiene el estado actual
     infoElement.innerText = 'Próximamente';
@@ -161,6 +163,7 @@ function cambiarEstadoPartido() {
 
 // Llama a la función para cambiar el estado del partido cada segundo
 setInterval(cambiarEstadoPartido, 1000); // 1000 ms = 1 segundo
+
 
 
 
