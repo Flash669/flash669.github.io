@@ -127,31 +127,27 @@ Ejemplo - PARTIDO NO OFICIAL
 </script>
 	
 <script type="text/javascript">
-  function cambiarEstadoPartido() {
+ function cambiarEstadoPartido() {
   const tElement = document.querySelector('.t');
   const infoElement = document.querySelector('.info');
 
-  // Obtiene la hora actual en UTC
-  const currentUTC = new Date().getTime();
+  // Obtiene la hora actual en el huso horario de Argentina
+  const currentLocalTime = new Date().toLocaleString('en-US', { timeZone: 'America/Argentina/Buenos_Aires' });
+  const currentLocalHours = new Date(currentLocalTime).getHours();
+  const currentLocalMinutes = new Date(currentLocalTime).getMinutes();
 
-  // Obtiene la hora del partido en UTC
-  const partidoTime = new Date().setUTCHours(parseInt(tElement.innerText.split(':')[0]), parseInt(tElement.innerText.split(':')[1]), 0, 0);
-
-  const diferenciaTiempo = currentUTC - partidoTime;
-  const diferenciaHoras = diferenciaTiempo / (1000 * 60 * 60); // Convertir la diferencia de tiempo a horas
-
-  if (diferenciaHoras >= 0 && diferenciaHoras < 2) {
+  if (currentLocalHours === 16 && currentLocalMinutes >= 30 && currentLocalMinutes < 30 + 120) {
     // Cambia a EN VIVO
     infoElement.innerText = 'EN VIVO';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
-  } else if (diferenciaHoras >= 2 && diferenciaHoras < 2.083333) {
-    // Cambia a Finalizado después de 2 horas y 5 minutos (2.083333 horas)
+  } else if (currentLocalHours === 16 && currentLocalMinutes >= 30 + 120) {
+    // Cambia a Finalizado
     infoElement.innerText = 'Finalizado';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#222222';
   } else {
-    // Cambia a Próximamente
+    // Cambia a Próximamente o mantiene el estado actual
     infoElement.innerText = 'Próximamente';
     infoElement.style.color = '#000';
     infoElement.style.backgroundColor = '#fff';
@@ -160,8 +156,6 @@ Ejemplo - PARTIDO NO OFICIAL
 
 // Llama a la función para cambiar el estado del partido cada minuto
 setInterval(cambiarEstadoPartido, 60000); // 60000 ms = 1 minuto
-
-
 
 
 </script>
