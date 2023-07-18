@@ -90,7 +90,7 @@
 
 <li class="AR"><a href="#">
 Ejemplo - PARTIDO NO OFICIAL
-<span class="t">02:04</span><span class="info">Próximamente</span></a>
+<span class="t">02:30</span><span class="info">Próximamente</span></a>
 <ul>
 <li class="subitem1"><a href="https://piepelota-tv.blogspot.com/2023/07/win-sports-plus.html" target="_top">Win Sports +<span>Calidad 720p</span></a></li>
 
@@ -136,27 +136,22 @@ function cambiarEstadoPartido() {
   const currentLocalHours = new Date(currentLocalTime).getHours();
   const currentLocalMinutes = new Date(currentLocalTime).getMinutes();
 
-  if (currentLocalHours === 2 && currentLocalMinutes === 10) {
+  if (currentLocalHours === 2 && currentLocalMinutes === 30) {
     // Cambia a EN VIVO
     infoElement.innerText = 'EN VIVO';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
-  } else if (currentLocalHours === 2 && currentLocalMinutes >= 10 && currentLocalMinutes < 10 + 120) {
+  } else if (currentLocalHours === 2 && currentLocalMinutes >= 30 && currentLocalMinutes < 10 + 120) {
     // Cambia a EN VIVO durante 2 horas
     infoElement.innerText = 'EN VIVO';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
-  } else if (currentLocalHours === 2 && currentLocalMinutes >= 10 + 120) {
+  } else if (currentLocalHours === 2 && currentLocalMinutes >= 30 + 120) {
     // Cambia a Finalizado después de 2 horas
-    infoElement.innerText = 'Finalizado';
+    infoElement.innerText = 'FINALIZADO';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#222222';
-  } else {
-    // Cambia a Próximamente o mantiene el estado actual
-    infoElement.innerText = 'Próximamente';
-    infoElement.style.color = '#000';
-    infoElement.style.backgroundColor = '#fff';
-  }
+  } 
 }
 
 // Llama a la función para cambiar el estado del partido cada minuto
