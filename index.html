@@ -89,14 +89,44 @@
 
 
 <li id="evento1" class="AR"><a href="#">
-Ejemplo - PARTIDO NO OFICIAL
-<span class="t">20:30</span><span class="info">Próximamente</span></a>
+Amistoso Internacional: Tottenham vs. West Ham United
+<span class="t">09:50</span><span class="info">Próximamente</span></a>
 <ul>
-<li class="subitem1"><a href="https://piepelota-tv.blogspot.com/2023/07/win-sports-plus.html" target="_top">Win Sports +<span>Calidad 720p</span></a></li>
+<li class="subitem1"><a href="/star/" target="_blank">Star+<span>Calidad 720p</span></a></li>	
+
 
 </ul>
 </li>
+<li id="evento2" class="SUD"><a href="#">
+Copa Sudamericana: 	América Mineiro vs. Colo-Colo
+<span class="t">00:00</span></a>
+<ul>
+<li class="subitem1"><a href="https://piepelota-tv.blogspot.com/2023/07/directv-sports.html" target="_blank">Dsports<span>Calidad 720p</span></a></li>	
 
+
+</ul>
+</li>
+<li id="evento3" class="SUD"><a href="#">
+Copa Sudamericana: 	Estudiantes vs. Barcelona
+<span class="t">02:00</span></a>
+<ul>
+<li class="subitem1"><a href="https://piepelota-tv.blogspot.com/2023/07/directv-sports.html" target="_blank">DirecTV Sports<span>Calidad 720p</span></a></li>
+<li class="subitem1"><a href="/star/" target="_blank">Star+<span>Calidad 720p</span></a></li>	
+	
+
+
+</ul>
+</li>
+<li id="evento4" class="SUD"><a href="#">
+Copa Sudamericana: 	Universitario vs. Corinthians
+<span class="t">02:30</span></a>
+<ul>
+<li class="subitem1"><a href="https://piepelota-tv.blogspot.com/2023/07/espn.html" target="_blank">ESPN<span>Calidad 720p</span></a></li>	
+<li class="subitem1"><a href="/star/" target="_blank">Star+<span>Calidad 720p</span></a></li>	
+<li class="subitem1"><a href="https://bestformula.one/dtvpl2.html?id=1106" target="_blank">ESPN CO<span>Calidad 720p</span></a></li>
+
+</ul>
+</li>	
 </ul>
 </div>
 <br>
@@ -130,15 +160,25 @@ Ejemplo - PARTIDO NO OFICIAL
 const eventos = [
   {
     id: 'evento1',
-    horaInicio: { horas: 2, minutos: 30 },
-    horaFin: { horas: 3, minutos: 30 }
+    horaInicio: { horas: 6, minutos: 50, am: true },
+    horaFin: { horas: 8, minutos: 10, am: true }
   },
   {
     id: 'evento2',
-    horaInicio: { horas: 4, minutos: 30 },
-    horaFin: { horas: 6, minutos: 0 }
-  }
-  // Agrega más eventos según sea necesario
+    horaInicio: { horas: 7, minutos: 0, am: false },
+    horaFin: { horas: 8, minutos: 45, am: false }
+  },
+   {
+    id: 'evento3',
+    horaInicio: { horas: 9, minutos: 0, am: false },
+    horaFin: { horas: 10, minutos: 45, am: false }
+  },
+  {
+    id: 'evento4',
+    horaInicio: { horas: 9, minutos: 30, am: false },
+    horaFin: { horas: 10, minutos: 10, am: false }
+  },
+ 
 ];
 
 function cambiarEstadoPartido(evento) {
@@ -151,11 +191,15 @@ function cambiarEstadoPartido(evento) {
   const currentLocalHours = new Date(currentLocalTime).getHours();
   const currentLocalMinutes = new Date(currentLocalTime).getMinutes();
 
+  // Convierte las horas PM a formato de 24 horas sumando 12 horas
+  const horaInicio24 = evento.horaInicio.am ? evento.horaInicio.horas : evento.horaInicio.horas + 12;
+  const horaFin24 = evento.horaFin.am ? evento.horaFin.horas : evento.horaFin.horas + 12;
+
   // Verifica si el evento está en curso
   const enCurso = (
-    (currentLocalHours > evento.horaInicio.horas && currentLocalHours < evento.horaFin.horas) ||
-    (currentLocalHours === evento.horaInicio.horas && currentLocalMinutes >= evento.horaInicio.minutos) ||
-    (currentLocalHours === evento.horaFin.horas && currentLocalMinutes <= evento.horaFin.minutos)
+    (currentLocalHours > horaInicio24 && currentLocalHours < horaFin24) ||
+    (currentLocalHours === horaInicio24 && currentLocalMinutes >= evento.horaInicio.minutos) ||
+    (currentLocalHours === horaFin24 && currentLocalMinutes <= evento.horaFin.minutos)
   );
 
   if (enCurso) {
@@ -163,12 +207,20 @@ function cambiarEstadoPartido(evento) {
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
   } else if (
-    (currentLocalHours > evento.horaFin.horas) ||
-    (currentLocalHours === evento.horaFin.horas && currentLocalMinutes > evento.horaFin.minutos)
+    (currentLocalHours > horaFin24) ||
+    (currentLocalHours === horaFin24 && currentLocalMinutes > evento.horaFin.minutos)
   ) {
     infoElement.innerText = 'Finalizado';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#222222';
+
+    // Establece un temporizador para cambiar el estado a Próximamente después de 23 horas
+    const tiempoEspera = 23 * 60 * 60 * 1000; // 23 horas en milisegundos
+    setTimeout(() => {
+      infoElement.innerText = 'Próximamente';
+      infoElement.style.color = '#000';
+      infoElement.style.backgroundColor = '#fff';
+    }, tiempoEspera);
   } else {
     infoElement.innerText = 'Próximamente';
     infoElement.style.color = '#000';
@@ -176,12 +228,11 @@ function cambiarEstadoPartido(evento) {
   }
 }
 
-// Llama a la función para cambiar el estado de cada evento cada segundo
 setInterval(function() {
   eventos.forEach(function(evento) {
     cambiarEstadoPartido(evento);
   });
-}, 1000); // 1000 ms = 1 segundo
+}, 1000);
 
 
 
