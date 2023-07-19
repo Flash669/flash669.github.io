@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-<link href='https://www.blogger.com/u/1/favicon-image.g?blogID=6464223849025536726' rel='icon'  type='image/png'/>
+<link href='' rel='icon'  type='image/png'/>
 
 <meta content='#ffffff' name='theme-color'/>
 <meta name='referrer' content='no-referrer' />
@@ -79,7 +79,7 @@ function eventos() {
   var x = Math.random().toString(36).substring(7);
 
   $.ajax({
-    url: "https://flash669.github.io/star/eventos.json?" + x,
+    url: "eventos.json?" + x,
     type: "get",
     success: function (arr) {
       var content = '';
@@ -105,9 +105,17 @@ function eventos() {
         eventStartTime.setHours(startHours, startMinutes, 0);
         eventEndTime.setHours(endHours, endMinutes, 0);
 
+        var startHourString = ("0" + startHours).slice(-2);
+        var startMinuteString = ("0" + startMinutes).slice(-2);
+        var endHourString = ("0" + endHours).slice(-2);
+        var endMinuteString = ("0" + endMinutes).slice(-2);
+
+        var startTimeString = startHourString + ":" + startMinuteString;
+        var endTimeString = endHourString + ":" + endMinuteString;
+
         if (currentTime < eventStartTime) {
           // Event is scheduled for the future
-          status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
+          status = 'HOY | <span class="t">' + startTimeString + '</span> hs';
           additionalClass = "";
         } else if (currentTime < eventEndTime) {
           // Event is ongoing
@@ -143,8 +151,7 @@ eventos();
 
 window.setInterval(function () {
   eventos();
-}, 60000);
-
+}, 1000);
 
 
 
