@@ -238,87 +238,82 @@ Amistoso: Necaxa vs. Athletic Club
 
 
 
-  
-
-
 const eventos = [
-  // ... tus eventos aquí ...
-	 {
+  {
     id: 'evento1',
-    horaInicio: { horas: 10, minutos: 0,  },
-    horaFin: { horas: 11, minutos: 50,  }
+    horaInicio: { horas: 10, minutos: 0, am: true },
+    horaFin: { horas: 11, minutos: 50, am: true }
   },
   {
     id: 'evento2',
-    horaInicio: { horas: 13, minutos: 0,  },
-    horaFin: { horas: 14, minutos: 50, }
+    horaInicio: { horas: 1, minutos: 0, am: false },
+    horaFin: { horas: 2, minutos: 50, am: false }
   },
-   {
+  {
     id: 'evento3',
-    horaInicio: { horas: 13, minutos: 30,  },
-    horaFin: { horas: 15, minutos: 30,  }
+    horaInicio: { horas: 1, minutos: 30, am: false },
+    horaFin: { horas: 3, minutos: 25, am: false }
   },
   {
     id: 'evento4',
-    horaInicio: { horas: 15, minutos: 0,  },
-    horaFin: { horas: 16, minutos: 55,  }
+    horaInicio: { horas: 3, minutos: 0, am: false },
+    horaFin: { horas: 4, minutos: 50, am: false }
   },
-   {
+  {
     id: 'evento5',
-    horaInicio: { horas: 17, minutos: 0,  },
-    horaFin: { horas: 19, minutos: 0,  }
+    horaInicio: { horas: 5, minutos: 0, am: false },
+    horaFin: { horas: 6, minutos: 50, am: false }
   },
   {
     id: 'evento6',
-    horaInicio: { horas: 18, minutos: 0,  },
-    horaFin: { horas: 19, minutos: 55,  }
+    horaInicio: { horas: 6, minutos: 0, am: false },
+    horaFin: { horas: 7, minutos: 50, am: false }
   },
-   {
+  {
     id: 'evento7',
-    horaInicio: { horas:19, minutos: 0,  },
-    horaFin: { horas: 21, minutos: 0,  }
+    horaInicio: { horas: 7, minutos: 0, am: false },
+    horaFin: { horas: 8, minutos: 50, am: false }
   },
   {
     id: 'evento8',
-    horaInicio: { horas: 21, minutos: 0,  },
-    horaFin: { horas: 23, minutos: 0,  }
+    horaInicio: { horas: 9, minutos: 0, am: false },
+    horaFin: { horas: 10, minutos: 50, am: false }
   },
-   {
+  {
     id: 'evento9',
-    horaInicio: { horas: 21, minutos: 0,  },
-    horaFin: { horas: 23, minutos: 0, am:  }
+    horaInicio: { horas: 9, minutos: 0, am: false },
+    horaFin: { horas: 10, minutos: 50, am: false }
   },
   {
     id: 'evento10',
-    horaInicio: { horas: 21, minutos: 0,  },
-    horaFin: { horas: 22, minutos: 55,  }
+    horaInicio: { horas: 9, minutos: 0, am: false },
+    horaFin: { horas: 10, minutos: 50, am: false }
   },
-   {
+  {
     id: 'evento11',
-    horaInicio: { horas: 21, minutos: 0,  },
-    horaFin: { horas: 22, minutos: 55,  }
+    horaInicio: { horas: 9, minutos: 0, am: false },
+    horaFin: { horas: 10, minutos: 50, am: false }
   },
   {
     id: 'evento12',
-    horaInicio: { horas: 21, minutos: 30,  },
-    horaFin: { horas: 23, minutos: 27,  }
+    horaInicio: { horas: 9, minutos: 30, am: false },
+    horaFin: { horas: 11, minutos: 25, am: false }
   },
-   {
+  {
     id: 'evento13',
-    horaInicio: { horas: 22, minutos: 0,  },
-    horaFin: { horas: 23, minutos: 57,  }
+    horaInicio: { horas: 10, minutos: 0, am: false },
+    horaFin: { horas: 11, minutos: 50, am: false }
   },
   {
     id: 'evento14',
-    horaInicio: { horas: 23, minutos: 0,  },
-    horaFin: { horas: 0, minutos: 50,  }
+    horaInicio: { horas: 11, minutos: 0, am: false },
+    horaFin: { horas: 12, minutos: 50, am: true }
   },
-   {
+  {
     id: 'evento15',
-    horaInicio: { horas: 23, minutos: 59, },
-    horaFin: { horas: 1, minutos: 50,  }
+    horaInicio: { horas: 11, minutos: 59, am: false },
+    horaFin: { horas: 11, minutos: 59, am: false }
   },
-
 ];
 
 function cambiarEstadoPartido(evento) {
@@ -330,45 +325,39 @@ function cambiarEstadoPartido(evento) {
   const currentLocalHours = new Date(currentLocalTime).getHours();
   const currentLocalMinutes = new Date(currentLocalTime).getMinutes();
 
-  const horaInicio24 = evento.horaInicio.horas;
-  const horaFin24 = evento.horaFin.horas;
+  const horaInicio24 = evento.horaInicio.am ? evento.horaInicio.horas : evento.horaInicio.horas + 12;
+  const horaFin24 = evento.horaFin.am ? evento.horaFin.horas : evento.horaFin.horas + 12;
 
-  // Manejar el cruce de la medianoche (12:00 AM)
-  if (horaFin24 < horaInicio24) {
-    if (currentLocalHours >= horaInicio24 || currentLocalHours < horaFin24) {
-      // El evento está en curso si la hora actual está después o igual a la hora de inicio
-      // o antes de la hora de finalización (cruce de la medianoche).
-      infoElement.innerHTML = '<span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i> VIVO</span>';
-      infoElement.style.color = '#fff';
-      infoElement.style.backgroundColor = '#bf1c1c';
-      // Eliminar el estado "FIN" del localStorage si existe
-      localStorage.removeItem(evento.id);
-      return;
-    }
+  const enCurso = (
+    (currentLocalHours > horaInicio24 && currentLocalHours < horaFin24) ||
+    (currentLocalHours === horaInicio24 && currentLocalMinutes >= evento.horaInicio.minutos) ||
+    (currentLocalHours === horaFin24 && currentLocalMinutes <= evento.horaFin.minutos)
+  );
+
+  if (enCurso) {
+    infoElement.innerText = 'VIVO';
+    infoElement.style.color = '#fff';
+    infoElement.style.backgroundColor = '#bf1c1c';
+    localStorage.removeItem(evento.id); // Elimina el estado "FIN" si está almacenado
+  } else if (
+    (currentLocalHours > horaFin24) ||
+    (currentLocalHours === horaFin24 && currentLocalMinutes > evento.horaFin.minutos)
+  ) {
+    infoElement.innerText = 'Fin';
+    infoElement.style.color = '#fff';
+    infoElement.style.backgroundColor = '#222222';
+    // Guarda el estado "FIN" en localStorage
+    localStorage.setItem(evento.id, 'FIN');
   } else {
-    // Si no hay cruce de medianoche, el evento está en curso si la hora actual está dentro del rango.
-    if (
-      (currentLocalHours > horaInicio24 && currentLocalHours < horaFin24) ||
-      (currentLocalHours === horaInicio24 && currentLocalMinutes >= evento.horaInicio.minutos) ||
-      (currentLocalHours === horaFin24 && currentLocalMinutes <= evento.horaFin.minutos)
-    ) {
-      infoElement.innerHTML = '<span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i> VIVO</span>';
-      infoElement.style.color = '#fff';
-      infoElement.style.backgroundColor = '#bf1c1c';
-      // Eliminar el estado "FIN" del localStorage si existe
-      localStorage.removeItem(evento.id);
-      return;
-    }
+    infoElement.innerText = 'Próx.';
+    infoElement.style.color = '#000';
+    infoElement.style.backgroundColor = '#fff';
+    // Elimina el estado "FIN" si está almacenado
+    localStorage.removeItem(evento.id);
   }
-
-  // Si el evento no está en curso, mostrar "FIN".
-  infoElement.innerText = 'FIN';
-  infoElement.style.color = '#fff';
-  infoElement.style.backgroundColor = '#222222';
-  // Guardar el estado "FIN" en localStorage
-  localStorage.setItem(evento.id, 'FIN');
 }
 
+// Verificar el estado almacenado en localStorage para cada evento
 eventos.forEach(function (evento) {
   const estadoGuardado = localStorage.getItem(evento.id);
   if (estadoGuardado === 'FIN') {
@@ -381,6 +370,7 @@ setInterval(function () {
     cambiarEstadoPartido(evento);
   });
 }, 1000);
+
 	
 </script>
 </body>
