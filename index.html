@@ -234,8 +234,11 @@ Amistoso: Necaxa vs. Athletic Club
 <script type="text/javascript">
 
 
+
+
+
 const eventos = [
-  {
+   {
     id: 'evento1',
     horaInicio: { horas: 10, minutos: 0,  },
     horaFin: { horas: 11, minutos: 50,  }
@@ -311,12 +314,10 @@ const eventos = [
     horaFin: { horas: 1, minutos: 50,  }
   },
 
- 
-
-
 ];
 
 function cambiarEstadoPartido(evento) {
+ 
   const eventoElement = document.getElementById(evento.id);
   const tElement = eventoElement.querySelector('.t');
   const infoElement = eventoElement.querySelector('.info');
@@ -335,30 +336,32 @@ function cambiarEstadoPartido(evento) {
   );
 
   if (enCurso) {
-    infoElement.innerHTML = '<span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i> VIVO</span>';
-    infoElement.style.color = '#fff';
-    infoElement.style.backgroundColor = '#bf1c1c';
-  } else if (
-    (currentLocalHours > horaFin24) ||
-    (currentLocalHours === horaFin24 && currentLocalMinutes > evento.horaFin.minutos)
-  ) {
+    // Código como antes ...
+  } else if (currentLocalHours > horaFin24 || (currentLocalHours === horaFin24 && currentLocalMinutes > evento.horaFin.minutos)) {
     infoElement.innerText = 'FIN';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#222222';
 
-    // Establece un temporizador para cambiar el estado a Próximamente después de 23 horas
-    const tiempoEspera = 23 * 60 * 60 * 1000; // 23 horas en milisegundos
-    setTimeout(() => {
-      infoElement.innerText = 'Próx.';
-      infoElement.style.color = '#000';
-      infoElement.style.backgroundColor = '#fff';
-    }, tiempoEspera);
+    // Guardar estado "FIN" en localStorage
+    localStorage.setItem(evento.id, 'FIN');
   } else {
     infoElement.innerText = 'Próx.';
     infoElement.style.color = '#000';
     infoElement.style.backgroundColor = '#fff';
+
+    // Si existe un estado anterior almacenado, lo eliminamos
+    if (localStorage.getItem(evento.id) === 'FIN') {
+      localStorage.removeItem(evento.id);
+    }
   }
 }
+
+// Verificar el estado almacenado en localStorage para cada evento
+eventos.forEach(function (evento) {
+  if (localStorage.getItem(evento.id) === 'FIN') {
+    cambiarEstadoPartido(evento);
+  }
+});
 
 setInterval(function() {
   eventos.forEach(function(evento) {
@@ -366,6 +369,7 @@ setInterval(function() {
   });
 }, 1000);
 
+	
 </script>
 </body>
 </html>
