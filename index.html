@@ -335,7 +335,7 @@ function cambiarEstadoPartido(evento) {
   );
 
   if (enCurso) {
-    infoElement.innerText = 'VIVO';
+   infoElement.innerHTML = '<span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i> VIVO</span>';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
     localStorage.removeItem(evento.id); // Elimina el estado "FIN" si está almacenado
