@@ -336,13 +336,14 @@ function cambiarEstadoPartido(evento) {
   if (enCurso) {
 	
     liveIndicatorElement.innerHTML = '<i class="fa fa-circle blink" aria-hidden="true"></i>';
+	  infoElement.innerText = 'VIVO';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
   } else if (
     (currentLocalHours > horaFin24) ||
     (currentLocalHours === horaFin24 && currentLocalMinutes > evento.horaFin.minutos)
   ) {
-    infoElement.innerText = 'Fin';
+    infoElement.innerText = 'FIN';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#222222';
 
