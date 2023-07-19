@@ -315,7 +315,7 @@ function cambiarEstadoPartido(evento) {
   const eventoElement = document.getElementById(evento.id);
   const tElement = eventoElement.querySelector('.t');
   const infoElement = eventoElement.querySelector('.info');
-
+  const liveIndicatorElement = infoElement.querySelector('.live-indicator');
   // Obtiene la hora actual en el huso horario de Argentina
   const currentLocalTime = new Date().toLocaleString('en-US', { timeZone: 'America/Argentina/Buenos_Aires' });
   const currentLocalHours = new Date(currentLocalTime).getHours();
@@ -334,7 +334,7 @@ function cambiarEstadoPartido(evento) {
 
   if (enCurso) {
 	
-    infoElement.innerText = '<i class="fa fa-circle blink" aria-hidden="true">';
+    liveIndicatorElement.innerHTML = '<i class="fa fa-circle blink" aria-hidden="true"></i>';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
   } else if (
