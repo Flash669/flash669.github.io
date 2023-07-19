@@ -102,13 +102,22 @@ function eventos() {
         var endHours = obj['horaFin']['horas'];
         var endMinutes = obj['horaFin']['minutos'];
         
+        // Configuramos la hora de inicio
         eventStartTime.setHours(startHours, startMinutes, 0);
+
+        // Configuramos la hora de finalización asegurándonos de ajustar el día si es necesario
+        if (startHours > endHours || (startHours === endHours && startMinutes > endMinutes)) {
+          // Si la hora de finalización es anterior a la hora de inicio, asumimos que el evento termina al día siguiente
+          eventEndTime.setDate(currentTime.getDate() + 1);
+        } else {
+          eventEndTime.setDate(currentTime.getDate());
+        }
         eventEndTime.setHours(endHours, endMinutes, 0);
 
-        var startHourString = ("0" + startHours).slice(-2);
-        var startMinuteString = ("0" + startMinutes).slice(-2);
-        var endHourString = ("0" + endHours).slice(-2);
-        var endMinuteString = ("0" + endMinutes).slice(-2);
+        var startHourString = String(startHours).padStart(2, '0');
+        var startMinuteString = String(startMinutes).padStart(2, '0');
+        var endHourString = String(endHours).padStart(2, '0');
+        var endMinuteString = String(endMinutes).padStart(2, '0');
 
         var startTimeString = startHourString + ":" + startMinuteString;
         var endTimeString = endHourString + ":" + endMinuteString;
@@ -151,8 +160,7 @@ eventos();
 
 window.setInterval(function () {
   eventos();
-}, 1000);
-
+}, 60000);
 
 
 </script>
