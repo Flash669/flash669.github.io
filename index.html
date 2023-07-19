@@ -343,7 +343,7 @@ function cambiarEstadoPartido(evento) {
     (currentLocalHours > horaFin24) ||
     (currentLocalHours === horaFin24 && currentLocalMinutes > evento.horaFin.minutos)
   ) {
-    infoElement.innerText = 'FINALIZADO';
+    infoElement.innerText = 'FIN';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#222222';
     // Guarda el estado "FIN" en localStorage
