@@ -334,6 +334,7 @@ function cambiarEstadoPartido(evento) {
   );
 
   if (enCurso) {
+	infoElement.innerHTML = '<i class="fa fa-circle blink" aria-hidden="true"></i>';  
     infoElement.innerText = 'VIVO';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
