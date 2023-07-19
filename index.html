@@ -233,7 +233,7 @@ Amistoso: Necaxa vs. Athletic Club
 	
 <script type="text/javascript">
 const eventos = [
-   {
+  {
     id: 'evento1',
     horaInicio: { horas: 10, minutos: 0, am: true },
     horaFin: { horas: 11, minutos: 50, am: true }
@@ -303,12 +303,13 @@ const eventos = [
     horaInicio: { horas: 11, minutos: 0, am: false },
     horaFin: { horas: 12, minutos: 50, am: true }
   },
-  {
+   {
     id: 'evento15',
     horaInicio: { horas: 11, minutos: 59, am: false },
     horaFin: { horas: 1, minutos: 50, am: true }
-  }
-  
+  },
+
+ 
 ];
 
 function cambiarEstadoPartido(evento) {
@@ -323,9 +324,7 @@ function cambiarEstadoPartido(evento) {
 
   // Convierte las horas PM a formato de 24 horas sumando 12 horas
   const horaInicio24 = evento.horaInicio.am ? evento.horaInicio.horas : evento.horaInicio.horas + 12;
-
-  // Ajusta la hora final si es menor que la hora inicial (para eventos que abarcan dos días)
-  const horaFin24 = evento.horaFin.am ? evento.horaFin.horas : evento.horaFin.horas + (evento.horaFin.horas < evento.horaInicio.horas ? 24 : 0);
+  const horaFin24 = evento.horaFin.am ? evento.horaFin.horas : evento.horaFin.horas + 12;
 
   // Verifica si el evento está en curso
   const enCurso = (
@@ -365,8 +364,6 @@ setInterval(function() {
     cambiarEstadoPartido(evento);
   });
 }, 1000);
-
-
 </script>
 </body>
 </html>
