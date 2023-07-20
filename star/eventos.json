@@ -1,24 +1,16 @@
-
 [
     {
-        "title": "Real Betis vs. AS Monaco",
-        "league": "Amistoso",
-        "status": "FINALIZADO",
-        "img": "6D214B63FE286014550835E422C22DED7BD547534E73C99B23A32C7D6626B601",
-        "url": "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=e1"
+        "title": "Audax Italiano vs. \u00d1ublense",
+        "league": "Copa Sudamericana",
+        "status": "00:00",
+        "img": "205A3747EED3686ED8C9F20C788D9AE643F4E9CE09ABBF560C0EC0F086758E26",
+        "url": "#"
     },
     {
-        "title": "Botafogo vs. Patronato",
+        "title": "Tigre vs. Libertad",
         "league": "Copa Sudamericana",
-        "status": "FINALIZADO",
-        "img": "AA1BB05863C2B58C5C64EE5AD143108DAF3957DEDA7ED3D76C52003A1FFAAA3D",
-        "url": "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=e2"
-    },
-    {
-        "title": "San Lorenzo vs. Independiente Medell\u00edn",
-        "league": "Copa Sudamericana",
-        "status": "FINALIZADO",
-        "img": "7696A3B7EE0CCAECDDA6561AD0D91742E458AE77987074E9DE9C65196CA9479E",
-        "url": "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=e3"
+        "status": "02:00",
+        "img": "6EC5F079678822D87D9099E8EB1C9C0D2F575A2C5A243F83AE09B7BA83896E53",
+        "url": "#"
     }
 ]
