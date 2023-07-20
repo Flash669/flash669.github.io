@@ -69,7 +69,7 @@
 
 <li id="evento1" class="FIFA"><a href="#">
 Mundial Femenino: Australia vs. Irlanda
-<span class="t">11:00</span><span class="info"></span></a>
+<span class="t">11:00</span></a>
 <ul>
 <li class="subitem1"><a href="https://piepelota-tv.blogspot.com/2023/07/directv-sports.html" target="_top">DirecTV Sports<span>Calidad 720p</span></a></li>
 <li class="subitem1"><a href="https://piepelota-tv.blogspot.com/2023/07/eventos.html?r=38" target="_top">ATV PE<span>Calidad 720p</span></a></li>
@@ -182,85 +182,7 @@ Mundial Femenino: Nigeria vs. Canadá
 
 </script>
 <script type="text/javascript"/> 
-	// Aquí iría el código JavaScript con las modificaciones
-    const eventos = [
-     {
-    id: 'evento1',
-    horaInicio: { horas: 7, minutos: 0, am: true },
-    horaFin: { horas: 9, minutos: 0, am: true }
-  },
-    ];
-
-  // JavaScript
-function cambiarEstadoPartido(evento) {
-  const eventoElement = document.getElementById(evento.id);
-  const tElement = eventoElement.querySelector('.t');
-  const infoElement = eventoElement.querySelector('.info');
-
-  // Obtiene la hora actual en el huso horario de Argentina
-  const currentLocalTime = new Date().toLocaleString('en-US', { timeZone: 'America/Argentina/Buenos_Aires' });
-  const currentLocalHours = new Date(currentLocalTime).getHours();
-  const currentLocalMinutes = new Date(currentLocalTime).getMinutes();
-
-  // Convierte las horas PM a formato de 24 horas sumando 12 horas
-  const horaInicio24 = evento.horaInicio.am ? evento.horaInicio.horas : evento.horaInicio.horas + 12;
-
-  // Ajusta la hora final si es menor que la hora inicial (para eventos que abarcan dos días)
-  let horaFin24 = evento.horaFin.am ? evento.horaFin.horas : evento.horaFin.horas + (evento.horaFin.horas < evento.horaInicio.horas ? 24 : 0);
-
-  // Ajusta la hora final para eventos que terminan en AM del día siguiente
-  if (!evento.horaFin.am && evento.horaFin.horas < evento.horaInicio.horas) {
-    horaFin24 += 24;
-  }
-
-  // Verifica si el evento está en curso
-  const enCurso = (
-    (currentLocalHours > horaInicio24 && currentLocalHours < horaFin24) ||
-    (currentLocalHours === horaInicio24 && currentLocalMinutes >= evento.horaInicio.minutos) ||
-    (currentLocalHours === horaFin24 && currentLocalMinutes <= evento.horaFin.minutos)
-  );
-
-  if (enCurso) {
-    // Creamos un elemento span con la clase "liveIndicatorElement"
-    const liveIndicatorElement = document.createElement('span');
-    liveIndicatorElement.classList.add('liveIndicatorElement');
-
-    // Creamos un elemento i con las clases "fa fa-circle blink" para el icono de círculo parpadeante
-    const circleIcon = document.createElement('i');
-    circleIcon.classList.add('fa', 'fa-circle', 'blink');
-    circleIcon.setAttribute('aria-hidden', 'true');
-
-    // Creamos un nodo de texto para el texto "VIVO"
-    const liveText = document.createTextNode(' VIVO');
-
-    // Agregamos el icono y el texto al elemento "liveIndicatorElement"
-    liveIndicatorElement.appendChild(circleIcon);
-    liveIndicatorElement.appendChild(liveText);
-
-    // Borramos cualquier contenido anterior del elemento "infoElement"
-    infoElement.innerHTML = '';
-
-    // Agregamos el nuevo contenido al elemento "infoElement"
-    infoElement.appendChild(liveIndicatorElement);
-
-    // Mostramos el elemento "infoElement" configurando su estilo a "block"
-    infoElement.style.display = 'block';
-
-    // Establecemos los estilos para el texto "VIVO" y el círculo parpadeante
-    liveIndicatorElement.style.color = '#fff';
-    liveIndicatorElement.style.backgroundColor = '#bf1c1c';
-    circleIcon.style.marginRight = '5px';
-  } else {
-    // Ocultamos el elemento "infoElement" configurando su estilo a "none"
-    infoElement.style.display = 'none';
-  }
-}
-
-setInterval(function() {
-  eventos.forEach(function(evento) {
-    cambiarEstadoPartido(evento);
-  });
-}, 1000);
+	
 
 
 </script>	
