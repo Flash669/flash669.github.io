@@ -67,9 +67,9 @@
 
 
 
-<li class="FIFA"><a href="#">
+<li id="evento1" class="FIFA"><a href="#">
 Mundial Femenino: Australia vs. Irlanda
-<span class="t">11:00</span></a>
+<span class="t">11:00</span><span class="info">Próx.</span></a>
 <ul>
 <li class="subitem1"><a href="https://piepelota-tv.blogspot.com/2023/07/directv-sports.html" target="_top">DirecTV Sports<span>Calidad 720p</span></a></li>
 <li class="subitem1"><a href="https://piepelota-tv.blogspot.com/2023/07/eventos.html?r=38" target="_top">ATV PE<span>Calidad 720p</span></a></li>
@@ -181,7 +181,91 @@ Mundial Femenino: Nigeria vs. Canadá
 
 
 </script>
-	
+<script type="text/javascript"/> 
+	// Aquí iría el código JavaScript con las modificaciones
+    const eventos = [
+     {
+    id: 'evento1',
+    horaInicio: { horas: 7, minutos: 0, am: true },
+    horaFin: { horas: 9, minutos: 0, am: true }
+  },
+    ];
+
+    function cambiarEstadoPartido(evento) {
+      const eventoElement = document.getElementById(evento.id);
+      const tElement = eventoElement.querySelector('.t');
+      const infoElement = eventoElement.querySelector('.info');
+      const liveIndicatorElement = infoElement.querySelector('.live-indicator'); // Elemento span para "VIVO" dentro de .info
+
+      // Obtiene la hora actual en el huso horario de Argentina
+      const currentLocalTime = new Date().toLocaleString('en-US', { timeZone: 'America/Argentina/Buenos_Aires' });
+      const currentLocalHours = new Date(currentLocalTime).getHours();
+      const currentLocalMinutes = new Date(currentLocalTime).getMinutes();
+
+      // Convierte las horas PM a formato de 24 horas sumando 12 horas
+      const horaInicio24 = evento.horaInicio.am ? evento.horaInicio.horas : evento.horaInicio.horas + 12;
+      const horaFin24 = evento.horaFin.am ? evento.horaFin.horas : evento.horaFin.horas + 12;
+
+      // Verifica si el evento está en curso
+      const enCurso = (
+        (currentLocalHours > horaInicio24 && currentLocalHours < horaFin24) ||
+        (currentLocalHours === horaInicio24 && currentLocalMinutes >= evento.horaInicio.minutos) ||
+        (currentLocalHours === horaFin24 && currentLocalMinutes <= evento.horaFin.minutos)
+      );
+
+      if (enCurso) {
+        // Establece el contenido para "VIVO" con el icono de Font Awesome
+        liveIndicatorElement.innerHTML = '<i class="fa fa-circle blink" aria-hidden="true"></i> VIVO';
+        infoElement.style.color = '#fff';
+        infoElement.style.backgroundColor = '#bf1c1c';
+
+        // Limpia el estado "FIN" del localStorage si el evento está en curso
+        localStorage.removeItem(evento.id);
+      } else if (currentLocalHours > horaFin24 || (currentLocalHours === horaFin24 && currentLocalMinutes > evento.horaFin.minutos)) {
+        // Establece el estado "FIN" en el localStorage si el evento ha finalizado
+        if (!localStorage.getItem(evento.id)) {
+          // Solo establece el estado "FIN" si aún no está almacenado en el localStorage
+          localStorage.setItem(evento.id, 'FIN');
+
+          infoElement.innerText = 'Fin';
+          infoElement.style.color = '#fff';
+          infoElement.style.backgroundColor = '#222222';
+
+          // Establece un temporizador para cambiar el estado a Próximamente después de 23 horas
+          const tiempoEspera = 23 * 60 * 60 * 1000; // 23 horas en milisegundos
+          setTimeout(() => {
+            localStorage.removeItem(evento.id);
+            infoElement.innerText = 'Próx.';
+            infoElement.style.color = '#000';
+            infoElement.style.backgroundColor = '#fff';
+          }, tiempoEspera);
+        }
+      } else {
+        // Restablece el estado "Próx." si el evento no está en curso ni ha finalizado
+        infoElement.innerText = 'Próx.';
+        infoElement.style.color = '#000';
+        infoElement.style.backgroundColor = '#fff';
+      }
+    }
+
+    // Función para cargar el estado inicial de los eventos al cargar la página
+    function cargarEstadosIniciales() {
+      eventos.forEach(function(evento) {
+        cambiarEstadoPartido(evento);
+      });
+    }
+
+    // Intervalo para actualizar el estado de los eventos cada 60 segundos (60000 milisegundos)
+    setInterval(function() {
+      eventos.forEach(function(evento) {
+        cambiarEstadoPartido(evento);
+      });
+    }, 1000);
+
+    // Cargar estados iniciales al cargar la página
+    cargarEstadosIniciales();
+
+</script>	
 
 </body>
 </html>
