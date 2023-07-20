@@ -111,70 +111,78 @@ Amistoso: Atlas vs. Sporting de Gijón
 
 
 
-const eventos = [
-   {
+cconst eventos = [
+  {
     id: 'evento1',
     horaInicio: { horas: 10, minutos: 0, diaSemana: 3, am: false }, // Miércoles (0 = domingo, 1 = lunes, ..., 6 = sábado)
     horaFin: { horas: 2, minutos: 50, diaSemana: 4, am: true }     // Jueves
   },
+  // Agrega más eventos con el día de la semana y las horas de inicio y fin especificadas (0 a 6) para cada uno
+  // ...
 ];
 
 const tiempoEstadoFinHoras = 24; // Tiempo en horas para mantener el estado "FIN" (24 horas en este ejemplo)
 
 function cambiarEstadoPartido(evento) {
   const eventoElement = document.getElementById(evento.id);
-  const tElement = eventoElement.querySelector('.t');
   const infoElement = eventoElement.querySelector('.info');
 
   const currentLocalTime = new Date().toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' });
-  const currentLocalDay = new Date(currentLocalTime).getDay(); // Valor numérico del día actual (0 = domingo, 1 = lunes, ..., 6 = sábado)
+  const currentLocalDay = new Date(currentLocalTime).getDay();
   const currentLocalHours = new Date(currentLocalTime).getHours();
   const currentLocalMinutes = new Date(currentLocalTime).getMinutes();
 
-  const horaInicio12 = evento.horaInicio.am ? evento.horaInicio.horas : (evento.horaInicio.horas === 12 ? 0 : evento.horaInicio.horas + 12);
-const horaFin12 = evento.horaFin.am ? evento.horaFin.horas : (evento.horaFin.horas === 12 ? 0 : evento.horaFin.horas + 12);
-
-
-  const isToday = currentLocalDay === evento.horaInicio.diaSemana;
-
-  // Determinar el día siguiente respecto a la hora de fin
-  const nextDay = (currentLocalDay + 1) % 7;
+  const horaInicio24 = evento.horaInicio.am ? evento.horaInicio.horas : (evento.horaInicio.horas === 12 ? 0 : evento.horaInicio.horas + 12);
+  const horaFin24 = evento.horaFin.am ? evento.horaFin.horas : (evento.horaFin.horas === 12 ? 0 : evento.horaFin.horas + 12);
 
   const enCurso = (
-    (isToday && (currentLocalDay === evento.horaInicio.diaSemana && currentLocalHours > horaInicio12)) ||
-    (isToday && (currentLocalDay === evento.horaInicio.diaSemana && currentLocalHours === horaInicio12 && currentLocalMinutes >= evento.horaInicio.minutos) && (currentLocalHours < horaFin12 || (currentLocalHours === horaFin12 && currentLocalMinutes <= evento.horaFin.minutos))) ||
-    (!isToday && currentLocalDay === evento.horaFin.diaSemana && currentLocalHours < 5) || // Hasta las 5 a.m. del día siguiente
-    (!isToday && nextDay === evento.horaFin.diaSemana && currentLocalHours >= 5) // Después de las 5 a.m. del día siguiente
+    (currentLocalDay === evento.horaInicio.diaSemana && currentLocalHours > horaInicio24) ||
+    (currentLocalDay === evento.horaInicio.diaSemana && currentLocalHours === horaInicio24 && currentLocalMinutes >= evento.horaInicio.minutos) ||
+    (currentLocalDay === evento.horaFin.diaSemana && currentLocalHours < horaFin24) ||
+    (currentLocalDay === evento.horaFin.diaSemana && currentLocalHours === horaFin24 && currentLocalMinutes <= evento.horaFin.minutos)
   );
 
-  if (isToday && enCurso) {
+  if (enCurso) {
     infoElement.innerHTML = '<span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i> VIVO</span>';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
-    localStorage.removeItem(evento.id); // Elimina el estado "FIN" si está almacenado
-  } else if (isToday && (currentLocalDay === evento.horaFin.diaSemana && currentLocalHours > horaFin12 || (currentLocalDay === evento.horaFin.diaSemana && currentLocalHours === horaFin12 && currentLocalMinutes > evento.horaFin.minutos))) {
-    infoElement.innerText = 'FIN';
+    localStorage.removeItem(evento.id);
+  } else if (
+    (currentLocalDay === evento.horaFin.diaSemana && currentLocalHours > horaFin24) ||
+    (currentLocalDay === evento.horaFin.diaSemana && currentLocalHours === horaFin24 && currentLocalMinutes > evento.horaFin.minutos)
+  ) {
+    infoElement.innerText = 'Fin';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#222222';
-    // Guarda el estado "FIN" en localStorage con una marca de tiempo para saber cuándo se cambió a "FIN"
-    localStorage.setItem(evento.id, 'FIN_' + Date.now());
+
+    // Establece un temporizador para cambiar el estado a Próximamente después de 2 días
+    const tiempoEspera = 2 * 24 * 60 * 60 * 1000; // 2 días en milisegundos
+    setTimeout(() => {
+      infoElement.innerText = 'Próx.';
+      infoElement.style.color = '#000';
+      infoElement.style.backgroundColor = '#fff';
+    }, tiempoEspera);
+
+    localStorage.setItem(evento.id, 'FIN');
   } else {
-    // Comprobar si el evento estaba en estado "FIN" anteriormente
     const estadoGuardado = localStorage.getItem(evento.id);
-    if (estadoGuardado && estadoGuardado.startsWith('FIN_')) {
-      const tiempoTranscurridoHoras = (Date.now() - parseInt(estadoGuardado.split('_')[1])) / (1000 * 60 * 60);
+    if (estadoGuardado === 'FIN') {
+      const tiempoTranscurridoHoras = (Date.now() - new Date(localStorage.getItem(evento.id + '_timestamp'))) / (1000 * 60 * 60);
       if (tiempoTranscurridoHoras >= tiempoEstadoFinHoras) {
         infoElement.innerText = 'Próx.';
         infoElement.style.color = '#000';
         infoElement.style.backgroundColor = '#fff';
-        // Elimina el estado "FIN" si ha pasado el tiempo necesario
         localStorage.removeItem(evento.id);
+        localStorage.removeItem(evento.id + '_timestamp');
       }
+    } else {
+      infoElement.innerText = 'Próx.';
+      infoElement.style.color = '#000';
+      infoElement.style.backgroundColor = '#fff';
     }
   }
 }
 
-// Verificar el estado almacenado en localStorage para cada evento
 eventos.forEach(function (evento) {
   const estadoGuardado = localStorage.getItem(evento.id);
   if (estadoGuardado === 'FIN') {
@@ -186,7 +194,7 @@ setInterval(function () {
   eventos.forEach(function (evento) {
     cambiarEstadoPartido(evento);
   });
-}, 1000);
+}, 60000); // Cambiamos el intervalo a 1 minuto (60000 milisegundos)
 
 
 </script>
