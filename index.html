@@ -112,12 +112,12 @@ Amistoso: Atlas vs. Sporting de Gijón
 const eventos = [
   {
     id: 'evento1',
-    fechaInicio: '2023-07-19', // Miércoles
-    horaInicio: { horas: 23, minutos: 0, am: false },
-    fechaFin: '2023-07-20', // Jueves
+    fechaInicio: '2023-07-20', 
+    horaInicio: { horas: 3, minutos: 0, am: true },
+    fechaFin: '2023-07-20', 
     horaFin: { horas: 3, minutos: 50, am: true }
   },
-  // ... otros eventos aquí ...
+ 
 ];
 
 
@@ -157,7 +157,7 @@ function cambiarEstadoPartido(evento) {
     infoElement.innerText = 'VIVO';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
-    localStorage.removeItem(evento.id); // Elimina el estado "FIN" si está almacenado
+    localStorage.removeItem(evento.id); 
   } else if (
     (currentLocalDate > fechaFin.toLocaleDateString('en-US', { timeZone: 'America/Argentina/Buenos_Aires' })) ||
     (currentLocalDate === fechaFin.toLocaleDateString('en-US', { timeZone: 'America/Argentina/Buenos_Aires' }) &&
@@ -168,18 +168,18 @@ function cambiarEstadoPartido(evento) {
     infoElement.innerText = 'Fin';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#222222';
-    // Guarda el estado "FIN" en localStorage
+    
     localStorage.setItem(evento.id, 'FIN');
   } else {
     infoElement.innerText = 'Próx.';
     infoElement.style.color = '#000';
     infoElement.style.backgroundColor = '#fff';
-    // Elimina el estado "FIN" si está almacenado
+    
     localStorage.removeItem(evento.id);
   }
 }
 
-// Verificar el estado almacenado en localStorage para cada evento
+
 eventos.forEach(function (evento) {
   const estadoGuardado = localStorage.getItem(evento.id);
   if (estadoGuardado === 'FIN') {
