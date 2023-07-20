@@ -114,10 +114,10 @@ Amistoso: Atlas vs. Sporting de Gijón
 const eventos = [
   {
     id: 'evento1',
-    horaInicio: { horas: 22, minutos: 0, diaSemana: 3 }, // Miércoles (0 = domingo, 1 = lunes, ..., 6 = sábado)
-    horaFin: { horas: 2, minutos: 50, diaSemana: 4 }     // Miércoles
+    horaInicio: { horas: 10, minutos: 0, diaSemana: 3, am: false }, // Miércoles (0 = domingo, 1 = lunes, ..., 6 = sábado)
+    horaFin: { horas: 2, minutos: 50, diaSemana: 4, am: false }     // Jueves
   },
-  // Agrega más eventos con el día de la semana especificado (0 a 6) para cada uno
+  // Agrega más eventos con el día de la semana y las horas de inicio y fin especificadas (0 a 6) para cada uno
   // ...
 ];
 
@@ -133,8 +133,8 @@ function cambiarEstadoPartido(evento) {
   const currentLocalHours = new Date(currentLocalTime).getHours();
   const currentLocalMinutes = new Date(currentLocalTime).getMinutes();
 
-  const horaInicio24 = evento.horaInicio.horas;
-  const horaFin24 = evento.horaFin.horas;
+  const horaInicio12 = evento.horaInicio.am ? evento.horaInicio.horas : evento.horaInicio.horas + 12;
+  const horaFin12 = evento.horaFin.am ? evento.horaFin.horas : evento.horaFin.horas + 12;
 
   const isToday = currentLocalDay === evento.horaInicio.diaSemana;
 
@@ -142,8 +142,8 @@ function cambiarEstadoPartido(evento) {
   const nextDay = (currentLocalDay + 1) % 7;
 
   const enCurso = (
-    (isToday && (currentLocalDay === evento.horaInicio.diaSemana && currentLocalHours > horaInicio24)) ||
-    (isToday && (currentLocalDay === evento.horaInicio.diaSemana && currentLocalHours === horaInicio24 && currentLocalMinutes >= evento.horaInicio.minutos) && (currentLocalHours < horaFin24 || (currentLocalHours === horaFin24 && currentLocalMinutes <= evento.horaFin.minutos))) ||
+    (isToday && (currentLocalDay === evento.horaInicio.diaSemana && currentLocalHours > horaInicio12)) ||
+    (isToday && (currentLocalDay === evento.horaInicio.diaSemana && currentLocalHours === horaInicio12 && currentLocalMinutes >= evento.horaInicio.minutos) && (currentLocalHours < horaFin12 || (currentLocalHours === horaFin12 && currentLocalMinutes <= evento.horaFin.minutos))) ||
     (!isToday && currentLocalDay === evento.horaFin.diaSemana && currentLocalHours < 5) || // Hasta las 5 a.m. del día siguiente
     (!isToday && nextDay === evento.horaFin.diaSemana && currentLocalHours >= 5) // Después de las 5 a.m. del día siguiente
   );
@@ -153,7 +153,7 @@ function cambiarEstadoPartido(evento) {
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#bf1c1c';
     localStorage.removeItem(evento.id); // Elimina el estado "FIN" si está almacenado
-  } else if (isToday && (currentLocalDay === evento.horaFin.diaSemana && currentLocalHours > horaFin24 || (currentLocalDay === evento.horaFin.diaSemana && currentLocalHours === horaFin24 && currentLocalMinutes > evento.horaFin.minutos))) {
+  } else if (isToday && (currentLocalDay === evento.horaFin.diaSemana && currentLocalHours > horaFin12 || (currentLocalDay === evento.horaFin.diaSemana && currentLocalHours === horaFin12 && currentLocalMinutes > evento.horaFin.minutos))) {
     infoElement.innerText = 'FIN';
     infoElement.style.color = '#fff';
     infoElement.style.backgroundColor = '#222222';
@@ -188,6 +188,7 @@ setInterval(function () {
     cambiarEstadoPartido(evento);
   });
 }, 1000);
+
 
 </script>
 </body>
