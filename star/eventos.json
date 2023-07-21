@@ -7,10 +7,17 @@
         "url": "#"
     },
     {
-        "title": "Tigre vs. Libertad",
-        "league": "Copa Sudamericana",
-        "status": "FINALIZADO",
+        "title": "Fénix vs. Liverpool",
+        "league": "Campeonato Uruguayo",
+        "status": "19:00",
         "img": "6EC5F079678822D87D9099E8EB1C9C0D2F575A2C5A243F83AE09B7BA83896E53",
-        "url": "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=e2"
+        "url": "#"
+    },
+      {
+        "title": "La Luz vs. Torque City",
+        "league": "Campeonato Uruguayo",
+        "status": "00:00",
+        "img": "6EC5F079678822D87D9099E8EB1C9C0D2F575A2C5A243F83AE09B7BA83896E53",
+        "url": "#"
     }
 ]
