@@ -72,7 +72,6 @@ Pie Pelota TV
 </center><br><p class="display-5 text-center">Elige el evento:</p>
 	
 <div id="eventos"></div>
-
 <br>
 <script>
 function eventos() {
@@ -83,6 +82,8 @@ function eventos() {
     type: "get",
     success: function (arr) {
       var content = '';
+      var currentTime = new Date();
+      var eventosEstado = JSON.parse(localStorage.getItem('eventosEstado')) || {};
 
       for (var i = 0; i < arr.length; i++) {
         if (i % 4 == 0) {
@@ -95,12 +96,33 @@ function eventos() {
         var obj = arr[i];
         var status, additionalClass, buttonContent;
 
-        if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO") {
-          status = obj['status'];
+        var startTime = new Date(currentTime);
+        var endTime = new Date(currentTime);
+
+        // Establecer el rango de tiempo para cada evento
+        if (i === 0) { // Evento 1 - Empieza a las 12:30 y termina a las 14:15
+          startTime.setHours(12, 30, 0); // 12:30 PM
+          endTime.setHours(14, 15, 0); // 2:15 PM
+        } else if (i === 1) { // Evento 2 - Empieza a las 15:00 y termina a las 17:15
+          startTime.setHours(15, 0, 0); // 3:00 PM
+          endTime.setHours(17, 15, 0); // 5:15 PM
+        } else if (i === 2) { // Evento 3 - Empieza a las 20:00 y termina a las 22:15
+          startTime.setHours(20, 0, 0); // 8:00 PM
+          endTime.setHours(22, 15, 0); // 10:15 PM
+        }
+
+        // Verificar si el evento tiene un estado almacenado en LocalStorage y actualizar el estado actual
+        if (eventosEstado[i]) {
+          status = eventosEstado[i].status;
           additionalClass = (status == "EN VIVO") ? "live-indicator-block" : "";
         } else {
-          status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
-          additionalClass = "";
+          if (currentTime >= startTime && currentTime <= endTime) {
+            status = 'EN VIVO';
+            additionalClass = "live-indicator-block";
+          } else {
+            status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
+            additionalClass = "";
+          }
         }
 
         if (status == "EN VIVO") {
@@ -113,6 +135,15 @@ function eventos() {
 
         if (i == arr.length - 1)
           content += '</div>';
+
+        // Verificar si el evento ha terminado y actualizar el estado a "FINALIZADO" en LocalStorage
+        if (status == "EN VIVO" && currentTime > endTime) {
+          status = "FINALIZADO";
+          buttonContent = '<a class="btn btn-block btn-dark" href="' + obj['url'] + '">' + status + '</a>';
+          content = content.replace('EN VIVO', status);
+          eventosEstado[i] = { status: status };
+          localStorage.setItem('eventosEstado', JSON.stringify(eventosEstado));
+        }
       }
 
       $("#eventos").html(content);
@@ -128,9 +159,8 @@ eventos();
 window.setInterval(function () {
   eventos();
 }, 60000);
-
-
 </script>
+
 
 
 
