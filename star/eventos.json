@@ -1,86 +1,41 @@
 [
+  
     {
-        "title": "Sevilla vs. Magdeburg",
-        "league": "Amistoso",
-        "status": "FINALIZADO",
-        "img": "6F6D9F2DA4F1A320267478CB56125AC2AC819F23F7A7C43EA10F4A2C2A2CFA71",
+        "title": "V\u00e9lez S\u00e1rsfield vs. Uni\u00f3n de Santa Fe",
+        "league": "Liga Profesional",
+        "status": "21:30",
+        "img": "4E3F574A59ACEAA3CE24D631D55EAE94914558FB625460CE70B4E02FD79050AF",
         "url": "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=e1"
     },
     {
-        "title": "Boston River vs. Montevideo Wanderers",
+        "title": "Cerro vs. Plaza Colonia",
         "league": "Campeonato Uruguayo",
-        "status": "FINALIZADO",
-        "img": "86BCCE13D278E429202DDB5A093773BF795FAA4C4C605D86265993940CBF06C7",
+        "status": "00:00",
+        "img": "23304B446098EF1445E29A8224F659A05E508E7756DB93C041C896CC35A13D91",
         "url": "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=e2"
     },
     {
-        "title": "Pe\u00f1arol vs. Defensor Sporting",
-        "league": "Campeonato Uruguayo",
-        "status": "FINALIZADO",
-        "img": "E845B68105C1F719C12420AE4CDBAE545D5467D9690C79997CFB226132C4F96B",
+        "title": "Coritiba vs. Fluminense",
+        "league": "Brasileirao",
+        "status": "00:00",
+        "img": "D52518F44E82EA5D66673575AF5EE68D57A4229C15E223269CF4AB348E6BAA9C",
         "url": "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=e3"
     },
+
     {
-        "title": "Santos vs. Botafogo",
-        "league": "Brasileir\u00e3o",
-        "status": "FINALIZADO",
-        "img": "EB638FF47EBDA0D6BBC0CC71F618DE2866866A819BE005B1EC6ABE99E279078A",
+        "title": "Racing Club vs. Central C\u00f3rdoba",
+        "league": "Liga Profesional",
+        "status": "00:30",
+        "img": "982A155B97972668BE3F153D8C7D19FAC32A622A45681F61DC46946027FBD2E9",
         "url": "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=e4"
     },
+
     {
-        "title": "RB Bragantino vs. Internacional",
-        "league": "Brasileir\u00e3o",
-        "status": "FINALIZADO",
-        "img": "8510C66A3CA8D5152E8FA0A866DFEC88299B22E423C5A381376B3B54DD617238",
+        "title": "Boca Juniors vs. Newell's Old Boys",
+        "league": "Liga Profesional",
+        "status": "01:45",
+        "img": "42ABBE7F9C03F1AC4454D9CA96893B2D1EB88424D49A385509789CD87987720E",
         "url": "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=e5"
     },
-    {
-        "title": "Cruzeiro vs. Goi\u00e1s",
-        "league": "Brasileir\u00e3o",
-        "status": "FINALIZADO",
-        "img": "365852763B0C3A42C62B50FA5461AF4E9D51BC08CF7220B8D71CFC6577C270D8",
-        "url": "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=e6"
-    },
-    {
-        "title": "Fulham vs. Brentford",
-        "league": "Amistoso",
-        "status": "FINALIZADO",
-        "img": "08EFEFAC53EFEE7FD4C9867C7A1DC98F893BEBAF73E3C6DCC19A327B9E06D3F6",
-        "url": "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=e7"
-    },
-    {
-        "title": "Vasco da Gama vs. Athletico Paranaense",
-        "league": "Brasileir\u00e3o",
-        "status": "FINALIZADO",
-        "img": "489A6A8BA454DC7D914F4D621A8F2B554780361DC7BFCF189C9477C96EB36C2B",
-        "url": "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=e8"
-    },
-    {
-        "title": "Defensa y Justicia vs. Sarmiento",
-        "league": "Liga Profesional de Argentina",
-        "status": "FINALIZADO",
-        "img": "7E2D833B4EF3D960F1548B36D64D664DE3357B8D63E6623D987DC5A96B5462B7",
-        "url": "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=e9"
-    },
-    {
-        "title": "Newcastle United vs. Aston Villa",
-        "league": "Amistoso",
-        "status": "FINALIZADO",
-        "img": "BDE8B209547C667899E3257E0D595769148ACFB0F4E7A554EAE2EDA725609E98",
-        "url": "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=e10"
-    },
-    {
-        "title": "Rosario Central vs. River Plate",
-        "league": "Liga Profesional de Argentina",
-        "status": "FINALIZADO",
-        "img": "328FF3E41A44EA99710DD4AEAD1B764C436AA67C6DA96BEA319A34DCF1790168",
-        "url": "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=e11"
-    },
-    {
-        "title": "Real Madrid vs. Milan",
-        "league": "Amistoso",
-        "status": "EN VIVO",
-        "img": "DF839D63D4DE69DEC978DC133C078D63800B5EEFF3198F932B0A26D9F57BDD40",
-        "url": "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=e12"
-    }
+
 ]
