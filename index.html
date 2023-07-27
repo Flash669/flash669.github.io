@@ -129,23 +129,21 @@ Amistoso: <img class="logo lazy-load" data-src="https://image-service.onefootbal
 
 
 </script>
-<script type="text/javascript"/> 
-	
+<script>
   document.addEventListener("DOMContentLoaded", function () {
-    
+
     const lazyLoadImages = document.querySelectorAll(".lazy-load");
 
-    
+  
     const supportsLazyLoad = "loading" in HTMLImageElement.prototype;
 
+   
     if (!supportsLazyLoad) {
       lazyLoadImages.forEach((img) => {
         img.setAttribute("src", img.getAttribute("data-src"));
       });
     }
   });
-
-
 </script>	
 
 </body>
