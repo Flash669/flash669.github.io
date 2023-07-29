@@ -75,6 +75,8 @@ Pie Pelota TV
 <br>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
 function obtenerDatosDesdeURL(url) {
   var x = Math.random().toString(36).substring(7);
 
@@ -86,11 +88,10 @@ function obtenerDatosDesdeURL(url) {
 
       for (var i = 0; i < arr.length; i++) {
         var obj = arr[i];
-        var title = obj['title'];
         var urlEvento = obj['url'];
 
-        // Aquí puedes usar la variable "urlEvento" para hacer lo que necesites con la URL de cada evento
-        console.log("URL del evento " + title + ": " + urlEvento);
+       
+        console.log("URL del evento " + (i+1) + ": " + urlEvento);
 
         var status, additionalClass, buttonContent;
 
@@ -134,6 +135,8 @@ window.setInterval(function () {
   obtenerDatosDesdeURL("https://librefutboltv.com/star-plus/eventos.json");
 }, 60000);
 </script>
+
+
 
 
 
