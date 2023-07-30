@@ -79,49 +79,56 @@ Pie Pelota TV
 <script>
 function eventos() {
   var x = Math.random().toString(36).substring(7);
-
-  // Primero, obtenemos los datos de la segunda URL que contiene las URLs
+  
+  // Obtenemos los datos del primer JSON
   $.ajax({
-    url: "https://flash669.github.io/star/eventos.json?" + x,
+    url: "https://librefutboltv.com/star-plus/eventos.json?" + x,
     type: "get",
-    success: function (urlData) {
-      // Luego, obtenemos los datos de la primera URL
+    success: function (arr) {
+      // Luego obtenemos los datos del segundo JSON
       $.ajax({
-        url: "https://librefutboltv.com/star-plus/eventos.json?" + x,
+        url: "https://flash669.github.io/star/eventos.json?" + x,
         type: "get",
-        success: function (arr) {
+        success: function (urlData) {
           var content = '';
 
           for (var i = 0; i < arr.length; i++) {
-            if (i % 4 == 0) {
-              if (i != 0)
+            if (i % 4 === 0) {
+              if (i !== 0)
                 content += '</div>';
-
+              
               content += '<div class="w3-row-padding w3-padding-16 w3-center" id="copa">';
             }
 
             var obj = arr[i];
             var status, additionalClass, buttonContent;
 
-            if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO") {
+            if (obj['status'] === "FINALIZADO" || obj['status'] === "EN VIVO") {
               status = obj['status'];
-              additionalClass = (status == "EN VIVO") ? "live-indicator-block" : "";
+              additionalClass = (status === "EN VIVO") ? "live-indicator-block" : "";
             } else {
               status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
               additionalClass = "";
             }
 
-            if (status == "EN VIVO") {
+            if (status === "EN VIVO") {
               buttonContent = '<div class="live-indicator-block"><span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i>EN VIVO</span></div>';
             } else {
-              // Use the "url" value from the second JSON for the URL
-              var urlValue = (i < urlData.length) ? urlData[i]['url'] : obj['url'];
+              // Buscamos la URL correspondiente al evento actual del primer JSON en el segundo JSON
+              var urlValue = obj['url'];
+              for (var j = 0; j < urlData.length; j++) {
+                if (urlData[j]['title'] === obj['title']) {
+                  urlValue = urlData[j]['url'];
+                  break;
+                }
+              }
+              
               buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
             }
 
             content += '<div class="w3-quarter"><a href="' + urlValue + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>' + buttonContent + '<div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
 
-            if (i == arr.length - 1)
+            if (i === arr.length - 1)
               content += '</div>';
           }
 
@@ -140,6 +147,7 @@ eventos();
 window.setInterval(function () {
   eventos();
 }, 60000);
+
 
 </script>
 
