@@ -114,7 +114,7 @@ function eventos() {
             if (status == "EN VIVO") {
               buttonContent = '<div class="live-indicator-block"><span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i>EN VIVO</span></div>';
             } else {
-              // Use the "url" value from the second URL, or "#" if the index is out of bounds
+              // Use the "url" value from the second URL
               var urlValue = (i < urlData.length) ? urlData[i]['url'] : "#";
               buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
             }
@@ -140,8 +140,6 @@ eventos();
 window.setInterval(function () {
   eventos();
 }, 60000);
-
-
 </script>
 
 
