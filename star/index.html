@@ -80,16 +80,16 @@ Pie Pelota TV
 function eventos() {
   var x = Math.random().toString(36).substring(7);
 
-  // Primero, obtenemos los datos de la primera URL
+  // Primero, obtenemos los datos de la segunda URL que contiene las URLs
   $.ajax({
-    url: "https://librefutboltv.com/star-plus/eventos.json?" + x,
+    url: "https://flash669.github.io/star/eventos.json?" + x,
     type: "get",
-    success: function (arr) {
-      // Luego, obtenemos los datos de la segunda URL
+    success: function (urlData) {
+      // Luego, obtenemos los datos de la primera URL
       $.ajax({
-        url: "https://flash669.github.io/star/eventos.json?" + x,
+        url: "https://librefutboltv.com/star-plus/eventos.json?" + x,
         type: "get",
-        success: function (urlData) {
+        success: function (arr) {
           var content = '';
 
           for (var i = 0; i < arr.length; i++) {
@@ -114,7 +114,7 @@ function eventos() {
             if (status == "EN VIVO") {
               buttonContent = '<div class="live-indicator-block"><span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i>EN VIVO</span></div>';
             } else {
-              // Use the "url" value from the second URL if available, otherwise use the original "url" value
+              // Use the "url" value from the second JSON for the URL
               var urlValue = (i < urlData.length) ? urlData[i]['url'] : obj['url'];
               buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
             }
@@ -140,7 +140,6 @@ eventos();
 window.setInterval(function () {
   eventos();
 }, 60000);
-
 
 </script>
 
