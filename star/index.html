@@ -80,16 +80,16 @@ Pie Pelota TV
 function eventos() {
   var x = Math.random().toString(36).substring(7);
 
-  // Primero, obtenemos los datos de la primera URL
+  // Primero, obtenemos los datos de la segunda URL
   $.ajax({
-    url: "https://librefutboltv.com/star-plus/eventos.json?" + x,
+    url: "https://flash669.github.io/star/eventos.json?" + x,
     type: "get",
-    success: function (arr) {
-      // Luego, obtenemos los datos de la segunda URL
+    success: function (urlData) {
+      // Luego, obtenemos los datos de la primera URL
       $.ajax({
-        url: "https://flash669.github.io/star/eventos.json?" + x,
+        url: "https://librefutboltv.com/star-plus/eventos.json?" + x,
         type: "get",
-        success: function (urlData) {
+        success: function (arr) {
           var content = '';
 
           for (var i = 0; i < arr.length; i++) {
@@ -119,7 +119,7 @@ function eventos() {
               buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
             }
 
-            content += '<div class="w3-quarter"><a href="' + obj['url'] + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>' + buttonContent + '<div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
+            content += '<div class="w3-quarter"><a href="' + urlValue + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>' + buttonContent + '<div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
 
             if (i == arr.length - 1)
               content += '</div>';
@@ -140,7 +140,6 @@ eventos();
 window.setInterval(function () {
   eventos();
 }, 60000);
-
 
 </script>
 
