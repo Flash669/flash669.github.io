@@ -71,28 +71,23 @@ Pie Pelota TV
 <br>
 
 
-
-<!-- Agrega jQuery si no lo tienes ya incluido -->
-
-
-<!-- Agrega este script para obtener y mostrar los datos -->
 <script>
 function eventos() {
   var x = Math.random().toString(36).substring(7);
 
-  // Obtenemos los datos del archivo "https://flash669.github.io/star/eventos.json"
+  // Primero, obtenemos los datos de la primera URL
   $.ajax({
-    url: "https://flash669.github.io/star/eventos.json?" + x,
+    url: "https://librefutboltv.com/star-plus/eventos.json?" + x,
     type: "get",
-    success: function (flashData) {
-      // Luego, obtenemos los datos del archivo "https://librefutboltv.com/star-plus/eventos.json"
+    success: function (arr) {
+      // Luego, obtenemos los datos de la segunda URL
       $.ajax({
-        url: "https://librefutboltv.com/star-plus/eventos.json?" + x,
+        url: "https://flash669.github.io/star/eventos.json?" + x,
         type: "get",
-        success: function (libreData) {
+        success: function (urlData) {
           var content = '';
 
-          for (var i = 0; i < libreData.length; i++) {
+          for (var i = 0; i < arr.length; i++) {
             if (i % 4 == 0) {
               if (i != 0)
                 content += '</div>';
@@ -100,28 +95,28 @@ function eventos() {
               content += '<div class="w3-row-padding w3-padding-16 w3-center" id="copa">';
             }
 
-            var objLibre = libreData[i];
+            var obj = arr[i];
             var status, additionalClass, buttonContent;
 
-            if (objLibre['status'] == "FINALIZADO" || objLibre['status'] == "EN VIVO") {
-              status = objLibre['status'];
+            if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO") {
+              status = obj['status'];
               additionalClass = (status == "EN VIVO") ? "live-indicator-block" : "";
             } else {
-              status = 'HOY | <span class="t">' + objLibre['status'] + '</span> hs';
+              status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
               additionalClass = "";
             }
 
             if (status == "EN VIVO") {
               buttonContent = '<div class="live-indicator-block"><span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i>EN VIVO</span></div>';
             } else {
-              // Sobrescribe el campo "url" con los datos del archivo "https://flash669.github.io/star/eventos.json"
-              var urlValue = (i < flashData.length) ? flashData[i]['url'] : "#";
+              // Use the "url" value from the second URL
+              var urlValue = (i < urlData.length) ? urlData[i]['url'] : "#";
               buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
             }
 
-            content += '<div class="w3-quarter"><a href="' + urlValue + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + objLibre['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>' + buttonContent + '<div class="w3-card-4"><p><b>' + objLibre['league'] + '</b></p><p>' + objLibre['title'] + '</p></div></div>';
+            content += '<div class="w3-quarter"><a href="' + obj['url'] + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>' + buttonContent + '<div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
 
-            if (i == libreData.length - 1)
+            if (i == arr.length - 1)
               content += '</div>';
           }
 
@@ -140,6 +135,7 @@ eventos();
 window.setInterval(function () {
   eventos();
 }, 60000);
+
 </script>
 
 
