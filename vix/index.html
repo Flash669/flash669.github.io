@@ -72,10 +72,12 @@ Pie Pelota TV
                 }
 
                 if (status == "EN VIVO") {
+                  // Si está EN VIVO, obtenemos el botón directamente del JSON de la URL sobrescrita
+                  var urlValue = (i < urlData.length && urlData[i].url && urlData[i].url !== "undefined") ? urlData[i].url : "#";
                   buttonContent = '<div class="live-indicator-block"><span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i>EN VIVO</span></div>';
                 } else {
-                  // Verificamos si el JSON de la URL sobrescrita tiene una URL válida para este evento
-                  var urlValue = (i < urlData.length && urlData[i].url && urlData[i].url !== "undefined") ? urlData[i].url : "#";
+                  // Para otros estados, utilizamos el enlace del JSON original
+                  var urlValue = (i < arr.length) ? arr[i]['url'] : "#";
                   buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
                 }
 
