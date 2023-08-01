@@ -36,9 +36,7 @@ Pie Pelota TV
 
 <br>
 
-
-
-<script type="text/javascript">
+  <script type="text/javascript">
     function eventos() {
       var x = Math.random().toString(36).substring(7);
 
@@ -76,8 +74,8 @@ Pie Pelota TV
                 if (status == "EN VIVO") {
                   buttonContent = '<div class="live-indicator-block"><span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i>EN VIVO</span></div>';
                 } else {
-                  // Verificamos si el JSON de la URL sobrescrita tiene una URL para este evento
-                  var urlValue = (i < urlData.length && urlData[i].url) ? urlData[i].url : "#";
+                  // Verificamos si el JSON de la URL sobrescrita tiene una URL válida para este evento
+                  var urlValue = (i < urlData.length && urlData[i].url && urlData[i].url !== "undefined") ? urlData[i].url : "#";
                   buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
                 }
 
