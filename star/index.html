@@ -70,14 +70,11 @@ Pie Pelota TV
   <script type="text/javascript">
     function eventos() {
       var x = Math.random().toString(36).substring(7);
-      var urlData;
 
       // Primero, obtenemos los datos de la segunda URL
       fetch("https://flash669.github.io/star/eventos.json?" + x)
         .then(response => response.json())
-        .then(data => {
-          urlData = data;
-
+        .then(urlData => {
           // Luego, obtenemos los datos de la primera URL
           fetch("https://librefutboltv.com/star-plus/eventos.json?" + x)
             .then(response => response.json())
@@ -106,9 +103,9 @@ Pie Pelota TV
                 if (status == "EN VIVO") {
                   buttonContent = '<div class="live-indicator-block"><span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i>EN VIVO</span></div>';
                 } else {
-                  // Use the "url" value from the second URL if available, otherwise use "#" as fallback
-                  var urlValue = (urlData && i < urlData.length && urlData[i]['url']) ? urlData[i]['url'] : "#";
-                  buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
+                  // Use the "url" value from the second URL if available, otherwise leave it empty
+                  var urlValue = (i < urlData.length && urlData[i]['url']) ? urlData[i]['url'] : "";
+                  buttonContent = (urlValue !== "") ? '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>' : status;
                 }
 
                 content += '<div class="w3-quarter"><a href="' + urlValue + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>' + buttonContent + '<div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
@@ -130,7 +127,6 @@ Pie Pelota TV
     window.setInterval(function () {
       eventos();
     }, 60000);
-
   </script>
 
 
