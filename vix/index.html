@@ -38,59 +38,67 @@ Pie Pelota TV
 
 
 
-<script>
-function eventos()
-{
-	var x = Math.random().toString(36).substring(7);
+<script type="text/javascript">
+    function eventos() {
+      var x = Math.random().toString(36).substring(7);
 
-	$.ajax({
-		url : "/vix/eventos.json?"+x,
-		type : "get",
-		success: function (arr) {
-			var content = '';
-			
-			for (var i = 0; i < arr.length; i++)
-			{
-				if (i%4==0)
-				{
-					if (i != 0)
-						content += '</div>';
-					
-					content += '<div class="w3-row-padding w3-padding-16 w3-center" id="copa">';
-				}
-					
-				var obj = arr[i];
-		
-				if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO")
-					status = obj['status'];
-				else
-					status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
-			
-				if (status == "EN VIVO")
-					color = "danger";
-				else
-					color = "dark";
-					
-				content += '<div class="w3-quarter"><a href="' + obj['url'] + '"><img src="' + obj['img'] + '" alt="VIX+" style="width:100%" class="w3-hover-opacity"></a><a class="btn btn-block btn-' + color + '" href="' + obj['url'] + '">' + status + '</a> <div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
-				
-				if (i == arr.length-1)
-					content += '</div>';
-			}
-			
-			$("#eventos").html(content);
-			
-			guardaHorario();
-			dT();
-		}
-	})
-}
+      // Primero, obtenemos los datos de la segunda URL
+      fetch("https://flash669.github.io/star/eventos.json?" + x)
+        .then(response => response.json())
+        .then(urlData => {
+          // Luego, obtenemos los datos de la primera URL
+          fetch("https://librefutboltv.com/star-plus/eventos.json?" + x)
+            .then(response => response.json())
+            .then(arr => {
+              var content = '';
 
-eventos();
+              for (var i = 0; i < arr.length; i++) {
+                if (i % 4 == 0) {
+                  if (i != 0)
+                    content += '</div>';
 
-window.setInterval(function() {
-	eventos();
-}, 60000);
-</script>
+                  content += '<div class="w3-row-padding w3-padding-16 w3-center" id="copa">';
+                }
+
+                var obj = arr[i];
+                var status, additionalClass, buttonContent;
+
+                if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO") {
+                  status = obj['status'];
+                  additionalClass = (status == "EN VIVO") ? "live-indicator-block" : "";
+                } else {
+                  status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
+                  additionalClass = "";
+                }
+
+                if (status == "EN VIVO") {
+                  buttonContent = '<div class="live-indicator-block"><span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i>EN VIVO</span></div>';
+                } else {
+                  // Use the "url" value from the first JSON if available, otherwise leave it empty
+                  var urlValue = (i < urlData.length) ? urlData[i]['url'] : "";
+                  buttonContent = (urlValue !== "") ? '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>' : status;
+                }
+
+                content += '<div class="w3-quarter"><a href="' + urlValue + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>' + buttonContent + '<div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
+
+                if (i == arr.length - 1)
+                  content += '</div>';
+              }
+
+              document.getElementById("eventos").innerHTML = content;
+
+              guardaHorario();
+              dT();
+            });
+        });
+    }
+
+    eventos();
+
+    window.setInterval(function () {
+      eventos();
+    }, 60000);
+  </script>
 
 <footer class="pt-4 my-md-5 pt-md-5 border-top">
 <div class="row">
