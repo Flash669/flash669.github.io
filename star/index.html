@@ -94,13 +94,16 @@ Pie Pelota TV
                 var obj = arr[i];
                 var status, additionalClass, buttonContent;
 
-                if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO") {
-                  status = obj['status'];
-                  additionalClass = (status == "EN VIVO") ? "live-indicator-block" : "";
-                } else {
-                  status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
-                  additionalClass = "";
-                }
+              if (status == "EN VIVO" || status == "FINALIZADO") {
+  // Obtenemos el botón directamente del JSON de la URL sobrescrita
+  var urlValue = (i < urlData.length && urlData[i].url && urlData[i].url !== "undefined") ? urlData[i].url : "#";
+  buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
+} else {
+  // Para otros estados, utilizamos el enlace del JSON original
+  var urlValue = (i < arr.length) ? arr[i]['url'] : "#";
+  buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
+}
+
 
                 if (status == "EN VIVO") {
           
