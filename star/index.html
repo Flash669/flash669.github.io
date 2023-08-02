@@ -48,6 +48,27 @@
 		 opacity: 0;
 	}
 }
+/* Estilos para botones EN VIVO */
+.btn-dark.en-vivo {
+  background-color: red;
+  color: white;
+}
+
+.btn-dark.en-vivo .fa-circle {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+	}
+	
+
+		
  </style>
 </head>
 <body>
@@ -68,7 +89,8 @@ Pie Pelota TV
 <br>
 
   <script type="text/javascript">
-   function eventos() {
+  
+function eventos() {
   var x = Math.random().toString(36).substring(7);
 
   // Primero, obtenemos los datos del JSON con la URL sobrescrita
@@ -103,11 +125,9 @@ Pie Pelota TV
             }
 
             if (status == "EN VIVO" || status == "FINALIZADO") {
-              // Obtenemos el botón directamente del JSON de la URL sobrescrita
               var urlValue = (i < urlData.length && urlData[i].url && urlData[i].url !== "undefined") ? urlData[i].url : "#";
-              buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
+              buttonContent = '<a class="btn btn-block btn-dark en-vivo" href="' + urlValue + '">' + '<i class="fa fa-circle blink" aria-hidden="true"></i> ' + status + '</a>';
             } else {
-              // Para otros estados, utilizamos el enlace del JSON original
               var urlValue = (i < arr.length) ? arr[i]['url'] : "#";
               buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
             }
