@@ -68,62 +68,51 @@ Pie Pelota TV
 <br>
 
   <script type="text/javascript">
-     function eventos() {
-  var flash669Url = "https://flash669.github.io/star/eventos.json"; // URL constante
-
-  // Primero, obtenemos los datos del JSON con la URL constante
+   function eventos() {
+  // Obtener los datos de la segunda URL
   $.ajax({
-    url: flash669Url,
+    url: "https://librefutboltv.com/star-plus/eventos.json",
     type: "get",
-    success: function (urlData) {
-      // Luego, obtenemos los datos del otro JSON
-      $.ajax({
-        url: "https://librefutboltv.com/star-plus/eventos.json",
-        type: "get",
-        success: function (arr) {
-          var content = '';
+    success: function (arr) {
+      var content = '';
 
-          for (var i = 0; i < arr.length; i++) {
-            if (i % 4 == 0) {
-              if (i != 0)
-                content += '</div>';
+      for (var i = 0; i < arr.length; i++) {
+        if (i % 4 == 0) {
+          if (i != 0)
+            content += '</div>';
 
-              content += '<div class="w3-row-padding w3-padding-16 w3-center" id="copa">';
-            }
-
-            var obj = arr[i];
-            var status, additionalClass, buttonContent;
-
-            if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO") {
-              status = obj['status'];
-              additionalClass = (status == "EN VIVO") ? "live-indicator-block" : "";
-            } else {
-              status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
-              additionalClass = "";
-            }
-
-            if (status == "EN VIVO") {
-              // Si está EN VIVO, obtenemos el botón directamente del JSON de la URL constante
-              var urlValue = (i < urlData.length && urlData[i].url && urlData[i].url !== "undefined") ? urlData[i].url : "#";
-              buttonContent = '<div class="live-indicator-block"><span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i>EN VIVO</span></div>';
-            } else {
-              // Para otros estados, utilizamos el enlace del JSON original
-              var urlValue = (i < arr.length) ? arr[i]['url'] : "#";
-              buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
-            }
-
-            content += '<div class="w3-quarter"><a href="' + urlValue + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>' + buttonContent + '<div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
-
-            if (i == arr.length - 1)
-              content += '</div>';
-          }
-
-          $("#eventos").html(content);
-
-          guardaHorario();
-          dT();
+          content += '<div class="w3-row-padding w3-padding-16 w3-center" id="copa">';
         }
-      });
+
+        var obj = arr[i];
+        var status, additionalClass, buttonContent;
+
+        if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO") {
+          status = obj['status'];
+          additionalClass = (status == "EN VIVO") ? "live-indicator-block" : "";
+        } else {
+          status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
+          additionalClass = "";
+        }
+
+        if (status == "EN VIVO") {
+          var urlValue = (obj.url && obj.url !== "undefined") ? obj.url : "#";
+          buttonContent = '<div class="live-indicator-block"><span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i>EN VIVO</span></div>';
+        } else {
+          var urlValue = "https://flash669.github.io/star/eventos.json";
+          buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
+        }
+
+        content += '<div class="w3-quarter"><a href="' + urlValue + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>' + buttonContent + '<div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
+
+        if (i == arr.length - 1)
+          content += '</div>';
+      }
+
+      $("#eventos").html(content);
+
+      guardaHorario();
+      dT();
     }
   });
 }
