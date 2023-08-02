@@ -67,7 +67,22 @@
   }
 	}
 	
+/* Estilos para botones EN VIVO */
+.btn-dark.en-vivo {
+  background-color: red;
+  color: white;
+}
 
+.btn-dark.en-vivo .fa-circle {
+  animation: blink 1s infinite;
+}
+
+/* Estilos para botones FINALIZADOS */
+.btn-dark.finalizado {
+  background-color: gray;
+  color: white;
+		}
+		
 		
  </style>
 </head>
@@ -90,6 +105,7 @@ Pie Pelota TV
 
   <script type="text/javascript">
   
+
 function eventos() {
   var x = Math.random().toString(36).substring(7);
 
@@ -126,7 +142,11 @@ function eventos() {
 
             if (status == "EN VIVO" || status == "FINALIZADO") {
               var urlValue = (i < urlData.length && urlData[i].url && urlData[i].url !== "undefined") ? urlData[i].url : "#";
-              buttonContent = '<a class="btn btn-block btn-dark en-vivo" href="' + urlValue + '">' + '<i class="fa fa-circle blink" aria-hidden="true"></i> ' + status + '</a>';
+              if (status == "EN VIVO") {
+                buttonContent = '<a class="btn btn-block btn-dark en-vivo" href="' + urlValue + '">' + '<i class="fa fa-circle blink" aria-hidden="true"></i> ' + status + '</a>';
+              } else if (status == "FINALIZADO") {
+                buttonContent = '<a class="btn btn-block btn-dark finalizado" href="' + urlValue + '">' + status + '</a>';
+              }
             } else {
               var urlValue = (i < arr.length) ? arr[i]['url'] : "#";
               buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
@@ -153,7 +173,7 @@ eventos();
 window.setInterval(function () {
   eventos();
 }, 60000);
-
+	  
 
   </script>
 
