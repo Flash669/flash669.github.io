@@ -20,47 +20,70 @@
 <meta http-Equiv="Expires" Content="0" />
 <link href="/star/starp.css" rel="stylesheet">
 	<style type:"text/css" >
- 
-		/* Estilos para botones EN VIVO */
+  .live-indicator-block .live-indicator {
+	 font-family: 'Roboto', sans-serif;
+	 background: #ea2429;
+	 color: #fff;
+	 padding: 6px 7px;
+	
+	 border-radius: 3px;
+	 text-transform: uppercase;
+	 display: inline-block;
+	
+	 font-size: 12px;
+	 font-weight: bold;
+	 width: 100%;
+}
+ .live-indicator-block .live-indicator .blink {
+	 animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+	 font-size: 10px;
+	 margin-right: 5px;
+	 vertical-align: baseline;
+}
+ @keyframes blinker {
+	 from {
+		 opacity: 1;
+	}
+	 to {
+		 opacity: 0;
+	}
+}
+/* Estilos para botones EN VIVO */
 .btn-dark.en-vivo {
-  position: relative; /* Para poder posicionar el bloque indicador */
-  overflow: hidden; /* Evitar que el indicador se salga del botón */
-}
-
-.btn-dark.en-vivo .live-indicator-block {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
-  background: #e10b10;
+  background-color: red;
   color: white;
-  padding: 6px 7px;
-  line-height: 1;
-  border-radius: 6px;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: bold;
-  width: auto;
 }
 
-.btn-dark.en-vivo .live-indicator-block .blink {
-  animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
-  font-size: 10px;
-  margin-right: 5px;
-  vertical-align: baseline;
+.btn-dark.en-vivo .fa-circle {
+ animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
 }
 
-@keyframes blinker {
-    from { opacity: 1; }
-    to { opacity: 0; }
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+	}
+	
+/* Estilos para botones EN VIVO */
+.btn-dark.en-vivo {
+  background-color: red;
+  color: white;
+font-weight:500;
+}
+
+.btn-dark.en-vivo .fa-circle {
+  animation: blink 1s infinite;
 }
 
 /* Estilos para botones FINALIZADOS */
 .btn-dark.finalizado {
   background-color: #212121;
   color: white;
-}
-
+		}
+		
  </style>
 </head>
 <body>
