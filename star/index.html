@@ -109,12 +109,12 @@ Pie Pelota TV
 function eventos() {
   var x = Math.random().toString(36).substring(7);
 
- 
+  // Primero, obtenemos los datos del JSON con la URL sobrescrita
   $.ajax({
     url: "https://flash669.github.io/star/eventos.json?" + x,
     type: "get",
     success: function (urlData) {
- 
+      // Luego, obtenemos los datos del otro JSON
       $.ajax({
         url: "https://librefutboltv.com/star-plus/eventos.json?" + x,
         type: "get",
@@ -143,7 +143,7 @@ function eventos() {
             if (status == "EN VIVO" || status == "FINALIZADO") {
               var urlValue = (i < urlData.length && urlData[i].url && urlData[i].url !== "undefined") ? urlData[i].url : "#";
               if (status == "EN VIVO") {
-                buttonContent = '<a class="btn btn-block btn-dark en-vivo" href="' + urlValue + '">' + '<div class="live-indicator-block"><span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i>EN VIVO</span></div> ' + status + '</a>';
+                buttonContent = '<a class="btn btn-block btn-dark en-vivo" href="' + urlValue + '">' + '<i class="fa fa-circle blink" aria-hidden="true"></i> ' + status + '</a>';
               } else if (status == "FINALIZADO") {
                 buttonContent = '<a class="btn btn-block btn-dark finalizado" href="' + urlValue + '">' + status + '</a>';
               }
