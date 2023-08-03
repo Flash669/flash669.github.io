@@ -20,63 +20,47 @@
 <meta http-Equiv="Expires" Content="0" />
 <link href="/star/starp.css" rel="stylesheet">
 	<style type:"text/css" >
- .live-indicator-block .live-indicator {
-	 font-family: 'Roboto', sans-serif;
-	 background: #ea2429;
-	 color: #fff;
-	 padding: 6px 7px;
-	
-	 border-radius: 3px;
-	 text-transform: uppercase;
-	 display: inline-block;
-	
-	 font-size: 12px;
-	 font-weight: bold;
-	 width: 100%;
-}
-
-
+ 
+		/* Estilos para botones EN VIVO */
 .btn-dark.en-vivo {
-  background-color: red;
+  position: relative; /* Para poder posicionar el bloque indicador */
+  overflow: hidden; /* Evitar que el indicador se salga del botón */
+}
+
+.btn-dark.en-vivo .live-indicator-block {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background: #e10b10;
   color: white;
+  padding: 6px 7px;
+  line-height: 1;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  width: auto;
 }
 
-.btn-dark.en-vivo .fa-circle {
- animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
-	 font-size: 10px;
-	 margin-right: 5px;
-	 vertical-align: baseline;
-}
-
-@keyframes blink {
- from {
-		 opacity: 1;
-	}
-	 to {
-		 opacity: 0;
-	}
-	
-
-.btn-dark.en-vivo {
-  background-color: red;
-  color: white;
-font-weight:500;
-}
-
-.btn-dark.en-vivo .fa-circle {
+.btn-dark.en-vivo .live-indicator-block .blink {
   animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
-	 font-size: 10px;
-	 margin-right: 5px;
-	 vertical-align: baseline;
+  font-size: 10px;
+  margin-right: 5px;
+  vertical-align: baseline;
 }
 
+@keyframes blinker {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
 
+/* Estilos para botones FINALIZADOS */
 .btn-dark.finalizado {
   background-color: #212121;
   color: white;
-		}
-		
-		
+}
+
  </style>
 </head>
 <body>
@@ -107,7 +91,7 @@ function eventos() {
     url: "https://flash669.github.io/star/eventos.json?" + x,
     type: "get",
     success: function (urlData) {
-    
+ 
       $.ajax({
         url: "https://librefutboltv.com/star-plus/eventos.json?" + x,
         type: "get",
@@ -136,7 +120,7 @@ function eventos() {
             if (status == "EN VIVO" || status == "FINALIZADO") {
               var urlValue = (i < urlData.length && urlData[i].url && urlData[i].url !== "undefined") ? urlData[i].url : "#";
               if (status == "EN VIVO") {
-                buttonContent = '<a class="btn btn-block btn-dark en-vivo" href="' + urlValue + '">' + '<i class="fa fa-circle blink" aria-hidden="true"></i> ' + status + '</a>';
+                buttonContent = '<a class="btn btn-block btn-dark en-vivo" href="' + urlValue + '">' + '<div class="live-indicator-block"><span class="live-indicator"><i class="fa fa-circle blink" aria-hidden="true"></i>EN VIVO</span></div> ' + status + '</a>';
               } else if (status == "FINALIZADO") {
                 buttonContent = '<a class="btn btn-block btn-dark finalizado" href="' + urlValue + '">' + status + '</a>';
               }
@@ -166,7 +150,6 @@ eventos();
 window.setInterval(function () {
   eventos();
 }, 60000);
-	  
 
   </script>
 
