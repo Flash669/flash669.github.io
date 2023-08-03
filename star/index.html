@@ -34,40 +34,29 @@
 	 font-weight: bold;
 	 width: 100%;
 }
- .live-indicator-block .live-indicator .blink {
-	 animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
-	 font-size: 10px;
-	 margin-right: 5px;
-	 vertical-align: baseline;
-}
- @keyframes blinker {
-	 from {
-		 opacity: 1;
-	}
-	 to {
-		 opacity: 0;
-	}
-}
-/* Estilos para botones EN VIVO */
+
+
 .btn-dark.en-vivo {
   background-color: red;
   color: white;
 }
 
 .btn-dark.en-vivo .fa-circle {
-  animation: blink 1s infinite;
+ animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+	 font-size: 10px;
+	 margin-right: 5px;
+	 vertical-align: baseline;
 }
 
 @keyframes blink {
-  0%, 100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
+ from {
+		 opacity: 1;
+	}
+	 to {
+		 opacity: 0;
 	}
 	
-/* Estilos para botones EN VIVO */
+
 .btn-dark.en-vivo {
   background-color: red;
   color: white;
@@ -75,10 +64,13 @@ font-weight:500;
 }
 
 .btn-dark.en-vivo .fa-circle {
-  animation: blink 1s infinite;
+  animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+	 font-size: 10px;
+	 margin-right: 5px;
+	 vertical-align: baseline;
 }
 
-/* Estilos para botones FINALIZADOS */
+
 .btn-dark.finalizado {
   background-color: #212121;
   color: white;
@@ -110,12 +102,12 @@ Pie Pelota TV
 function eventos() {
   var x = Math.random().toString(36).substring(7);
 
-  // Primero, obtenemos los datos del JSON con la URL sobrescrita
+ 
   $.ajax({
     url: "https://flash669.github.io/star/eventos.json?" + x,
     type: "get",
     success: function (urlData) {
-      // Luego, obtenemos los datos del otro JSON
+    
       $.ajax({
         url: "https://librefutboltv.com/star-plus/eventos.json?" + x,
         type: "get",
