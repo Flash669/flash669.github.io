@@ -930,7 +930,8 @@ a {
 }
 
 .w3-opacity,.w3-hover-opacity:hover {
-    opacity: 0.60
+     transition: all 0.2s ease-in-out;
+     filter: brightness(20%);
 }
 
 .w3-opacity-off,.w3-hover-opacity-off:hover {
