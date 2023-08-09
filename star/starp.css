@@ -931,7 +931,7 @@ a {
 
 .w3-opacity,.w3-hover-opacity:hover {
      transition: all 0.2s ease-in-out;
-     filter: brightness(20%);
+     filter: brightness(50%);
 }
 
 .w3-opacity-off,.w3-hover-opacity-off:hover {
