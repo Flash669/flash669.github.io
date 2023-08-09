@@ -48,7 +48,7 @@
 		 opacity: 0;
 	}
 }
-/* Estilos para botones EN VIVO */
+
 .btn-dark.en-vivo {
   background-color: red;
   color: white;
@@ -67,7 +67,7 @@
   }
 	}
 	
-/* Estilos para botones EN VIVO */
+
 .btn-dark.en-vivo {
   background-color: red;
   color: white;
@@ -79,12 +79,15 @@ font-weight:700;
 	font-size:12px;
 }
 
-/* Estilos para botones FINALIZADOS */
 .btn-dark.finalizado {
   background-color: #212121;
   color: white;
 		}
-		
+.w3-hover-opacity {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+ 
+}		
  </style>
 </head>
 <body>
@@ -110,12 +113,12 @@ Pie Pelota TV
 function eventos() {
   var x = Math.random().toString(36).substring(7);
 
-  // Primero, obtenemos los datos del JSON con la URL sobrescrita
+ 
   $.ajax({
     url: "https://flash669.github.io/star/eventos.json?" + x,
     type: "get",
     success: function (urlData) {
-      // Luego, obtenemos los datos del otro JSON
+    
       $.ajax({
         url: "https://librefutboltv.com/star-plus/eventos.json?" + x,
         type: "get",
