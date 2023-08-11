@@ -1647,3 +1647,10 @@ a {
     opacity: 1;
     height: auto;
 }
+.w3-quarter:hover {
+    transform: scale(1.05);
+}
+
+.w3-quarter {
+    transition: transform 0.3s ease-in-out;
+}
