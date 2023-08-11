@@ -10,7 +10,76 @@
 <script type="text/javascript" src="/vix/horario.js?v"></script>
 
 <link href="/star/bootstrap.css?v3" rel="stylesheet">
+<style>
+	 .live-indicator-block .live-indicator {
+	 font-family: 'Roboto', sans-serif;
+	 background: #ea2429;
+	 color: #fff;
+	 padding: 6px 7px;
+	
+	 border-radius: 3px;
+	 text-transform: uppercase;
+	 display: inline-block;
+	
+	 font-size: 12px;
+	 font-weight: bold;
+	 width: 100%;
+}
+ .live-indicator-block .live-indicator .blink {
+	 animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+	 font-size: 10px;
+	 margin-right: 5px;
+	 vertical-align: baseline;
+}
+ @keyframes blinker {
+	 from {
+		 opacity: 1;
+	}
+	 to {
+		 opacity: 0;
+	}
+}
 
+.btn-dark.en-vivo {
+  background-color: red;
+  color: white;
+}
+
+.btn-dark.en-vivo .fa-circle {
+ animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+	}
+	
+
+.btn-dark.en-vivo {
+  background-color: red;
+  color: white;
+font-weight:700;
+}
+
+.btn-dark.en-vivo .fa-circle {
+  animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+	font-size:12px;
+}
+
+.btn-dark.finalizado {
+  background-color: #212121;
+  color: white;
+		}
+.w3-hover-opacity {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+ 
+}
+</style>
 <link href="/star/portada.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <meta http-Equiv="Cache-Control" Content="no-cache" />
@@ -86,7 +155,7 @@ function eventos() {
               buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
             }
 
-            content += '<div class="w3-quarter"><a href="' + urlValue + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>' + buttonContent + '<div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
+            content += '<div class="w3-quarter"><a href="' + urlValue + '"><img src="' + obj['img'] + '" alt="VIX+" style="width:100%" class="w3-hover-opacity"></a>' + buttonContent + '<div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
 
             if (i == arr.length - 1)
               content += '</div>';
