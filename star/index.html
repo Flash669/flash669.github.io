@@ -85,7 +85,7 @@
 	}
 	
 
-.btn-dark.en-vivo {
+.btn-live {
   background-color: red;
   color: white;
 font-weight:700;
@@ -96,7 +96,7 @@ font-weight:700;
 	font-size:12px;
 }
 
-.btn-dark.finalizado {
+.btn-dark {
   background-color: #212121;
   color: white;
 		}
@@ -151,12 +151,12 @@ function eventos() {
               status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
 
             if (status == "EN VIVO") {
-              colorClass = "btn-custom-red"; // Cambiar el color a rojo personalizado para el estado "EN VIVO"
+              colorClass = "btn-live"; // Cambiar el color a rojo personalizado para el estado "EN VIVO"
               additionalClass = "live-indicator-block"; // Agregar la clase de parpadeo
               status = '<i class="fa fa-circle blink" aria-hidden="true"></i> ' + status; // Agregar el ícono
             } else {
               colorClass = "btn-dark"; // Color predeterminado para otros estados
-              additionalClass = ""; // No se agrega la clase de parpadeo
+              additionalClass = ""; 
             }
 
             // Resto del código para generar el contenido del evento
