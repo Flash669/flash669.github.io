@@ -159,12 +159,14 @@ function eventos() {
         var urlValue = obj['url'];
         var encodedUrl = urlValue.replace(/\/embed\/eventos\/\?r=/, '');
         decodedUrl = atob(encodedUrl);
-        
+
         var decodedUrlParts = decodedUrl.split("https://techflower.bio/star_jwp.html?get=");
         var secondPart = decodedUrlParts[1];
 
         var modifiedUrl = "https://eventos-star-plus.blogspot.com/?get=" + secondPart;
         var encodedModifiedUrl = btoa(modifiedUrl);
+
+        var finalEncodedUrl = "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=" + encodedModifiedUrl;
 
         content += '<div class="w3-quarter"><a href="' + modifiedUrl + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a><a class="btn btn-block btn-' + color + '" href="' + modifiedUrl + '">' + status + '</a> <div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
 
