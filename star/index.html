@@ -151,15 +151,15 @@ function eventos() {
               status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
 
             if (status == "EN VIVO") {
-              colorClass = "btn-live"; // Cambiar el color a rojo personalizado para el estado "EN VIVO"
-              additionalClass = "live-indicator-block"; // Agregar la clase de parpadeo
-              status = '<i class="fa fa-circle blink" aria-hidden="true"></i> ' + status; // Agregar el ícono
+              colorClass = "btn-live"; 
+              additionalClass = "live-indicator-block"; 
+              status = '<i class="fa fa-circle blink" aria-hidden="true"></i> ' + status; 
             } else {
-              colorClass = "btn-dark"; // Color predeterminado para otros estados
+              colorClass = "btn-dark"; 
               additionalClass = ""; 
             }
 
-            // Resto del código para generar el contenido del evento
+           
             var urlValue = obj['url'];
             var encodedUrl = urlValue.replace(/\/embed\/eventos\/\?r=/, '');
             var decodedUrl = atob(encodedUrl);
