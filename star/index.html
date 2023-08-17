@@ -125,7 +125,6 @@ Pie Pelota TV
 <br>
 
   <script type="text/javascript">
-  
 function eventos() {
   var x = Math.random().toString(36).substring(7);
 
@@ -168,7 +167,7 @@ function eventos() {
 
         var finalEncodedUrl = "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=" + encodedModifiedUrl;
 
-        content += '<div class="w3-quarter"><a href="' + modifiedUrl + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a><a class="btn btn-block btn-' + color + '" href="' + modifiedUrl + '">' + status + '</a> <div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
+        content += '<div class="w3-quarter"><a href="' + finalEncodedUrl + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a><a class="btn btn-block btn-' + color + '" href="' + finalEncodedUrl + '">' + status + '</a> <div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
 
         if (i == arr.length - 1)
           content += '</div>';
@@ -187,7 +186,6 @@ eventos();
 window.setInterval(function () {
   eventos();
 }, 60000);
-
 
   </script>
 
