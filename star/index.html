@@ -143,17 +143,23 @@ function eventos() {
         }
 
         var obj = arr[i];
-        var status, color, decodedUrl, finalUrl;
+        var status, color, decodedUrl, finalUrl, buttonContent, additionalClass;
 
-        if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO")
+        if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO") {
           status = obj['status'];
-        else
+          additionalClass = (status == "EN VIVO") ? "live-indicator-block" : "";
+        } else {
           status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
+          additionalClass = "";
+        }
 
-        if (status == "EN VIVO")
+        if (status == "EN VIVO") {
           color = "danger";
-        else
+          buttonContent = '<a class="btn btn-block btn-dark en-vivo ' + additionalClass + '" href="' + obj['url'] + '"><i class="fa fa-circle blink" aria-hidden="true"></i>' + status + '</a>';
+        } else {
           color = "dark";
+          buttonContent = '<a class="btn btn-block btn-' + color + '" href="' + obj['url'] + '">' + status + '</a>';
+        }
 
         var urlValue = obj['url'];
         var encodedUrl = urlValue.replace(/\/embed\/eventos\/\?r=/, '');
@@ -167,7 +173,7 @@ function eventos() {
 
         var finalEncodedUrl = "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=" + encodedModifiedUrl;
 
-        content += '<div class="w3-quarter"><a href="' + finalEncodedUrl + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a><a class="btn btn-block btn-' + color + '" href="' + finalEncodedUrl + '">' + status + '</a> <div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
+        content += '<div class="w3-quarter"><a href="' + finalEncodedUrl + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>' + buttonContent + '<div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
 
         if (i == arr.length - 1)
           content += '</div>';
