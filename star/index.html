@@ -126,7 +126,6 @@ Pie Pelota TV
 
   <script type="text/javascript">
   
-
 function eventos() {
   var x = Math.random().toString(36).substring(7);
 
@@ -145,15 +144,25 @@ function eventos() {
         }
 
         var obj = arr[i];
-        var status, additionalClass, buttonContent;
+        var status, buttonContent;
 
-        // ... Rest of your existing code for status and buttonContent ...
+        if (obj['status'] == "EN VIVO" || obj['status'] == "FINALIZADO") {
+          status = obj['status'];
+          var urlValue = (i < arr.length && obj['url'] && obj['url'] !== "undefined") ? obj['url'] : "#";
+          var decodedUrl = decodeURIComponent(urlValue.replace(/\/embed\/eventos\/\?r=/, ''));
 
-        var urlValue = (i < arr.length) ? arr[i]['url'] : "#";
-        var decodedUrl = decodeURIComponent(urlValue.replace(/\/embed\/eventos\/\?r=/, ''));
+          var parsedUrl = new URL(decodedUrl);
+          var finalUrl = "https://techflower.bio/star_jwp.html?get=" + parsedUrl.search;
 
-        var parsedUrl = new URL(decodedUrl);
-        var finalUrl = "https://techflower.bio/star_jwp.html?get=" + parsedUrl.search;
+          if (status == "EN VIVO") {
+            buttonContent = '<a class="btn btn-block btn-dark en-vivo" href="' + finalUrl + '">' + '<i class="fa fa-circle blink" aria-hidden="true"></i> ' + status + '</a>';
+          } else if (status == "FINALIZADO") {
+            buttonContent = '<a class="btn btn-block btn-dark finalizado" href="' + finalUrl + '">' + status + '</a>';
+          }
+        } else {
+          var urlValue = (i < arr.length) ? arr[i]['url'] : "#";
+          buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
+        }
 
         content += '<div class="w3-quarter"><a href="' + finalUrl + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>' + buttonContent + '<div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
 
@@ -171,6 +180,7 @@ eventos();
 window.setInterval(function () {
   eventos();
 }, 60000);
+
 
   </script>
 
