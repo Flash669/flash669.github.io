@@ -153,17 +153,17 @@ function eventos() {
               status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
 
             if (status == "EN VIVO") {
-              colorClass = "btn-custom-red"; // Cambiar el color a rojo personalizado para el estado "EN VIVO"
-              additionalClass = "live-indicator-block"; // Agregar la clase de parpadeo
+              colorClass = "btn-custom-red"; 
+              additionalClass = "live-indicator-block"; 
               status = '<i class="fa fa-circle blink" aria-hidden="true"></i> ' + status; // Agregar el ícono
             } else {
-              colorClass = "btn-dark"; // Color predeterminado para otros estados
-              additionalClass = ""; // No se agrega la clase de parpadeo
+              colorClass = "btn-dark"; 
+              additionalClass = ""; // 
             }
 
             var urlValue = obj['url'];
 
-            // Verificar si hay una URL válida
+            
             if (urlValue && urlValue !== "#") {
               var encodedUrl = urlValue.replace(/\/embed\/eventos\/\?r=/, '');
               decodedUrl = atob(encodedUrl);
@@ -176,10 +176,10 @@ function eventos() {
 
               var finalEncodedUrl = "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=" + encodedModifiedUrl;
             } else {
-              finalEncodedUrl = "#"; // Asignar una URL de reemplazo en caso de que no haya una URL válida
+              finalEncodedUrl = "#"; 
             }
 
-            // Resto del código para generar el contenido del evento
+           
             content += '<div class="w3-quarter">';
             content += '<a href="' + finalEncodedUrl + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>';
             content += '<a class="btn btn-block ' + colorClass + ' ' + additionalClass + '" href="' + finalEncodedUrl + '">' + status + '</a>';
