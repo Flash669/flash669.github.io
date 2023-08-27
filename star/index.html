@@ -131,7 +131,7 @@ function eventos() {
       var x = Math.random().toString(36).substring(7);
 
       $.ajax({
-        url: "https://librefutboltv.com/star-plus/eventos.json?" + x,
+        url: "https://www.todopelotatv.com/live/plus.json?" + x,
         type: "get",
         success: function (arr) {
           var content = '';
@@ -168,7 +168,7 @@ function eventos() {
               var encodedUrl = urlValue.replace(/\/embed\/eventos\/\?r=/, '');
               decodedUrl = atob(encodedUrl);
 
-              var decodedUrlParts = decodedUrl.split("https://techflower.bio/star_jwp.html?get=");
+              var decodedUrlParts = decodedUrl.split("https://fulldeportes.live/star.html?get=");
               var secondPart = decodedUrlParts[1];
 
               var modifiedUrl = "https://eventos-star-plus.blogspot.com/?get=" + secondPart;
