@@ -131,7 +131,7 @@ function eventos() {
       var x = Math.random().toString(36).substring(7);
 
       $.ajax({
-        url: "https://futbolplaytvhd.com/vix.json?" + x, 
+        url: "https://librefutboltv.com/star-plus/eventos.json?" + x,
         type: "get",
         success: function (arr) {
           var content = '';
@@ -145,7 +145,7 @@ function eventos() {
             }
 
             var obj = arr[i];
-            var status, colorClass, additionalClass, finalEncodedUrl;
+            var status, colorClass, additionalClass, decodedUrl, finalUrl;
 
             if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO")
               status = obj['status'];
@@ -163,15 +163,23 @@ function eventos() {
 
             var urlValue = obj['url'];
 
-          
-            if (urlValue) {
-              var encodedModifiedUrl = btoa(urlValue); 
-              finalEncodedUrl = "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=" + encodedModifiedUrl; // Construir la URL final
+         
+            if (urlValue && urlValue !== "#") {
+              var encodedUrl = urlValue.replace(/\/embed\/eventos\/\?r=/, '');
+              decodedUrl = atob(encodedUrl);
+
+              var decodedUrlParts = decodedUrl.split("https://techflower.bio/star_jwp.html?get=");
+              var secondPart = decodedUrlParts[1];
+
+              var modifiedUrl = "https://eventos-star-plus.blogspot.com/?get=" + secondPart;
+              var encodedModifiedUrl = btoa(modifiedUrl);
+
+              var finalEncodedUrl = "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=" + encodedModifiedUrl;
             } else {
               finalEncodedUrl = "#"; 
             }
 
-            // Resto del código para generar el contenido del evento
+        
             content += '<div class="w3-quarter">';
             content += '<a href="' + finalEncodedUrl + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>';
             content += '<a class="btn btn-block ' + colorClass + ' ' + additionalClass + '" href="' + finalEncodedUrl + '">' + status + '</a>';
@@ -198,6 +206,7 @@ function eventos() {
     window.setInterval(function () {
       eventos();
     }, 60000);
+
 
 
   </script>
