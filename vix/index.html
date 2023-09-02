@@ -130,16 +130,10 @@ Pie Pelota TV
   
 
 function eventos() {
-  var x = Math.random().toString(36).substring(7);
+      var x = Math.random().toString(36).substring(7);
 
- 
-  $.ajax({
-    url: "https://flash669.github.io/vix/eventos.json?" + x,
-    type: "get",
-    success: function (urlData) {
-    
       $.ajax({
-        url: "https://librefutboltv.com/vix-plus/eventos.json?" + x,
+        url: "https://futbolplaytvhd.com/vix.json?" + x, 
         type: "get",
         success: function (arr) {
           var content = '';
@@ -153,29 +147,41 @@ function eventos() {
             }
 
             var obj = arr[i];
-            var status, additionalClass, buttonContent;
+            var status, colorClass, additionalClass, finalEncodedUrl;
 
-            if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO") {
+            if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO")
               status = obj['status'];
-              additionalClass = (status == "EN VIVO") ? "live-indicator-block" : "";
-            } else {
+            else
               status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
-              additionalClass = "";
-            }
 
-            if (status == "EN VIVO" || status == "FINALIZADO") {
-              var urlValue = (i < urlData.length && urlData[i].url && urlData[i].url !== "undefined") ? urlData[i].url : "#";
-              if (status == "EN VIVO") {
-                buttonContent = '<a class="btn btn-block btn-dark en-vivo" href="' + urlValue + '">' + '<i class="fa fa-circle blink" aria-hidden="true"></i> ' + status + '</a>';
-              } else if (status == "FINALIZADO") {
-                buttonContent = '<a class="btn btn-block btn-dark finalizado" href="' + urlValue + '">' + status + '</a>';
-              }
+            if (status == "EN VIVO") {
+              colorClass = "btn-custom-red"; 
+              additionalClass = "live-indicator-block"; 
+              status = '<i class="fa fa-circle blink" aria-hidden="true"></i> ' + status; 
             } else {
-              var urlValue = (i < arr.length) ? arr[i]['url'] : "#";
-              buttonContent = '<a class="btn btn-block btn-dark" href="' + urlValue + '">' + status + '</a>';
+              colorClass = "btn-dark"; 
+              additionalClass = ""; 
             }
 
-            content += '<div class="w3-quarter"><a href="' + urlValue + '"><img src="' + obj['img'] + '" alt="VIX+" style="width:100%" class="w3-hover-opacity"></a>' + buttonContent + '<div class="w3-card-4"><p><b>' + obj['league'] + '</b></p><p>' + obj['title'] + '</p></div></div>';
+            var urlValue = obj['url'];
+
+          
+            if (urlValue) {
+              var encodedModifiedUrl = btoa(urlValue); 
+              finalEncodedUrl = "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=" + encodedModifiedUrl; // Construir la URL final
+            } else {
+              finalEncodedUrl = "#"; 
+            }
+
+            
+            content += '<div class="w3-quarter">';
+            content += '<a href="' + finalEncodedUrl + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="w3-hover-opacity"></a>';
+            content += '<a class="btn btn-block ' + colorClass + ' ' + additionalClass + '" href="' + finalEncodedUrl + '">' + status + '</a>';
+            content += '<div class="w3-card-4">';
+            content += '<p><b>' + obj['league'] + '</b></p>';
+            content += '<p>' + obj['title'] + '</p>';
+            content += '</div>';
+            content += '</div>';
 
             if (i == arr.length - 1)
               content += '</div>';
@@ -185,17 +191,15 @@ function eventos() {
 
           guardaHorario();
           dT();
-        }
+        },
       });
     }
-  });
-}
 
-eventos();
+    eventos();
 
-window.setInterval(function () {
-  eventos();
-}, 60000);
+    window.setInterval(function () {
+      eventos();
+    }, 60000);
 
   </script>
 <footer class="pt-4 my-md-5 pt-md-5 border-top">
