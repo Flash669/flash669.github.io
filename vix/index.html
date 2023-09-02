@@ -164,7 +164,9 @@ function eventos() {
             }
 
             var urlValue = obj['url'];
-
+  if (urlValue && urlValue !== "#") {
+              var encodedUrl = urlValue.replace(/\/embed\/eventos\/\?r=/, '');
+              decodedUrl = atob(encodedUrl);
           
             if (urlValue) {
               var encodedModifiedUrl = btoa(urlValue); 
