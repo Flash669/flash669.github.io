@@ -131,7 +131,7 @@ function eventos() {
       var x = Math.random().toString(36).substring(7);
 
       $.ajax({
-        url: "https://librefutboltv.com/star-plus/eventos.json?" + x,
+        url: "https://corsproxy.io/?url=https://futbolplaytvhd.com/famustv.com.json?" + x,
         type: "get",
         success: function (arr) {
           var content = '';
@@ -168,13 +168,13 @@ function eventos() {
               var encodedUrl = urlValue.replace(/\/embed\/eventos\/\?r=/, '');
               decodedUrl = atob(encodedUrl);
 
-              var decodedUrlParts = decodedUrl.split("https://techflower.bio/star_jwp.html?get=");
+              var decodedUrlParts = decodedUrl.split("//futbolplaytvhd.com/star-plus/star.php?get=");
               var secondPart = decodedUrlParts[1];
 
               var modifiedUrl = "https://eventos-star-plus.blogspot.com/?get=" + secondPart;
               var encodedModifiedUrl = btoa(modifiedUrl);
 
-              var finalEncodedUrl = "https://piepelota-tv.blogspot.com/2023/07/star-plus-eventos.html?r=" + encodedModifiedUrl;
+              var finalEncodedUrl = "https://www.pelotalibretv.online/p/eventos.html?r=" + encodedModifiedUrl;
             } else {
               finalEncodedUrl = "#"; 
             }
