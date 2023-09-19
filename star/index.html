@@ -12,6 +12,8 @@
 <script type="text/javascript" src="/star/horario.js?v"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.36/moment-timezone-with-data.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.36/moment-timezone-with-data-10-year-range.min.js"></script>
+
 
 <link href="/star/bootstrap.css?v3" rel="stylesheet">
 <link href='//flash669.github.io/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -150,14 +152,19 @@ function eventos() {
         var status, colorClass, additionalClass, finalEncodedUrl;
 
         // Obtener la hora en la zona horaria local del usuario
-        var localTime = moment.tz(obj['status'], 'HH:mm', moment.tz.guess());
+        var eventTime = moment.tz(obj['status'], 'HH:mm', 'UTC');
+        eventTime.tz(moment.tz.guess());
 
-        status = 'HOY ' + localTime.format('HH:mm'); // Mostrar la hora local
+        if (eventTime.isValid()) {
+          status = eventTime.format('HH:mm'); // Mostrar la hora local
+        } else {
+          status = obj['status']; // Mantener el texto original si no es una hora válida
+        }
 
-        if (obj['status'] == "EN VIVO") {
+        if (obj['status'] === "EN VIVO") {
           colorClass = "btn-custom-red";
           additionalClass = "live-indicator-block";
-          status = '<i class="fa fa-circle blink" aria-hidden="true"></i> ' + status;
+          status = '<i class="fa fa-circle blink" aria-hidden="true"></i> EN VIVO';
         } else {
           colorClass = "btn-dark";
           additionalClass = "";
@@ -195,6 +202,7 @@ eventos();
 window.setInterval(function () {
   eventos();
 }, 60000);
+
 
 
 
