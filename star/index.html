@@ -151,27 +151,22 @@ function eventos() {
         var obj = arr[i];
         var status, colorClass, additionalClass, finalEncodedUrl;
 
-     // Obtener la hora en UTC y restar 2 horas (120 minutos)
-var eventTime = moment.utc(obj['status'], 'HH:mm').subtract(120, 'minutes');
+        // Obtener la hora en UTC y restar 2 horas (120 minutos)
+        var eventTime = moment.utc(obj['status'], 'HH:mm').subtract(120, 'minutes');
 
-// Convertir a la zona horaria local del usuario
-eventTime.local();
+        // Convertir a la zona horaria local del usuario
+        eventTime.local();
 
-var now = moment(); // Obtener la hora actual en la zona horaria local
+        var now = moment(); // Obtener la hora actual en la zona horaria local
 
-console.log("Hora del evento:", eventTime.format('HH:mm')); // Agregar esta línea para depuración
-console.log("Hora actual:", now.format('HH:mm')); // Agregar esta línea para depuración
+        console.log("Hora del evento:", eventTime.format('HH:mm'));
+        console.log("Hora actual:", now.format('HH:mm'));
 
-if (eventTime.isValid()) {
-  if (eventTime.isSame(now, 'day')) {
-    status = 'HOY | ' + eventTime.format('HH:mm') + ' hs'; // Agregar "HOY |" y "hs" si es el mismo día
-  } else {
-    status = eventTime.format('HH:mm') + ' hs'; // Mostrar la hora local sin "HOY |" si no es el mismo día
-  }
-} else {
-  status = obj['status']; // Mantener el texto original si no es una hora válida
-}
-
+        if (eventTime.isValid()) {
+          status = 'HOY | ' + eventTime.format('HH:mm') + ' hs'; // Agregar "HOY |" siempre
+        } else {
+          status = obj['status']; // Mantener el texto original si no es una hora válida
+        }
 
         if (obj['status'] === "EN VIVO") {
           colorClass = "btn-custom-red";
@@ -214,8 +209,6 @@ eventos();
 window.setInterval(function () {
   eventos();
 }, 60000);
-
-
 
 
 
