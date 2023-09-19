@@ -157,8 +157,14 @@ function eventos() {
         // Convertir a la zona horaria local del usuario
         eventTime.local();
 
+        var now = moment(); // Obtener la hora actual en la zona horaria local
+
         if (eventTime.isValid()) {
-          status = eventTime.format('HH:mm'); // Mostrar la hora local
+          if (eventTime.isSame(now, 'day')) {
+            status = 'HOY | ' + eventTime.format('HH:mm') + ' hs'; // Agregar "HOY |" y "hs" si es el mismo día
+          } else {
+            status = eventTime.format('HH:mm') + ' hs'; // Mostrar la hora local sin "HOY |" si no es el mismo día
+          }
         } else {
           status = obj['status']; // Mantener el texto original si no es una hora válida
         }
@@ -204,6 +210,7 @@ eventos();
 window.setInterval(function () {
   eventos();
 }, 60000);
+
 
 
 
