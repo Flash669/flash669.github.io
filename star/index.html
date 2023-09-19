@@ -151,9 +151,11 @@ function eventos() {
         var obj = arr[i];
         var status, colorClass, additionalClass, finalEncodedUrl;
 
-        // Obtener la hora en la zona horaria local del usuario
-        var eventTime = moment.tz(obj['status'], 'HH:mm', 'UTC');
-        eventTime.tz(moment.tz.guess());
+        // Obtener la hora en UTC y restar 4 horas (240 minutos)
+        var eventTime = moment.utc(obj['status'], 'HH:mm').subtract(240, 'minutes');
+
+        // Convertir a la zona horaria local del usuario
+        eventTime.local();
 
         if (eventTime.isValid()) {
           status = eventTime.format('HH:mm'); // Mostrar la hora local
@@ -202,6 +204,7 @@ eventos();
 window.setInterval(function () {
   eventos();
 }, 60000);
+
 
 
 
