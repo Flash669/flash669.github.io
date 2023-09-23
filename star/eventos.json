@@ -1,16 +1,17 @@
-{
-"sTL1":"directv.today", 
-"sTL2":"aztecauno.makeup", 
-"sTL3":"fulldrink.monster", 
-"sTL4":"arenacdmexico.com", 
-"partido1":"", 
-"partido2":"", 
-"partido3":"",  
-"partido4":"",  
-"partido5":"", 
-"partido6":"",  
-"partido7":"", 
-"partido8":"", 
-"partido9":"", 
-"partido10":""
-}
+[
+  {
+    "title": "Gimnasia y Esgrima (LP) vs Rosario Central",
+    "league": "Liga Profesional de Argentina",
+    "status": "20:00",
+    "img": "https://images.vix.com/prd/league/card/62166915eb81d283bdc6e5ac/a72bb3b9a46f4ba6bb708c0ba4ddf1bf?tr=w-1200,h-627,f-jpeg,:oi-/prd/team-logo/62166559eb81d28edec6c425/fc13f99fb101aa5695f104985c780554,ox-162,oic-at_max,oit-false,oicm-pad_resize,oh-420,ow-392,oy-103,:oi-/prd/team-logo/62166705eb81d2daf7c6d254/05fec3aec0621c77e3b62101da08e58f,ox-N162,oic-at_max,oit-false,oicm-pad_resize,oh-420,ow-392,oy-103",
+    "url": "#"
+  },
+  {
+    "title": "Boyacá Chicó vs Águilas Doradas",
+    "league": "Liga Betplay",
+    "status": "22:00",
+    "img": "https://images.vix.com/prd/league/card/6216607ceb81d251f1c68ec3/9b60180611a71d3c77df249821ee382f?tr=w-1200,h-627,f-jpeg,:oi-/prd/team-logo/6217aab11696600bae96249d/e0280874686810bcae0fc3415fa71e30,ox-162,oic-at_max,oit-false,oicm-pad_resize,oh-420,ow-392,oy-103,:oi-/prd/team-logo/62165c22eb81d2e776c660d7/00f1e0816954e7214c46024342a7b20a,ox-N162,oic-at_max,oit-false,oicm-pad_resize,oh-420,ow-392,oy-103",
+    "url": "#"
+  },
+  
+]
