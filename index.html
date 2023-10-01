@@ -303,38 +303,7 @@
         }
     </style>
 
-	<script>
-   
-    function verificarEventoEnCurso() {
- 
-      var horaActualLocal = new Date();
 
-      horaActualLocal.setHours(horaActualLocal.getHours() - 4);
-
-     
-      var horaEventoLocal = new Date();
-      horaEventoLocal.setUTCHours(7, 0, 0); 
-
-    
-      if (horaActualLocal >= horaEventoLocal) {
-   
-        var elementoEvento = document.getElementById("evento");
-        elementoEvento.innerHTML = "EN VIVO";
-        elementoEvento.style.backgroundColor = "red";
-        elementoEvento.style.color = "white";
-        
-       
-        clearInterval(intervalID);
-      }
-    }
-
-
-    verificarEventoEnCurso();
-
-
-    var intervalID = setInterval(verificarEventoEnCurso, 60000);
-    
-  </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </head>
 <body link='#000000' onload='guardaHorario();dT();' vlink='#ff0000'>
@@ -351,7 +320,7 @@
 
 <li class="IT"><a href="#">
 Serie A: Bologna vs. Empoli
-<span  id="evento">11:00</span></a>
+<span  data-event-time="2023-09-30T19:00:00-05:00">11:00</span></a>
 <ul>
 <li class="subitem1"><a href="https://www.pelotalibretv.online/p/star-plus.html" target="_top">Star+<span>Calidad 720p</span></a></li>
 <li class="subitem1"><a href="https://www.pelotalibretv.online/p/eventos.html?r=aHR0cHM6Ly9lbWJlZC5saWJyZWZ1dGJvbHR2LmNvbS9tcGRrLmh0bWw/Z2V0PWFIUjBjSE02THk5c2FXNWxZWEl6TURJdGFYUXRaR0Z6YURFdGNISmtMV3hzTG1Oa2JqRXpMbk5yZVdOa2NDNWpiMjB2TURFMllTOHpNVEl3T1M5R1NFUXZjMnQ1YzNCdmNuUnpaWEpwWldFdmJXRnpkR1Z5TG0xd1pBJmtleT1NREF6Tm1VMVpEQmxPRGhrWm1Jd09EZG1NVGM1TVdSaE5qRTFNR05sWkRrJmtleTI9TUdKak5qVXpaRGd6TURnek4yUmpaV0l4TTJKa01UY3hOamxtTUdZNFpUSQ" target="_top">Sky Sports Calcio IT<span>Calidad 1080p</span></a></li>
