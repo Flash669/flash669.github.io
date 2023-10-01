@@ -306,25 +306,34 @@
 	<script>
    
     function verificarEventoEnCurso() {
+ 
+      var horaActualLocal = new Date();
 
-      var horaActualUTC = new Date();
+      horaActualLocal.setHours(horaActualLocal.getHours() - 4);
+
+     
+      var horaEventoLocal = new Date();
+      horaEventoLocal.setUTCHours(7, 0, 0); 
 
     
-      var horaEventoUTC = new Date("2023-10-01T07:00:00Z");
-
+      if (horaActualLocal >= horaEventoLocal) {
    
-      if (horaActualUTC >= horaEventoUTC) {
-
         var elementoEvento = document.getElementById("evento");
         elementoEvento.innerHTML = "EN VIVO";
         elementoEvento.style.backgroundColor = "red";
         elementoEvento.style.color = "white";
+        
+       
+        clearInterval(intervalID);
       }
     }
 
- 
+
     verificarEventoEnCurso();
 
+
+    var intervalID = setInterval(verificarEventoEnCurso, 60000);
+    
   </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </head>
