@@ -303,21 +303,28 @@
         }
     </style>
 
-	    <script>
- 
-    var horaActualUTC = new Date();
+	<script>
+   
+    function verificarEventoEnCurso() {
 
-  
-    var horaEventoUTC = new Date("2023-10-01T07:00:00Z");
+      var horaActualUTC = new Date();
 
+    
+      var horaEventoUTC = new Date("2023-10-01T07:00:00Z");
 
-    if (horaActualUTC >= horaEventoUTC) {
- 
-      var elementoEvento = document.getElementById("evento");
-      elementoEvento.innerHTML = "EN VIVO";
-      elementoEvento.style.backgroundColor = "red";
-      elementoEvento.style.color = "white";
+   
+      if (horaActualUTC >= horaEventoUTC) {
+
+        var elementoEvento = document.getElementById("evento");
+        elementoEvento.innerHTML = "EN VIVO";
+        elementoEvento.style.backgroundColor = "red";
+        elementoEvento.style.color = "white";
+      }
     }
+
+ 
+    verificarEventoEnCurso();
+
   </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </head>
