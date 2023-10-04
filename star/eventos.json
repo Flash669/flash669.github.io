@@ -1,17 +1,86 @@
 [
-  {
-    "title": "Gimnasia y Esgrima (LP) vs Rosario Central",
-    "league": "Liga Profesional de Argentina",
-    "status": "20:00",
-    "img": "https://images.vix.com/prd/league/card/62166915eb81d283bdc6e5ac/a72bb3b9a46f4ba6bb708c0ba4ddf1bf?tr=w-1200,h-627,f-jpeg,:oi-/prd/team-logo/62166559eb81d28edec6c425/fc13f99fb101aa5695f104985c780554,ox-162,oic-at_max,oit-false,oicm-pad_resize,oh-420,ow-392,oy-103,:oi-/prd/team-logo/62166705eb81d2daf7c6d254/05fec3aec0621c77e3b62101da08e58f,ox-N162,oic-at_max,oit-false,oicm-pad_resize,oh-420,ow-392,oy-103",
-    "url": "#"
-  },
-  {
-    "title": "Boyacá Chicó vs Águilas Doradas",
-    "league": "Liga Betplay",
-    "status": "22:00",
-    "img": "https://images.vix.com/prd/league/card/6216607ceb81d251f1c68ec3/9b60180611a71d3c77df249821ee382f?tr=w-1200,h-627,f-jpeg,:oi-/prd/team-logo/6217aab11696600bae96249d/e0280874686810bcae0fc3415fa71e30,ox-162,oic-at_max,oit-false,oicm-pad_resize,oh-420,ow-392,oy-103,:oi-/prd/team-logo/62165c22eb81d2e776c660d7/00f1e0816954e7214c46024342a7b20a,ox-N162,oic-at_max,oit-false,oicm-pad_resize,oh-420,ow-392,oy-103",
-    "url": "#"
-  },
-  
+    {
+        "title": "Atl\u00e9tico de Madrid vs. Feyenoord",
+        "league": "UEFA Champions League",
+        "status": "FINALIZADO",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/621909d73c552da7cabc8030\/f5f5f46af2fa4a8ff994173f34f89456?tr=w-1200,h-675:oi-\/prd\/team-logo\/621959c03c552d1cd2c0b72a\/f23f954815d819fa5d3874ff84582513,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/62195edb3c552d05d1c1125e\/79d5bc2f96ebecb5c886e1888ba60b86,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "\/embed\/eventos\/?r=aHR0cHM6Ly93My5tcC5sdXJhLmxpdmUvcGxheWVyL3Byb2QvdjMvYW52bG9hZC5odG1sP2tleT1leUp0SWpvaVFVNVdJaXdpZGlJNkltRmtjM1JzUVhKWWNUY3pSM0ZsTW5ZaUxDSjBiMnRsYmlJNkltVjVTbWhpUjJOcFQybEtTVlY2U1RGT2FVbHpTVzVTTldORFNUWkphM0JZVmtOS09TNWxlVXB3WXpOTmFVOXBTWGRPTTJ4eFRsWnNXVmRzU2xSV2VtaFRVa2hhU1UxWGVFcFBSMUpwV2xka2FtUnNjRTFWUm1jd1drTkpjMGx1V25CYVEwazJTVzFHYTJNelVuTlJXRXBaWTFSamVsSXpSbXhOYmxscFRFTktiR1ZJUVdsUGFrVXlUMVJaTVUxcVNYZE5SRkZ6U1cxc2FHUkRTVFpOVkZrMVRtcFJlazVVV1hkT1NEQXVWbGRoZURGZlZtSTNWM1JXT1dkTmJXWmlZVFp6T1daWVdGWmZlVEJWV1VSdVZVbHpkVTF6UlhSMlp5SXNJbUZ1ZG1GamF5STZJakEzZVdvMVdWaGFVbE5YT0ZKRWRrZ3hiRWs0WkdKbFoyTjJXa3hRV0RSa0luMD0"
+    },
+    {
+        "title": "Royal Antwerp vs. Shakhtar Donetsk",
+        "league": "UEFA Champions League",
+        "status": "FINALIZADO",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/621909d73c552da7cabc8030\/f5f5f46af2fa4a8ff994173f34f89456?tr=w-1200,h-675:oi-\/prd\/team-logo\/621965003c552d729fc16d53\/5991c94929294f137ea128b37686ec8b,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/62195c943c552d9897c0e6f4\/a5fcc17e6c936bb86264c396eb17cdc0,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "\/embed\/eventos\/?r=aHR0cHM6Ly93My5tcC5sdXJhLmxpdmUvcGxheWVyL3Byb2QvdjMvYW52bG9hZC5odG1sP2tleT1leUp0SWpvaVFVNVdJaXdpZGlJNkltRmtjM1F3U2pSV1RsWlhTM0V5ZWxnaUxDSjBiMnRsYmlJNkltVjVTbWhpUjJOcFQybEtTVlY2U1RGT2FVbHpTVzVTTldORFNUWkphM0JZVmtOS09TNWxlVXB3WXpOTmFVOXBTWGRPTTJ4eFRsWnNXVmRzU2xSV2VtaFRVa2hhU1UxWGVFcFBSMUpwV2xka2FtUnNjRTFWUm1jd1drTkpjMGx1V25CYVEwazJTVzFHYTJNelVYZFRhbEpYVkd4YVdGTXpSWGxsYkdkcFRFTktiR1ZJUVdsUGFrVXlUMVJaTVUxcVNYZE5SRkZ6U1cxc2FHUkRTVFpOVkZrMVRtcFJlazVVV1hkT1NEQXVURWd0TWtoblVFTjFlRk54WVhSQ2R6TnlkRk5PYkdkeU0wYzViWFo1ZVRKUlVFMDJTSGx2TUhJMGF5SXNJbUZ1ZG1GamF5STZJakEzZVdvMVdWaGFVbE5YT0ZKRWRrZ3hiRWs0WkdKbFoyTjJXa3hRV0RSa0luMD0"
+    },
+    {
+        "title": "FC Porto vs. FC Barcelona",
+        "league": "UEFA Champions League",
+        "status": "FINALIZADO",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/621909d73c552da7cabc8030\/f5f5f46af2fa4a8ff994173f34f89456?tr=w-1200,h-675:oi-\/prd\/team-logo\/62195b233c552d874fc0ccf8\/e6d7ffaca5141890cfae2841cd1b4945,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/621959d83c552d4fcbc0b868\/7340db4bc55ddd149af34fd7466ae15d,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "\/embed\/eventos\/?r=aHR0cHM6Ly93My5tcC5sdXJhLmxpdmUvcGxheWVyL3Byb2QvdjMvYW52bG9hZC5odG1sP2tleT1leUp0SWpvaVFVNVdJaXdpZGlJNkltRmtjM1JsUWpGV1lXSXpkazQ0ZGxvaUxDSjBiMnRsYmlJNkltVjVTbWhpUjJOcFQybEtTVlY2U1RGT2FVbHpTVzVTTldORFNUWkphM0JZVmtOS09TNWxlVXB3WXpOTmFVOXBTWGRPTTJ4eFRsWnNXVmRzU2xSV2VtaFRVa2hhU1UxWGVFcFBSMUpwV2xka2FtUnNjRTFWUm1jd1drTkpjMGx1V25CYVEwazJTVzFHYTJNelVteFJha1pYV1ZkSmVtUnJORFJrYkc5cFRFTktiR1ZJUVdsUGFrVXlUMVJaTVUxcVNYZE5SRkZ6U1cxc2FHUkRTVFpOVkZrMVRtcFJlazVVV1hkT1NEQXVaMkl0UTFoUFptaHFURGhvU0hSUWFXdGpNMlZzTnpNeU9YSjRjWEl4TUhwbFNGUlhjaTAxU1RSaVNTSXNJbUZ1ZG1GamF5STZJakEzZVdvMVdWaGFVbE5YT0ZKRWRrZ3hiRWs0WkdKbFoyTjJXa3hRV0RSa0luMD0"
+    },
+    {
+        "title": "Leipzig vs. Manchester City",
+        "league": "UEFA Champions League",
+        "status": "FINALIZADO",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/621909d73c552da7cabc8030\/f5f5f46af2fa4a8ff994173f34f89456?tr=w-1200,h-675:oi-\/prd\/team-logo\/62195c573c552d7eb1c0e524\/17fc530334e1ceff29f882949a290b4a,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/62195be83c552d1531c0e119\/fc01b8102f985f0c67903db534ab1bab,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "\/embed\/eventos\/?r=aHR0cHM6Ly93My5tcC5sdXJhLmxpdmUvcGxheWVyL3Byb2QvdjMvYW52bG9hZC5odG1sP2tleT1leUp0SWpvaVFVNVdJaXdpZGlJNkltRmtjM1JaVWxGV1lUaHFiSEYzTkc0aUxDSjBiMnRsYmlJNkltVjVTbWhpUjJOcFQybEtTVlY2U1RGT2FVbHpTVzVTTldORFNUWkphM0JZVmtOS09TNWxlVXB3WXpOTmFVOXBTWGRPTTJ4eFRsWnNXVmRzU2xSV2VtaFRVa2hhU1UxWGVFcFBSMUpwV2xka2FtUnNjRTFWUm1jd1drTkpjMGx1V25CYVEwazJTVzFHYTJNelVscFZiRVpYV1ZSb2NXSklSak5PUnpScFRFTktiR1ZJUVdsUGFrVXlUMVJaTVUxcVNYZE5SRlZ6U1cxc2FHUkRTVFpOVkZrMVRtcFJlazVVV1hkT1dEQXVVamxwUldORVRHcHlNMGQ0VEhCTWNXTnZaMlZ1VldOWlkybEZPRmhwTXpOUU9ESndlbk5EVkdvdFVTSXNJbUZ1ZG1GamF5STZJakEzZVdvMVdWaGFVbE5YT0ZKRWRrZ3hiRWs0WkdKbFoyTjJXa3hRV0RSa0luMD0"
+    },
+    {
+        "title": "Newcastle vs. Paris Saint-Germain",
+        "league": "UEFA Champions League",
+        "status": "FINALIZADO",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/621909d73c552da7cabc8030\/f5f5f46af2fa4a8ff994173f34f89456?tr=w-1200,h-675:oi-\/prd\/team-logo\/6503218fb6a0d05624c74b0f\/3b6b323e9e085346b510af7fa57c2fc3,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/62195c343c552dc0bac0e351\/6acf9cec6c6cda3f932318cb89e8d046,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "\/embed\/eventos\/?r=aHR0cHM6Ly93My5tcC5sdXJhLmxpdmUvcGxheWVyL3Byb2QvdjMvYW52bG9hZC5odG1sP2tleT1leUp0SWpvaVFVNVdJaXdpZGlJNkltRmtjM1JYVFhkeVlWSnlRbUZhZWxJaUxDSjBiMnRsYmlJNkltVjVTbWhpUjJOcFQybEtTVlY2U1RGT2FVbHpTVzVTTldORFNUWkphM0JZVmtOS09TNWxlVXB3WXpOTmFVOXBTWGRPTTJ4eFRsWnNXVmRzU2xSV2VtaFRVa2hhU1UxWGVFcFBSMUpwV2xka2FtUnNjRTFWUm1jd1drTkpjMGx1V25CYVEwazJTVzFHYTJNelVsaFVXR1I1V1ZaS2VWRnRSbUZsYkVscFRFTktiR1ZJUVdsUGFrVXlUMVJaTVUxcVNYZE5SRlZ6U1cxc2FHUkRTVFpOVkZrMVRtcFJlazVVV1hkT1dEQXVXVmxaVW0xMVFVdFhkVEJzVDIxUk5WTklVbEptWlhKNFluVnFTMVl6WmxGdVZUQXpaRk15ZDI1WVdTSXNJbUZ1ZG1GamF5STZJakEzZVdvMVdWaGFVbE5YT0ZKRWRrZ3hiRWs0WkdKbFoyTjJXa3hRV0RSa0luMD0"
+    },
+    {
+        "title": "Borussia Dortmund vs. AC Milan",
+        "league": "UEFA Champions League",
+        "status": "FINALIZADO",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/621909d73c552da7cabc8030\/f5f5f46af2fa4a8ff994173f34f89456?tr=w-1200,h-675:oi-\/prd\/team-logo\/64ff62faf98ad99580f10bc4\/2633ef39fc8de0cb3553d59dc7ff8003,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/62195c203c552d3e6ec0e30b\/628c89b425422a733b34882a4da7d6f5,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "\/embed\/eventos\/?r=aHR0cHM6Ly93My5tcC5sdXJhLmxpdmUvcGxheWVyL3Byb2QvdjMvYW52bG9hZC5odG1sP2tleT1leUp0SWpvaVFVNVdJaXdpZGlJNkltRmtjM1JQV2pWU2NXVldWbVE1UlVjaUxDSjBiMnRsYmlJNkltVjVTbWhpUjJOcFQybEtTVlY2U1RGT2FVbHpTVzVTTldORFNUWkphM0JZVmtOS09TNWxlVXB3WXpOTmFVOXBTWGRPTTJ4eFRsWnNXVmRzU2xSV2VtaFRVa2hhU1UxWGVFcFBSMUpwV2xka2FtUnNjRTFWUm1jd1drTkpjMGx1V25CYVEwazJTVzFHYTJNelVsQlhhbFpUWTFkV1YxWnRVVFZTVldOcFRFTktiR1ZJUVdsUGFrVXlUMVJaTVUxcVNYZE5SRlZ6U1cxc2FHUkRTVFpOVkZrMVRtcFJlazVVV1hkT1dEQXVjVzFUVXpkWVVFZExZMUpKYTFOdE5WRlNUVVpEUmtGMWFWcDVUWGMzZWt4WlRrWTVkemt0Tlc5Qk1DSXNJbUZ1ZG1GamF5STZJakEzZVdvMVdWaGFVbE5YT0ZKRWRrZ3hiRWs0WkdKbFoyTjJXa3hRV0RSa0luMD0"
+    },
+    {
+        "title": "Celtic vs. Lazio",
+        "league": "UEFA Champions League",
+        "status": "FINALIZADO",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/621909d73c552da7cabc8030\/f5f5f46af2fa4a8ff994173f34f89456?tr=w-1200,h-675:oi-\/prd\/team-logo\/621963553c552d44a8c15722\/4611eff6e9606ae44607b411e6801cc1,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/621964df3c552d68f4c168ea\/ef12261aa1f394462d9baa859a72ec1b,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "\/embed\/eventos\/?r=aHR0cHM6Ly93My5tcC5sdXJhLmxpdmUvcGxheWVyL3Byb2QvdjMvYW52bG9hZC5odG1sP2tleT1leUp0SWpvaVFVNVdJaXdpZGlJNkltRmtjM1JyYkhnM2NXMUNPR1EwUW5BaUxDSjBiMnRsYmlJNkltVjVTbWhpUjJOcFQybEtTVlY2U1RGT2FVbHpTVzVTTldORFNUWkphM0JZVmtOS09TNWxlVXB3WXpOTmFVOXBTWGRPTTJ4eFRsWnNXVmRzU2xSV2VtaFRVa2hhU1UxWGVFcFBSMUpwV2xka2FtUnNjRTFWUm1jd1drTkpjMGx1V25CYVEwazJTVzFHYTJNelVuSmlTR2N6WTFjeFEwOUhVVEJSYmtGcFRFTktiR1ZJUVdsUGFrVXlUMVJaTVUxcVNYZE5SRlZ6U1cxc2FHUkRTVFpOVkZrMVRtcFJlazVVV1hkT1dEQXVOV05RUm0xeFZFMXdTVEIyT0ROQ05HaDFXVTFKTFU1TmQwc3RaazExZVZGbE0ycHphazFFVUhaVmJ5SXNJbUZ1ZG1GamF5STZJakEzZVdvMVdWaGFVbE5YT0ZKRWRrZ3hiRWs0WkdKbFoyTjJXa3hRV0RSa0luMD0"
+    },
+    {
+        "title": "Estrella Roja vs. Young Boys",
+        "league": "UEFA Champions League",
+        "status": "FINALIZADO",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/621909d73c552da7cabc8030\/f5f5f46af2fa4a8ff994173f34f89456?tr=w-1200,h-675:oi-\/prd\/team-logo\/621963943c552d0d36c15be9\/3e36d6635ac5014ce8fcd0b9f30b8d6e,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/62195aa23c552d666ac0c7bf\/1552256e0d14f515c76e349f9f9ec9ba,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "\/embed\/eventos\/?r=aHR0cHM6Ly93My5tcC5sdXJhLmxpdmUvcGxheWVyL3Byb2QvdjMvYW52bG9hZC5odG1sP2tleT1leUp0SWpvaVFVNVdJaXdpZGlJNkltRmtjM1I1ZG5wcVRteFhjbUZCYTBRaUxDSjBiMnRsYmlJNkltVjVTbWhpUjJOcFQybEtTVlY2U1RGT2FVbHpTVzVTTldORFNUWkphM0JZVmtOS09TNWxlVXB3WXpOTmFVOXBTWGRPTTJ4eFRsWnNXVmRzU2xSV2VtaFRVa2hhU1UxWGVFcFBSMUpwV2xka2FtUnNjRTFWUm1jd1drTkpjMGx1V25CYVEwazJTVzFHYTJNelVqVmtibkJ4VkcxNFdHTnRSa0poTUZGcFRFTktiR1ZJUVdsUGFrVXlUMVJaTVUxcVNYZE5SRmx6U1cxc2FHUkRTVFpOVkZrMVRtcFJlazVVV1hkT2JqQXViVjlmVW5KaWRXeFhVazVRWVdVNGFscDBlWE5yVkdoMmEweExiREU1WldwblEyVnJTM1ZqTkRBemF5SXNJbUZ1ZG1GamF5STZJakEzZVdvMVdWaGFVbE5YT0ZKRWRrZ3hiRWs0WkdKbFoyTjJXa3hRV0RSa0luMD0"
+    },
+    {
+        "title": "Necaxa vs. Cruz Azul",
+        "league": "Liga MX",
+        "status": "03:00",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/6495fe4bbfdce8e91858e3fa\/1e43f0fa08d14ef952c6064dff1ba097?tr=w-1200,h-675:oi-\/prd\/team-logo\/649ccdfb30d73a11e5ccc4ef\/e798d422bae503bdc5104d5779e1771c,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/649ccd8ec9ea82cf81f0872a\/896976636275bb3166348b1f710de2fc,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "Pumas UNAM vs. Quer\u00e9taro",
+        "league": "Liga MX",
+        "status": "03:00",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/6495fe4bbfdce8e91858e3fa\/1e43f0fa08d14ef952c6064dff1ba097?tr=w-1200,h-675:oi-\/prd\/team-logo\/649cce380a27c860ddf66f80\/01a037becaa73cc8fd02cc2207fad8a1,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/649cce4fd5bf3416bf2d8904\/74fa5c9c5b96b999deeb035b68c78ecc,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "Tigres UANL vs. Toluca",
+        "league": "Liga MX",
+        "status": "05:00",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/6495fe4bbfdce8e91858e3fa\/1e43f0fa08d14ef952c6064dff1ba097?tr=w-1200,h-675:oi-\/prd\/team-logo\/649cce754bbb82d6418fc842\/3b2171a9cc3240b6ab764dba866f01bf,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/649cce9514adc3cf3b50b993\/a2c6c48b42a9ba7e5e559646afa589fc,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    },
+    {
+        "title": "Santos Laguna vs. Tijuana",
+        "league": "Liga MX",
+        "status": "05:00",
+        "img": "https:\/\/images.vix.com\/prd\/league\/card\/6495fe4bbfdce8e91858e3fa\/1e43f0fa08d14ef952c6064dff1ba097?tr=w-1200,h-675:oi-\/prd\/team-logo\/649daf3721a8ca381f9b9c39\/4bf79200e9f8b1b5da39edd492a6015d,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-162,oy-112:oi-\/prd\/team-logo\/649ccd70d5bf3416bf2d8676\/52cecce96a1dc1ec203c005b78379eac,oh-456,ow-392,oic-at_max,oit-false,oicm-pad_resize,ox-N162,oy-112:w-304,ar-16:9,q-80&w=1920",
+        "url": "#"
+    }
 ]
