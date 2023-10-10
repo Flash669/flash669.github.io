@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-DASH_schema_files/DASH-MPD.xsd" profiles="urn:mpeg:dash:profile:isoff-live:2011" type="dynamic" availabilityStartTime="2015-01-01T00:00:03Z" publishTime="2023-10-10T20:29:21.351395Z" minimumUpdatePeriod="PT2S" minBufferTime="PT10S" timeShiftBufferDepth="PT30S" maxSegmentDuration="PT3S">
+  <Period id="1" start="PT0S">
+    <AdaptationSet id="1" group="1" mimeType="audio/mp4" lang="en" contentType="audio" segmentAlignment="true">
+      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main" />
+      <SegmentTemplate timescale="48000" initialization="HBOHD-$RepresentationID$-scale=48000-init.mp4" media="HBOHD-$RepresentationID$-scale=48000-$Time$.mp4">
+        <SegmentTimeline>
+          <S t="13291167618161" d="95232" />
+          <S d="96256" r="5" />
+          <S d="95232" />
+          <S d="96256" r="4" />
+          <S d="95232" />
+          <S d="96256" />
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="mp4a_145200_eng=20005" bandwidth="145200" audioSamplingRate="48000" codecs="mp4a.40.2">
+        <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2" />
+      </Representation>
+    </AdaptationSet>
+    <AdaptationSet id="2" group="1" mimeType="audio/mp4" lang="es" contentType="audio" segmentAlignment="true">
+      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main" />
+      <SegmentTemplate timescale="48000" initialization="HBOHD-$RepresentationID$-scale=48000-init.mp4" media="HBOHD-$RepresentationID$-scale=48000-$Time$.mp4">
+        <SegmentTimeline>
+          <S t="13291167617324" d="96256" r="5" />
+          <S d="95232" />
+          <S d="96256" r="4" />
+          <S d="95232" />
+          <S d="96256" r="1" />
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="mp4a_145200_spa=20006" bandwidth="145200" audioSamplingRate="48000" codecs="mp4a.40.2">
+        <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2" />
+      </Representation>
+    </AdaptationSet>
+    <AdaptationSet id="3" group="3" mimeType="application/mp4" lang="es" contentType="text" segmentAlignment="true">
+      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="subtitle" />
+      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="alternate" />
+      <SegmentTemplate timescale="1000" initialization="HBOHD-$RepresentationID$-scale=1000-init.mp4" media="HBOHD-$RepresentationID$-scale=1000-$Time$.mp4">
+        <SegmentTimeline>
+          <S t="276899325400" d="2000" r="4" />
+          <S d="1975" />
+          <S d="2025" />
+          <S d="2000" />
+          <S d="2075" />
+          <S d="1925" />
+          <S d="2000" r="4" />
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="DVBSUB_TTML_spa_6514162=30001" bandwidth="10000" codecs="stpp" />
+    </AdaptationSet>
+    <AdaptationSet id="4" group="2" frameRate="30000/1001" mimeType="video/mp4" startWithSAP="1" contentType="video" par="16:9" minBandwidth="360000" maxBandwidth="4999936" minWidth="416" maxWidth="1920" minHeight="240" maxHeight="1080" segmentAlignment="true">
+      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main" />
+      <SegmentTemplate timescale="30000" initialization="HBOHD-$RepresentationID$-scale=30000-init.mp4" media="HBOHD-$RepresentationID$-scale=30000-$Time$.mp4">
+        <SegmentTimeline>
+          <S t="8306979760808" d="60060" r="14" />
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="avc1_360000=10011" bandwidth="360000" width="416" height="240" sar="40:39" codecs="avc1.4d401e" />
+      <Representation id="avc1_579968=10010" bandwidth="579968" width="640" height="360" sar="1:1" codecs="avc1.4d401e" />
+      <Representation id="avc1_899968=10009" bandwidth="899968" width="854" height="480" sar="1280:1281" codecs="avc1.4d401f" />
+      <Representation id="avc1_1499968=10008" bandwidth="1499968" width="1024" height="576" sar="1:1" codecs="avc1.4d401f" />
+      <Representation id="avc1_2499968=10007" bandwidth="2499968" width="1280" height="720" sar="1:1" codecs="avc1.4d401f" />
+      <Representation id="avc1_4999936=10006" bandwidth="4999936" width="1920" height="1080" sar="1:1" codecs="avc1.4d4029" />
+    </AdaptationSet>
+  </Period>
+</MPD>
