@@ -1,20 +1,19 @@
-
 <style type="text/css">
 html, body {
    margin: 0;
    padding: 0;
 }
 </style>
-<meta charset="utf-8">
-<meta name="referrer" content="no-referrer">
-<meta http-equiv="cache-control" content="max-age=0" />
-<meta http-equiv="cache-control" content="no-cache" />
-<meta http-equiv="expires" content="0" />
-<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-<meta http-equiv="pragma" content="no-cache" />
+
+
+
+
+
+
+
 <script src="//ssl.p.jwpcdn.com/player/v/8.21.0/jwplayer.js"></script>
 <script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';</script>
-<body>
+
 <script type="text/javascript">
 function getParameterByName(name) {
 	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
@@ -24,28 +23,40 @@ function getParameterByName(name) {
 }
 
 var getURL = getParameterByName('get');
-if (getURL == "#") {alert('Vuelve a la página anterior');}
 var getLang = getParameterByName('lang');
+var getIMG = getParameterByName('img');
+var getKEY  = getParameterByName('key');
+var getKEY2  = getParameterByName('key2');
+if (getURL == "") {alert('Vuelve a la pÃƒÆ’Ã‚Â¡gina anterior');}
 </script>
 <div id="player"></div>
 <script>
 
 var playerInstance= jwplayer("player");
 
-if (getURL == "QTNfQ2luZQ==" || getURL == "Rmxvd19NdXNpY19YUA==" || getURL == "QUVIRA==" || getURL == "SG9sYV9UVg==" || getURL == "QVhOSEQ=" || getURL == "TVRWMDA=" || getURL == "V2FybmVySEQ=" || getURL == "R0VOX1RW" || getURL == "Rm94X1Nwb3J0c19QcmVtaXVuX0hE" || getURL == "VG9kb05vdGljaWFz" || getURL == "VHlDU3BvcnQ" || getURL == "QW1lcmljYTI0" || getURL == "QzVO" || getURL == "TGFfTmFjaW9u" || getURL == "Q3JvbmljYVRW" || getURL == "Q2FuYWxfOF9UdWN1bWFu" || getURL == "UGFyYWd1YXlfVFY=" || getURL == "UGFyYW1vdW50" || getURL == "Q29tZWR5Q2VudHJhbA" || getURL == "Rmxvd19NdXNpY19YUA==" || getURL == "Rmxvd19NdXNpY18x" || getURL == "Rmxvd19NdXNpY18y" || getURL == "Rmxvd19NdXNpY18z" || getURL == "Qm9vbWVyYW5n" || getURL == "RHJlYW13b3Jrcw==" || getURL == "QnJhdm9UVg==")
+if (getURL == "QTNfQ2luZQ==" || getURL == "Rmxvd19NdXNpY19YUA==" || getURL == "QUVIRA==" || getURL == "SG9sYV9UVg==" || getURL == "QVhOSEQ=" || getURL == "TVRWMDA=" || getURL == "V2FybmVySEQ=" || getURL == "R0VOX1RW" || getURL == "Rm94X1Nwb3J0c19QcmVtaXVuX0hE" || getURL == "VG9kb05vdGljaWFz" || getURL == "VHlDU3BvcnQ" || getURL == "QW1lcmljYTI0" || getURL == "QzVO" || getURL == "TGFfTmFjaW9u" || getURL == "Q3JvbmljYVRW" || getURL == "Q2FuYWxfOF9UdWN1bWFu" || getURL == "UGFyYWd1YXlfVFY=" || getURL == "UGFyYW1vdW50" || getURL == "Q29tZWR5Q2VudHJhbA" || getURL == "Rmxvd19NdXNpY19YUA==" || getURL == "Rmxvd19NdXNpY18x" || getURL == "Rmxvd19NdXNpY18y" || getURL == "Rmxvd19NdXNpY18z" || getURL == "Qm9vbWVyYW5n" || getURL == "RHJlYW13b3Jrcw==" || getURL == "QW5pbWFsUGxhbmV0" || getURL == "SGlzdG9yeUhE" ||  getURL == "SUQ=" || getURL == "QnJhdm9UVg==" || getURL == "U29ueUhE" || getURL == "VHJ1VFY=" || getURL == "SEJPX1BPUA==")
 number = 7;
-else if (getURL == "RVNQTjJfQXJn" || getURL == "Q2luZW1heA==" || getURL == "RXZlbnRvc18yX0hE" || getURL == "Q2FuYWxfOF9DQkE" || getURL == "MjZfVFZfSEQ" || getURL == "RGlwdXRhZG9zX1RW" || getURL == "QXJnZW50aW5pc2ltYQ" || getURL == "TWV0cm8" || getURL == "QkJDX1dvcmxkX05ld3M" || getURL == "VGhlYXRlcl9IRA==" || getURL == "R2xpdHo=" || getURL == "UXVpZXJvX0hE" || getURL == "RGlzY292ZXJ5X1dvcmxkX0hE" || getURL == "RXVyb2NoYW5uZWw=" || getURL == "RGlzY292ZXJ5X1NjaWVuY2U=" || getURL == "SU5DQUFfVHY=" || getURL == "VFY1X01vbmRl" || getURL == "TVRWX0hpdHM=" || getURL == "TVRWX0hE" || getURL == "Tmlja19Kcg==" || getURL == "VFZfRXNwYW5h" || getURL == "V09CSQ==" || getURL == "Vm9sdmVy" || getURL == "VGVsZXN1cg==" || getURL == "TGlmZXRpbWU=" || getURL == "QW50ZW5hXzM=" || getURL == "Rm94X05ld3M=" || getURL == "VHZfQ2hpbGU=" || getURL == "TWFzX0NoaWM=" || getURL == "U3R1ZGlvX1VuaXZlcnNhbA==" || getURL == "SVNBVA==" || getURL == "U3VuX0NoYW5uZWw=" || getURL == "UkFJ" || getURL == "VmVudXM=" || getURL == "U2V4dHJlbWU" || getURL == "UGxheWJveQ" || getURL == "VE5UX1Nwb3J0c19IRA" || getURL == "VGVsZWZlSEQ=" || getURL == "Q2FuYWw3" || getURL == "RW5jdWVudHJv" || getURL == "VGVsZW1heA" || getURL == "TmV0X1RW" || getURL == "Q2FuYWxfMTJfQ0JB" || getURL == "RWxfR2FyYWdl" || getURL == "RmlsbV9BcnRz" || getURL == "VW5pdmVyc2FsX0NoYW5uZWxfSEQ=" || getURL == "RXVyb3BhX0V1cm9wYQ" || getURL == "RXVyb25ld3M=" || getURL == "Rm9vZF9OZXR3b3Jr" || getURL == "RV9FbnRlcnRhaW5tZW50X1RlbGV2aXNpb24=" || getURL == "Q00=" || getURL == "UEFLQV9QQUtB" || getURL == "U3lGeQ==")
+else if (getURL == "RVNQTjJfQXJn" || getURL == "Q2luZW1heA==" || getURL == "RXZlbnRvc18yX0hE" || getURL == "Q2FuYWxfOF9DQkE" || getURL == "MjZfVFZfSEQ" || getURL == "RGlwdXRhZG9zX1RW" || getURL == "QXJnZW50aW5pc2ltYQ" || getURL == "TWV0cm8" || getURL == "QkJDX1dvcmxkX05ld3M" || getURL == "VGhlYXRlcl9IRA==" || getURL == "R2xpdHo=" || getURL == "UXVpZXJvX0hE" || getURL == "RGlzY292ZXJ5X1dvcmxkX0hE" || getURL == "RXVyb2NoYW5uZWw=" || getURL == "RGlzY292ZXJ5X1NjaWVuY2U=" || getURL == "SU5DQUFfVHY=" || getURL == "VFY1X01vbmRl" || getURL == "TVRWX0hpdHM=" || getURL == "TVRWX0hE" || getURL == "Tmlja19Kcg==" || getURL == "VFZfRXNwYW5h" || getURL == "V09CSQ==" || getURL == "Vm9sdmVy" || getURL == "VGVsZXN1cg==" || getURL == "TGlmZXRpbWU=" || getURL == "QW50ZW5hXzM=" || getURL == "Rm94X05ld3M=" || getURL == "VHZfQ2hpbGU=" || getURL == "TWFzX0NoaWM=" || getURL == "U3R1ZGlvX1VuaXZlcnNhbA==" || getURL == "SVNBVA==" || getURL == "U3VuX0NoYW5uZWw=" || getURL == "UkFJ" || getURL == "VmVudXM=" || getURL == "U2V4dHJlbWU" || getURL == "UGxheWJveQ" || getURL == "VE5UX1Nwb3J0c19IRA" || getURL == "VGVsZWZlSEQ=" || getURL == "Q2FuYWw3" || getURL == "RW5jdWVudHJv" || getURL == "VGVsZW1heA" || getURL == "TmV0X1RW" || getURL == "Q2FuYWxfMTJfQ0JB" || getURL == "RWxfR2FyYWdl" || getURL == "RmlsbV9BcnRz" || getURL == "VW5pdmVyc2FsX0NoYW5uZWxfSEQ=" || getURL == "RXVyb3BhX0V1cm9wYQ" || getURL == "RXVyb25ld3M=" || getURL == "Rm9vZF9OZXR3b3Jr" || getURL == "RV9FbnRlcnRhaW5tZW50X1RlbGV2aXNpb24=" || getURL == "Q00=" || getURL == "UEFLQV9QQUtB" || getURL == "SGlzdG9yeV8y" || getURL == "U3lGeQ==" || getURL == "VEJT" || getURL == "VENN"  || getURL == "SEJPXzI=" || getURL == "SEJPX1BsdXM=" || getURL == "SEJPX0ZhbWlseQ==" || getURL == "SEJPX0V4dHJlbWU=" || getURL == "SEJPX011bmRp" || getURL == "SEJPX1NpZ25hdHVyZQ==" || getURL == "Q2FuYWxfUnVyYWw=")
 number = 6;
 else if (getURL == "QzlOX0M0")
 number = 5;
-else if (getURL == "QzlOX0M0")
-number = 5;
-else if (getURL == "Q2FuYWxfNV9Sb3Nhcmlv" || getURL == "VEVMRUZVVFVST19DNA==" || getURL == "VGVsZWZlX05ldXF1ZW4=" || getURL == "VGVsZWZlX1NhbHRh" || getURL == "U05UX0M0" || getURL == "UEFSQVZJU0lPTl9DNA==" || getURL == "Tk9USUNJQVNfUFlfQzQ=" || getURL == "Tk9USUNJQVNfUFlfQzQ=" || getURL == "UEFSQVZJU0lPTl9DNA==" || getURL == "TEFfVEVMRV9DNA==" || getURL == "U1VSX1RWX0M0" || getURL == "Q2FuYWwxMlVSVQ==" || getURL == "Q2FuYWw0X1VSVQ==")
+else if (getURL == "RGlzY292ZXJ5SG9tZUhlYWx0aEhE" || getURL == "TmF0R2VvSEQ="  || getURL == "VE5UX0hEX0FyZw=="  || getURL == "VE5UU2VyaWVz"  ) 
+number = 3;
+else if (getURL == "Q2FuYWxfNV9Sb3Nhcmlv" || getURL == "VEVMRUZVVFVST19DNA==" || getURL == "VGVsZWZlX05ldXF1ZW4=" || getURL == "VGVsZWZlX1NhbHRh" || getURL == "U05UX0M0" || getURL == "UEFSQVZJU0lPTl9DNA==" || getURL == "Tk9USUNJQVNfUFlfQzQ=" || getURL == "Tk9USUNJQVNfUFlfQzQ=" || getURL == "UEFSQVZJU0lPTl9DNA==" || getURL == "TEFfVEVMRV9DNA==" || getURL == "U1VSX1RWX0M0" || getURL == "Q2FuYWwxMlVSVQ=="  || getURL == "RGlzY292ZXJ5SG9tZUhlYWx0aEhE" || getURL == "Q2FuYWw0X1VSVQ==")
 number = 4;
 else
 number = 3;
 
-var mpd = "https://edge-live16-sl.cvattv.com.ar/live/c"+number+"eds/"+atob(getURL)+"/SA_Live_dash_enc/"+atob(getURL)+".mpd";
+
+var randomStrings = ["edge-live31-sl", "edge-live32-sl", "edge-live15-sl", "edge-live14-sl", "edge-live14-hr", "edge-live15-hr", "edge-live32-hr", "edge-live16-hr", "edge-vod02-sl", "edge-live12-hr", "edge-mix01-ros", "edge-live17-sl", "edge-live01-bel", "edge-live02-bel", "edge-live03-bel", "edge-live12-sl", "edge-live13-sl", "edge-live16-sl",];
+
+
+var randomString = randomStrings[Math.floor(Math.random() * randomStrings.length)];
+
+
+var mpd = "https://+" + randomString + "+.cvattv.com.ar/live/c" + number + "eds/" + atob(getURL) + "/SA_Live_dash_enc/" + atob(getURL) + ".mpd";
+
+
 
 if (getURL == "RVNQTjJIRA")
 {
@@ -58,10 +69,118 @@ else if (getURL == "U3lGeQ==")
         key = "18d9faccdaf2d15807d0a3f713e8b2a4";
 }
 
+
+
+
 else if (getURL == "Q2luZW1heA==") // cinemax
 {
         keyId = "977928a92b82ba3781741a6470f8f45b";
         key = "51f4e62827c128f7210b79a11587661a";
+}
+else if (getURL == "VE5UX0hEX0FyZw==") // TNT HD
+{
+        keyId = "faad1722a575f4d9ec7b774db63c879c";
+        key = "cf0184830344ba36ad2ffef9dd2dd9d0";
+}
+else if (getURL == "VE5UU2VyaWVz") // TNT Series
+{
+        keyId = "5c14d6aeb19bf113edf91a7b544253cb";
+        key = "8d776d6f9c5c840ebe88d767dd731692";
+}
+else if (getURL == "VEJT") // TNT Novelas (TBS)
+{
+        keyId = "49a0179b034ae899cb67d8a5834181aa";
+        key = "486e2c6d69adea7e17f2960e8e366612";
+}
+else if (getURL == "U29ueUhE") // Sony Channel
+{
+        keyId = "fd9619f9d7c2d5115a339941279e0b4b";
+        key = "bf55635e6591f905659fa27ab3ca2812";
+}
+else if (getURL == "VHJ1VFY=") // TruTV
+{
+        keyId = "7d0cecffe9c29734343cf9983978c1a1";
+        key = "f86b5ac05f2a2626b6c61bd4e13344d8";
+}
+else if (getURL == "VENN") // TCM
+{
+        keyId = "a5f44a5e30714cf3bcee7c7f15a08b4e";
+        key = "c3c141ae941ab9750339c3af45a65ce2";
+}
+
+else if (getURL == "SEJPXzI=") // HBO 2
+{
+        keyId = "c90cc57ad2c436e5a77db2f8d9db2d85";
+        key = "04f6c73984bdcffd013050608497935d";
+}
+
+else if (getURL == "SEJPX1BsdXM=") // HBO Plus
+{
+        keyId = "f0e7f7d458990edfab7b98b412564615";
+        key = "79205754b7f84a62661c2dbe9de5dd5d";
+}
+
+else if (getURL == "SEJPX0ZhbWlseQ==") // HBO Family
+{
+        keyId = "535473132f68082160b489482ca35f8e";
+        key = "e90fd91fcd3fc809bed2b1c0d37f7297";
+}
+
+else if (getURL == "SEJPX0V4dHJlbWU=") // HBO Xtreme
+{
+        keyId = "d504011bbef467c0de3a7534e302a6d4";
+        key = "334103e2abe16faa7f9ab2e3097c5a58";
+}
+
+else if (getURL == "SEJPX011bmRp") // HBO Mundi
+{
+        keyId = "7821b2662148fe333d5191acbb8a5c1f";
+        key = "ae43f3e2545237ebda58b13813b5d328";
+}
+
+else if (getURL == "SEJPX1BPUA==") // HBO POP
+{
+        keyId = "f4e1ce5cef7e9a110fe968f8881b21fa";
+        key = "6bbe2062b150b11496cdd5fbdd9c89d6";
+}
+
+else if (getURL == "SEJPX1NpZ25hdHVyZQ==") // HBO Signature
+{
+        keyId = "e866499fbc1149f49989672075aa3a68";
+        key = "d2dd5c95623c6343240981c2202fc311";
+}
+
+if (getURL == "QW5pbWFsUGxhbmV0") // Animal Planet
+{
+	keyId = "4146a8ecbb0540dc807c6389ee87e0bc";
+	key = "0c3cdc1b3e4617c57361265e9fa4c5bd";
+}
+if (getURL == "RGlzY292ZXJ5SG9tZUhlYWx0aEhE") // Discovery hyh
+{
+	keyId = "9b0a76dd7a0df1e1b4320aeb1254d1a9";
+	key = "d011267775c38d6d2ab09b428c03d63f";
+}
+if (getURL == "SUQ=") // Discovery  id
+{
+	keyId = "0956caf2e2bd41f49fdcead7cc94fe24";
+	key = "640c49578073a911938617eb4e652d6c";
+}
+
+if (getURL == "SGlzdG9yeUhE") // History Channel
+{
+	keyId = "e82318e518ba70cea3d7b37bef99e692";
+	key = "a05fcb634c071a514e3039e1c274b4db";
+}
+if (getURL == "SGlzdG9yeV8y") // History Channel 2
+{
+	keyId = "ecbe97ec34784304b390a12ba3854ccf";
+	key = "5a0ee36ed9b8920cb19546fd92f2d415";
+}
+
+if (getURL == "TmF0R2VvSEQ=") // NATGEO
+{
+	keyId = "4be0c61ceddc62294cc9e23b627af53d";
+	key = "852c1935d11c3c53d0a1ceff3bb3bf16";
 }
 	
 else if (getURL == "VlRWX1BsdXNfSEQ")
@@ -206,8 +325,8 @@ else if (getURL == "TEFfVEVMRV9DNA==")
 }
 else if (getURL == "UEFSQVZJU0lPTl9DNA==")
 {
-        keyId = "bd8e8c9b32ef027e8ff4ff0cfce855a4";
-        key = "2918e9893b570c3fa1f215b52a12cc91";
+        keyId = "b02c568163c14cfda4ddb958a0aab742";
+        key = "edef8ba979d64acea3c827dcd51d21ed";
 }
 else if (getURL == "RXVyb3BhX0V1cm9wYQ")
 {
@@ -680,11 +799,5 @@ else
 	});
 }
 
-if (getLang == "") {
-	getLang = 0;
-}
 
-jwplayer().on('play', function(e) {
-  jwplayer().setCurrentAudioTrack(getLang);
-}); 
 </script>
