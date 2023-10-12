@@ -40,11 +40,40 @@ else if (getURL == "Q2FuYWxfNV9Sb3Nhcmlv" || getURL == "VEVMRUZVVFVST19DNA==")
 else
 	number = 3;
 
-var edge = [  "edge-live17-sl" ];
 
-var random = Math.floor((Math.random() * edge.length));
+var urlMapping = {
+    "RVNQTjJIRA": [
+        "https://edge-live15-sl.cvattv.com.ar/live/c6eds/ESPN2_Arg/SA_Live_dash_enc/ESPN2_Arg.mpd",
+        "https://edge-live12-sl.cvattv.com.ar/live/c6eds/ESPN2_Arg/SA_Live_dash_enc/ESPN2_Arg.mpd",
+        "https://edge-live17-sl.cvattv.com.ar/live/c6eds/ESPN2_Arg/SA_Live_dash_enc/ESPN2_Arg.mpd"
+    ],
+    "U3lGeQ==": [
+        "https://edge-live31-sl.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc/TNT_Sports_HD.mpd",
+        "https://edge-live15-sl.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc/TNT_Sports_HD.mpd",
+        "https://edge-live12-sl.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc/TNT_Sports_HD.mpd",
+        "https://edge-live17-sl.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc/TNT_Sports_HD.mpd"
+    ],
+  
+};
 
-var mpd = "https://"+edge[random]+".cvattv.com.ar/live/c"+number+"eds/"+atob(getURL)+"/SA_Live_dash_enc/"+atob(getURL)+".mpd";
+
+function getRandomURL(getURL) {
+    var urls = urlMapping[getURL];
+    if (urls) {
+        var randomIndex = Math.floor(Math.random() * urls.length);
+        return urls[randomIndex];
+    }
+ 
+    return "https://edge-live17-sl.cvattv.com.ar/live/c"+number+"eds/"+atob(getURL)+"/SA_Live_dash_enc/"+atob(getURL)+".mpd"; 
+}
+
+
+var getURL = "RVNQTjJIRA"; 
+var randomURL = getRandomURL(getURL);
+var mpd = randomURL;
+
+
+
 
 if (getURL == "RVNQTjJIRA")
 {
