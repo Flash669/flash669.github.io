@@ -2,7 +2,6 @@
 
 
 <script src="https://jwpsrv.com/library/dvlGEDvMEeSLyCIACtqXBA.js"></script>
-
 <script type="text/javascript">
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
@@ -15,28 +14,24 @@ var getURL = getParameterByName('get');
 if (getURL == "#") {
     alert('Vuelve a la página anterior');
 } else {
-
-    var streamURL;
+ 
+    var videoURL;
     if (getURL === "tvp") {
-        streamURL = 'https://router.cdn.rcs.net.ar/mnp/tvp/output.mpd';
+        videoURL = 'https://router.cdn.rcs.net.ar/mnp/tvp/output.mpd';
     } else if (getURL === "espn3") {
-        streamURL = 'https://router.cdn.rcs.net.ar/mnp/espn3/output.mpd';
-    } 
-    else if (getURL === "tntsports") {
-        streamURL = 'https://bvsat02.cdn.rcs.net.ar/mnp/tntsports/output.mpd';
+        videoURL = 'https://router.cdn.rcs.net.ar/mnp/espn3/output.mpd';
+    } else {
+        
+        videoURL = 'URL_POR_DEFECTO';
     }
+
     
-    else {
-       
-        streamURL = '#';
-    }
-
-
     jwplayer('playerAJxJyoaBJaaN').setup({
-        file: streamURL,
+        file: videoURL,
         width: '100%',
         aspectratio: '16:9',
         mute: 'true'
     });
 }
 </script>
+
