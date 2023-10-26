@@ -1,37 +1,34 @@
-<style>body {margin:0;padding:0}</style>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>body {margin:0;padding:0}</style>
+    <script src="https://jwpsrv.com/library/dvlGEDvMEeSLyCIACtqXBA.js"></script>
+</head>
+<body>
+    <div id='playerAJxJyoaBJaaN'></div>
+    <script type='text/javascript'>
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+            var results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
 
+        var base64StreamURL = getParameterByName('get');
 
-<script src="https://jwpsrv.com/library/dvlGEDvMEeSLyCIACtqXBA.js"></script>
-<script type="text/javascript">
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
-    var regex = new RegExp("[\?&]" + name + "=([^&#]*)");
-    var results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
+        if (base64StreamURL === "") {
+            alert('Get Error.');
+        } else {
+           
+            var streamURL = atob(base64StreamURL);
 
-var getURL = getParameterByName('get');
-if (getURL == "#") {
-    alert('Vuelve a la página anterior');
-} else {
- 
-    var videoURL;
-    if (getURL === "tvp") {
-        videoURL = 'https://router.cdn.rcs.net.ar/mnp/tvp/output.mpd';
-    } else if (getURL === "espn3") {
-        videoURL = 'https://router.cdn.rcs.net.ar/mnp/espn3/output.mpd';
-    } else {
-        
-        videoURL = 'URL_POR_DEFECTO';
-    }
-
-    
-    jwplayer('playerAJxJyoaBJaaN').setup({
-        file: videoURL,
-        width: '100%',
-        aspectratio: '16:9',
-        mute: 'true'
-    });
-}
-</script>
-
+            jwplayer('playerAJxJyoaBJaaN').setup({
+                file: streamURL,
+                width: '100%',
+                aspectratio: '16:9',
+                mute: true
+            });
+        }
+    </script>
+</body>
+</html>
