@@ -19,9 +19,20 @@
         var videoURL;
 
         if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3RudHNwb3J0cy9vdXRwdXQubXBk") {
-            videoURL = mpdBase + "tntsport/output.mpd";
-        } else {
-            // Maneja otros valores o errores aquí
+            videoURL = mpdBase + "tntsports/output.mpd";
+        } 
+         if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2VzcG5wcmVtaXVtL291dHB1dC5tcGQ=") {
+            videoURL = mpdBase + "espnpremium/output.mpd";
+        }
+          if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2VzcG5wcmVtaXVtL291dHB1dC5tcGQ=") {
+            videoURL = mpdBase + "fox_sport/output.mpd";
+        }
+
+          if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2ZveF9zcG9ydDIvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "fox_sport2/output.mpd";
+        }
+        else {
+           
             alert('Valor no válido para "get".');
         }
 
