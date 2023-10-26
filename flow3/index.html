@@ -14,33 +14,23 @@
             return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
         }
 
-        var base64StreamURL = getParameterByName('get');
+        var mpdBase = "https://bvsat02.cdn.rcs.net.ar/mnp/";
+        var getURL = getParameterByName('get');
+        var videoURL;
 
-        if (base64StreamURL === "") {
-            alert('Get Error.');
+        if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3RudHNwb3J0cy9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "tntsport/output.mpd";
         } else {
-           
-            var streamURL = atob(base64StreamURL);
-
-            jwplayer('playerAJxJyoaBJaaN').setup({
-                file: streamURL,
-                width: '100%',
-                aspectratio: '16:9',
-                mute: true
-                playerInstance.setup({
-
-		playlist: [{
-			"sources": [
-				{
-					"default": false,
-					"type": "dash",
-					"file": streamURL,
-					"label": "0"
-				}
-			]
-		}],
-            });
+            // Maneja otros valores o errores aquí
+            alert('Valor no válido para "get".');
         }
+
+        jwplayer('playerAJxJyoaBJaaN').setup({
+            file: videoURL,
+            width: '100%',
+            aspectratio: '16:9',
+            mute: true
+        });
     </script>
 </body>
 </html>
