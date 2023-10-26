@@ -27,6 +27,18 @@
                 width: '100%',
                 aspectratio: '16:9',
                 mute: true
+                playerInstance.setup({
+
+		playlist: [{
+			"sources": [
+				{
+					"default": false,
+					"type": "dash",
+					"file": mpd,
+					"label": "0"
+				}
+			]
+		}],
             });
         }
     </script>
