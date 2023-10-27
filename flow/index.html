@@ -1,703 +1,237 @@
 
-<style type="text/css">
-body {
-   margin: 0;
-   padding: 0;
-}
-</style>
-<meta name="referrer" content="no-referrer">
-<script src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
-<script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
-</script>
-<script type='text/javascript'>
-<!-- 
-var t="203c73637269707420747970653d27746578742f6a617661736372697074273e0d0a202020766172205f3078353638383d5b225c7837335c7836385c7836395c7836365c783734222c225c7837305c7837355c7837335c783638222c225c7837335c7836355c7837345c7835345c7836395c7836445c7836355c7836465c7837355c783734222c225c7836325c7836465c7836345c783739222c225c7836335c7836435c7836315c7837335c7837335c7834455c7836315c7836445c783635222c22222c225c7833345c7833375c7833325c7833345c7833395c7833325c7837375c7836355c7834345c7834445c7836375c783431222c225c7833325c7833305c7833385c7833375c7833365c7833375c7833345c7835315c7835355c7836385c7834455c7836345c783644222c225c7833325c7833335c7833325c7833385c7833395c7833375c7833385c7834345c7835385c7836435c7837355c7836335c783441222c225c7833325c7833315c7833385c7833325c7833385c7833355c7833365c7837335c7835325c7834375c7834395c7835355c783445222c225c7833315c7833335c7833325c7833325c7833375c7833315c7833385c7834365c7836345c7836465c7837305c7834345c783639222c225c7833375c7834425c7835345c7837335c7835305c7835395c783445222c225c7833365c7833365c7834435c7836315c7836455c7837415c7836385c783738222c225c7833375c7833325c7833375c7833375c7833385c7833355c7834415c7836445c7834395c7837395c7835355c783442222c225c7833315c7833315c7833325c7833365c7833365c7833375c7833375c7836415c7836415c7834375c7836385c7836465c783443222c225c7837325c7836355c7837305c7836435c7836315c7836335c783635222c225c7833335c7836395c7834375c7835415c7836385c7835335c783739222c225c7833375c7833395c7833305c7833365c7833395c7833305c7835315c7837335c7836395c7836395c7835335c783432222c225c7833395c7833355c7833345c7833395c7833395c7833325c7837375c7837415c7834445c7834375c7835335c783631222c225c7833355c7837315c7836325c7836395c7834355c7836415c783437222c225c7833325c7833365c7833325c7833345c7833375c7833395c7836375c7836365c7836435c7835345c7834385c783436222c225c7833355c7833325c7833365c7833395c7833335c7833335c7837415c7834315c7834385c7836395c7837385c783632222c225c7833325c7833375c7837395c7835335c7836415c7837415c7836445c783739222c225c7833355c7836465c7835375c7835335c7836445c7836385c783441222c225c7833355c7833385c7833365c7833395c7833365c7833355c7833365c7836335c7837335c7837325c7837385c7835305c783633222c225c7833315c7833305c7833365c7833385c7833395c7833335c7833325c7833305c7836415c7836325c7837375c7835315c7837345c783733222c225c7833315c7833375c7833395c7833395c7833305c7833305c7833305c7837415c7837335c7834375c7836455c7836455c783442222c225c7836385c7837345c7837345c7837305c7837335c7833415c7832465c7832465c7836335c7836315c7836325c7836435c7836355c7836375c7837325c7836315c7837345c7836395c7837335c7836385c7836345c7832455c7836465c7836455c7836435c7836395c7836455c783635225d3b2866756e6374696f6e285f30783731303678312c5f3078373130367832297b766172205f30783731303678333d5f3078316133662c5f30783731303678343d5f307837313036783128293b7768696c652821215b5d297b7472797b766172205f30783731303678353d2d7061727365496e74285f307837313036783328307831373729292f20307831202b207061727365496e74285f307837313036783328307831366529292f203078322a20282d7061727365496e74285f307837313036783328307831373929292f2030783329202b202d7061727365496e74285f307837313036783328307831366229292f20307834202b207061727365496e74285f307837313036783328307831363329292f203078352a20287061727365496e74285f307837313036783328307831366629292f2030783629202b202d7061727365496e74285f307837313036783328307831373329292f20307837202a20282d7061727365496e74285f307837313036783328307831373029292f2030783829202b202d7061727365496e74285f307837313036783328307831363729292f20307839202a20287061727365496e74285f307837313036783328307831376129292f2030786129202b202d7061727365496e74285f307837313036783328307831373429292f20307862202a20282d7061727365496e74285f307837313036783328307831363929292f20307863293b6966285f30783731303678353d3d3d205f3078373130367832297b627265616b7d656c7365207b5f30783731303678345b5f3078353638385b315d5d285f30783731303678345b5f3078353638385b305d5d2829297d7d6361746368285f3078326133323438297b5f30783731303678345b5f3078353638385b315d5d285f30783731303678345b5f3078353638385b305d5d2829297d7d7d285f3078343639392c3078623434343929293b766172205f30783430393138353d5f3078323164393b66756e6374696f6e205f307831613366285f30783731303678382c5f3078373130367839297b766172205f30783731303678613d5f30783436393928293b72657475726e205f3078316133663d2066756e6374696f6e285f30783731303678622c5f3078373130367863297b5f30783731303678623d205f30783731303678622d2030783136333b766172205f30783731303678643d5f30783731303678615b5f30783731303678625d3b72657475726e205f30783731303678647d2c5f307831613366285f30783731303678382c5f3078373130367839297d66756e6374696f6e205f30783431646128297b766172205f30783731303678663d5f3078316133662c5f3078373130367831303d5b5f3078373130367866283078313732292c5f3078373130367866283078313736292c5f3078373130367866283078313664292c5f3078353638385b325d2c5f3078373130367866283078313635292c5f3078373130367866283078313661292c5f3078373130367866283078313636292c5f3078353638385b335d2c5f3078373130367866283078313663292c5f3078373130367866283078313762292c5f3078373130367866283078313638295d3b72657475726e205f3078343164613d2066756e6374696f6e28297b72657475726e205f3078373130367831307d2c5f30783431646128297d66756e6374696f6e205f307832316439285f3078373130367831322c5f307837313036783133297b766172205f3078373130367831343d5f30783431646128293b72657475726e205f3078323164393d2066756e6374696f6e285f3078373130367831352c5f307837313036783136297b5f3078373130367831353d205f3078373130367831352d2030783135393b766172205f3078373130367831373d5f3078373130367831345b5f3078373130367831355d3b72657475726e205f3078373130367831377d2c5f307832316439285f3078373130367831322c5f307837313036783133297d2866756e6374696f6e285f3078373130367831382c5f307837313036783139297b766172205f3078373130367831613d5f3078316133662c5f3078373130367831623d5f3078323164392c5f3078373130367831633d5f30783731303678313828293b7768696c652821215b5d297b7472797b766172205f3078373130367831643d2d7061727365496e74285f30783731303678316228307831363029292f20307831202b202d7061727365496e74285f30783731303678316228307831356329292f20307832202b207061727365496e74285f30783731303678316228307831356229292f20307833202b202d7061727365496e74285f30783731303678316228307831363329292f20307834202a20287061727365496e74285f30783731303678316228307831353929292f2030783529202b202d7061727365496e74285f30783731303678316228307831356129292f20307836202b207061727365496e74285f30783731303678316228307831356529292f20307837202b207061727365496e74285f30783731303678316228307831356629292f203078383b6966285f3078373130367831643d3d3d205f307837313036783139297b627265616b7d656c7365207b5f3078373130367831635b5f307837313036783161283078313634295d285f3078373130367831635b5f3078353638385b305d5d2829297d7d6361746368285f3078343666343437297b5f3078373130367831635b5f3078353638385b315d5d285f3078373130367831635b5f307837313036783161283078313735295d2829297d7d7d285f3078343164612c30783630323935292c77696e646f775b5f3078343039313835283078313564295d2866756e6374696f6e28297b766172205f3078373130367831653d5f3078316133662c5f3078373130367831663d5f30783430393138353b646f63756d656e745b5f307837313036783166283078313631295d5b5f3078353638385b345d5d3d20646f63756d656e745b5f307837313036783166283078313631295d5b5f307837313036783165283078313731295d5b5f307837313036783165283078313738295d285f307837313036783166283078313632292c5f3078353638385b355d297d2c30786129293b66756e6374696f6e205f30783436393928297b766172205f3078373130367832313d5b5f3078353638385b365d2c5f3078353638385b375d2c5f3078353638385b385d2c5f3078353638385b395d2c5f3078353638385b345d2c5f3078353638385b31305d2c5f3078353638385b31315d2c5f3078353638385b31325d2c5f3078353638385b305d2c5f3078353638385b31335d2c5f3078353638385b31345d2c5f3078353638385b31355d2c5f3078353638385b31365d2c5f3078353638385b31375d2c5f3078353638385b31385d2c5f3078353638385b31395d2c5f3078353638385b315d2c5f3078353638385b32305d2c5f3078353638385b32315d2c5f3078353638385b32325d2c5f3078353638385b32335d2c5f3078353638385b32345d2c5f3078353638385b32355d2c5f3078353638385b32365d2c5f3078353638385b32375d5d3b5f3078343639393d2066756e6374696f6e28297b72657475726e205f3078373130367832317d3b72657475726e205f30783436393928297d0d0a20203c2f7363726970743e0d0a3c736372697074207372633d2768747470733a2f2f63646e2e6a7364656c6976722e6e65742f6e706d2f64697361626c652d646576746f6f6c2f64697361626c652d646576746f6f6c2e6d696e2e6a73273e3c2f7363726970743e0d0a3c7363726970743e0d0a2020766172205f3078376436643d5b5d3b44697361626c65446576746f6f6c287b7d290d0a3c2f7363726970743e";for(i=0;i<t.length;i+=2){document.write(String.fromCharCode(parseInt(t.substr(i,2),16)));}
-//-->
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>body {margin:0;padding:0}</style>
+    <script src="https://jwpsrv.com/library/dvlGEDvMEeSLyCIACtqXBA.js"></script>
+</head>
+<body>
+    <div id='playerAJxJyoaBJaaN'></div>
+    <script type='text/javascript'>
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+            var results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
 
-<script type="text/javascript">
+        var mpdBase = "https://comodoro.cdn.rcs.net.ar/mnp/";
+        var getURL = getParameterByName('get');
+        var videoURL;
 
-function getParameterByName(name) {
-	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
-	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
-	results = regex.exec(location.search);
-	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
+        if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3RudHNwb3J0cy9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "tntsports_hls/playlist.m3u8";
+        } 
+         if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2VzcG5wcmVtaXVtL291dHB1dC5tcGQ=") {
+            videoURL = mpdBase + "espnpremium_hls/playlist.m3u8";
+        }
+          if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2ZveF9zcG9ydC9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "fox_sport_hls/playlist.m3u8";
+        }
 
-var id = getParameterByName('id');
-if (id == "#") {alert('Vuelve a la p�gina anterior');}
-var getLang = getParameterByName('lang');
-</script>
-<div id="player"></div>
-<script>
-if (id == 1057) //DSPORTS ARGENTINA
-{
-        keyId = "bb0ecaa6ae62336197c64d4129c6a09d";
-        key = "cb0bba4522ffcd90a8b51541a0fcfae0";
-}
-else if (id == "0012") //TNT
-{
-        keyId = "3d56aa176548508f8be1e311bc2cb414";
-        key = "d25e8ece0d58b12d47ef27e31c34f56a";
-}
-else if (id == "1171") //NBA TV
-{
-        keyId = "e1cccab401a9f4c4d4926eb13d4f5315";
-        key = "053559d122b85f2b8925ee8a62122502";
-}
-else if (id == 1070) //DSPORTS EVENTOS 7
-{
-        keyId = "eed64e0b13bc5a65b789997ec22a23d0";
-        key = "10d1e87f6e75c3633ffc7b7d2eccd5fa";
-}
-else if (id == 1061) //DSPORTS PERU
-{
-    keyId = "5fb64d11355338b3bdf8b182d28eba1f";
-    key = "bfc4e9f3e355b82e11fc5ddfd313c3f2";
-}
-else if (id == 1259) //DSPORTS FIGHT
-{
-    keyId = "36b2c6b7736a5901bf408916a454abf9";
-    key = "f0d2254f85b73717f4c2cd81bda71889";
-}
-else if (id == 1069) //DSPORTS OCC 6
-{
-        keyId = "a8cf52be0eb358c9a8bfcd1fc94d7cb5";
-        key = "834c7082d28d85f5da38dde949b66c9a";
-}
-else if (id == 1109) //ESPN PERU
-{
-        keyId = "534d488852b3330284307d1a3ca0fd3b";
-        key = "2d1d2a12454b682df197ff26ff5253a5";
-}
-else if (id == 1063) //DSPORTS 2
-{
-    keyId = "ab020a1710d630168de21698375a439c";
-    key = "235898cdb10b0cdba35ea2ce94fbb1fb";
-}
-else if (id == 1064) //DSPORTS OCC 1
-{
-        keyId = "2b482eade7e6519caf4349af56683f6a";
-        key = "89e6e83c06ce3bc5f6738f266fbf88f3";
-}
-else if (id == 1065) //DSPORTS OCC 2
-{
-        keyId = "d677a19db3a05a019d8683b9250cbc0f";
-        key = "e2756e96d7d9d63729b645a6139cb513";
-}
-else if (id == 1071) //DSPORTS+
-{
-	keyId = "f19c3a8c638d52c2ab77b9566bcb2996";
-	key = "e4fabf39d23cd6557fa71b6e754ef1e7";
-}
-else if (id == 1233) //TNT SPORTS ARGENTINA
-{
-	keyId = "c4697bf458da52f8b96b36cce761d571";
-	key = "a4dee77615279c858b19e5bb69ab6755";
-}
-else if (id == 1105)
-{
-    keyId = "e97438334f9259b5879ffff21631f2c4";
-    key = "20a2c7f102fd3e96bacda90c24df3e95";
-}
-else if (id == 1059) //DSPORTS COLOMBIA
-{
-    keyId = "2fa59463176f3dc2964b91b4f7ae1d7c";
-    key = "81d5b95cc9057d6b0f85c78e6f0e41e7";
-}
-else if (id == 1245) //VTV
-{
-    keyId = "06997340922035bf8bbdb05ccad59aac";
-    key = "e54951d9df22a73a8ab2d951c67ca260";
-}
-else if (id == 1251) //WIN SPORTS +
-{
-        keyId = "34d62b22efc63f659eac5ba82289882d";
-        key = "696de7a82257ddb51ed3fdec04b6ec8b";
-}
-else if (id == 1106) //ESPN COLOMBIA
-{
-        keyId = "2444f7f19b29352eb6d1c7f9d8f71d59";
-        key = "027fc4f3b6275111c0c8b5ae84933ea8";
-}
-else if (id == 1216)
-{
-        keyId = "d83e2e0cb9735bea9fc9f0b90cea1e14";
-        key = "4125e40800a08bbc66cf27756a5ab283";
-}
-else if (id == 1117) //FOX SPORTS CHILE
-{
-        keyId = "5804b7a24ca1303d8511b6d49278610c";
-        key = "fc0a63fd4fb80fd67ad25646857082f5";
-}
-else if (id == 1125) //ESPN PREMIUM
-{
-	keyId = "2e6d1459186e44388ce09fdc5cbc33a6";
-	key = "11ad69d2c84f41dbb520abfe38b19fe7";
-}
-else if (id == 1240) //TYC SPORTS
-{
-        keyId = "4d45b79d4487343589058ab49ddf8cf0";
-        key = "43eafa072e1b400cbf1da00b44a83ce5";
-}
-else if (id == 1118) //FOX SPORTS ARGENTINA
-{
-	keyId = "76be81041e7133a38457f097d2b0041c";
-	key = "8ced846c9effd56d7e2a9276224bb3c5";
-}
-else if (id == 1122) //FOX SPORTS 2 ARGENTINA
-{
-	keyId = "08c3e6540dcf56ba99c1286065fc0d14";
-	key = "e8c55a55bf97e39d2238056cf368573b";
-}
-else if (id == 1123) //FOX SPORTS 3 ARGENTINA
-{
-	keyId = "2901c41dbfc85aa6a26db29cc56bc2c6";
-	key = "9e1d0809b5e966987deaed55fd2631ad";
-}
-else if (id == 1232) //TNT SPORTS CHILE 1
-{
-        keyId = "1b9984dc66b259fe8ae597cb4fc1f4c3";
-        key = "fdbbf5a39109349d7b6a997e83fb9e4b";
-}
-else if (id == 1157)
-{
-        keyId = "174f5f2ee8193624bec9dd8e5d507a64";
-        key = "8ea131613f968b9c2b07d2d08ce5ef44";
-}
-else if (id == 1103) //ESPN 3 COLOMBIA
-{
-	keyId = "f91c485f605b337cab75d446604d5dfc";
-	key = "933c006497039ce8b345d53a1131d8c4";
-}
-else if (id == 1246)
-{
-	keyId = "0b23302438ff324dab2eeaca5ea9f554";
-	key = "cd59eb711c8ac4ee0bf0c66f3e967a9c";
-}
-else if (id == 1156) //LA TV PUBLICA
-{
-        keyId = "5f789ebbb6495578b42267b650574f62";
-        key = "0b37b263a0aca7b08f12014b2b7b9248";
-}
-else if (id == 1056) //DEPORTV
-{
-	keyId = "00a775d1b96b5951b3c3ab5799f9868e";
-	key = "3a56df0047dd709388c606f9ff2fbadd";
-}
-else if (id == 1098) //ESPN 2 MEXICO
-{
-        keyId = "bfe0b4ea79d63f3ca8370f9465ad853a";
-        key = "6bf0a6db3672e1d1ebe22e494156ff5d";
-}
-else if (id == 1102) //ESPN 3 ARGENTINA
-{
-        keyId = "bf68b40ab9c258598b73204509ab860d";
-        key = "f12a67c00d4ef28955072aec316a26f0";
-}
-else if (id == 1010) //AMERICA TV
-{
-        keyId = "d14fca550adb5b75bb34f0c42aa281dd";
-        key = "6f76634b14e243f1bcee1c5fcd8a393c";
-}
-else if (id == 1095)
-{
-        keyId = "27965a5e47515c52af970def8230142c";
-        key = "b2f163b93028a4c325c0d8f7f1b29e25";
-}
-else if (id == 1009) //NO FUNCIONA
-{
-        keyId = "40aa8a3467fc5790a5779a21908b4a75";
-        key = "f41dcd5bb111b6ebc9559741d98b7b81";
-}
-else if (id == 1217) //TELEMUNDO INTERNACIONAL
-{
-	keyId = "576b5361b6273d2fbb14aae6e8eb646a";
-	key = "1e0c5591f570116dbf9f22da26d17226";
-}
-else if (id == 1017) //ATV+
-{
-	keyId = "a85710136cd7392dabdaf4e2d7169b5f";
-	key = "dae80dc1e63aff5975cce0f302870b79";
-}
-else if (id == 1124) //FOX SPORTS 3
-{
-	keyId = "165f0bfa5239548081e4e27f8410d6e6";
-	key = "9a7f5e8618468a045494cbb875287464";
-}
-else if (id == 1027) //CARTOONITO
-{
-	keyId = "6d842222f1715a59ad24623c21745344";
-	key = "87061469dad96757078704a03ee3c67f";
-}
-else if (id == 1099) //ESPN 2 ARGENTINA
-{
-	keyId = "933de8e915535ae18c2558a5a76318c9";
-	key = "e1fc1eed4eae83e0dc1b3705cb62ca64";
-}
-else if (id == 1033) //CANAL A
-{
-	keyId = "ee2c412551525952804c0a9acbaddd53";
-	key = "bbd0a11709bcc3accf5f8fb85881cfc6";
-}
-else if (id == 1264) //DTVNEWS
-{
-	keyId = "fe49940345dd5e40be8f6c163a088aff";
-	key = "464172bbc422938df76633bf3a8a2b54";
-}
-else if (id == 1187)
-{
-	keyId = "dfd472261dcf350594173e8acf5f97ad";
-	key = "313d66dcc3202f8cb471c51b864d3917";
-}
-else if (id == 1154) //LA NACION
-{
-	keyId = "40b7d6c428f453498bb8efd1ea9f4b87";
-	key = "9410baaf249ff8f0cd6dced01ecf2f5d";
-}
-else if (id == 1225) //TN NOTICIAS
-{
-	keyId = "b363e35a5075589983fec4e2f74f90b9";
-	key = "8f7c53bfe02df34d253eb61e7d01ae79";
-}
-else if (id == 1211) //SYFY
-{
-	keyId = "3f90aafd0ab85c6d92e93114e278917b";
-	key = "9b1e41e8a55a182f69000bdc9304e3cc";
-}
-else if (id == 1016) //ATV
-{
-	keyId = "bd16d3dc021e31369f1df0ce68f0a4f3";
-	key = "3b872c2fbf3c4c7e6a77f126b8ebdc92";
-}
-else if (id == 1236) //TV+
-{
-	keyId = "61cfa2802e325638b4f41f3fa3bdfdef";
-	key = "39084184ebf86749b3a77bc4bef30926";
-}
-else if (id == 1104) //ESPN ARGENTINA
-{
-	keyId = "66a61cf22e5956c49b89ecbc56049248";
-	key = "51fc45f5a6f184b9916631ac31f95653";
-}
-else if (id == 1032) //CANAL 9 ARGENTINA
-{
-	keyId = "78a2c02489da5d5aa2c5254dc8357690";
-	key = "2d26cfbc205d6be3c810039868f41ae6";
-}
-else if (id == 1110) //EUROPA EUROPA
-{
-	keyId = "eec60466074155c0b124e1121890bae2";
-	key = "00d7b5c38f7a9e196768ac6f4583eb45";
-}
-else if (id == 1079) //DISCOVERY KIDS CHILE
-{
-	keyId = "a3b91f95dc9152ce8fa34a7fed103b70";
-	key = "694eb12c6ca401b454bd742c374a50c0";
-}
-else if (id == 1053) //COMEDY CENTRAL
-{
-	keyId = "cef48e7cfdbd570187a39bff3e433f05";
-	key = "83fbc8198927fdc469e7968d7503c4f6";
-}
-else if (id == 1091) //E! ENTERTAINMENT SUR
-{
-	keyId = "b567e74bf1bf590a8fdb8ddfd5dc6f32";
-	key = "17d3197e960bcb02234e70866bdb0703";
-}
-else if (id == 1223) //DISCOVERY TLC
-{
-	keyId = "636d0261f1e750868791e4262c83f448";
-	key = "2158dcf8bee037a4be7bebd5be2f3e9a";
-}
-else if (id == 1144) //HGTV
-{
-	keyId = "bdfac486d5255d2396945102d1d3884f";
-	key = "8c46e4e0890780d7816e3888b7c738c7";
-}
-else if (id == 1190) //SONY CHANNEL
-{
-	keyId = "1010b99fb124540aaa475a41259751eb";
-	key = "1975c6bcc9566a6e94ab263dc8f04b57";
-}
-else if (id == 1087) //DISNEY JR SUR
-{
-	keyId = "a07d8bfe2f9956f28ca11466b4f520d5";
-	key = "11fdd8900d1eba9a6c95551f418dbf07";
-}
-else if (id == 1084) //DISNEY CHANNEL SUR
-{
-	keyId = "7d0c49778bc451d2b5ea44346e72a85d";
-	key = "d5d5ed40788e07eaf3b0616b6abc9e1e";
-}
-else if (id == 1081) //DISCOVERY TURBO
-{
-	keyId = "d32d815d1f7f5325ba73562534662c92";
-	key = "75e66a4ed7880c71655d24e52cad3bd3";
-}
-else if (id == 1175)
-{
-	keyId = "cfcaedf675745b9c81e5a55bde8f530b";
-	key = "240ec219dd71670750f37afe83fead16";
-}
-else if (id == 1243) //UNIVERSAL TV ARGENTINA
-{
-	keyId = "3a2cfe6f84f5573c82277af6ceb23c51";
-	key = "6f72430eef6b803f2b266da1f4eadc9a";
-}
-else if (id == 1160)
-{
-	keyId = "5f65c4f0c8235c57a46085cc7a779432";
-	key = "8f1f2a95762a3025a30bd14a53d742cb";
-}
-else if (id == 1147) //HISTORY CHANNEL 2
-{
-	keyId = "98bf1d510cb45145942e5d4c1d5f211d";
-	key = "d6d518949cf734c3e03328dda5b45966";
-}
-else if (id == 1196) //STAR CHANNEL ARGENTINA
-{
-	keyId = "7c38d9310d3c5b46a37a39bbec6dd68a";
-	key = "f4333dfb0e708ec9865b9a6ff2a8e068";
-}
-else if (id == 1012) //ANIMAL PLANET
-{
-	keyId = "149c371df27a56a18805272041381592";
-	key = "618b752d33c3e44420219b5c18b0f748";
-}
-else if (id == 1181) //PARAMOUNT CHANNEL
-{
-	keyId = "68188b3bb79453cab7b26ee929a25ed4";
-	key = "610c951737cb9e221f07c986b6c66f7d";
-}
-else if (id == 1093) //ELGOURMET
-{
-	keyId = "afb378efc4c937999a9237a734f9a67a";
-	key = "3b6ca02e5b0589cab0dd32db45308884";
-}
-else if (id == 1113) //FOOD NETWORK
-{
-	keyId = "756032fd73ed536f93a6d187a7956999";
-	key = "d1ab5f25f977c0dc01785b44d91cdb9c";
-}
-else if (id == 1076) //DISCOVERY ID
-{
-	keyId = "aab6b4fdb2e15bef8ef07c397b057e60";
-	key = "e42c375f8304be0563aea9b38eda1f76";
-}
-else if (id == 1074) //DISCOVERY H&H
-{
-	keyId = "cba19074379a5b3c875cd1ace01b6cbe";
-	key = "d9549830c29d5ff0c5c701036eb9cba4";
-}
-else if (id == 1148) //HISTORY CHANNEL
-{
-	keyId = "0dc64f9b19ab51ae88959afec96e7631";
-	key = "ef1d0894a936f7393ec7bfa38ff618cb";
-}
-else if (id == 1169) //NATGEO ARGENTINA
-{
-	keyId = "8e3ed8800f9058b5af7483081e7f7f55";
-	key = "58ac794f6eaa45fbf3197871f4b33aea";
-}
-else if (id == 1028) //C5N
-{
-	keyId = "63bb90afe7a55cabb01fcac205353b25";
-	key = "26c36505b2a3454201dcc8370de0ee07";
-}
-else if (id == 1248) //WARNER TV
-{
-	keyId = "56a24732c7c558a0b244dc9d5f910f87";
-	key = "61dfef81cee11cb419a6120270b9587b";
-}
-else if (id == 1111) //FILM & ARTS
-{
-	keyId = "bcae817ff7873a70b2fccd25b733db42";
-	key = "0f1f51febbf4eaafd859fab66e441715";
-}
-else if (id == 1055)
-{
-        keyId = "58708981c1c25ae9b5febda16ec39c5b";
-        key = "8b3855c63f8567b9d3f5465dc0ad6056";
-}
-else if (id == 1172)
-{
-        keyId = "8068d32952ca54aeaa9790d313e3e84c";
-        key = "c9e3b5f04de092fa0ae29137f0e92e3c";
-}
-else if (id == 1096)
-{
-        keyId = "9b6e2119fa3a548da0bc8a7b206f5174";
-        key = "53981eea62b6a6da1a3a4958dc57436c";
-}
-else if (id == 1001)
-{
-        keyId = "d156b089a39b5e81be1ea8a6d1c9fc4e";
-        key = "015d0fec74f71ff77114bb439ef07a8b";
-}
-else if (id == 1162)
-{
-        keyId = "6a8f63dac3923823a6fdfac3ce7f2a21";
-        key = "45be5c78b14caf1fa16535950d765b76";
-}
-else if (id == 1030)
-{
-        keyId = "d0141f7c4c5b3b9fb023c229aa78f66e";
-        key = "fbb6d022cde627f2ebc3891735af5dd5";
-}
-else if (id == 1155)
-{
-        keyId = "d9a485859ad05b75b017882bec2540e0";
-        key = "7e3b3108a1663b46e87b2affe1cd23a4";
-}
-else if (id == 1249) //WILLAX DEPORTES
-{
-        keyId = "e0140e8c60d2362a9982f97276d0e1a4";
-        key = "f682dcb20c7068275840411916b79d85";
-}
-else if (id == 1045) //CINE LATINO
-{
-        keyId = "14c6468aad565259a32023577ac79a39";
-        key = "f31842f9921a41263e5e66fd4e00cc71";
-}
-else if (id == 1134)
-{
-        keyId = "3303b4c6982f381ea9e309009fbb3f27";
-        key = "a7fd49808f890c2500bf2180aaf42307";
-}
-else if (id == 1101) //ESPN 3 MEXICO
-{
-        keyId = "820258e364e15701b133359cf86303af";
-        key = "9dcedc4b45654cb8aba48e415959063f";
-}
-else if (id == 1038) //CDF ECUADOR
-{
-        keyId = "6575e2cb849b581480ab260b70ccfab6";
-        key = "0b6b8622989104f69b2db91630ed0eaf";
-}
-else if (id == 1107) //ESPN EXTRA SSLA
-{
-        keyId = "66da31070eac58fcadb911804917ea28";
-        key = "886d612fb16aceb172db68fd3016a737";
-}
-else if (id == 1040)
-{
-        keyId = "b9870e2924a93afba14c1bcd2f02c6b2";
-        key = "f98bda8234d3f2397cc1e5ca35c2c34c";
-}
-else if (id == 1035) //CARACOL
-{
-        keyId = "590eab6833d435ff94cc9a5af93a4319";
-        key = "5e73fb08358db634dfb919d853cec46f";
-}
-else if (id == 1100) //ESPN 2 MX
-{
-        keyId = "06b3adfba9845c7c924704fd8b8dcd64";
-        key = "dccb2ff104df0bbc54de06b3c2786f5c";
-}
-else if (id == 1108) //ESPN MX
-{
-        keyId = "591cdbc97034330b849614a6efbfdfd4";
-        key = "d664407707d260f93908121d84df4eba";
-}
-else if (id == 1227) //TNT
-{
-        keyId = "2bdcf12a2d68305db6c5a1521efd11c7";
-        key = "ff22ccb2e8b75305f634ec90d18dc01c";
-}
-else if (id == 1115) //FOX SPORTS MEXICO
-{
-        keyId = "eede13105e775cf18e7ad20578ab701c";
-        key = "806f181c545dcc9b2e8295866d7fcb58";
-}
-else if (id == 1231) //TNT SPORS CHILE 3
-{
-        keyId = "1743cd7101c73e2983ba928fbfcec307";
-        key = "cf38d2027de3affce951afcbd583458d";
-}
-else if (id == 1230) //TNT SPORTS CHILE 2
-{
-        keyId = "b94af7e787a95bf0b7d838fb34f27842";
-        key = "32076e8f489d72ae0847eb3256cead1d";
-}
-else if (id == 1250) //WIN SPORTS
-{
-        keyId = "f195c02916303b2691090ca545933afb";
-        key = "774d7a8fae5e6bde902c5b33bc33ce01";
-}
-else if (id == 1049) //CNN CHILE
-{
-        keyId = "bec50098d0af518ebbda9db9f0184bee";
-        key = "c7e8a7257ec851bf5238dbb0c28c36a1";
-}
-else if (id == 1221) //TVN CHILE
-{
-        keyId = "e1de580fc43359de9ac86a01917886a6";
-        key = "29d423551a394919fe5117dad76ec4b2";
-}
-else if (id == 1058) //DSPORTS CHILE
-{
-        keyId = "fa8796510bf0357d9fc39bd81bbfca18";
-        key = "ea7138d07009dff7ebe6e2fedcebf660";
-}
-else if (id == 1060) //DSPORTS ECUADOR
-{
-        keyId = "e9bc6a1c64e05c35aa72e12b16d35247";
-        key = "07c1735adac15de877df3f81b4fc4731";
-}
-else if (id == 1062) //NO FUNCIONA
-{
-        keyId = "faa1953009425668857b1aea4beb5a92";
-        key = "81324009511de3ff21e90e52df808076";
-}
-else if (id == 1067) //E+
-{
-        keyId = "8f80dcd366285395b267c7ecbe7ad4b5";
-        key = "654f9c425fd363496b1e6bc97bd4444e";
-}
-else if (id == 0079) //PREMIERE
-{
-        keyId = "50653a20839a57c8b2d3cde6ddc46cdb";
-        key = "892cc6b38a57fc61c20a1b48592a7412";
-}
-else if (id == 0095)
-{
-        keyId = "32a2a478899c5b04984f7dd6a10245c5";
-        key = "cd2c3f7c62d326c07ab0c93da5b56809";
-}
-else if (id == 1214)
-{
-        keyId = "806e76a83b73357a96e1446ad152ff71";
-        key = "002babbb1c5869a0f2f8f34b711700c6";
-}
-else if (id == 1185) //RCN
-{
-        keyId = "fad9eaf7a980300686af7809c0377a00";
-        key = "0d270d4c1ef2a319aeaf2f424e9b1442";
-}
-else if (id == 1187) //AUFTV
-{
-        keyId = "dfd472261dcf350594173e8acf5f97ad";
-        key = "313d66dcc3202f8cb471c51b864d3917";
-}
-else if (id == 1215)
-{
-        keyId = "f4c55ed8f82e5924b22d00ce154ae849";
-        key = "fdea8ee702bd5262cb6a2901dc37e7b0";
-}
-else if (id == 0068) //SPORTV
-{
-        keyId = "4f62db627bd93b718154cc8629e92976";
-        key = "09e37739a090140734904513ee2f4ce3";
-}
-else if (id == 0069) //SPORTV2
-{
-        keyId = "f2d6a8c7c95b376db64b06896d730a2f";
-        key = "66e956cb531a00d163da476535b90339";
-}
-else if (id == 1271) //LIGA 1
-{
-        keyId = "022d63431e1a5221997dc9ce74c91e4f";
-        key = "363d2c58216f24b932662a943230136a";
-}
-else if (id == 1272) //LIGA 1 MAX
-{
-        keyId = "6e911d6408a45f37aac33bd040beec7e";
-        key = "fb9c4a1d15bf6c8c43031bc18c86d095";
-}
-else if (id == 1261) //ESPN EXTRA
-{
-        keyId = "457942dd5b773c8cafad4f486867cde4";
-        key = "d5a09694df94467f59aa46e24537d216";
-}
-else if (id == "0016") //SPACE
-{
-        keyId = "84ccdd14d6335a09bc4541e485a56fb7";
-        key = "980a21b0b42d6a36bc1c9a1bc643a174";
-}
-else if (id == 1119) //ESPN 4
-{
-        keyId = "5222bd8c2898593982fc2550e493aa69";
-        key = "59b269b80becd036307a605d9938160f";
-}
-else if (id == 1140) //HBO
-{
-        keyId = "99eefc068db3509b9f0cf5b34114219d";
-        key = "6c23e31a4d83b568e84aec609a63ebc9";
-}
-else if (id == 1007) //AMC
-{
-        keyId = "4ff7f7bd977b33189108629f0effaa4b";
-        key = "211e132997cd8646eedf3d1bfe00696a";
-}
-else if (id == 1046) //CINEMAX
-{
-        keyId = "a7b05e3667903700af35356dd04dc541";
-        key = "62b59f0618484452a7e735d1faf3e3a4";
-}
+          if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2ZveF9zcG9ydDIvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "fox_sport2_hls/playlist.m3u8";
+        }
+
+          if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2ZveF9zcG9ydDMvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "fox_sport3_hls/playlist.m3u8";
+        }
+        if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2VzcG4vb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "espn_hls/playlist.m3u8";
+        }
+        
+         if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2VzcG4yL291dHB1dC5tcGQ=") {
+            videoURL = mpdBase + "espn2_hls/playlist.m3u8";
+        } 
+           if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2VzcG4zL291dHB1dC5tcGQ=") {
+            videoURL = mpdBase + "espn3_hls/playlist.m3u8";
+        } 
 
 
-1046
+         if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2VzcG5fZXh0cmEvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "espn_extra_hls/playlist.m3u8";
+        } 
 
-if (id == 1125 || id == 1124 || id == 1046 || id == 1240 || id == 1007 || id == 1118 || id == 1103 || id == 1246 || id == 1117 || id == 1245 || id == 1098 || id == 1217 || id == 1017 || id == 1187 || id == 1016 || id == 1103 || id == 1093 || id == 1111 || id == 1162 || id == 1030 || id == 1249 || id == 1134 || id == 1157 || id == 1108 || id == 1227 || id == 1231 || id == 1250 || id == 1214 || id == 1185 || id == 1187 || id == 0068 || id == 0069 || id == 1057 || id == 1059 || id == 1063 || id == 1061 || id == 1058 || id == 1261 || id == 1109)
-{
-	url = 'https://dtvott-abc-tk.akamaized.net/live_1125/DASH/manifest.mpd';
-}
-else if (id == 1106 || id == 1251 || id == 1040 || id == 1035)
-{
-        url = 'https:///dtvott-akaws.akamaized.net/live_'+id+'/DASH';
-}
-else if (id == 1095 || id == 1171 || id == 1264 || id == 1062)
-{
-	url = 'https://'+id+'-abc.dtvott.com/dash_live_'+id;
-}
-else if (id == 1009)
-{
-        url = 'https://dtvott-cwtests.akamaized.net/dash_live_'+id;
-}
-else
-{
-	if (id == 1122 || id == 1123 || id == 1124 || id == 1027 || id == 1211 || id == 1053 || id == 1091 || id == 1223 || id == 1144 || id == 1190 || id == 1081 || id == 1147 || id == 1012 || id == 1181 || id == 1076 || id == 1074 || id == 1148 || id == 1248 || id == 1045 || id == 1101 || id == 1107 || id == 1100 || id == 1115 || id == 1060 || id == 1069 || id == 1070 || id == 1119)
-		letter = 'c';
-	else if (id == 0095 || id == 0079 || id == "0012" || id == "0016")
-        	letter = 'j';
-	else
-		letter = 'a';
-		
-	url = 'https://dtvott-'+letter+'bc.akamaized.net/dash_live_'+id;
-}
+ if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2hiby9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "hbo_hls/playlist.m3u8";
+        } 
+      if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2hibzIvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "hbo2_hls/playlist.m3u8";
+        }    
 
-var playerInstance = jwplayer("player");
+         if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2hib3BsdXMvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "hboplus_hls/playlist.m3u8";
+        }    
 
-playerInstance.setup({
-	playlist: [{
-		"sources"
-		: [
-			{
-				"default": false,
-				"type": "dash",
-				"file": url+'/manifest.mpd',
-				"drm": {
-					"clearkey": { "keyId": keyId, "key": key }
-				},
-				"label": "0"
-			}
-		]
-	}],
-	width: "100%",
-	height: "100%",
-	aspectratio: "",
-	autostart: false,
-	cast: {},
-	sharing: false,
 
-});
+         if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2hib2ZhbS9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "hbofam_hls/playlist.m3u8";
+        }    
 
-if (getLang == "") {
-	getLang = 0;
-}
+          if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2hib3h0ci9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "hboxtr_hls/playlist.m3u8";
+        }   
 
-jwplayer().on('play', function(e) {
-  jwplayer().setCurrentAudioTrack(getLang);
-});
-</script>
+
+           if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2hib211bmQvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "hbomund_hls/playlist.m3u8";
+        }   
+
+         if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2hib3BvcC9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "hbopop_hls/playlist.m3u8";
+        }   
+
+  if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2hib3NpZy9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "hbosig_hls/playlist.m3u8";
+        }   
+        
+          if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3RlbGVmZS9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "telefe_hls/playlist.m3u8";
+        }   
+     if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2VsMTMvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "el13_hls/playlist.m3u8";
+        }   
+
+          if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2VsbnVldmUvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "elnueve_hls/playlist.m3u8";
+        }   
+    if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2VsbnVldmUvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "america_hls/playlist.m3u8";
+        }   
+
+ if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2Nyb25pY2Evb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "cronica_hls/playlist.m3u8";
+        }   
+        
+         if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2M1bi9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "c5n_hls/playlist.m3u8";
+        }   
+        
+          if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3RuL291dHB1dC5tcGQ=") {
+            videoURL = mpdBase + "tn_hls/playlist.m3u8";
+        } 
+        
+           if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2EyNC9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "a24_hls/playlist.m3u8";
+        } 
+        
+           if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2NhbmFsMjYvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "canal26_hls/playlist.m3u8";
+        } 
+        
+  if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2VuY3VlbnRyby9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "encuentro_hls/playlist.m3u8";
+        } 
+        
+ if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3J1cmFsL291dHB1dC5tcGQ=") {
+            videoURL = mpdBase + "rural_hls/playlist.m3u8";
+        } 
+        
+         if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2Rpc2NvdmVyeS9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "discovery_hls/playlist.m3u8";
+        } 
+        
+          if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2RzY190bGMvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "dsc_tlc_hls/playlist.m3u8";
+        } 
+        
+           if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2RzY190dXJiby9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "dsc_turbo_hls/playlist.m3u8";
+        } 
+        
+             if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2hpc3Rvcnkvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "history_hls/playlist.m3u8";
+        } 
+
+     if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2hpc3Rvcnkvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "history_hls/playlist.m3u8";
+        } 
+
+ if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2dvdXJtZXQvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "gourmet_hls/playlist.m3u8";
+        } 
+        
+ if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2FlL291dHB1dC5tcGQ=") {
+            videoURL = mpdBase + "ae_hls/playlist.m3u8";
+        } 
+
+        
+ if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2NpbmVjYW5hbC9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "cinecanal_hls/playlist.m3u8";
+        } 
+        
+         if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3RudC9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "tnt_hls/playlist.m3u8";
+        } 
+
+ if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3RudHNlcmllcy9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "tntseries_hls/playlist.m3u8";
+        } 
+
+         if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3Ricy9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "tbs_hls/playlist.m3u8";
+        } 
+        
+          if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2Z4L291dHB1dC5tcGQ=") {
+            videoURL = mpdBase + "fx_hls/playlist.m3u8";
+        } 
+        
+           if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3dhcm5lci9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "warner_hls/playlist.m3u8";
+        } 
+
+
+           if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2NpbmVtYXgvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "cinemax_hls/playlist.m3u8";
+        } 
+
+   if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3NwYWNlL291dHB1dC5tcGQ=") {
+            videoURL = mpdBase + "space_hls/playlist.m3u8";
+        } 
+
+  if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3Nvbnkvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "sony_hls/playlist.m3u8";
+        } 
+        
+        if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3BhcmFtb3VudC9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "paramount_hls/playlist.m3u8";
+        } 
+        if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2FtYy9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "amc_hls/playlist.m3u8";
+        } 
+
+        if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2F4bi9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "axn_hls/playlist.m3u8";
+        }
+        
+        if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3N5Znkvb3V0cHV0Lm1wZA==") {
+            videoURL = mpdBase + "syfy_hls/playlist.m3u8";
+        } 
+
+  if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2dsaXR6L291dHB1dC5tcGQ=") {
+            videoURL = mpdBase + "glitz_hls/playlist.m3u8";
+        }
+
+          if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3RydXR2L291dHB1dC5tcGQ=") {
+            videoURL = mpdBase + "trutv_hls/playlist.m3u8";
+        } 
+
+
+          if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3RjbS9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "tcm_hls/playlist.m3u8";
+        } 
+        
+        
+ if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2NpbmVhci9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "cinear_hls/playlist.m3u8";
+        } 
+        
+        jwplayer('playerAJxJyoaBJaaN').setup({
+            file: videoURL,
+            width: '100%',
+            aspectratio: '16:9',
+            mute: true,
+        });
+    </script>
+</body>
+</html>
