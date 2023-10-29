@@ -226,6 +226,9 @@
             videoURL = mpdBase + "cinear/output.mpd";
         } 
         
+ if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3VuaXZlcnNhbC9vdXRwdXQubXBk") {
+            videoURL = mpdBase + "universal/output.mpd";
+        }
         jwplayer('playerAJxJyoaBJaaN').setup({
             file: videoURL,
             width: '100%',
