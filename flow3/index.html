@@ -277,7 +277,11 @@ if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2hpc3Rvcnkvb3V0cHV0
             videoURL = mpdBase + "disneyjr/output.mpd";
         }
 	    
-  
+   if (getURL === "RGlzY292ZXJ5X0tpZHM=") {
+            videoURL = mpdBase + "disc_kids/output.mpd";
+        }
+
+	    
        var playerInstance = jwplayer("player");
 		playerInstance.setup({
 			file: videoURL,
