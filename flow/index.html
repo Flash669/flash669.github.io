@@ -229,7 +229,15 @@
  if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL2NpbmVhci9vdXRwdXQubXBk") {
             videoURL = mpdBase + "cinear_hls/playlist.m3u8";
         } 
-        
+
+
+
+  if (getURL === "Y2FydG9vbg==") {
+            videoURL = mpdBase + "cartoon_hls/playlist.m3u8";
+        }
+
+
+	    
        var playerInstance = jwplayer("player");
 		playerInstance.setup({
 			file: videoURL,
