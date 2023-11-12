@@ -22,7 +22,6 @@
         var mpdBase = "https://comodoro.cdn.rcs.net.ar/mnp/";
         var getURL = getParameterByName('get');
         var videoURL;
-
         if (getURL === "aHR0cHM6Ly9yb3V0ZXIuY2RuLnJjcy5uZXQuYXIvbW5wL3RudHNwb3J0cy9vdXRwdXQubXBk") {
             videoURL = mpdBase + "tntsports_hls/playlist.m3u8";
         } 
@@ -246,7 +245,17 @@ if (getURL === "ZGlzbmV5anI=") {
 	    
 if (getURL === "RGlzY292ZXJ5X0tpZHM=") {
             videoURL = mpdBase + "disc_kids_hls/playlist.m3u8";
-        }	    
+        }	
+
+ if (getURL === "bmlja2Vsb2Rlb24=") {
+            videoURL = mpdBase + "nickelodeon_hls/playlist.m3u8";
+        }	
+
+  if (getURL === "bmlja2py") {
+            videoURL = mpdBase + "nickjr_hls/playlist.m3u8";
+        }
+
+	    
        var playerInstance = jwplayer("player");
 		playerInstance.setup({
 			file: videoURL,
