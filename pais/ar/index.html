@@ -18,10 +18,224 @@
   <div id="player"></div>
 
  <script>
-let token = "eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoiZHpna1Z6OVB2Smk5TjFkMm4ycXItdyIsInN1YiI6InZpZ2lhcGFzQGhvdG1haWwuY29tIiwiYnVzaW5lc3NVbml0IjoiU1NMQS1EVEgiLCJyZWdpb25zIjpbImY5MTdjZmY2LTAyNWEtNDkxNy04NGQ2LWZiNjg2Njk3ZDkzYyIsIjJlMTY3MjM3LWM3YmItNDIzYi1iNjA2LWMzMTExNWFkYjFkYSJdLCJhdWRpdFRyYWNraW5nSWQiOiI3MTlhMDM5OS03MzdiLTQyYzEtOTQxOS0xZDkyYzM5MzZlOGEtNzQ2NTY1NzMiLCJpc28yQ29kZSI6IkFSIiwiaXNzIjoiaHR0cHM6Ly9wcm9kcm9jay5kaXJlY3R2Z28uY29tOjQ0My9vcGVuYW0vb2F1dGgyL3JlYWxtcy9yb290L3JlYWxtcy9zc2xhIiwidG9rZW5OYW1lIjoiaWRfdG9rZW4iLCJkZXZpY2VJZCI6IlgzQ1U3dWh2RkFRWUhhM0lfQVpGanJVQWd4NFNPNVdTMGhGTkhSbFJlX2MiLCJjdXN0b21lclN0YXR1cyI6IkFjdGl2ZSIsImF6cCI6ImR0dmdvIiwiZmFtaWx5TmFtZSI6IlNBWUVTIiwiYXV0aF90aW1lIjoxNzAxODA1OTA3LCJjdXN0b21lcklkIjoiMjM3MjgxODYiLCJleHAiOjE3MDI0NjkwMjQsImlhdCI6MTcwMjMwMzQyNCwiY3VzdG9tZXJTdGF0dXNNZXNzYWdlIjoiMTAwMSIsImlic0FjY291bnRTdGF0dXMiOiJBQ1RJVkUiLCJnaXZlbk5hbWUiOiJQQUJMTyBBTEVYSSIsInNlcnZpY2VQcm92aWRlckFjY291bnRJZCI6IjU4MGVkZWNmLWVhN2QtNDY2Ni1hNDI5LTQwZmVjY2E3MmM1YiIsInZyaW9EZXZpY2VJZCI6ImRhYmFlY2YwLTAxNTMtNDQzMy04YzhlLWM3MWFjZTdlNGFlOCIsImF1ZCI6ImR0dmdvIiwiQ0IxIjpmYWxzZSwiY2hhbm5lbHMiOlsiQ0gwMTAwMDAwMDAwMDE5IiwiQ0gwMTAwMDAwMDAwMTY3IiwiQ0gwMTAwMDAwMDAwMDc2IiwiQ0gwMTAwMDAwMDAwMTA3IiwiQ0gwMTAwMDAwMDAwMjAyIiwiQ0gwMTAwMDAwMDAwMDI2IiwiQ0gwMTAwMDAwMDAwMTY5IiwiQ0gwMTAwMDAwMDAwMTUxIiwiQ0gwMTAwMDAwMDAwMjE2IiwiQ0gwMTAwMDAwMDAwMjA5IiwiQ0gwMTAwMDAwMDAwMDc1IiwiQ0gwMTAwMDAwMDAwMjk1IiwiQ0gwMTAwMDAwMDAwMjkzIiwiQ0gwMTAwMDAwMDAwMDM5IiwiQ0gwMTAwMDAwMDAwMDg3IiwiQ0gwMTAwMDAwMDAwMjI5IiwiQ0gwMTAwMDAwMDAwMDE4IiwiQ0gwMTAwMDAwMDAwMDY4IiwiQ0gwMTAwMDAwMDAwMDM4IiwiQ0gwMTAwMDAwMDAwMDIwIiwiQ0gwMTAwMDAwMDAwMDE1IiwiQ0gwMTAwMDAwMDAwMTQyIiwiQ0gwMTAwMDAwMDAwMTQwIiwiQ0gwMTAwMDAwMDAwMTcxIiwiQ0gwMTAwMDAwMDAwMTE3IiwiQ0gwMTAwMDAwMDAwMDY1IiwiQ0gwMTAwMDAwMDAwMDQ2IiwiQ0gwMTAwMDAwMDAwMjM1IiwiQ0gwMTAwMDAwMDAwMjg2IiwiQ0gwMTAwMDAwMDAwMjMwIiwiQ0gwMTAwMDAwMDAwMjkyIiwiQ0gwMTAwMDAwMDAwMDUxIiwiQ0gwMTAwMDAwMDAwMTM5IiwiQ0gwMTAwMDAwMDAwMjAzIiwiQ0gwMTAwMDAwMDAwMDUwIiwiQ0gwMTAwMDAwMDAwMDc0IiwiQ0gwMTAwMDAwMDAwMTE4IiwiQ0gwMTAwMDAwMDAwMDE2IiwiQ0gwMTAwMDAwMDAwMTYxIiwiQ0gwMTAwMDAwMDAwMTYzIiwiQ0gwMTAwMDAwMDAwMDEwIiwiQ0gwMTAwMDAwMDAwMDM2IiwiQ0gwMTAwMDAwMDAwMjE0IiwiQ0gwMTAwMDAwMDAwMTYyIiwiQ0gwMTAwMDAwMDAwMjcxIiwiQ0gwMTAwMDAwMDAwMTc3IiwiQ0gwMTAwMDAwMDAwMDgwIiwiQ0gwMTAwMDAwMDAwMDY0IiwiQ0gwMTAwMDAwMDAwMDk0IiwiQ0gwMTAwMDAwMDAwMDg2IiwiQ0gwMTAwMDAwMDAwMTA0IiwiQ0gwMTAwMDAwMDAwMTQ4IiwiQ0gwMTAwMDAwMDAwMTE2IiwiQ0gwMTAwMDAwMDAwMTg2IiwiQ0gwMTAwMDAwMDAwMjE1IiwiQ0gwMTAwMDAwMDAwMjIzIiwiQ0gwMTAwMDAwMDAwMjI1IiwiQ0gwMTAwMDAwMDAwMjQ3IiwiQ0gwMTAwMDAwMDAwMjQ5IiwiQ0gwMTAwMDAwMDAwMjU5IiwiQ0gwMTAwMDAwMDAwMDIxIiwiQ0gwMTAwMDAwMDAwMTI4IiwiQ0gwMTAwMDAwMDAwMDM3IiwiQ0gwMTAwMDAwMDAwMjY4IiwiQ0gwMTAwMDAwMDAwMjM2IiwiQ0gwMTAwMDAwMDAwMjQ2IiwiQ0gwMTAwMDAwMDAwMDMwIiwiQ0gwMTAwMDAwMDAwMTQ2IiwiQ0gwMTAwMDAwMDAwMTUyIiwiQ0gwMTAwMDAwMDAwMTU1IiwiQ0gwMTAwMDAwMDAwMTE1IiwiQ0gwMTAwMDAwMDAwMDMxIiwiQ0gwMTAwMDAwMDAwMTk0IiwiQ0gwMTAwMDAwMDAwMjExIiwiQ0gwMTAwMDAwMDAwMjY5IiwiQ0gwMTAwMDAwMDAwMjYzIiwiQ0gwMTAwMDAwMDAwMDk4IiwiQ0gwMTAwMDAwMDAwMjA3IiwiQ0gwMTAwMDAwMDAwMDUzIiwiQ0gwMTAwMDAwMDAwMDQ0IiwiQ0gwMTAwMDAwMDAwMDQwIiwiQ0gwMTAwMDAwMDAwMTgyIiwiQ0gwMTAwMDAwMDAwMDQ4IiwiQ0gwMTAwMDAwMDAwMjA1IiwiQ0gwMTAwMDAwMDAwMjcwIiwiQ0gwMTAwMDAwMDAwMjY3IiwiQ0gwMTAwMDAwMDAwMDUyIiwiQ0gwMTAwMDAwMDAwMDkzIiwiQ0gwMTAwMDAwMDAwMjIyIiwiQ0gwMTAwMDAwMDAwMDcwIiwiQ0gwMTAwMDAwMDAwMjM5IiwiQ0gwMTAwMDAwMDAwMDcxIiwiQ0gwMTAwMDAwMDAwMDg1IiwiQ0gwMTAwMDAwMDAwMDg5IiwiQ0gwMTAwMDAwMDAwMTkzIiwiQ0gwMTAwMDAwMDAwMDkyIiwiQ0gwMTAwMDAwMDAwMTA2IiwiQ0gwMTAwMDAwMDAwMTExIiwiQ0gwMTAwMDAwMDAwMTEyIiwiQ0gwMTAwMDAwMDAwMTE5IiwiQ0gwMTAwMDAwMDAwMzAyIiwiQ0gwMTAwMDAwMDAwMTQxIiwiQ0gwMTAwMDAwMDAwMjgxIiwiQ0gwMTAwMDAwMDAwMTMxIiwiQ0gwMTAwMDAwMDAwMjgzIiwiQ0gwMTAwMDAwMDAwMjk4IiwiQ0gwMTAwMDAwMDAwMjEwIiwiQ0gwMTAwMDAwMDAwMjA4IiwiQ0gwMTAwMDAwMDAwMjI2IiwiQ0gwMTAwMDAwMDAwMjM4IiwiQ0gwMTAwMDAwMDAwMjczIiwiQ0gwMTAwMDAwMDAwMTM1IiwiQ0gwMTAwMDAwMDAwMjc2IiwiQ0gwMTAwMDAwMDAwMzEyIiwiQ0gwMTAwMDAwMDAwMzEzIiwiQ0gwMTAwMDAwMDAwMzE1IiwiQ0gwMTAwMDAwMDAwMzE2IiwiQ0gwMTAwMDAwMDAwMzE3IiwiQ0gwMTAwMDAwMDAwMzMwIiwiQ0gwMTAwMDAwMDAwMzMxIiwiQ0gwMTAwMDAwMDAwMzM0IiwiQ0gwMTAwMDAwMDAwMzM1IiwiQ0gwMTAwMDAwMDAwMzM2IiwiQ0gwMTAwMDAwMDAwMzM3IiwiQ0gwMTAwMDAwMDAwMzQyIiwiQ0gwMTAwMDAwMDAwMzQwIiwiQ0gwMTAwMDAwMDAwMzQxIiwiQ0gwMTAwMDAwMDAwMzQzIl0sInZyaW9DdXN0b21lcklkIjoiNTgwZWRlY2YtZWE3ZC00NjY2LWE0MjktNDBmZWNjYTcyYzViIiwibmFtZSI6IlBBQkxPIEFMRVhJIFNBWUVTIiwicmVhbG0iOiIvc3NsYSIsImNzbSI6IjIiLCJ0b2tlblR5cGUiOiJKV1RUb2tlbiJ9.hXTL1W4atx9XWk1S0sNjzZTYs7wnpdDZ5hkgJhHO1D1zPZnI2GJ1IwAf4TNQDWIX2E-dQXzve3ETxzAPzbLYZqqmFDtkLSmFoLU0pn_2jL0iotphBYYQUybz76eXSzhtXy8sSwGsag3YyneNxSG0_wsT3mha5ENFXzwIg2F4UkcvS6qGB-b6eSCN2Wk4p2jEEjP9Tira-7EZt3Obi43EiQ1uk5ZQfk9006rLXj5ec90ALkzM_TZedz-zJDjZaab6cNCVzf1DY_7yqGbNSLwZki6cbm2q3DVybDqjm2fAeZXhWMpq9XuEUhUKBcdBWzaUoKM1l2XBgPach2n_s4g8gA";
+   let token = "eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoiZHpna1Z6OVB2Smk5TjFkMm4ycXItdyIsInN1YiI6InZpZ2lhcGFzQGhvdG1haWwuY29tIiwiYnVzaW5lc3NVbml0IjoiU1NMQS1EVEgiLCJyZWdpb25zIjpbImY5MTdjZmY2LTAyNWEtNDkxNy04NGQ2LWZiNjg2Njk3ZDkzYyIsIjJlMTY3MjM3LWM3YmItNDIzYi1iNjA2LWMzMTExNWFkYjFkYSJdLCJhdWRpdFRyYWNraW5nSWQiOiI3MTlhMDM5OS03MzdiLTQyYzEtOTQxOS0xZDkyYzM5MzZlOGEtNzQ2NTY1NzMiLCJpc28yQ29kZSI6IkFSIiwiaXNzIjoiaHR0cHM6Ly9wcm9kcm9jay5kaXJlY3R2Z28uY29tOjQ0My9vcGVuYW0vb2F1dGgyL3JlYWxtcy9yb290L3JlYWxtcy9zc2xhIiwidG9rZW5OYW1lIjoiaWRfdG9rZW4iLCJkZXZpY2VJZCI6IlgzQ1U3dWh2RkFRWUhhM0lfQVpGanJVQWd4NFNPNVdTMGhGTkhSbFJlX2MiLCJjdXN0b21lclN0YXR1cyI6IkFjdGl2ZSIsImF6cCI6ImR0dmdvIiwiZmFtaWx5TmFtZSI6IlNBWUVTIiwiYXV0aF90aW1lIjoxNzAxODA1OTA3LCJjdXN0b21lcklkIjoiMjM3MjgxODYiLCJleHAiOjE3MDI0NjkwMjQsImlhdCI6MTcwMjMwMzQyNCwiY3VzdG9tZXJTdGF0dXNNZXNzYWdlIjoiMTAwMSIsImlic0FjY291bnRTdGF0dXMiOiJBQ1RJVkUiLCJnaXZlbk5hbWUiOiJQQUJMTyBBTEVYSSIsInNlcnZpY2VQcm92aWRlckFjY291bnRJZCI6IjU4MGVkZWNmLWVhN2QtNDY2Ni1hNDI5LTQwZmVjY2E3MmM1YiIsInZyaW9EZXZpY2VJZCI6ImRhYmFlY2YwLTAxNTMtNDQzMy04YzhlLWM3MWFjZTdlNGFlOCIsImF1ZCI6ImR0dmdvIiwiQ0IxIjpmYWxzZSwiY2hhbm5lbHMiOlsiQ0gwMTAwMDAwMDAwMDE5IiwiQ0gwMTAwMDAwMDAwMTY3IiwiQ0gwMTAwMDAwMDAwMDc2IiwiQ0gwMTAwMDAwMDAwMTA3IiwiQ0gwMTAwMDAwMDAwMjAyIiwiQ0gwMTAwMDAwMDAwMDI2IiwiQ0gwMTAwMDAwMDAwMTY5IiwiQ0gwMTAwMDAwMDAwMTUxIiwiQ0gwMTAwMDAwMDAwMjE2IiwiQ0gwMTAwMDAwMDAwMjA5IiwiQ0gwMTAwMDAwMDAwMDc1IiwiQ0gwMTAwMDAwMDAwMjk1IiwiQ0gwMTAwMDAwMDAwMjkzIiwiQ0gwMTAwMDAwMDAwMDM5IiwiQ0gwMTAwMDAwMDAwMDg3IiwiQ0gwMTAwMDAwMDAwMjI5IiwiQ0gwMTAwMDAwMDAwMDE4IiwiQ0gwMTAwMDAwMDAwMDY4IiwiQ0gwMTAwMDAwMDAwMDM4IiwiQ0gwMTAwMDAwMDAwMDIwIiwiQ0gwMTAwMDAwMDAwMDE1IiwiQ0gwMTAwMDAwMDAwMTQyIiwiQ0gwMTAwMDAwMDAwMTQwIiwiQ0gwMTAwMDAwMDAwMTcxIiwiQ0gwMTAwMDAwMDAwMTE3IiwiQ0gwMTAwMDAwMDAwMDY1IiwiQ0gwMTAwMDAwMDAwMDQ2IiwiQ0gwMTAwMDAwMDAwMjM1IiwiQ0gwMTAwMDAwMDAwMjg2IiwiQ0gwMTAwMDAwMDAwMjMwIiwiQ0gwMTAwMDAwMDAwMjkyIiwiQ0gwMTAwMDAwMDAwMDUxIiwiQ0gwMTAwMDAwMDAwMTM5IiwiQ0gwMTAwMDAwMDAwMjAzIiwiQ0gwMTAwMDAwMDAwMDUwIiwiQ0gwMTAwMDAwMDAwMDc0IiwiQ0gwMTAwMDAwMDAwMTE4IiwiQ0gwMTAwMDAwMDAwMDE2IiwiQ0gwMTAwMDAwMDAwMTYxIiwiQ0gwMTAwMDAwMDAwMTYzIiwiQ0gwMTAwMDAwMDAwMDEwIiwiQ0gwMTAwMDAwMDAwMDM2IiwiQ0gwMTAwMDAwMDAwMjE0IiwiQ0gwMTAwMDAwMDAwMTYyIiwiQ0gwMTAwMDAwMDAwMjcxIiwiQ0gwMTAwMDAwMDAwMTc3IiwiQ0gwMTAwMDAwMDAwMDgwIiwiQ0gwMTAwMDAwMDAwMDY0IiwiQ0gwMTAwMDAwMDAwMDk0IiwiQ0gwMTAwMDAwMDAwMDg2IiwiQ0gwMTAwMDAwMDAwMTA0IiwiQ0gwMTAwMDAwMDAwMTQ4IiwiQ0gwMTAwMDAwMDAwMTE2IiwiQ0gwMTAwMDAwMDAwMTg2IiwiQ0gwMTAwMDAwMDAwMjE1IiwiQ0gwMTAwMDAwMDAwMjIzIiwiQ0gwMTAwMDAwMDAwMjI1IiwiQ0gwMTAwMDAwMDAwMjQ3IiwiQ0gwMTAwMDAwMDAwMjQ5IiwiQ0gwMTAwMDAwMDAwMjU5IiwiQ0gwMTAwMDAwMDAwMDIxIiwiQ0gwMTAwMDAwMDAwMTI4IiwiQ0gwMTAwMDAwMDAwMDM3IiwiQ0gwMTAwMDAwMDAwMjY4IiwiQ0gwMTAwMDAwMDAwMjM2IiwiQ0gwMTAwMDAwMDAwMjQ2IiwiQ0gwMTAwMDAwMDAwMDMwIiwiQ0gwMTAwMDAwMDAwMTQ2IiwiQ0gwMTAwMDAwMDAwMTUyIiwiQ0gwMTAwMDAwMDAwMTU1IiwiQ0gwMTAwMDAwMDAwMTE1IiwiQ0gwMTAwMDAwMDAwMDMxIiwiQ0gwMTAwMDAwMDAwMTk0IiwiQ0gwMTAwMDAwMDAwMjExIiwiQ0gwMTAwMDAwMDAwMjY5IiwiQ0gwMTAwMDAwMDAwMjYzIiwiQ0gwMTAwMDAwMDAwMDk4IiwiQ0gwMTAwMDAwMDAwMjA3IiwiQ0gwMTAwMDAwMDAwMDUzIiwiQ0gwMTAwMDAwMDAwMDQ0IiwiQ0gwMTAwMDAwMDAwMDQwIiwiQ0gwMTAwMDAwMDAwMTgyIiwiQ0gwMTAwMDAwMDAwMDQ4IiwiQ0gwMTAwMDAwMDAwMjA1IiwiQ0gwMTAwMDAwMDAwMjcwIiwiQ0gwMTAwMDAwMDAwMjY3IiwiQ0gwMTAwMDAwMDAwMDUyIiwiQ0gwMTAwMDAwMDAwMDkzIiwiQ0gwMTAwMDAwMDAwMjIyIiwiQ0gwMTAwMDAwMDAwMDcwIiwiQ0gwMTAwMDAwMDAwMjM5IiwiQ0gwMTAwMDAwMDAwMDcxIiwiQ0gwMTAwMDAwMDAwMDg1IiwiQ0gwMTAwMDAwMDAwMDg5IiwiQ0gwMTAwMDAwMDAwMTkzIiwiQ0gwMTAwMDAwMDAwMDkyIiwiQ0gwMTAwMDAwMDAwMTA2IiwiQ0gwMTAwMDAwMDAwMTExIiwiQ0gwMTAwMDAwMDAwMTEyIiwiQ0gwMTAwMDAwMDAwMTE5IiwiQ0gwMTAwMDAwMDAwMzAyIiwiQ0gwMTAwMDAwMDAwMTQxIiwiQ0gwMTAwMDAwMDAwMjgxIiwiQ0gwMTAwMDAwMDAwMTMxIiwiQ0gwMTAwMDAwMDAwMjgzIiwiQ0gwMTAwMDAwMDAwMjk4IiwiQ0gwMTAwMDAwMDAwMjEwIiwiQ0gwMTAwMDAwMDAwMjA4IiwiQ0gwMTAwMDAwMDAwMjI2IiwiQ0gwMTAwMDAwMDAwMjM4IiwiQ0gwMTAwMDAwMDAwMjczIiwiQ0gwMTAwMDAwMDAwMTM1IiwiQ0gwMTAwMDAwMDAwMjc2IiwiQ0gwMTAwMDAwMDAwMzEyIiwiQ0gwMTAwMDAwMDAwMzEzIiwiQ0gwMTAwMDAwMDAwMzE1IiwiQ0gwMTAwMDAwMDAwMzE2IiwiQ0gwMTAwMDAwMDAwMzE3IiwiQ0gwMTAwMDAwMDAwMzMwIiwiQ0gwMTAwMDAwMDAwMzMxIiwiQ0gwMTAwMDAwMDAwMzM0IiwiQ0gwMTAwMDAwMDAwMzM1IiwiQ0gwMTAwMDAwMDAwMzM2IiwiQ0gwMTAwMDAwMDAwMzM3IiwiQ0gwMTAwMDAwMDAwMzQyIiwiQ0gwMTAwMDAwMDAwMzQwIiwiQ0gwMTAwMDAwMDAwMzQxIiwiQ0gwMTAwMDAwMDAwMzQzIl0sInZyaW9DdXN0b21lcklkIjoiNTgwZWRlY2YtZWE3ZC00NjY2LWE0MjktNDBmZWNjYTcyYzViIiwibmFtZSI6IlBBQkxPIEFMRVhJIFNBWUVTIiwicmVhbG0iOiIvc3NsYSIsImNzbSI6IjIiLCJ0b2tlblR5cGUiOiJKV1RUb2tlbiJ9.hXTL1W4atx9XWk1S0sNjzZTYs7wnpdDZ5hkgJhHO1D1zPZnI2GJ1IwAf4TNQDWIX2E-dQXzve3ETxzAPzbLYZqqmFDtkLSmFoLU0pn_2jL0iotphBYYQUybz76eXSzhtXy8sSwGsag3YyneNxSG0_wsT3mha5ENFXzwIg2F4UkcvS6qGB-b6eSCN2Wk4p2jEEjP9Tira-7EZt3Obi43EiQ1uk5ZQfk9006rLXj5ec90ALkzM_TZedz-zJDjZaab6cNCVzf1DY_7yqGbNSLwZki6cbm2q3DVybDqjm2fAeZXhWMpq9XuEUhUKBcdBWzaUoKM1l2XBgPach2n_s4g8gA";
 
-   
- function _0xff83(){const _0x2da6b2=['27980a955bc3885c922b558e134b98ec','962913VLroxV','toString','get','a7dbd673c51a4c73522e7d1a240fa7bc','a75929e2696c04b382b901793982b6ed','player','5368365URzdPi','Dash\x20primary\x20URL\x20not\x20found\x20in\x20the\x20response.','CH0100000000028','de7d7ded48b437d691966acdc8a97262','577434lXYdkU','__proto__','2607510ueadni','45d78db595418f228edcdfd8eee3244a','cd9941e77fc63100986acdcb6bcba661','POST','apply','search','stringify','CH0100000000043','dash','8c3aa01f5cf71aab30d6df7ab74bfb23','info','7830b692416a413e1f31fb81a3bdf752','Header\x20\x22hdntl\x22\x20not\x20found\x20in\x20the\x20response.','715ea55293fe3d178a7bce49e51e4d68','ffb53a94f48f499546869c1f9e877187','bind','then','https://api.directvgo.com/entitlement/v3/playback/token/authorizer','92UOevia','9551559085843488876b472cd5416000','06b3adfba9845c7c924704fd8b8dcd64','chid','6244063ad7317036483d129ad7bcc75a','1f76baf7c7ac317c8ee9f64991298e88','498277qmzxYx','CH0100000000051','566d0a2b7ee9384c8fc5e3613db7fb7e','dc9b59d9a8397b756bdd2607c7614476','{}.constructor(\x22return\x20this\x22)(\x20)','constructor','a07d972af3ea385ab67b9ddc832e3d55','b94af7e787a95bf0b7d838fb34f27842','CH0100000000266','trace','78ecb51bf93594cd4a7d904bd48bbd0a','error','CH0100000000168','696de7a82257ddb51ed3fdec04b6ec8b','CH0100000000343','933de8e915535ae18c2558a5a76318c9','replace','log','6fb095d66807314cabbde0385b2953e4','12d1ef63300a35c49c8cab6e6b89f8e5','exception','key','ce810782e63339049f1a4854a081416b','CH0100000000016','status','CH0100000000342','Error\x20fetching\x20MPD:','warn','CH0100000000040','includes','CH0100000000341','keyId','web','json','prototype','CH0100000000265','8LVXmlF','2d2a808c4367669044777e623d7ff136','11kyMbGF','c4697bf458da52f8b96b36cce761d571','CH0100000000164','eb790b9685c1d3f9680cc9f907a502ea','text','CH0100000000165','Hdntl','application/json','table','d83e2e0cb9735bea9fc9f0b90cea1e14','=([^&#]*)','No\x20se\x20encontró\x20información\x20para\x20el\x20canal\x20especificado\x20en\x20la\x20URL.','CH0100000000041','CH0100000000340','100%','manifest','36xfKrKi','manifest.mpd','206ba28f691f34f88d8886cc42702c4c','854199LkVJHI','return\x20(function()\x20','138155rkjplL','34d62b22efc63f659eac5ba82289882d','[?&]','catch','2444f7f19b29352eb6d1c7f9d8f71d59','console','5d90f742e6398b7ab0abb769c77b2638'];_0xff83=function(){return _0x2da6b2;};return _0xff83();}const _0x3a36bb=_0x17fe;function _0x17fe(_0x3c7c19,_0x53b486){const _0x14de70=_0xff83();return _0x17fe=function(_0x29203f,_0x40555c){_0x29203f=_0x29203f-0x174;let _0x59af1d=_0x14de70[_0x29203f];return _0x59af1d;},_0x17fe(_0x3c7c19,_0x53b486);}(function(_0x4c9e10,_0x5e1f73){const _0x2159b6=_0x17fe,_0x36010a=_0x4c9e10();while(!![]){try{const _0x55d9cc=parseInt(_0x2159b6(0x18d))/0x1+-parseInt(_0x2159b6(0x1da))/0x2+-parseInt(_0x2159b6(0x1c6))/0x3+-parseInt(_0x2159b6(0x187))/0x4*(parseInt(_0x2159b6(0x1c8))/0x5)+parseInt(_0x2159b6(0x1c3))/0x6*(parseInt(_0x2159b6(0x1d0))/0x7)+-parseInt(_0x2159b6(0x1b1))/0x8*(-parseInt(_0x2159b6(0x1d6))/0x9)+-parseInt(_0x2159b6(0x175))/0xa*(parseInt(_0x2159b6(0x1b3))/0xb);if(_0x55d9cc===_0x5e1f73)break;else _0x36010a['push'](_0x36010a['shift']());}catch(_0x1fb77b){_0x36010a['push'](_0x36010a['shift']());}}}(_0xff83,0x6df62));var channelId=getParameterByName('id');let channelInfo={'GH':{'chid':_0x3a36bb(0x1ab),'keyId':_0x3a36bb(0x1d9),'key':'c1696c67cf7a678932d33340135ea82b'},'GHCAMARA1':{'chid':_0x3a36bb(0x1a6),'keyId':_0x3a36bb(0x188),'key':_0x3a36bb(0x1d3)},'GHCAMARA2':{'chid':_0x3a36bb(0x19b),'keyId':_0x3a36bb(0x1c5),'key':_0x3a36bb(0x180)},'GHCAMARA3':{'chid':_0x3a36bb(0x1c0),'keyId':_0x3a36bb(0x177),'key':_0x3a36bb(0x190)},'TELEFE':{'chid':_0x3a36bb(0x18e),'keyId':_0x3a36bb(0x1bc),'key':_0x3a36bb(0x197)},'ESPNCL':{'chid':_0x3a36bb(0x1b5),'keyId':_0x3a36bb(0x18c),'key':_0x3a36bb(0x17e)},'TNTCL':{'chid':_0x3a36bb(0x1bf),'keyId':'1b9984dc66b259fe8ae597cb4fc1f4c3','key':_0x3a36bb(0x183)},'TNT2CL':{'chid':_0x3a36bb(0x17c),'keyId':_0x3a36bb(0x194),'key':_0x3a36bb(0x1b2)},'TNT3CL':{'chid':'CH0100000000042','keyId':_0x3a36bb(0x1a3),'key':'9fe13e1bbc3fdebd7acc0b6070f61340'},'WINSPORTS':{'chid':_0x3a36bb(0x1b0),'keyId':_0x3a36bb(0x193),'key':_0x3a36bb(0x1d4)},'WINSPORTSPLUS':{'chid':_0x3a36bb(0x195),'keyId':_0x3a36bb(0x1c9),'key':_0x3a36bb(0x19a)},'ESPNCO':{'chid':_0x3a36bb(0x1b8),'keyId':_0x3a36bb(0x1cc),'key':'027fc4f3b6275111c0c8b5ae84933ea8'},'ESPNMX':{'chid':_0x3a36bb(0x199),'keyId':_0x3a36bb(0x182),'key':_0x3a36bb(0x1cf)},'ESPN2MX':{'chid':'CH0100000000157','keyId':_0x3a36bb(0x189),'key':_0x3a36bb(0x18b)},'VTVPLUS':{'chid':_0x3a36bb(0x1d8),'keyId':_0x3a36bb(0x1a0),'key':'d092d2e9815a561f4167a8cc70e38cf7'},'ESPN':{'chid':'CH0100000000162','keyId':_0x3a36bb(0x19f),'key':_0x3a36bb(0x1b6)},'ESPN2':{'chid':_0x3a36bb(0x1a4),'keyId':_0x3a36bb(0x19c),'key':_0x3a36bb(0x176)},'TNTAR':{'chid':_0x3a36bb(0x1a9),'keyId':_0x3a36bb(0x1b4),'key':'d905edf70433013f22444460fe4e0121'},'ESPNPREMIUM':{'chid':'CH0100000000182','keyId':'13cc9fd6bd903b9ab1602b12e3080ffd','key':'ad1709ca8208939e969b2aa8f631edbf'},'TYC':{'chid':'CH0100000000036','keyId':_0x3a36bb(0x18f),'key':_0x3a36bb(0x1ce)}},currentChannel=channelInfo[channelId];currentChannel?fetchAuthorizationToken(token,currentChannel):console[_0x3a36bb(0x198)](_0x3a36bb(0x1be));function fetchAuthorizationToken(_0x5eed4a,_0x434a0b){const _0x1e835f=_0x3a36bb;_0x434a0b&&_0x434a0b[_0x1e835f(0x1ac)]&&_0x434a0b[_0x1e835f(0x1a2)]?fetch(_0x1e835f(0x186),{'method':_0x1e835f(0x178),'headers':{'Authorization':'Bearer\x20'+_0x5eed4a,'Content-Type':_0x1e835f(0x1ba),'X-Client-Id':_0x1e835f(0x1ad),'X-Client-Version':'3.17.0'},'body':JSON[_0x1e835f(0x17b)]({'contentId':_0x434a0b[_0x1e835f(0x18a)],'delay':0x0,'isLive':!![],'mobileNetwork':!![]})})[_0x1e835f(0x185)](_0x4a4e17=>_0x4a4e17[_0x1e835f(0x1ae)]())[_0x1e835f(0x185)](_0x2b5a44=>{const _0x3c210d=_0x1e835f;if(_0x2b5a44[_0x3c210d(0x1c2)]&&_0x2b5a44['manifest'][_0x3c210d(0x17d)]&&_0x2b5a44['manifest'][_0x3c210d(0x17d)]['primary']){let _0x2587ac=_0x2b5a44[_0x3c210d(0x1c2)][_0x3c210d(0x17d)]['primary'];fetch(_0x2587ac)['then'](_0x115b2a=>{const _0xd5ddb5=_0x3c210d;if(!_0x115b2a['ok'])throw new Error('HTTP\x20error!\x20status:\x20'+_0x115b2a[_0xd5ddb5(0x1a5)]);const _0x5ca6ae=_0x115b2a['headers'][_0xd5ddb5(0x1d2)]('hdntl');if(_0x5ca6ae){console[_0xd5ddb5(0x19e)]('hdntl:',_0x5ca6ae);let _0x5f2efa=jwplayer(_0xd5ddb5(0x1d5));_0x5f2efa['setup']({'playlist':[{'sources':[{'default':![],'type':_0xd5ddb5(0x17d),'file':_0x2587ac,'drm':{'clearkey':{'keyId':_0x434a0b[_0xd5ddb5(0x1ac)],'key':_0x434a0b[_0xd5ddb5(0x1a2)]}},'label':'0','onXhrOpen':function(_0x54454f,_0x5871fb){const _0x323121=_0xd5ddb5;!_0x5871fb[_0x323121(0x1aa)](_0x323121(0x1c4))&&_0x54454f['setRequestHeader'](_0x323121(0x1b9),_0x5ca6ae);}}]}],'width':'100%','height':_0xd5ddb5(0x1c1),'aspectratio':'16:9','autostart':![],'cast':{},'sharing':![]});}else console['log'](_0xd5ddb5(0x181));return _0x115b2a[_0xd5ddb5(0x1b7)]();})[_0x3c210d(0x1cb)](_0x11ea96=>console['error'](_0x3c210d(0x1a7),_0x11ea96));}else console[_0x3c210d(0x198)](_0x3c210d(0x1d7));})[_0x1e835f(0x1cb)](_0x1b969d=>console['error']('Error\x20fetching\x20authorization\x20token:',_0x1b969d)):console[_0x1e835f(0x198)]('Información\x20incompleta\x20para\x20el\x20canal\x20actual.');}function getParameterByName(_0x3bf754){const _0x4f6c86=_0x3a36bb,_0x402103=(function(){let _0x213619=!![];return function(_0x15062d,_0x5d1aa6){const _0x49be13=_0x213619?function(){const _0x27ff4f=_0x17fe;if(_0x5d1aa6){const _0x4a258d=_0x5d1aa6[_0x27ff4f(0x179)](_0x15062d,arguments);return _0x5d1aa6=null,_0x4a258d;}}:function(){};return _0x213619=![],_0x49be13;};}()),_0x184538=_0x402103(this,function(){const _0x665df6=_0x17fe,_0x2e6963=function(){const _0x5a4736=_0x17fe;let _0x6fa6b3;try{_0x6fa6b3=Function(_0x5a4736(0x1c7)+_0x5a4736(0x191)+');')();}catch(_0x5d8f3a){_0x6fa6b3=window;}return _0x6fa6b3;},_0x26f54e=_0x2e6963(),_0x4c3e2e=_0x26f54e[_0x665df6(0x1cd)]=_0x26f54e[_0x665df6(0x1cd)]||{},_0x4bca56=[_0x665df6(0x19e),_0x665df6(0x1a8),_0x665df6(0x17f),_0x665df6(0x198),_0x665df6(0x1a1),_0x665df6(0x1bb),_0x665df6(0x196)];for(let _0x57de4a=0x0;_0x57de4a<_0x4bca56['length'];_0x57de4a++){const _0x396224=_0x402103[_0x665df6(0x192)][_0x665df6(0x1af)]['bind'](_0x402103),_0x5b9a89=_0x4bca56[_0x57de4a],_0x25bb54=_0x4c3e2e[_0x5b9a89]||_0x396224;_0x396224[_0x665df6(0x174)]=_0x402103[_0x665df6(0x184)](_0x402103),_0x396224[_0x665df6(0x1d1)]=_0x25bb54[_0x665df6(0x1d1)][_0x665df6(0x184)](_0x25bb54),_0x4c3e2e[_0x5b9a89]=_0x396224;}});_0x184538(),_0x3bf754=_0x3bf754[_0x4f6c86(0x19d)](/[\[]/,'[')['replace'](/[\]]/,']');var _0x22c947=new RegExp(_0x4f6c86(0x1ca)+_0x3bf754+_0x4f6c86(0x1bd)),_0xf8eda5=_0x22c947['exec'](location[_0x4f6c86(0x17a)]);return _0xf8eda5===null?'':decodeURIComponent(_0xf8eda5[0x1][_0x4f6c86(0x19d)](/\+/g,'\x20'));}
+    // Obtener el valor del parámetro 'id' de la URL utilizando la función getParameterByName
+    var channelId = getParameterByName('id');
+
+    // Definir información para diferentes canales
+    let channelInfo = {
+        "GH": {
+            chid: "CH0100000000341",
+            keyId: "de7d7ded48b437d691966acdc8a97262",
+            key: "c1696c67cf7a678932d33340135ea82b"
+        },
+        "GHCAMARA1": {
+            chid: "CH0100000000342",
+            keyId: "9551559085843488876b472cd5416000",
+            key: "a7dbd673c51a4c73522e7d1a240fa7bc"
+        },
+
+"GHCAMARA2": {
+            chid: "CH0100000000343",
+            keyId: "206ba28f691f34f88d8886cc42702c4c",
+            key: "7830b692416a413e1f31fb81a3bdf752"
+        },
+
+"GHCAMARA3": {
+            chid: "CH0100000000340",
+            keyId: "cd9941e77fc63100986acdcb6bcba661",
+            key: "dc9b59d9a8397b756bdd2607c7614476"
+        },
+      
+
+"TELEFE": {
+            chid: "CH0100000000051",
+            keyId: "d83e2e0cb9735bea9fc9f0b90cea1e14",
+            key: "78ecb51bf93594cd4a7d904bd48bbd0a"
+        },
+       "ESPNCL": {
+            chid: "CH0100000000164",
+            keyId: "1f76baf7c7ac317c8ee9f64991298e88",
+            key: "8c3aa01f5cf71aab30d6df7ab74bfb23"
+        },
+
+           "TNTCL": {
+            chid: "CH0100000000041",
+            keyId: "1b9984dc66b259fe8ae597cb4fc1f4c3",
+            key: "ffb53a94f48f499546869c1f9e877187"
+        },
+            "TNT2CL": {
+            chid: "CH0100000000043",
+            keyId: "b94af7e787a95bf0b7d838fb34f27842",
+            key: "2d2a808c4367669044777e623d7ff136"
+        },
+
+           "TNT3CL": {
+            chid: "CH0100000000042",
+            keyId: "ce810782e63339049f1a4854a081416b",
+            key: "9fe13e1bbc3fdebd7acc0b6070f61340"
+        },
+
+         "WINSPORTS": {
+            chid: "CH0100000000265",
+            keyId: "a07d972af3ea385ab67b9ddc832e3d55",
+            key: "a75929e2696c04b382b901793982b6ed"
+        },
+
+       "WINSPORTSPLUS": {
+            chid: "CH0100000000266",
+            keyId: "34d62b22efc63f659eac5ba82289882d",
+            key: "696de7a82257ddb51ed3fdec04b6ec8b"
+        },
+      "ESPNCO": {
+            chid: "CH0100000000165",
+            keyId: "2444f7f19b29352eb6d1c7f9d8f71d59",
+            key: "027fc4f3b6275111c0c8b5ae84933ea8"
+        },
+
+       "ESPNMX": {
+            chid: "CH0100000000168",
+            keyId: "715ea55293fe3d178a7bce49e51e4d68",
+            key: "27980a955bc3885c922b558e134b98ec"
+        },
+
+       "ESPN2MX": {
+            chid: "CH0100000000157",
+            keyId: "06b3adfba9845c7c924704fd8b8dcd64",
+            key: "6244063ad7317036483d129ad7bcc75a"
+        },
+
+         "VTVPLUS": {
+            chid: "CH0100000000028",
+            keyId: "12d1ef63300a35c49c8cab6e6b89f8e5",
+            key: "d092d2e9815a561f4167a8cc70e38cf7"
+        },
+
+       "ESPN": {
+            chid: "CH0100000000162",
+            keyId: "6fb095d66807314cabbde0385b2953e4",
+            key: "eb790b9685c1d3f9680cc9f907a502ea"
+        },
+
+     "ESPN2": {
+            chid: "CH0100000000016",
+            keyId: "933de8e915535ae18c2558a5a76318c9",
+            key: "45d78db595418f228edcdfd8eee3244a"
+        },
+        "TNTAR": {
+            chid: "CH0100000000040",
+            keyId: "c4697bf458da52f8b96b36cce761d571",
+            key: "d905edf70433013f22444460fe4e0121"
+        },
+
+       "ESPNPREMIUM": {
+            chid: "CH0100000000182",
+            keyId: "13cc9fd6bd903b9ab1602b12e3080ffd",
+            key: "ad1709ca8208939e969b2aa8f631edbf"
+        },
+       "TYC": {
+            chid: "CH0100000000036",
+            keyId: "566d0a2b7ee9384c8fc5e3613db7fb7e",
+            key: "5d90f742e6398b7ab0abb769c77b2638"
+        },
+    };
+
+    // Obtener la información del canal actual
+    let currentChannel = channelInfo[channelId];
+
+    // Verificar si se encontró información para el canal actual
+    if (currentChannel) {
+        fetchAuthorizationToken(token, currentChannel);
+    } else {
+        console.error("No se encontró información para el canal especificado en la URL.");
+    }
+
+    function fetchAuthorizationToken(token, channel) {
+        // Asegúrate de que channel esté definido y tenga keyId y key
+        if (channel && channel.keyId && channel.key) {
+            fetch("https://api.directvgo.com/entitlement/v3/playback/token/authorizer", {
+                method: "POST",
+                headers: {
+                    "Authorization": "Bearer " + token,
+                    "Content-Type": "application/json",
+                    "X-Client-Id": "web",
+                    "X-Client-Version": "3.17.0"
+                },
+                body: JSON.stringify({
+                    contentId: channel.chid,
+                    delay: 0,
+                    isLive: true,
+                    mobileNetwork: true
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.manifest && data.manifest.dash && data.manifest.dash.primary) {
+                    let manifestUrl = data.manifest.dash.primary;
+
+                    fetch(manifestUrl)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('HTTP error! status: ' + response.status);
+                            }
+                            const hdntl = response.headers.get('hdntl');
+                            if (hdntl) {
+                                console.log('hdntl:', hdntl);
+
+                                // Configurar JWPlayer con clearkey y hdntl
+                                let player = jwplayer("player");
+                                player.setup({
+                                    playlist: [{
+                                        sources: [{
+                                            default: false,
+                                            type: "dash",
+                                            file: manifestUrl,
+                                            drm: {
+                                                clearkey: {
+                                                    keyId: channel.keyId,
+                                                    key: channel.key
+                                                }
+                                            },
+                                            label: "0",
+                                            onXhrOpen: function (xhr, url) {
+                                                if (!url.includes("manifest.mpd")) {
+                                                    xhr.setRequestHeader("Hdntl", hdntl);
+                                                }
+                                            }
+                                        }]
+                                    }],
+                                    width: "100%",
+                                    height: "100%",
+                                    aspectratio: "16:9",
+                                    autostart: false,
+                                    cast: {},
+                                    sharing: false
+                                });
+                            } else {
+                                console.log('Header "hdntl" not found in the response.');
+                            }
+                            return response.text();
+                        })
+                        .catch(error => console.error('Error fetching MPD:', error));
+
+                } else {
+                    console.error("Dash primary URL not found in the response.");
+                }
+            })
+            .catch(error => console.error("Error fetching authorization token:", error));
+        } else {
+            console.error("Información incompleta para el canal actual.");
+        }
+    }
+
+    // Función getParameterByName
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+        var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
 </script>
 
 
