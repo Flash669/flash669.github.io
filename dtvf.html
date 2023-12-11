@@ -65,7 +65,17 @@
         })
         .then(response => response.json())
         .then(data => {
-          if (hdntl) { 
+           if (data.manifest && data.manifest.dash && data.manifest.dash.primary) { 
+          let manifestUrl = data.manifest.dash.primary; 
+
+          // Realizar solicitud para obtener hdntl 
+          fetch(manifestUrl) 
+            .then(response => { 
+              if (!response.ok) { 
+                throw new Error('HTTP error! status: ' + response.status); 
+              } 
+              const hdntl = response.headers.get('hdntl'); 
+              if (hdntl) { 
                 // hdntl está disponible, puedes usarlo según sea necesario 
                 console.log('hdntl:', hdntl); 
 
