@@ -23,17 +23,42 @@
 
     // Definir información para diferentes canales
     let channelInfo = {
-        "canal1": {
+        "GH": {
             chid: "CH0100000000341",
             keyId: "de7d7ded48b437d691966acdc8a97262",
             key: "c1696c67cf7a678932d33340135ea82b"
         },
-        "canal2": {
+        "GHCAMARA1": {
+            chid: "CH0100000000342",
+            keyId: "9551559085843488876b472cd5416000",
+            key: "a7dbd673c51a4c73522e7d1a240fa7bc"
+        },
+
+"GHCAMARA2": {
+            chid: "CH0100000000343",
+            keyId: "206ba28f691f34f88d8886cc42702c4c",
+            key: "7830b692416a413e1f31fb81a3bdf752"
+        },
+
+"GHCAMARA3": {
+            chid: "CH0100000000340",
+            keyId: "cd9941e77fc63100986acdcb6bcba661",
+            key: "dc9b59d9a8397b756bdd2607c7614476"
+        },
+      
+
+"TELEFE": {
+            chid: "",
+            keyId: "",
+            key: ""
+        },
+      
+       "ESPN": {
             chid: "CH0200000001234",
             keyId: "aabbccddeeff11223344556677889900",
             key: "00112233445566778899001122334455"
         },
-        // Agrega más canales según sea necesario
+       
     };
 
     // Obtener la información del canal actual
@@ -103,7 +128,7 @@
                                     width: "100%",
                                     height: "100%",
                                     aspectratio: "16:9",
-                                    autostart: true,
+                                    autostart: false,
                                     cast: {},
                                     sharing: false
                                 });
