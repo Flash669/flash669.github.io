@@ -47,79 +47,81 @@
     }
 
     function fetchAuthorizationToken(token, channel) {
-        fetch("https://api.directvgo.com/entitlement/v3/playback/token/authorizer", {
-            method: "POST",
-            headers: {
-                "Authorization": "Bearer " + token,
-                "Content-Type": "application/json",
-                "X-Client-Id": "web",
-                "X-Client-Version": "3.17.0"
-            },
-            body: JSON.stringify({
-                contentId: channel.chid,
-                delay: 0,
-                isLive: true,
-                mobileNetwork: true
+        // Asegúrate de que channel esté definido y tenga keyId y key
+        if (channel && channel.keyId && channel.key) {
+            fetch("https://api.directvgo.com/entitlement/v3/playback/token/authorizer", {
+                method: "POST",
+                headers: {
+                    "Authorization": "Bearer " + token,
+                    "Content-Type": "application/json",
+                    "X-Client-Id": "web",
+                    "X-Client-Version": "3.17.0"
+                },
+                body: JSON.stringify({
+                    contentId: channel.chid,
+                    delay: 0,
+                    isLive: true,
+                    mobileNetwork: true
+                })
             })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.manifest && data.manifest.dash && data.manifest.dash.primary) { 
-          let manifestUrl = data.manifest.dash.primary; 
+            .then(response => response.json())
+            .then(data => {
+                if (data.manifest && data.manifest.dash && data.manifest.dash.primary) {
+                    let manifestUrl = data.manifest.dash.primary;
 
-          // Realizar solicitud para obtener hdntl 
-          fetch(manifestUrl) 
-            .then(response => { 
-              if (!response.ok) { 
-                throw new Error('HTTP error! status: ' + response.status); 
-              } 
-              const hdntl = response.headers.get('hdntl'); 
-              if (hdntl) { 
-                // hdntl está disponible, puedes usarlo según sea necesario 
-                console.log('hdntl:', hdntl); 
+                    fetch(manifestUrl)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('HTTP error! status: ' + response.status);
+                            }
+                            const hdntl = response.headers.get('hdntl');
+                            if (hdntl) {
+                                console.log('hdntl:', hdntl);
 
-                // Configurar JWPlayer con clearkey y hdntl 
-                let player = jwplayer("player"); 
-                player.setup({ 
-                  playlist: [{ 
-                    sources: [{ 
-                      default: false, 
-                      type: "dash", 
-                      file: manifestUrl, 
-                      drm: { 
-                        clearkey: { 
-                          keyId: keyId, 
-                          key: key 
-                        } 
-                      }, 
-                      label: "0", 
-                      // Agregar encabezado "Hdntl" a la solicitud de audio 
-                      onXhrOpen: function (xhr, url) { 
-                        if (!url.includes("manifest.mpd")) { 
-                          xhr.setRequestHeader("Hdntl", hdntl); 
-                        } 
-                      } 
-                    }] 
-                  }], 
-                  width: "100%", 
-                  height: "100%", 
-                  aspectratio: "16:9", 
-                  autostart: true, 
-                  cast: {}, 
-                  sharing: false 
-                }); 
-              } else { 
-                console.log('Header "hdntl" not found in the response.'); 
-              } 
-              return response.text(); 
-            }) 
-            .catch(error => console.error('Error fetching MPD:', error)); 
+                                // Configurar JWPlayer con clearkey y hdntl
+                                let player = jwplayer("player");
+                                player.setup({
+                                    playlist: [{
+                                        sources: [{
+                                            default: false,
+                                            type: "dash",
+                                            file: manifestUrl,
+                                            drm: {
+                                                clearkey: {
+                                                    keyId: channel.keyId,
+                                                    key: channel.key
+                                                }
+                                            },
+                                            label: "0",
+                                            onXhrOpen: function (xhr, url) {
+                                                if (!url.includes("manifest.mpd")) {
+                                                    xhr.setRequestHeader("Hdntl", hdntl);
+                                                }
+                                            }
+                                        }]
+                                    }],
+                                    width: "100%",
+                                    height: "100%",
+                                    aspectratio: "16:9",
+                                    autostart: true,
+                                    cast: {},
+                                    sharing: false
+                                });
+                            } else {
+                                console.log('Header "hdntl" not found in the response.');
+                            }
+                            return response.text();
+                        })
+                        .catch(error => console.error('Error fetching MPD:', error));
 
-        } else { 
-          console.error("Dash primary URL not found in the response."); 
-        } 
-        })
-        .catch(error => console.error("Error fetching authorization token:", error));
+                } else {
+                    console.error("Dash primary URL not found in the response.");
+                }
+            })
+            .catch(error => console.error("Error fetching authorization token:", error));
+        } else {
+            console.error("Información incompleta para el canal actual.");
+        }
     }
 
     // Función getParameterByName
@@ -130,6 +132,8 @@
         return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
 </script>
+
+
 
 
 
