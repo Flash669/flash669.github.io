@@ -1,5 +1,4 @@
 
-
 <html lang="es"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,89 +11,141 @@
   <title></title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
   <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
-  <script data-cfasync="false" src="//achcdn.com/script/suv4.js" data-adel="lwsu" cdnd="achcdn.com" zid="7692102"></script>
+ 
 </head>
 <body>
   <div id="player"></div>
 
  <script>
-const authorizationApiUrl = 'https://api.directvgo.com/entitlement/v3/playback/token/authorizer';
-const token = "eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoid2tqZlpVU281T0ZPSDFDMTlxMnZiQSIsInN1YiI6InBpM3BlbDB0YUBnbWFpbC5jb20iLCJidXNpbmVzc1VuaXQiOiJTU0xBLU9UVCIsInJlZ2lvbnMiOlsiODBiYjA2MTAtZmVhOS0xMWVhLWExOTAtMGIwZDc4ZDkyOTY2IiwiZjkxN2NmZjYtMDI1YS00OTE3LTg0ZDYtZmI2ODY2OTdkOTNjIiwiMmUxNjcyMzctYzdiYi00MjNiLWI2MDYtYzMxMTE1YWRiMWRhIl0sImF1ZGl0VHJhY2tpbmdJZCI6IjA0YzMwYzA1LWJmMWItNDgyYS1hYTljLTQ1Y2QwYTljYzc0MC04NTcyOTI5OCIsImlzbzJDb2RlIjoiQVIiLCJpc3MiOiJodHRwczovL3Byb2Ryb2NrLmRpcmVjdHZnby5jb206NDQzL29wZW5hbS9vYXV0aDIvcmVhbG1zL3Jvb3QvcmVhbG1zL3NzbGEiLCJ0b2tlbk5hbWUiOiJpZF90b2tlbiIsImRldmljZUlkIjoiMWhoaWZsM211LjN0byIsImN1c3RvbWVyU3RhdHVzIjoiQWN0aXZlIiwibXNvUHJvdmlkZXIiOiJHcmFuIEhlcm1hbm8iLCJhenAiOiJkdHZnbyIsImZhbWlseU5hbWUiOiJQRUxFRUxJTk8iLCJhdXRoX3RpbWUiOjE3MDI1MDExODksImN1c3RvbWVySWQiOiI4NGU5N2MwYy1mMGZjLTVmYjMtYTgwNi1mYTcwNDA3MzgxNDgiLCJleHAiOjE3MDI2NjY3OTksImlhdCI6MTcwMjUwMTE5OSwiZ2l2ZW5OYW1lIjoiSkVOSVRPTklOIiwidnJpb0RldmljZUlkIjoiMWY5ODRkYmEtMWI2Ny00MTM1LWJjNmYtNTY4NDQwNjMxYmUyIiwiYXVkIjoiZHR2Z28iLCJDQjEiOmZhbHNlLCJjaGFubmVscyI6WyJDSDAxMDAwMDAwMDAzMTUiLCJDSDAxMDAwMDAwMDAzMTQiLCJDSDAxMDAwMDAwMDAzMzEiLCJDSDAxMDAwMDAwMDAzNDEiXSwidnJpb0N1c3RvbWVySWQiOiI4NGU5N2MwYy1mMGZjLTVmYjMtYTgwNi1mYTcwNDA3MzgxNDgiLCJuYW1lIjoiSkVOSVRPTklOIFBFTEVFTElOTyIsInJlYWxtIjoiL3NzbGEiLCJjc20iOiIyIiwidG9rZW5UeXBlIjoiSldUVG9rZW4ifQ.jZcuM0-6LNnMpkEkVxplGDeCb2XmBrtsL0MEcb43Mk5T1G63yiCdEwqwwHFlFhCIdKwsqI7P1DaOj5uftUawyx_KnbQf2sH5ZwIs1qMLfWoOwP3khkxiaBH2YnYoZz-nbbgSINI-87awsAqRPU9BEACbumGEkXfjxwJxltvzN7ueHSxehNmnGmk7b54j8TW_rQqf6myjeojgljh_1vRzZyKcMGiYksb1j0xhMRSGE5Vfktwh1CROEAPcsHEf7XMidnWXHGb2Si5ZCjgsdCZtzG680uyJuYIliNIIl5wVC3iXpzqJoXTk_ukjkc9mBp0GrnQd1ZUODVTNVNJWFYQqdg";
-const chid = "CH0100000000341";
-const keyId = "de7d7ded48b437d691966acdc8a97262";
-const key = "c1696c67cf7a678932d33340135ea82b";
+let token = "eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoid2tqZlpVU281T0ZPSDFDMTlxMnZiQSIsInN1YiI6InBpM3BlbDB0YUBnbWFpbC5jb20iLCJidXNpbmVzc1VuaXQiOiJTU0xBLU9UVCIsInJlZ2lvbnMiOlsiODBiYjA2MTAtZmVhOS0xMWVhLWExOTAtMGIwZDc4ZDkyOTY2IiwiZjkxN2NmZjYtMDI1YS00OTE3LTg0ZDYtZmI2ODY2OTdkOTNjIiwiMmUxNjcyMzctYzdiYi00MjNiLWI2MDYtYzMxMTE1YWRiMWRhIl0sImF1ZGl0VHJhY2tpbmdJZCI6IjA0YzMwYzA1LWJmMWItNDgyYS1hYTljLTQ1Y2QwYTljYzc0MC04NTcyOTI5OCIsImlzbzJDb2RlIjoiQVIiLCJpc3MiOiJodHRwczovL3Byb2Ryb2NrLmRpcmVjdHZnby5jb206NDQzL29wZW5hbS9vYXV0aDIvcmVhbG1zL3Jvb3QvcmVhbG1zL3NzbGEiLCJ0b2tlbk5hbWUiOiJpZF90b2tlbiIsImRldmljZUlkIjoiMWhoaWZsM211LjN0byIsImN1c3RvbWVyU3RhdHVzIjoiQWN0aXZlIiwibXNvUHJvdmlkZXIiOiJHcmFuIEhlcm1hbm8iLCJhenAiOiJkdHZnbyIsImZhbWlseU5hbWUiOiJQRUxFRUxJTk8iLCJhdXRoX3RpbWUiOjE3MDI1MDExODksImN1c3RvbWVySWQiOiI4NGU5N2MwYy1mMGZjLTVmYjMtYTgwNi1mYTcwNDA3MzgxNDgiLCJleHAiOjE3MDI2NjY3OTksImlhdCI6MTcwMjUwMTE5OSwiZ2l2ZW5OYW1lIjoiSkVOSVRPTklOIiwidnJpb0RldmljZUlkIjoiMWY5ODRkYmEtMWI2Ny00MTM1LWJjNmYtNTY4NDQwNjMxYmUyIiwiYXVkIjoiZHR2Z28iLCJDQjEiOmZhbHNlLCJjaGFubmVscyI6WyJDSDAxMDAwMDAwMDAzMTUiLCJDSDAxMDAwMDAwMDAzMTQiLCJDSDAxMDAwMDAwMDAzMzEiLCJDSDAxMDAwMDAwMDAzNDEiXSwidnJpb0N1c3RvbWVySWQiOiI4NGU5N2MwYy1mMGZjLTVmYjMtYTgwNi1mYTcwNDA3MzgxNDgiLCJuYW1lIjoiSkVOSVRPTklOIFBFTEVFTElOTyIsInJlYWxtIjoiL3NzbGEiLCJjc20iOiIyIiwidG9rZW5UeXBlIjoiSldUVG9rZW4ifQ.jZcuM0-6LNnMpkEkVxplGDeCb2XmBrtsL0MEcb43Mk5T1G63yiCdEwqwwHFlFhCIdKwsqI7P1DaOj5uftUawyx_KnbQf2sH5ZwIs1qMLfWoOwP3khkxiaBH2YnYoZz-nbbgSINI-87awsAqRPU9BEACbumGEkXfjxwJxltvzN7ueHSxehNmnGmk7b54j8TW_rQqf6myjeojgljh_1vRzZyKcMGiYksb1j0xhMRSGE5Vfktwh1CROEAPcsHEf7XMidnWXHGb2Si5ZCjgsdCZtzG680uyJuYIliNIIl5wVC3iXpzqJoXTk_ukjkc9mBp0GrnQd1ZUODVTNVNJWFYQqdg";
 
 
-const authorizationRequestOptions = {
-  method: 'POST',
-  headers: {
-    'Authorization': 'Bearer ' + token,
-    'Content-Type': 'application/json',
-    'X-Client-Id': 'web',
-    'X-Client-Version': '3.17.0',
-  },
-  body: JSON.stringify({
-    contentId: chid,
-    delay: 0,
-    isLive: true,
-    mobileNetwork: true,
-  }),
-};
+    var channelId = getParameterByName('id');
 
+    let channelInfo = {
+        "prin": {
+            chid: "CH0100000000341",
+            keyId: "de7d7ded48b437d691966acdc8a97262",
+            key: "c1696c67cf7a678932d33340135ea82b"
+        },
+        "1": {
+            chid: "CH0100000000342",
+            keyId: "9551559085843488876b472cd5416000",
+            key: "a7dbd673c51a4c73522e7d1a240fa7bc"
+        },
 
-fetch(authorizationApiUrl, authorizationRequestOptions)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Error de HTTP! Estado: ' + response.status);
-    }
-    return response.json();
-  })
-  .then(authorizationData => {
-    if (authorizationData.manifest && authorizationData.manifest.dash && authorizationData.manifest.dash.primary) {
-      const manifestUrl = authorizationData.manifest.dash.primary;
+"2": {
+            chid: "CH0100000000343",
+            keyId: "206ba28f691f34f88d8886cc42702c4c",
+            key: "7830b692416a413e1f31fb81a3bdf752"
+        },
 
+"3": {
+            chid: "CH0100000000340",
+            keyId: "cd9941e77fc63100986acdcb6bcba661",
+            key: "dc9b59d9a8397b756bdd2607c7614476"
+        },
       
-      const player = jwplayer("player");
-      player.setup({
-        playlist: [{
-          title: "FEOS",
-          description: "",
-          sources: [{
-            default: false,
-            type: "dash",
-            file: manifestUrl,
-            drm: {
-              clearkey: {
-                keyId: keyId,
-                key: key,
-              },
-            },
-            label: "0",
-            onXhrOpen: function (xhr, url) {
-              if (!url.includes("manifest.mpd")) {
-                xhr.setRequestHeader("Hdntl", authorizationData.headers.get('hdntl'));
-              }
-            },
-          }],
-        }],
-        width: "100%",
-        height: "100%",
-        aspectratio: "16:9",
-        autostart: false,
-        cast: {},
-        sharing: {},
-      });
+
+"tf": {
+            chid: "CH0100000000051",
+            keyId: "d83e2e0cb9735bea9fc9f0b90cea1e14",
+            key: "78ecb51bf93594cd4a7d904bd48bbd0a"
+        },
+    };
+
+    let currentChannel = channelInfo[channelId];
+
+    if (currentChannel) {
+        fetchAuthorizationToken(token, currentChannel);
     } else {
-      console.error("URL principal de Dash no encontrada en la respuesta.");
+        console.error("No se encontró información para el canal especificado en la URL.");
     }
-  })
-  .catch(error => console.error('Error al obtener el token de autorización:', error));
- 
+
+    function fetchAuthorizationToken(token, channel) {
+        if (channel && channel.keyId && channel.key) {
+            fetch("https://corsproxy.io/?url=https://api.directvgo.com/entitlement/v3/playback/token/authorizer", {
+                method: "POST",
+                headers: {
+                    "Authorization": "Bearer " + token,
+                    "Content-Type": "application/json",
+                    "X-Client-Id": "web",
+                    "X-Client-Version": "3.17.0"
+                },
+                body: JSON.stringify({
+                    contentId: channel.chid,
+                    delay: 0,
+                    isLive: true,
+                    mobileNetwork: true
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.manifest && data.manifest.dash && data.manifest.dash.primary) {
+                    let manifestUrl = data.manifest.dash.primary;
+
+                    fetch(manifestUrl)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('HTTP error! status: ' + response.status);
+                            }
+                            const hdntl = response.headers.get('hdntl');
+                            if (hdntl) {
+                                console.log('hdntl:', hdntl);
+
+                                let player = jwplayer("player");
+                                player.setup({
+                                    playlist: [{
+                                      "title": "Mega Deportes TV | Reproductor",
+                                       "description": "megadeportestv2.com",
+                                        sources: [{
+                                            default: false,
+                                            type: "dash",
+                                            file: manifestUrl,
+                                            drm: {
+                                                clearkey: {
+                                                    keyId: channel.keyId,
+                                                    key: channel.key
+                                                }
+                                            },
+                                            label: "0",
+                                            onXhrOpen: function (xhr, url) {
+                                                if (!url.includes("manifest.mpd")) {
+                                                    xhr.setRequestHeader("Hdntl", hdntl);
+                                                }
+                                            }
+                                        }]
+                                    }],
+                                    width: "100%",
+                                    height: "100%",
+                                    aspectratio: "16:9",
+                                    autostart: false,
+                                    cast: {},
+                                    sharing: false
+                                });
+                            } else {
+                                console.log('Header "hdntl" not found in the response.');
+                            }
+                            return response.text();
+                        })
+                        .catch(error => console.error('Error fetching MPD:', error));
+
+                } else {
+                    console.error("Dash primary URL not found in the response.");
+                }
+            })
+            .catch(error => console.error("Error fetching authorization token:", error));
+        } else {
+            console.error("Información incompleta para el canal actual.");
+        }
+    }
+
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+        var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
  </script>
 
-
-
-
-
- 
 </body></html>
