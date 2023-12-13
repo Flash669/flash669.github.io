@@ -13,8 +13,7 @@ body {
 </head>
 <body>
 
-<!-- Tu iframe con la fuente que desees -->
-<iframe id="miIframe" src="https://gordomusculosotv.com/" width="100%" height="400"></iframe>
+<iframe id="miIframe" src="https://gordomusculosotv.com/" width="600" height="400"></iframe>
 
 <script>
   // Esperar a que el contenido del iframe esté cargado
@@ -22,12 +21,12 @@ body {
     // Acceder al contenido del iframe
     var iframeContent = document.getElementById('miIframe').contentDocument;
 
-    // Acceder al div con la clase "stream" dentro del iframe
-    var streamDivs = iframeContent.getElementsByClassName('stream');
+    // Obtener el elemento que deseas excluir
+    var elementToRemove = iframeContent.querySelector('.chat');
 
-    // Hacer algo con los divs, por ejemplo, cambiar su color de fondo
-    for (var i = 0; i < streamDivs.length; i++) {
-      streamDivs[i].style.backgroundColor = 'yellow';
+    // Eliminar el elemento del DOM
+    if (elementToRemove) {
+      elementToRemove.remove();
     }
   };
 </script>
