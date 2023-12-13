@@ -18,221 +18,87 @@
   <div id="player"></div>
 
  <script>
-let token = "eyJhbGciOiJSUzI1NiJ9.eyJ1dWlkIjoiM2NkZjI0NDQtODBkYS00MzYwLWFkOTgtY2Y1NWM5NThhZDVmIiwiYXRfaGFzaCI6IjJ0QW5ZcHRFLV96MS83V3JFY0ZNWVEiLCJhdWRpdFRyYWNraW5nSWQiOiJkNDI0LWIxZWItNDA0Mi05YWNkLWNhZDgiLCJ0b2tlbk5hbWUiOiJpZF90b2tlbiIsImF1ZCI6ImR0dmdvIiwiYXpwIjoiZHR2Z28iLCJhdXRoX3RpbWUiOjE3MDI0MjYyODkwODUsInRva2VuVHlwZSI6IkpXVFRva2VuIiwiZW1haWwiOiJjb3JvbmVsczU1OEBnbWFpbC5jb20iLCJwaG9uZU51bWJlciI6IjAwMDAwMDAwMDAwIiwiY3VzdG9tZXJTdGF0dXMiOiJBY3RpdmUiLCJhY2NvdW50SWQiOiIxYmQzODQyMi00OGI4LTUwOGMtOGZiMS05ZGRmNGZmZDI1NDkiLCJmYW1pbHlOYW1lIjoiQ09ST05FTCIsImlzbzJDb2RlIjoiTVgiLCJnaXZlbk5hbWUiOiJqRVNVUyIsImRldmljZUlkIjoiZGZjNDViNTM4OWEyNmQ2YzgzNWY5Zjg3NWE5MmFiNDgwODkwZWQ0YyIsImNsaWVudElQIjoiMTgxLjIwOS43NS4xNTYiLCJtc29OYW1lIjoiZHR2IiwiY2hhbm5lbHMiOlsiQ0gwMTAwMDAwMDAwMzE1IiwiQ0gwMTAwMDAwMDAwMzE0IiwiQ0gwMTAwMDAwMDAwMzMxIiwiQ0gwMTAwMDAwMDAwMzQxIl0sImNzbSI6MiwicmVnaW9ucyI6WyI4MGJiMDYxMC1mZWE5LTExZWEtYTE5MC0wYjBkNzhkOTI5NjYiLCJmOTE3Y2ZmNi0wMjVhLTQ5MTctODRkNi1mYjY4NjY5N2Q5M2MiLCIyZTE2NzIzNy1jN2JiLTQyM2ItYjYwNi1jMzExMTVhZGIxZGEiXSwidnJpb0RldmljZUlkIjoiNDMxMmNiODItZGFiZi00NzQ0LTllZTEtNGI2NzkwMjQyOGJmIiwibmFtZSI6ImpFU1VTIENPUk9ORUwiLCJpYnNBY2NvdW50U3RhdHVzIjoiQWN0aXZlIiwicmVhbG0iOiIvc3NsYSIsImJ1aWxkIjoiVlJJTy0xLVNTTEEiLCJidXNpbmVzc1VuaXQiOiJTU0xBLU9UVCIsInN1YiI6ImNvcm9uZWxzNTU4QGdtYWlsLmNvbSIsInZyaW9DdXN0b21lcklkIjoiMWJkMzg0MjItNDhiOC01MDhjLThmYjEtOWRkZjRmZmQyNTQ5IiwicmVhZEluRm9yZ2Vyb2NrIjp0cnVlLCJyZWRlbXB0aW9uTGltaXQiOm51bGwsImlhdCI6MTcwMjQyNjI4OSwiZXhwIjoxNzAyNjQyMjg5LCJpc3MiOiJzbS1kZ28udnJpb3NlcnZpY2VzLmNvbSJ9.MdC-5xVAtE4fbgcAaFT2qzVQiQv9obiI-BHGjGe2JZpE6QVu65RvVCBPWfUVWn-mQuP2wBh7FSdDnlU0GxvdWhmYV0tWWMZplQbEn99iYEeixqxhdTtjawoFd4hCsT3UnLwh42jlEc8sUo9MbjxJEmuWwrpwcmV4-CFQqLw6KwbMJqWut6BYAVjiy8lrJ62ayHJmFJNXWLNAG7hLGtoidHi-X7mKWlIG59PRbuotAdIIua6VH9fklBxGYzpDaoeK1Avy5NevkktM9jNvHkZtlecdRA-VgLfvwAt__x7yrwxrau3VR5ZHLPoNtr0WAe_wo7lTNA331BTjqbjfBe-pFQ";
+// Variables - Reemplaza con tus propios valores 
+      let token = "eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoiRDM1N2NHcEVZUWp0T1N3WEUwR3FpdyIsInN1YiI6ImZsYXNoNjY5MTIzQGdtYWlsLmNvbSIsImJ1c2luZXNzVW5pdCI6IlNTTEEtT1RUIiwicmVnaW9ucyI6WyI4MGJiMDYxMC1mZWE5LTExZWEtYTE5MC0wYjBkNzhkOTI5NjYiLCJmOTE3Y2ZmNi0wMjVhLTQ5MTctODRkNi1mYjY4NjY5N2Q5M2MiLCIyZTE2NzIzNy1jN2JiLTQyM2ItYjYwNi1jMzExMTVhZGIxZGEiXSwiYXVkaXRUcmFja2luZ0lkIjoiOWE2MGIxY2QtNzE3Mi00Y2RkLWJiYTYtNzc2YTExNjNlZmU2LTc0NjIzMzIyIiwiaXNvMkNvZGUiOiJBUiIsImlzcyI6Imh0dHBzOi8vcHJvZHJvY2suZGlyZWN0dmdvLmNvbTo0NDMvb3BlbmFtL29hdXRoMi9yZWFsbXMvcm9vdC9yZWFsbXMvc3NsYSIsInRva2VuTmFtZSI6ImlkX3Rva2VuIiwiZGV2aWNlSWQiOiIxaGhjcnRocmUuMmoiLCJjdXN0b21lclN0YXR1cyI6IkFjdGl2ZSIsIm1zb1Byb3ZpZGVyIjoiR3JhbiBIZXJtYW5vIiwiYXpwIjoiZHR2Z28iLCJmYW1pbHlOYW1lIjoiTU9OVEFOQU4iLCJhdXRoX3RpbWUiOjE3MDIzMTI3MjQsImN1c3RvbWVySWQiOiI1OWU1NWM3Mi01YWNiLTUxNjktOGFlMi03NzMwMmM1ZDUwZTIiLCJleHAiOjE3MDI0NzgzMzUsImlhdCI6MTcwMjMxMjczNSwiZ2l2ZW5OYW1lIjoiSnVhbml0b24iLCJ2cmlvRGV2aWNlSWQiOiIwYjRkZTg1NC02NzgwLTQwMjctYjg1NS01ZWZjMDMyMjZiZWEiLCJhdWQiOiJkdHZnbyIsIkNCMSI6ZmFsc2UsImNoYW5uZWxzIjpbIkNIMDEwMDAwMDAwMDMxNSIsIkNIMDEwMDAwMDAwMDMzMSIsIkNIMDEwMDAwMDAwMDM0MSJdLCJ2cmlvQ3VzdG9tZXJJZCI6IjU5ZTU1YzcyLTVhY2ItNTE2OS04YWUyLTc3MzAyYzVkNTBlMiIsIm5hbWUiOiJKdWFuaXRvbiBNT05UQU5BTiIsInJlYWxtIjoiL3NzbGEiLCJjc20iOiIyIiwidG9rZW5UeXBlIjoiSldUVG9rZW4ifQ.gfyzpZ9wrcnPyvXI-leTSyBTCgBn_HckRdoUfNssbg43XCiCj0UbVwA46DELjAomXFBP3XaDWMv04EiyyhcZGV6Nxxg3Jq0YxFxpQ-HzVVmMxwn_rO4SgtWX6wcTyZdXNuot5eAbE1UoPigCzZZ-IK0gslI0znwrVOgbjFHKIY-TEF73zK0ZcksNpEM3TH1FhCWtnYIucVPP-A-WqPTQ63rr3Xnr6s0ippB1HQS3wL-rPS3RHvfuGYgS-LLY8n3XoHhpmczny_NeL7elC0ACWQhF3h49I9QdTsUcZXNSCTvOfHj5KCIRy0w9yaFhvsl303h0522JF9IrjuX9X8Djlg";
+    let chid = "CH0100000000341"; 
+    let keyId = "de7d7ded48b437d691966acdc8a97262"; 
+    let key = "c1696c67cf7a678932d33340135ea82b"; 
 
+    // Obtener el token de autorización 
+    fetch("https://api.directvgo.com/entitlement/v3/playback/token/authorizer", { 
+      method: "POST", 
+      headers: { 
+        "Authorization": "Bearer " + token, 
+        "Content-Type": "application/json", 
+        "X-Client-Id": "web", 
+        "X-Client-Version": "3.17.0" 
+      }, 
+      body: JSON.stringify({ 
+        contentId: chid, 
+        delay: 0, 
+        isLive: true, 
+        mobileNetwork: true 
+      }) 
+    }) 
+      .then(response => response.json()) 
+      .then(data => { 
+        if (data.manifest && data.manifest.dash && data.manifest.dash.primary) { 
+          let manifestUrl = data.manifest.dash.primary; 
 
-    var channelId = getParameterByName('id');
+          // Realizar solicitud para obtener hdntl 
+          fetch(manifestUrl) 
+            .then(response => { 
+              if (!response.ok) { 
+                throw new Error('HTTP error! status: ' + response.status); 
+              } 
+              const hdntl = response.headers.get('hdntl'); 
+              if (hdntl) { 
+                // hdntl está disponible, puedes usarlo según sea necesario 
+                console.log('hdntl:', hdntl); 
 
-    // Definir información para diferentes canales
-    let channelInfo = {
-        "GH": {
-            chid: "CH0100000000341",
-            keyId: "de7d7ded48b437d691966acdc8a97262",
-            key: "c1696c67cf7a678932d33340135ea82b"
-        },
-        "GHCAMARA1": {
-            chid: "CH0100000000342",
-            keyId: "9551559085843488876b472cd5416000",
-            key: "a7dbd673c51a4c73522e7d1a240fa7bc"
-        },
+                // Configurar JWPlayer con clearkey y hdntl 
+                let player = jwplayer("player"); 
+                player.setup({ 
+                  playlist: [{ 
+                    sources: [{ 
+                      default: false, 
+                      type: "dash", 
+                      file: manifestUrl, 
+                      drm: { 
+                        clearkey: { 
+                          keyId: keyId, 
+                          key: key 
+                        } 
+                      }, 
+                      label: "0", 
+                      // Agregar encabezado "Hdntl" a la solicitud de audio 
+                      onXhrOpen: function (xhr, url) { 
+                        if (!url.includes("manifest.mpd")) { 
+                          xhr.setRequestHeader("Hdntl", hdntl); 
+                        } 
+                      } 
+                    }] 
+                  }], 
+                  width: "100%", 
+                  height: "100%", 
+                  aspectratio: "16:9", 
+                  autostart: false,
+                  cast: {}, 
+                  sharing: false 
+                }); 
+              } else { 
+                console.log('Header "hdntl" not found in the response.'); 
+              } 
+              return response.text(); 
+            }) 
+            .catch(error => console.error('Error fetching MPD:', error)); 
 
-"GHCAMARA2": {
-            chid: "CH0100000000343",
-            keyId: "206ba28f691f34f88d8886cc42702c4c",
-            key: "7830b692416a413e1f31fb81a3bdf752"
-        },
-
-"GHCAMARA3": {
-            chid: "CH0100000000340",
-            keyId: "cd9941e77fc63100986acdcb6bcba661",
-            key: "dc9b59d9a8397b756bdd2607c7614476"
-        },
-      
-
-"TELEFE": {
-            chid: "CH0100000000051",
-            keyId: "d83e2e0cb9735bea9fc9f0b90cea1e14",
-            key: "78ecb51bf93594cd4a7d904bd48bbd0a"
-        },
-       "ESPNCL": {
-            chid: "CH0100000000164",
-            keyId: "1f76baf7c7ac317c8ee9f64991298e88",
-            key: "8c3aa01f5cf71aab30d6df7ab74bfb23"
-        },
-
-           "TNTCL": {
-            chid: "CH0100000000041",
-            keyId: "1b9984dc66b259fe8ae597cb4fc1f4c3",
-            key: "ffb53a94f48f499546869c1f9e877187"
-        },
-            "TNT2CL": {
-            chid: "CH0100000000043",
-            keyId: "b94af7e787a95bf0b7d838fb34f27842",
-            key: "2d2a808c4367669044777e623d7ff136"
-        },
-
-           "TNT3CL": {
-            chid: "CH0100000000042",
-            keyId: "ce810782e63339049f1a4854a081416b",
-            key: "9fe13e1bbc3fdebd7acc0b6070f61340"
-        },
-
-         "WINSPORTS": {
-            chid: "CH0100000000265",
-            keyId: "a07d972af3ea385ab67b9ddc832e3d55",
-            key: "a75929e2696c04b382b901793982b6ed"
-        },
-
-       "WINSPORTSPLUS": {
-            chid: "CH0100000000266",
-            keyId: "34d62b22efc63f659eac5ba82289882d",
-            key: "696de7a82257ddb51ed3fdec04b6ec8b"
-        },
-      "ESPNCO": {
-            chid: "CH0100000000165",
-            keyId: "2444f7f19b29352eb6d1c7f9d8f71d59",
-            key: "027fc4f3b6275111c0c8b5ae84933ea8"
-        },
-
-       "ESPNMX": {
-            chid: "CH0100000000168",
-            keyId: "715ea55293fe3d178a7bce49e51e4d68",
-            key: "27980a955bc3885c922b558e134b98ec"
-        },
-
-       "ESPN2MX": {
-            chid: "CH0100000000157",
-            keyId: "06b3adfba9845c7c924704fd8b8dcd64",
-            key: "6244063ad7317036483d129ad7bcc75a"
-        },
-
-         "VTVPLUS": {
-            chid: "CH0100000000028",
-            keyId: "12d1ef63300a35c49c8cab6e6b89f8e5",
-            key: "d092d2e9815a561f4167a8cc70e38cf7"
-        },
-
-       "ESPN": {
-            chid: "CH0100000000162",
-            keyId: "6fb095d66807314cabbde0385b2953e4",
-            key: "eb790b9685c1d3f9680cc9f907a502ea"
-        },
-
-     "ESPN2": {
-            chid: "CH0100000000016",
-            keyId: "933de8e915535ae18c2558a5a76318c9",
-            key: "45d78db595418f228edcdfd8eee3244a"
-        },
-        "TNTAR": {
-            chid: "CH0100000000040",
-            keyId: "c4697bf458da52f8b96b36cce761d571",
-            key: "d905edf70433013f22444460fe4e0121"
-        },
-
-       "ESPNPREMIUM": {
-            chid: "CH0100000000182",
-            keyId: "13cc9fd6bd903b9ab1602b12e3080ffd",
-            key: "ad1709ca8208939e969b2aa8f631edbf"
-        },
-       "TYC": {
-            chid: "CH0100000000036",
-            keyId: "566d0a2b7ee9384c8fc5e3613db7fb7e",
-            key: "5d90f742e6398b7ab0abb769c77b2638"
-        },
-    };
-
-    // Obtener la información del canal actual
-    let currentChannel = channelInfo[channelId];
-
-    // Verificar si se encontró información para el canal actual
-    if (currentChannel) {
-        fetchAuthorizationToken(token, currentChannel);
-    } else {
-        console.error("No se encontró información para el canal especificado en la URL.");
-    }
-
-    function fetchAuthorizationToken(token, channel) {
-        // Asegúrate de que channel esté definido y tenga keyId y key
-        if (channel && channel.keyId && channel.key) {
-            fetch("https://api.directvgo.com/entitlement/v3/playback/token/authorizer", {
-                method: "POST",
-                headers: {
-                  "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkIjoiNDMxMmNiODItZGFiZi00NzQ0LTllZTEtNGI2NzkwMjQyOGJmIiwiaXAiOiIiLCJudmEiOiIyMDIzLTEyLTEzVDEzOjU0OjExLjc0NloiLCJnZW9jIjoiTVgiLCJjb250ZW50SWQiOiJMaXZlXzEyODIiLCJsaWNlbnNlUmVuZXdBY3RpdmUiOnRydWUsImlhdCI6MTcwMjQ2ODQ1MSwiZXhwIjoxNzAyNDc1NjUxfQ.6O8R7QZ_ZzPXedJEvbPuizqTsP6IJXVFfwFsDiJDS4k","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXZpY2VJZCI6IjQzMTJjYjgyLWRhYmYtNDc0NC05ZWUxLTRiNjc5MDI0MjhiZiIsImlwIjoiIiwiZ2VvYyI6Ik1YIiwiY29udGVudElkIjoiTGl2ZV8xMjgyIiwiaXNEUk1Gcm9tVG9vbGJveCI6dHJ1ZSwiY2lkIjoiQ0gwMTAwMDAwMDAwMzQxIiwiY2hhbm5lbElkIjoiQ0gwMTAwMDAwMDAwMzQxIiwibGljZW5zZVJlbmV3QWN0aXZlIjp0cnVlLCJpYXQiOjE3MDI0Njg0NTEsImV4cCI6MTcwMjQ3NTk1MX0.NmPlnqahUabTNkt7kjgZpQIP9ilJ2gA5mhDy8TLJX2s","channelId":"CH0100000000341","drmId":"Live_1282","drms":{"fairplay":[{"certificateUrl":"https://cpix.tbxdrm.com/v1/license/dtvgo/fairplay/cert","licenseUrl":"https://cpix.tbxdrm.com/v1/license/dtvgo/fairplay?contentId=Live_1282","quality":"SD-HD"}],"playready":[{"certificateUrl":"https://cpix.tbxdrm.com/v1/license/dtvgo/playready/cert","licenseUrl":"https://cpix.tbxdrm.com/v1/license/dtvgo/playready?contentId=Live_1282","quality":"SD-HD"}],"widevine":[{"certificateUrl":"https://cpix.tbxdrm.com/v1/license/dtvgo/widevine/cert","licenseUrl":"https://cpix.tbxdrm.com/v1/license/dtvgo/widevine?contentId=Live_1282","quality":"SD-HD"}]},"duration":null,"hasDrm":true,"isLive":true,"labels":[],"manifest":{"dash":{"primary":"https://dtvott-akaws.akamaized.net/live_1282/DASH/manifest.mpd?hdnts=exp%3D1702472051%7Eacl%3D%2F*%7Eid%3D1bd38422-48b8-508c-8fb1-9ddf4ffd2549%7Ehmac%3D048598496324fa4b51fc1dc4ca9b7dd90492167781de26e7e9c7f93a5e55b589&tokenization=true&da=0&country=MX&accountType=OTT&accountId=1bd38422-48b8-508c-8fb1-9ddf4ffd2549&deviceType=web&channelId=CH0100000000341&deviceId=4312cb82-dabf-4744-9ee1-4b67902428bf","lowLatency":null},"hls":{"primary":"https://dtvott-akaws.akamaized.net/live_1282/HLS/master.m3u8?hdnts=exp%3D1702472051%7Eacl%3D%2F*%7Eid%3D1bd38422-48b8-508c-8fb1-9ddf4ffd2549%7Ehmac%3D048598496324fa4b51fc1dc4ca9b7dd90492167781de26e7e9c7f93a5e55b589&tokenization=true&da=0&country=MX&accountType=OTT&accountId=1bd38422-48b8-508c-8fb1-9ddf4ffd2549&deviceType=web&channelId=CH0100000000341&deviceId=4312cb82-dabf-4744-9ee1-4b67902428bf","lowLatency":null}},"type":null,"vmsId":null,"vrioAssetId":null,"csmLimits":{"subscription":2,"channel":4,"provider":4},"provider":"GH"}
-                },
-                body: JSON.stringify({
-                    contentId: channel.chid,
-                    delay: 0,
-                    isLive: true,
-                    mobileNetwork: true
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.manifest && data.manifest.dash && data.manifest.dash.primary) {
-                    let manifestUrl = data.manifest.dash.primary;
-
-                    fetch(manifestUrl)
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error('HTTP error! status: ' + response.status);
-                            }
-                            const hdntl = response.headers.get('hdntl');
-                            if (hdntl) {
-                                console.log('hdntl:', hdntl);
-
-                                // Configurar JWPlayer con clearkey y hdntl
-                                let player = jwplayer("player");
-                                player.setup({
-                                    playlist: [{
-                                        sources: [{
-                                            default: false,
-                                            type: "dash",
-                                            file: manifestUrl,
-                                            drm: {
-                                                clearkey: {
-                                                    keyId: channel.keyId,
-                                                    key: channel.key
-                                                }
-                                            },
-                                            label: "0",
-                                            onXhrOpen: function (xhr, url) {
-                                                if (!url.includes("manifest.mpd")) {
-                                                    xhr.setRequestHeader("Hdntl", hdntl);
-                                                }
-                                            }
-                                        }]
-                                    }],
-                                    width: "100%",
-                                    height: "100%",
-                                    aspectratio: "16:9",
-                                    autostart: false,
-                                    cast: {},
-                                    sharing: false
-                                });
-                            } else {
-                                console.log('Header "hdntl" not found in the response.');
-                            }
-                            return response.text();
-                        })
-                        .catch(error => console.error('Error fetching MPD:', error));
-
-                } else {
-                    console.error("Dash primary URL not found in the response.");
-                }
-            })
-            .catch(error => console.error("Error fetching authorization token:", error));
-        } else {
-            console.error("Información incompleta para el canal actual.");
-        }
-    }
-
-    // Función getParameterByName
-    function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
-        var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
-            results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
+        } else { 
+          console.error("Dash primary URL not found in the response."); 
+        } 
+      }) 
+      .catch(error => console.error("Error fetching authorization token:", error)); 
+  
  
  </script>
 
