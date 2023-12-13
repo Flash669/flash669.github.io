@@ -18,18 +18,14 @@
 <body>
 
 <!-- Tu iframe con la fuente que desees -->
-document.write('<iframe id="miIframe"   allow="encrypted-media" sandbox="allow-same-origin allow-scripts" src="https://gordomusculosotv.com/" width="100%" height="100%" scrolling="no" frameBorder="0" allowfullscreen></iframe>');
+<div style="overflow: hidden; height: 30px; width: 200px">
+  <script>
+    document.write('<iframe id="miIframe" allow="encrypted-media" sandbox="allow-same-origin allow-scripts" src="https://gordomusculosotv.com/" width="100%" height="100%" scrolling="no" frameborder="0" allowfullscreen></iframe>');
+  </script>
+</div>
 
-<script>
-  // Esperar a que el contenido del iframe esté cargado
-  document.getElementById('miIframe').onload = function() {
-    // Acceder al contenido del iframe
-    var iframeContent = document.getElementById('miIframe').contentWindow;
 
-    // Llamar a una función dentro del iframe para manipular su contenido
-    iframeContent.postMessage('removeChatElement', '*');
-  };
-</script>
+
 
 </body>
 </html>
