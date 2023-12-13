@@ -24,7 +24,7 @@
 
             // Ejemplo de cómo cargar una manifestación con Shaka Player
             const videoElement = document.getElementById('shaka-player');
-            const manifestUri = 'https://dtvott-akaws.akamaized.net/live_1282/DASH/manifest.mpd?hdnts=exp%3D1702467583%7Eacl%3D%2F*%7Eid%3D9f6f726d-017f-5c7d-9baa-58c85770a4ed%7Ehmac%3D484dfc2d8327ecb9b04e967684fea8429039f10e1d4581524bd6ce6291a2720a&tokenization=true&da=0&country=AR&accountType=OTT&accountId=9f6f726d-017f-5c7d-9baa-58c85770a4ed&deviceType=web&channelId=CH0100000000341&deviceId=8fd8a8ef-abad-49ad-9f51-cb2e0f887110';  // Reemplaza con la URL de tu manifestación Shaka Player
+            let manifestUrl = '';  // Inicializa con un valor vacío
 
             // Configuración de Shaka Player
             const player = new shaka.Player(videoElement);
@@ -33,11 +33,11 @@
             });
 
             // Cargar la manifestación
-            player.load(manifestUri).then(function() {
+            player.load(manifestUrl).then(function() {
                 console.log('Manifest loaded successfully');
 
                 // Luego de cargar la manifestación, realiza la autenticación y configuración del JWPlayer
-                let token = "eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoiRDM1N2NHcEVZUWp0T1N3WEUwR3FpdyIsInN1YiI6ImZsYXNoNjY5MTIzQGdtYWlsLmNvbSIsImJ1c2luZXNzVW5pdCI6IlNTTEEtT1RUIiwicmVnaW9ucyI6WyI4MGJiMDYxMC1mZWE5LTExZWEtYTE5MC0wYjBkNzhkOTI5NjYiLCJmOTE3Y2ZmNi0wMjVhLTQ5MTctODRkNi1mYjY4NjY5N2Q5M2MiLCIyZTE2NzIzNy1jN2JiLTQyM2ItYjYwNi1jMzExMTVhZGIxZGEiXSwiYXVkaXRUcmFja2luZ0lkIjoiOWE2MGIxY2QtNzE3Mi00Y2RkLWJiYTYtNzc2YTExNjNlZmU2LTc0NjIzMzIyIiwiaXNvMkNvZGUiOiJBUiIsImlzcyI6Imh0dHBzOi8vcHJvZHJvY2suZGlyZWN0dmdvLmNvbTo0NDMvb3BlbmFtL29hdXRoMi9yZWFsbXMvcm9vdC9yZWFsbXMvc3NsYSIsInRva2VuTmFtZSI6ImlkX3Rva2VuIiwiZGV2aWNlSWQiOiIxaGhjcnRocmUuMmoiLCJjdXN0b21lclN0YXR1cyI6IkFjdGl2ZSIsIm1zb1Byb3ZpZGVyIjoiR3JhbiBIZXJtYW5vIiwiYXpwIjoiZHR2Z28iLCJmYW1pbHlOYW1lIjoiTU9OVEFOQU4iLCJhdXRoX3RpbWUiOjE3MDIzMTI3MjQsImN1c3RvbWVySWQiOiI1OWU1NWM3Mi01YWNiLTUxNjktOGFlMi03NzMwMmM1ZDUwZTIiLCJleHAiOjE3MDI0NzgzMzUsImlhdCI6MTcwMjMxMjczNSwiZ2l2ZW5OYW1lIjoiSnVhbml0b24iLCJ2cmlvRGV2aWNlSWQiOiIwYjRkZTg1NC02NzgwLTQwMjctYjg1NS01ZWZjMDMyMjZiZWEiLCJhdWQiOiJkdHZnbyIsIkNCMSI6ZmFsc2UsImNoYW5uZWxzIjpbIkNIMDEwMDAwMDAwMDMxNSIsIkNIMDEwMDAwMDAwMDMzMSIsIkNIMDEwMDAwMDAwMDM0MSJdLCJ2cmlvQ3VzdG9tZXJJZCI6IjU5ZTU1YzcyLTVhY2ItNTE2OS04YWUyLTc3MzAyYzVkNTBlMiIsIm5hbWUiOiJKdWFuaXRvbiBNT05UQU5BTiIsInJlYWxtIjoiL3NzbGEiLCJjc20iOiIyIiwidG9rZW5UeXBlIjoiSldUVG9rZW4ifQ.gfyzpZ9wrcnPyvXI-leTSyBTCgBn_HckRdoUfNssbg43XCiCj0UbVwA46DELjAomXFBP3XaDWMv04EiyyhcZGV6Nxxg3Jq0YxFxpQ-HzVVmMxwn_rO4SgtWX6wcTyZdXNuot5eAbE1UoPigCzZZ-IK0gslI0znwrVOgbjFHKIY-TEF73zK0ZcksNpEM3TH1FhCWtnYIucVPP-A-WqPTQ63rr3Xnr6s0ippB1HQS3wL-rPS3RHvfuGYgS-LLY8n3XoHhpmczny_NeL7elC0ACWQhF3h49I9QdTsUcZXNSCTvOfHj5KCIRy0w9yaFhvsl303h0522JF9IrjuX9X8Djlg";
+                let token = "TU_TOKEN_AQUI";
                 var channelId = getParameterByName('id');
                 let channelInfo = {
                     "GH": {
@@ -80,7 +80,7 @@
                     .then(response => response.json())
                     .then(data => {
                         if (data.manifest && data.manifest.dash && data.manifest.dash.primary) {
-                            let manifestUrl = data.manifest.dash.primary;
+                            manifestUrl = data.manifest.dash.primary;
 
                             fetch(manifestUrl)
                                 .then(response => {
