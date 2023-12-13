@@ -18,89 +18,224 @@
   <div id="player"></div>
 
  <script>
-// Variables - Reemplaza con tus propios valores 
-      let token = "eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoid2tqZlpVU281T0ZPSDFDMTlxMnZiQSIsInN1YiI6InBpM3BlbDB0YUBnbWFpbC5jb20iLCJidXNpbmVzc1VuaXQiOiJTU0xBLU9UVCIsInJlZ2lvbnMiOlsiODBiYjA2MTAtZmVhOS0xMWVhLWExOTAtMGIwZDc4ZDkyOTY2IiwiZjkxN2NmZjYtMDI1YS00OTE3LTg0ZDYtZmI2ODY2OTdkOTNjIiwiMmUxNjcyMzctYzdiYi00MjNiLWI2MDYtYzMxMTE1YWRiMWRhIl0sImF1ZGl0VHJhY2tpbmdJZCI6IjA0YzMwYzA1LWJmMWItNDgyYS1hYTljLTQ1Y2QwYTljYzc0MC04NTcyOTI5OCIsImlzbzJDb2RlIjoiQVIiLCJpc3MiOiJodHRwczovL3Byb2Ryb2NrLmRpcmVjdHZnby5jb206NDQzL29wZW5hbS9vYXV0aDIvcmVhbG1zL3Jvb3QvcmVhbG1zL3NzbGEiLCJ0b2tlbk5hbWUiOiJpZF90b2tlbiIsImRldmljZUlkIjoiMWhoaWZsM211LjN0byIsImN1c3RvbWVyU3RhdHVzIjoiQWN0aXZlIiwibXNvUHJvdmlkZXIiOiJHcmFuIEhlcm1hbm8iLCJhenAiOiJkdHZnbyIsImZhbWlseU5hbWUiOiJQRUxFRUxJTk8iLCJhdXRoX3RpbWUiOjE3MDI1MDExODksImN1c3RvbWVySWQiOiI4NGU5N2MwYy1mMGZjLTVmYjMtYTgwNi1mYTcwNDA3MzgxNDgiLCJleHAiOjE3MDI2NjY3OTksImlhdCI6MTcwMjUwMTE5OSwiZ2l2ZW5OYW1lIjoiSkVOSVRPTklOIiwidnJpb0RldmljZUlkIjoiMWY5ODRkYmEtMWI2Ny00MTM1LWJjNmYtNTY4NDQwNjMxYmUyIiwiYXVkIjoiZHR2Z28iLCJDQjEiOmZhbHNlLCJjaGFubmVscyI6WyJDSDAxMDAwMDAwMDAzMTUiLCJDSDAxMDAwMDAwMDAzMTQiLCJDSDAxMDAwMDAwMDAzMzEiLCJDSDAxMDAwMDAwMDAzNDEiXSwidnJpb0N1c3RvbWVySWQiOiI4NGU5N2MwYy1mMGZjLTVmYjMtYTgwNi1mYTcwNDA3MzgxNDgiLCJuYW1lIjoiSkVOSVRPTklOIFBFTEVFTElOTyIsInJlYWxtIjoiL3NzbGEiLCJjc20iOiIyIiwidG9rZW5UeXBlIjoiSldUVG9rZW4ifQ.jZcuM0-6LNnMpkEkVxplGDeCb2XmBrtsL0MEcb43Mk5T1G63yiCdEwqwwHFlFhCIdKwsqI7P1DaOj5uftUawyx_KnbQf2sH5ZwIs1qMLfWoOwP3khkxiaBH2YnYoZz-nbbgSINI-87awsAqRPU9BEACbumGEkXfjxwJxltvzN7ueHSxehNmnGmk7b54j8TW_rQqf6myjeojgljh_1vRzZyKcMGiYksb1j0xhMRSGE5Vfktwh1CROEAPcsHEf7XMidnWXHGb2Si5ZCjgsdCZtzG680uyJuYIliNIIl5wVC3iXpzqJoXTk_ukjkc9mBp0GrnQd1ZUODVTNVNJWFYQqdg";
-    let chid = "CH0100000000341"; 
-    let keyId = "de7d7ded48b437d691966acdc8a97262"; 
-    let key = "c1696c67cf7a678932d33340135ea82b"; 
+let token = "eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoid2tqZlpVU281T0ZPSDFDMTlxMnZiQSIsInN1YiI6InBpM3BlbDB0YUBnbWFpbC5jb20iLCJidXNpbmVzc1VuaXQiOiJTU0xBLU9UVCIsInJlZ2lvbnMiOlsiODBiYjA2MTAtZmVhOS0xMWVhLWExOTAtMGIwZDc4ZDkyOTY2IiwiZjkxN2NmZjYtMDI1YS00OTE3LTg0ZDYtZmI2ODY2OTdkOTNjIiwiMmUxNjcyMzctYzdiYi00MjNiLWI2MDYtYzMxMTE1YWRiMWRhIl0sImF1ZGl0VHJhY2tpbmdJZCI6IjA0YzMwYzA1LWJmMWItNDgyYS1hYTljLTQ1Y2QwYTljYzc0MC04NTcyOTI5OCIsImlzbzJDb2RlIjoiQVIiLCJpc3MiOiJodHRwczovL3Byb2Ryb2NrLmRpcmVjdHZnby5jb206NDQzL29wZW5hbS9vYXV0aDIvcmVhbG1zL3Jvb3QvcmVhbG1zL3NzbGEiLCJ0b2tlbk5hbWUiOiJpZF90b2tlbiIsImRldmljZUlkIjoiMWhoaWZsM211LjN0byIsImN1c3RvbWVyU3RhdHVzIjoiQWN0aXZlIiwibXNvUHJvdmlkZXIiOiJHcmFuIEhlcm1hbm8iLCJhenAiOiJkdHZnbyIsImZhbWlseU5hbWUiOiJQRUxFRUxJTk8iLCJhdXRoX3RpbWUiOjE3MDI1MDExODksImN1c3RvbWVySWQiOiI4NGU5N2MwYy1mMGZjLTVmYjMtYTgwNi1mYTcwNDA3MzgxNDgiLCJleHAiOjE3MDI2NjY3OTksImlhdCI6MTcwMjUwMTE5OSwiZ2l2ZW5OYW1lIjoiSkVOSVRPTklOIiwidnJpb0RldmljZUlkIjoiMWY5ODRkYmEtMWI2Ny00MTM1LWJjNmYtNTY4NDQwNjMxYmUyIiwiYXVkIjoiZHR2Z28iLCJDQjEiOmZhbHNlLCJjaGFubmVscyI6WyJDSDAxMDAwMDAwMDAzMTUiLCJDSDAxMDAwMDAwMDAzMTQiLCJDSDAxMDAwMDAwMDAzMzEiLCJDSDAxMDAwMDAwMDAzNDEiXSwidnJpb0N1c3RvbWVySWQiOiI4NGU5N2MwYy1mMGZjLTVmYjMtYTgwNi1mYTcwNDA3MzgxNDgiLCJuYW1lIjoiSkVOSVRPTklOIFBFTEVFTElOTyIsInJlYWxtIjoiL3NzbGEiLCJjc20iOiIyIiwidG9rZW5UeXBlIjoiSldUVG9rZW4ifQ.jZcuM0-6LNnMpkEkVxplGDeCb2XmBrtsL0MEcb43Mk5T1G63yiCdEwqwwHFlFhCIdKwsqI7P1DaOj5uftUawyx_KnbQf2sH5ZwIs1qMLfWoOwP3khkxiaBH2YnYoZz-nbbgSINI-87awsAqRPU9BEACbumGEkXfjxwJxltvzN7ueHSxehNmnGmk7b54j8TW_rQqf6myjeojgljh_1vRzZyKcMGiYksb1j0xhMRSGE5Vfktwh1CROEAPcsHEf7XMidnWXHGb2Si5ZCjgsdCZtzG680uyJuYIliNIIl5wVC3iXpzqJoXTk_ukjkc9mBp0GrnQd1ZUODVTNVNJWFYQqdg";
 
-    // Obtener el token de autorización 
-    fetch("https://api.directvgo.com/contents/v2/live/schedules/channel/CH0100000000341?eventType=now-next&pageSize=2&assetToken=false&language=es", { 
-      method: "POST", 
-      headers: { 
-          "Authorization": "Bearer " + token, 
-      "x-client-id": "web",
-        "x-profile-token": "eyJhbGciOiJSU0EtT0FFUC0yNTYiLCJlbmMiOiJBMjU2R0NNIn0.lybx16Tj827CSj_dXyRKXGTl7GLpsNMxIkUnr91LURwGYN0PbCyeAiRaAU97UFtZq43ciJQwKeFysDwZvYESob7LuuetC69Tc9bMj9xWMakdqz4pK1rSp_DO_pJ-JVVxqXxHbq2hnGwkbO4hJAJ1aY7O9qMybamkfv2KyBo1hOtS8s8umz9HbyK8B9NycT0ETBGSdBdw284FgGwl8DXwj0aHmXJqRtn-vVfRJykqiic94lOx7tAh4pUi9K1-aB2uEWQA6f4Z90TmU3izx6HZmoYj1g2StpSM4EytKHL_H3s7PGPiclQQ7z07h1ZTNCvThZspQtJrsLIvZAD_byhTcg.99aa5saWFg4ZgUld.ZHfKiRSQ6aVf0w3CMOeHlP52NRHFBZ6XCwIla-uVTh0JqO5w54p4wAYTVG3YstuFQ0lpSSlffafqBi6BT9o98eiXXNbFxSncWD2azpT2d5TArkADFTZ9FgSDIcRtclTHztS5oEs4i-usEc7ThI0kyXHOHwaIEiKeuE7yFk6zxU4NHbOyzoH1q6AgZyxtFmkkyRJgmQ1qNu-yhl0oYfczSTFLVWTb2CKwhnq7bmWx6y-YZxIhANqxex6hXD8nHyZAO5LAX7CJyh8j-ie71rHQYZ1YFllvZtyxdqQnsjmriMRsqC8xEFYy2p5mxwvaMDpYxMqwEUqsl1HiP4bw2jfAG-76kNP_mwBHpMsjVM7GR2GKRKdAghgRyxGIcKqfmbR-suSf_qw19GLfvR6UT2Z6sUahylKyTiA-2rT9brEBaaGJP8RLJBxK7heij_cO4-mqtanbdGn4HooW30uaMw2jYRdbldV9h7i6Y4HEkWz0yCV5T17l091REPw06oZpQYqGaNxcwlZnQQcaPIFD9C0nF71EmdAzzvstn5kRIuw4UcJTjUkKnXeJMXJgR1WdE8d3mJXmE4WwBpCWA-5tStxiEjotGfJCtUnUfbxHQ8jSfMg1BIH1PLAN8Wu14KEJgjanbLc45xmZBB9ml2Mwx0EvXUTGgQduPuELw-Cf2OEpAUmbM5jMrdeILOpk1a_W5S0cXtr37MDNzVe6gXpvuIwjVGXCb9YJ94YmyNWP5UJJQVKju1BwuKSosD3wzEhQx3IpZvE8BhW8Ivu8jdkNaHhSg2t2xJIxQ8N0DMK11vOuVLpk7lZe4Rsvsq-_wlIKdAOQdxy88sS-tyZJc-QcPtUb91XEgybn6cpBz_6yByEmaA1ekx9JrDX_yHAYCflBYNC2L6vaWxdM-veOKE2Dxy-V5I2b8IUDjRSoVX-S_MNTE_6KXGv6JddP5UbBmHDv9cJqampSzSjALmeqxMs2kLBi545ZmYGAfNSVraNUPohNRII.0-xWpkw4fgt1b5jrtOuA6Q",
 
-            "x-environment": "prd",
-        "x-app": "dgo"
-      }, 
-      body: JSON.stringify({ 
-        contentId: chid, 
-        delay: 0, 
-        isLive: true, 
-        mobileNetwork: true 
-      }) 
-    }) 
-      .then(response => response.json()) 
-      .then(data => { 
-        if (data.manifest && data.manifest.dash && data.manifest.dash.primary) { 
-          let manifestUrl = data.manifest.dash.primary; 
+    var channelId = getParameterByName('id');
 
-          // Realizar solicitud para obtener hdntl 
-          fetch(manifestUrl) 
-            .then(response => { 
-              if (!response.ok) { 
-                throw new Error('HTTP error! status: ' + response.status); 
-              } 
-              const hdntl = response.headers.get('hdntl'); 
-              if (hdntl) { 
-                // hdntl está disponible, puedes usarlo según sea necesario 
-                console.log('hdntl:', hdntl); 
+    // Definir información para diferentes canales
+    let channelInfo = {
+        "GH": {
+            chid: "CH0100000000341",
+            keyId: "de7d7ded48b437d691966acdc8a97262",
+            key: "c1696c67cf7a678932d33340135ea82b"
+        },
+        "GHCAMARA1": {
+            chid: "CH0100000000342",
+            keyId: "9551559085843488876b472cd5416000",
+            key: "a7dbd673c51a4c73522e7d1a240fa7bc"
+        },
 
-                // Configurar JWPlayer con clearkey y hdntl 
-                let player = jwplayer("player"); 
-                player.setup({ 
-                  playlist: [{ 
-                    sources: [{ 
-                      default: false, 
-                      type: "dash", 
-                      file: manifestUrl, 
-                      drm: { 
-                        clearkey: { 
-                          keyId: keyId, 
-                          key: key 
-                        } 
-                      }, 
-                      label: "0", 
-                      // Agregar encabezado "Hdntl" a la solicitud de audio 
-                      onXhrOpen: function (xhr, url) { 
-                        if (!url.includes("manifest.mpd")) { 
-                          xhr.setRequestHeader("Hdntl", hdntl); 
-                        } 
-                      } 
-                    }] 
-                  }], 
-                  width: "100%", 
-                  height: "100%", 
-                  aspectratio: "16:9", 
-                  autostart: false,
-                  cast: {}, 
-                  sharing: false 
-                }); 
-              } else { 
-                console.log('Header "hdntl" not found in the response.'); 
-              } 
-              return response.text(); 
-            }) 
-            .catch(error => console.error('Error fetching MPD:', error)); 
+"GHCAMARA2": {
+            chid: "CH0100000000343",
+            keyId: "206ba28f691f34f88d8886cc42702c4c",
+            key: "7830b692416a413e1f31fb81a3bdf752"
+        },
 
-        } else { 
-          console.error("Dash primary URL not found in the response."); 
-        } 
-      }) 
-      .catch(error => console.error("Error fetching authorization token:", error)); 
-  
+"GHCAMARA3": {
+            chid: "CH0100000000340",
+            keyId: "cd9941e77fc63100986acdcb6bcba661",
+            key: "dc9b59d9a8397b756bdd2607c7614476"
+        },
+      
+
+"TELEFE": {
+            chid: "CH0100000000051",
+            keyId: "d83e2e0cb9735bea9fc9f0b90cea1e14",
+            key: "78ecb51bf93594cd4a7d904bd48bbd0a"
+        },
+       "ESPNCL": {
+            chid: "CH0100000000164",
+            keyId: "1f76baf7c7ac317c8ee9f64991298e88",
+            key: "8c3aa01f5cf71aab30d6df7ab74bfb23"
+        },
+
+           "TNTCL": {
+            chid: "CH0100000000041",
+            keyId: "1b9984dc66b259fe8ae597cb4fc1f4c3",
+            key: "ffb53a94f48f499546869c1f9e877187"
+        },
+            "TNT2CL": {
+            chid: "CH0100000000043",
+            keyId: "b94af7e787a95bf0b7d838fb34f27842",
+            key: "2d2a808c4367669044777e623d7ff136"
+        },
+
+           "TNT3CL": {
+            chid: "CH0100000000042",
+            keyId: "ce810782e63339049f1a4854a081416b",
+            key: "9fe13e1bbc3fdebd7acc0b6070f61340"
+        },
+
+         "WINSPORTS": {
+            chid: "CH0100000000265",
+            keyId: "a07d972af3ea385ab67b9ddc832e3d55",
+            key: "a75929e2696c04b382b901793982b6ed"
+        },
+
+       "WINSPORTSPLUS": {
+            chid: "CH0100000000266",
+            keyId: "34d62b22efc63f659eac5ba82289882d",
+            key: "696de7a82257ddb51ed3fdec04b6ec8b"
+        },
+      "ESPNCO": {
+            chid: "CH0100000000165",
+            keyId: "2444f7f19b29352eb6d1c7f9d8f71d59",
+            key: "027fc4f3b6275111c0c8b5ae84933ea8"
+        },
+
+       "ESPNMX": {
+            chid: "CH0100000000168",
+            keyId: "715ea55293fe3d178a7bce49e51e4d68",
+            key: "27980a955bc3885c922b558e134b98ec"
+        },
+
+       "ESPN2MX": {
+            chid: "CH0100000000157",
+            keyId: "06b3adfba9845c7c924704fd8b8dcd64",
+            key: "6244063ad7317036483d129ad7bcc75a"
+        },
+
+         "VTVPLUS": {
+            chid: "CH0100000000028",
+            keyId: "12d1ef63300a35c49c8cab6e6b89f8e5",
+            key: "d092d2e9815a561f4167a8cc70e38cf7"
+        },
+
+       "ESPN": {
+            chid: "CH0100000000162",
+            keyId: "6fb095d66807314cabbde0385b2953e4",
+            key: "eb790b9685c1d3f9680cc9f907a502ea"
+        },
+
+     "ESPN2": {
+            chid: "CH0100000000016",
+            keyId: "933de8e915535ae18c2558a5a76318c9",
+            key: "45d78db595418f228edcdfd8eee3244a"
+        },
+        "TNTAR": {
+            chid: "CH0100000000040",
+            keyId: "c4697bf458da52f8b96b36cce761d571",
+            key: "d905edf70433013f22444460fe4e0121"
+        },
+
+       "ESPNPREMIUM": {
+            chid: "CH0100000000182",
+            keyId: "13cc9fd6bd903b9ab1602b12e3080ffd",
+            key: "ad1709ca8208939e969b2aa8f631edbf"
+        },
+       "TYC": {
+            chid: "CH0100000000036",
+            keyId: "566d0a2b7ee9384c8fc5e3613db7fb7e",
+            key: "5d90f742e6398b7ab0abb769c77b2638"
+        },
+    };
+
+    // Obtener la información del canal actual
+    let currentChannel = channelInfo[channelId];
+
+    // Verificar si se encontró información para el canal actual
+    if (currentChannel) {
+        fetchAuthorizationToken(token, currentChannel);
+    } else {
+        console.error("No se encontró información para el canal especificado en la URL.");
+    }
+
+    function fetchAuthorizationToken(token, channel) {
+        // Asegúrate de que channel esté definido y tenga keyId y key
+        if (channel && channel.keyId && channel.key) {
+            fetch("https://api.directvgo.com/entitlement/v3/playback/token/authorizer", {
+                method: "POST",
+                headers: {
+                    "Authorization": "Bearer " + token,
+                    "Content-Type": "application/json",
+                    "X-Client-Id": "web",
+                    "X-Client-Version": "3.17.0"
+                },
+                body: JSON.stringify({
+                    contentId: channel.chid,
+                    delay: 0,
+                    isLive: true,
+                    mobileNetwork: true
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.manifest && data.manifest.dash && data.manifest.dash.primary) {
+                    let manifestUrl = data.manifest.dash.primary;
+
+                    fetch(manifestUrl)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('HTTP error! status: ' + response.status);
+                            }
+                            const hdntl = response.headers.get('hdntl');
+                            if (hdntl) {
+                                console.log('hdntl:', hdntl);
+
+                                // Configurar JWPlayer con clearkey y hdntl
+                                let player = jwplayer("player");
+                                player.setup({
+                                    playlist: [{
+                                        sources: [{
+                                            default: false,
+                                            type: "dash",
+                                            file: manifestUrl,
+                                            drm: {
+                                                clearkey: {
+                                                    keyId: channel.keyId,
+                                                    key: channel.key
+                                                }
+                                            },
+                                            label: "0",
+                                            onXhrOpen: function (xhr, url) {
+                                                if (!url.includes("manifest.mpd")) {
+                                                    xhr.setRequestHeader("Hdntl", hdntl);
+                                                }
+                                            }
+                                        }]
+                                    }],
+                                    width: "100%",
+                                    height: "100%",
+                                    aspectratio: "16:9",
+                                    autostart: false,
+                                    cast: {},
+                                    sharing: false
+                                });
+                            } else {
+                                console.log('Header "hdntl" not found in the response.');
+                            }
+                            return response.text();
+                        })
+                        .catch(error => console.error('Error fetching MPD:', error));
+
+                } else {
+                    console.error("Dash primary URL not found in the response.");
+                }
+            })
+            .catch(error => console.error("Error fetching authorization token:", error));
+        } else {
+            console.error("Información incompleta para el canal actual.");
+        }
+    }
+
+    // Función getParameterByName
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+        var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
  
  </script>
 
