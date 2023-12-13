@@ -81,8 +81,8 @@ let token = "eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09Iiw
             })
             .then(response => response.json())
             .then(data => {
-                if (data.manifest && data.manifest.dash && data.manifest.dash.primary) {
-                    let manifestUrl = data.manifest.dash.primary;
+                if (data.hls && data.hls && data.hls.primary) {
+                    let manifestUrl = data.hls.primary;
 
                     fetch(manifestUrl)
                         .then(response => {
@@ -100,7 +100,7 @@ let token = "eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09Iiw
                                        "description": "megadeportestv2.com",
                                         sources: [{
                                             default: false,
-                                            type: "dash",
+                                            type: "hls",
                                             file: manifestUrl,
                                             drm: {
                                                 clearkey: {
@@ -110,7 +110,7 @@ let token = "eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09Iiw
                                             },
                                             label: "0",
                                             onXhrOpen: function (xhr, url) {
-                                                if (!url.includes("manifest.mpd")) {
+                                                if (!url.includes("master.m3u8")) {
                                                     xhr.setRequestHeader("Hdntl", hdntl);
                                                 }
                                             }
