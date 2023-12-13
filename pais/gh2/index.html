@@ -49,7 +49,7 @@ let channelInfo = {
     // ...otras entradas de canales...
 };
 
-fetch("https://api.directvgo.com/experiences/v3/playback/streaming")
+fetch("https://api.directvgo.com/entitlement/v3/playback/token/authorizer")
     .then(response => {
         if (!response.ok) {
             throw new Error('Error de red. Código de estado: ' + response.status);
