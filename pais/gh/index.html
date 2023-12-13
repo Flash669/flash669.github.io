@@ -154,7 +154,7 @@ let token = "eyJhbGciOiJSUzI1NiJ9.eyJ1dWlkIjoiM2NkZjI0NDQtODBkYS00MzYwLWFkOTgtY2
     function fetchAuthorizationToken(token, channel) {
         // Asegúrate de que channel esté definido y tenga keyId y key
         if (channel && channel.keyId && channel.key) {
-            fetch("https://api.directvgo.com/experiences/v3/recommendation/mylist?deviceType=15", {
+            fetch("https://api.directvgo.com/entitlement/v3/playback/token/authorizer", {
                 method: "POST",
                 headers: {
                     "Authorization": "Bearer " + token,
