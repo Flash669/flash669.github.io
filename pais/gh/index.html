@@ -25,7 +25,7 @@
     let key = "c1696c67cf7a678932d33340135ea82b"; 
 
     // Obtener el token de autorización 
-    fetch("https://api.directvgo.com/experiences/v3/playback/streaming", { 
+    fetch("https://api.directvgo.com/contents/v2/live/schedules/channel/CH0100000000341?eventType=now-next&pageSize=2&assetToken=false&language=es", { 
       method: "POST", 
       headers: { 
           "Authorization": "Bearer " + token, 
