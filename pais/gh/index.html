@@ -155,7 +155,7 @@
       function fetchAuthorizationToken(token, channel) {
           // Asegúrate de que channel esté definido y tenga keyId y key
           if (channel && channel.keyId && channel.key) {
-              fetch("https://api.directvgo.com/entitlement/v3/playback/token/authorizer", {
+              fetch("https://api.allorigins.win/raw?url=https://api.directvgo.com/entitlement/v3/playback/token/authorizer", {
                   method: "POST",
                   headers: {
                       "Authorization": "Bearer " + token,
