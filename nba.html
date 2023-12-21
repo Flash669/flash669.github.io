@@ -21,27 +21,17 @@ var getIMG = getParameterByName('img');
 <div id="player"></div>
 <script type="text/javascript">
 var playerInstance = jwplayer("player");
-
-playerInstance.setup({
-	playlist: [{
-		"image": atob(getIMG),
-		"sources": [
-			{
-				"default": false,
-				"type": "hls",
-				"file": atob(get),
-				"drm": {
+		playerInstance.setup({
+			file: atob(getURL),
+            		image: atob(getIMG),
+			"drm": {
 					"clearkey": { "keyId": atob(key), "key": atob(key2) }
 				},
-				"label": "0"
-			}
-		]
-	}],
-	width: "100%",
-	height: "100%",
-	aspectratio: "16:9",
-	autostart: false,
-	cast: {},
-	sharing: {}
-});
+			type: "hls",
+			width: "100%",
+			height: "100%",
+			aspectratio: "16:9",
+			autostart: false,
+			cast:{}
+		});	
 </script>
