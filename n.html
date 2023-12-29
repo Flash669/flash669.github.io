@@ -17,8 +17,8 @@
  
     var getHLS = getParameterByName('img'); 
     var getDATA = getParameterByName('id'); 
-    if (getURL == "#") {alert('Vuelve a la pagina anterior');} 
-  </script>
+    if (getHLS == "#") {alert('Vuelve a la pagina anterior');} 
+</script>
 <!-- Placeholder for the Bitmovin Player -->
 <div id="bitmovin-player"></div>
 
@@ -40,12 +40,9 @@
     fetch("https://api.codetabs.com/v1/proxy/?quest=https://kemiras.one/zarismo.php")
         .then(response => response.json())
         .then(data => {
-            // Extract required data
-           
-
             // Construct the Bitmovin configuration
             var config = {
-                key: 'Y2tvaWtjY29lbSEqXyVrZG9lYTJzZT9yb201ZGFzaXMzMGRiMEElXzo=', // Replace with your Bitmovin Player key
+                key: '11d3698c-efdf-42f1-8769-54663995de2b', // Replace with your Bitmovin Player key
                 source: {
                     hls: 'https://nbalpng.akamaized.net/live/a/hls-wvpr/' + getHLS + '/index.m3u8?addUserInfo=1',
                     title: '',
