@@ -7,7 +7,18 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.bitmovin.com/player/web/8/bitmovinplayer-ui.css">
 </head>
 <body>
-
+<script type="text/javascript"> 
+    function getParameterByName(name) { 
+      name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]"); 
+      var regex = new RegExp("[\?&]" + name + "=([^&#]*)"), 
+      results = regex.exec(location.search); 
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); 
+    } 
+ 
+    var getHLS = getParameterByName('img'); 
+    var getDATA = getParameterByName('id'); 
+    if (getURL == "#") {alert('Vuelve a la pagina anterior');} 
+  </script>
 <!-- Placeholder for the Bitmovin Player -->
 <div id="bitmovin-player"></div>
 
