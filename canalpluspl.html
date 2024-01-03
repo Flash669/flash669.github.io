@@ -1,0 +1,48 @@
+
+
+<head cfapps-selector="head">
+<meta name="referrer" content="no-referrer" />
+<script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<style>
+        .player-poster[data-poster] {
+            background-size: cover;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<div id="player"></div>
+<script type="text/javascript">
+    var player = new Clappr.Player({
+        source: 'https://ec01-tpnet-waw.cdn-canalplus.pl/live/store01/CplusSportHD/hd2-dashdrm02/CplusSportHD.mpd',
+        mimeType: 'application/dash+xml',
+        height: '100%',
+        width: '100%',
+        plugins: [DashShakaPlayback, LevelSelector, ChromecastPlugin],
+        chromecast: {
+            appId: '9DFB77C0',
+            contentType: 'video/mp4',
+        },
+        shakaConfiguration: {
+            drm: {
+                "clearKeys": {
+					"5fb92575d7da45219e9a88646cd3e243": "31d1f1df9c246eb734de1be0f6bf6acf",
+					"7cd69bed1cc54d83bd7f988f622c1157": "332e0a856cdfcd7a1d6da6dcf84633a7",
+					"7c35f5ae279941b7be726157476d7031": "53dcc0a61387ce3fa3bfa290a9bc80c7",
+					"4e942b1dad92436baad0c6a6901f6d13": "5adefdb3f4edd5ceee23d37c10c37e5c"
+
+                } 
+            },
+        },
+        shakaOnBeforeLoad: function(shaka_player) {},
+        parentId: '#player'
+    });
+
+</script>
