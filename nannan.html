@@ -1,0 +1,76 @@
+<html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <title>.</title>
+  <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+  <script data-cfasync="false" src="//achcdn.com/script/suv4.js" data-adel="lwsu" cdnd="achcdn.com" zid="7692102"></script>
+</head>
+<body>
+  <div id="player"></div>
+
+ <script>
+    let channelInfo = {
+        "GH": {
+            keyId: "de7d7ded48b437d691966acdc8a97262",
+            key: "c1696c67cf7a678932d33340135ea82b",
+            manifestUrl: "https://dtvott-akaws.akamaized.net/live_1282/DASH/manifest.mpd?hdnts=exp%3D1704803096%7Eacl%3D%2F*%7Eid%3D1bd38422-48b8-508c-8fb1-9ddf4ffd2549%7Ehmac%3Df007e0592ce690188b3048a9fc1293198b4e6da74730cc5a18a26b6bbb7a0c3a&tokenization=true&da=0&country=MX&accountType=OTT&accountId=1bd38422-48b8-508c-8fb1-9ddf4ffd2549&deviceType=web&channelId=CH0100000000341&deviceId=73047ac2-30b6-4016-becb-4e43bcfe3294"
+        },
+        // Agrega información para otros canales según sea necesario
+    };
+
+    let currentChannelId = "GH"; // Cambia esto según el canal actual
+    let currentChannel = channelInfo[currentChannelId];
+
+    if (currentChannel) {
+        // Configurar JWPlayer con clearkey y el enlace del manifiesto
+        let player = jwplayer("player");
+        player.setup({
+            playlist: [{
+                sources: [{
+                    default: false,
+                    type: "dash",
+                    file: currentChannel.manifestUrl,
+                    drm: {
+                        clearkey: {
+                            keyId: currentChannel.keyId,
+                            key: currentChannel.key
+                        }
+                    },
+                    label: "0"
+                }]
+            }],
+            width: "100%",
+            height: "100%",
+            aspectratio: "16:9",
+            autostart: false,
+            cast: {},
+            sharing: false
+        });
+    } else {
+        console.error("No se encontró información para el canal actual.");
+    }
+
+
+    // Función getParameterByName
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+        var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+ 
+ 
+ </script>
+
+
+
+
+
+ 
+</body></html>
