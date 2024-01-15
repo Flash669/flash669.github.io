@@ -19,7 +19,7 @@
             var results = regex.exec(location.search);
             return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
         }
-var mt = ["f2play" ];
+var mt = [ "f2play" ];
 var random = Math.floor(Math.random() * mt.length)
 console.log("Selected mt:", mt[random]);
         var mpdBase = "https://" + mt[random] + ".cdn.rcs.net.ar/mnp/";
