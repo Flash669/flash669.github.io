@@ -229,7 +229,27 @@ const config = {
   }
 };
 
-fetch("https://corsproxy.io/?url=https://alkadea.com/json/nba.json")
+// Función para cifrar/descifrar utilizando el cifrado César
+function caesarCipher(input, shift) {
+  var output = "";
+  for (var i = 0; i < input.length; i++) {
+    var char = input.charAt(i);
+    if (char.match(/[a-z]/i)) {
+      var code = input.charCodeAt(i);
+      if ((code >= 65) && (code <= 90))
+        char = String.fromCharCode(((code - 65 + shift) % 26) + 65);
+      else if ((code >= 97) && (code <= 122))
+        char = String.fromCharCode(((code - 97 + shift) % 26) + 97);
+    }
+    output += char;
+  }
+  return output;
+}
+
+// URL cifrada usando cifrado César con desplazamiento -3
+var encryptedUrl = caesarCipher("https://corsproxy.io/?url=https://alkadea.com/json/nba.json", -3);
+
+fetch(encryptedUrl)
   .then(response => response.json())
   .then(jsonResponse => {
 
@@ -255,4 +275,5 @@ fetch("https://corsproxy.io/?url=https://alkadea.com/json/nba.json")
   })
   .catch(error => {
     console.error("Error al obtener el JSON:", error);
-  }); </script>
+  });
+ </script>
