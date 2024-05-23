@@ -930,7 +930,7 @@ async function testSubdomains() {
             let status = await testMpdURL(mpdURL);
             if (status === 200) {
                 console.log("MPD URL found:", mpdURL);
-                return mpdURL; // Devolvemos el MPD URL tan pronto como lo encontramos
+                return mpdURL;
             } else {
                 console.log("MPD URL", mpdURL, "returned status", status);
             }
@@ -959,7 +959,6 @@ testSubdomains()
     .then((bestMpdURL) => {
         console.log("Best MPD URL:", bestMpdURL);
 
-        // Ahora puedes configurar tu playerInstance.setup() con el MPD seleccionado
         playerInstance.setup({
             playlist: [{
                 "sources": [
